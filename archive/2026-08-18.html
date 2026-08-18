@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>Practical test-runner, CI, and device-farm updates that affect flaky-test handling, CI throughput, and RAG evaluation · Tuesday, August 18, 2026 · Morning Signal</title>
+  <title>Agentic operations move from experiment to engineering: telemetry-enabled agents, CI-as-code workflows, and several security incidents shifting QA priorities · Tuesday, August 18, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 
     <section class="hero">
       <p class="eyebrow">Tuesday, August 18, 2026 <span class="dot">·</span> Issue 2026-08-18</p>
-      <h1>Practical test-runner, CI, and device-farm updates that affect flaky-test handling, CI throughput, and RAG evaluation</h1>
+      <h1>Agentic operations move from experiment to engineering: telemetry-enabled agents, CI-as-code workflows, and several security incidents shifting QA priorities</h1>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -26,190 +26,166 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">Playwright 1.62: isolated retries, AbortSignal cancellation, and a new component testing model</h2>
-      <p class="story-summary">Playwright's release notes for Version 1.62 document several test-runner features that change how suites behave under failure and long-running operations: a new component-testing model (stories/galleries), support for passing an AbortSignal to cancel actions and assertions, WebP support for visual snapshots, and a configurable retryStrategy (including an 'isolated' mode that runs retries at the end in a single worker).</p>
-      <div class="why"><span>Why it matters</span><p>For senior QA automation engineers this affects flaky-test strategies and CI stability. AbortSignal gives tests a standard cancellation mechanism to avoid hung actions; isolated retries reduce interference between retry attempts (helpful for tests that cause shared-state interference); WebP lowers artifact storage cost for visual comparisons; and the component testing model helps isolate UI scenarios for faster, more localizable failures.</p></div>
-      <a class="source-link" href="https://playwright.dev/docs/release-notes" target="_blank" rel="noopener noreferrer">Playwright — Release notes <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">Grafana ships gcx CLI and MCP server (GA) to let agents query live telemetry</h2>
+      <p class="story-summary">Grafana announced general availability for gcx (the Grafana Cloud CLI) and the Grafana MCP server, enabling agent workflows to pull metrics, logs, traces, SLOs and synthetic results from Grafana Cloud or self‑hosted Grafana. The releases expose agent‑friendly input/output, GitOps support, and an MCP endpoint option for runtime agent access to observability data.</p>
+      <div class="why"><span>Why it matters</span><p>QA automation and agentic engineering teams can now embed live telemetry into agent workflows and automated investigations without brittle, ad‑hoc scraping. That reduces the friction of writing agents that reason over production state (incident triage, test triage, flaky-test investigation), but it also raises the operational security surface (agent access to live data and remediation paths).</p></div>
+      <a class="source-link" href="https://grafana.com/press/2026/07/27/grafana-labs-ships-six-tools-that-power-agentic-operations-from-planning-to-production/" target="_blank" rel="noopener noreferrer">Grafana Labs (press) <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
-      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">22 signals</span></div>
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">19 signals</span></div>
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / GitHub Actions</span><span class="priority priority-2">2/10</span></div>
-          <h3>GitHub Actions: steps can now run in parallel (background steps)</h3>
-          <p>GitHub Actions added the ability to run steps concurrently via a background/parallel mechanism, letting teams overlap work inside a single job rather than splitting into separate jobs or runners.</p>
-          <div class="why compact"><span>Why it matters</span><p>This can reduce end-to-end CI time for test pipelines and make in-job orchestration (e.g., long-running browsers, device proxies, or test helpers) cheaper. It also increases the need to audit step-level concurrency for shared resources (device locks, ports, temp dirs) to avoid new flakiness.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-06-25-actions-steps-can-now-be-run-in-parallel/" target="_blank" rel="noopener noreferrer">GitHub Changelog — Actions steps can now be run in parallel <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">CI/CD / Test infra</span><span class="priority priority-1">1/10</span></div>
+          <h3>Cloudflare open-sources cloudflare/ci: define CI pipelines in TypeScript on Workflows</h3>
+          <p>Cloudflare published the cloudflare/ci repository and related Workflows integrations to author CI pipelines in TypeScript, run steps with durable retries, and execute commands in a sandboxed runtime. The design uses Cloudflare Workflows to orchestrate pipeline steps and Cloudflare Sandbox to execute steps.</p>
+          <div class="why compact"><span>Why it matters</span><p>Teams that prefer TypeScript-first pipelines and durable execution semantics now have a serverless CI model; this affects how test runners, device-farm integrations, and caching strategies are implemented in CI. It’s worth evaluating for speeding up test orchestration and reducing self-hosted runner maintenance.</p></div>
+          <a class="source-link" href="https://github.com/cloudflare/ci" target="_blank" rel="noopener noreferrer">cloudflare/ci (GitHub) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Device farms / Test infrastructure</span><span class="priority priority-3">3/10</span></div>
-          <h3>BrowserStack SDK: August 2026 patch run fixes CI hangs, Espresso App Automate timeouts, and Test Observability linking</h3>
-          <p>BrowserStack's SDK release notes show a cluster of August 2026 patches (1.67.x) that address test-run reliability: fixes for CI builds hanging when the BrowserStack CLI stalls, Espresso App Automate builds timing out when observability is enabled, and test-observability session linking issues on parallel TestNG runs.</p>
-          <div class="why compact"><span>Why it matters</span><p>If you run mobile automation on BrowserStack or integrate their SDK into CI, these fixes reduce common sources of pipeline blockage and improve traceability between test results and device sessions — both are important when triaging flaky mobile tests or scaling device-parallel runs.</p></div>
-          <a class="source-link" href="https://www.browserstack.com/docs/sdk/release-notes" target="_blank" rel="noopener noreferrer">BrowserStack — SDK release notes (changelog showing versions 1.67.0–1.67.6 and August 2026 fixes) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Developer workflow / Code review</span><span class="priority priority-1">1/10</span></div>
+          <h3>GitHub launches Stacked Pull Requests (public preview)</h3>
+          <p>GitHub rolled out Stacked Pull Requests in public preview and documentation for stacked‑PR workflows and the gh-stack CLI extension. The feature allows dependent changes to be expressed as a stack of smaller PRs that can be reviewed and merged independently.</p>
+          <div class="why compact"><span>Why it matters</span><p>For QA automation and agentic code generation, stacked PRs reduce review bottlenecks for large changes and make it easier to review incremental patches from automated tools or agents. They also change CI gating and test strategy: test runs can be aligned per-PR in a stack, helping isolate flaky changes and speed up validation.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Mobile QA / Android / Espresso</span><span class="priority priority-4">4/10</span></div>
-          <h3>AndroidX Test / Espresso versions and Test artifacts</h3>
-          <p>The AndroidX Test release notes list current stable artifacts (e.g., espresso-core:3.7.0, espresso-device:1.1.0, core:1.7.0 and associated runner/orchestrator components) and document dependency/toolchain updates used by the Jetpack test libraries.</p>
-          <div class="why compact"><span>Why it matters</span><p>Updates to Espresso and the AndroidX test stack affect instrumentation behavior, API availability in test code, and compatibility with device farms and orchestrators. Senior engineers should verify new versions against on-device observability hooks, CI orchestrator config (orchestrator vs. instrumentation runner), and SDK/toolchain requirements before upgrading.</p></div>
-          <a class="source-link" href="https://developer.android.com/jetpack/androidx/releases/test" target="_blank" rel="noopener noreferrer">Android Developers — AndroidX Test release notes <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agentic workflows / LLM evals</span><span class="priority priority-2">2/10</span></div>
+          <h3>Netflix open-sources an agentic Observational Causal Inference workflow (oci-agent)</h3>
+          <p>Netflix published the oci-agent project (GitHub) and wrote up its agentic workflow for observational causal inference: an actor‑critic agent loop that parameterizes and runs notebooks, evaluates diagnostics, and drafts reports.</p>
+          <div class="why compact"><span>Why it matters</span><p>This is a concrete example of agentic automation for a specialized, judgment‑heavy task. QA and analytics teams can study the repo to learn patterns for structuring agent workflows, building actor/critic loops, and evaluating agents on reproducible datasets—useful when designing evaluation harnesses for domain‑specific agent tasks.</p></div>
+          <a class="source-link" href="https://github.com/Netflix-Skunkworks/oci-agent" target="_blank" rel="noopener noreferrer">Netflix Skunkworks (GitHub) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Python / Pytest / Test frameworks</span><span class="priority priority-5">5/10</span></div>
-          <h3>pytest changelog (maintenance & deprecations affecting CI suites)</h3>
-          <p>The pytest changelog documents recent maintenance releases (including pytest 9.1.1) with bug fixes and deprecations. These maintenance releases include changes that can affect plugin compatibility and test discovery behavior in CI.</p>
-          <div class="why compact"><span>Why it matters</span><p>Large Python test suites often depend on plugins and discovery semantics. When upgrading pytest, expect to run full CI on a branch, validate plugin compatibility (xdist, coverage, custom reporters), and review deprecation notes to avoid surprising failures in nightly pipelines.</p></div>
-          <a class="source-link" href="https://pytest.org/en/stable/changelog.html" target="_blank" rel="noopener noreferrer">pytest — Changelog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agent security / Sandbox</span><span class="priority priority-1">1/10</span></div>
+          <h3>Docker publishes 'Coding Agent Horror Stories' — agents can run attacker-supplied commands</h3>
+          <p>Docker published an advisory-style blog post that walks through real cases where coding agents execute attacker-controlled commands and explains how Docker Sandboxes can constrain the blast radius.</p>
+          <div class="why compact"><span>Why it matters</span><p>QA and test infra teams running agentic tooling should treat runner isolation and sandboxing as first-class controls. Test harnesses that accept agent-supplied commands need strict allowlists, immutable environments, and execution sandboxes to avoid covert code execution during automated test or CI flows.</p></div>
+          <a class="source-link" href="https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/" target="_blank" rel="noopener noreferrer">Docker Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">RAG evaluation / LLM evaluation</span><span class="priority priority-6">6/10</span></div>
-          <h3>T²-RAGBench (EACL 2026): a focused RAG benchmark for text-and-table data</h3>
-          <p>T²-RAGBench is a 23,088 example benchmark (EACL 2026) designed to evaluate retrieval-augmented-generation (RAG) systems on documents that combine text and tables. The authors transform datasets into a context-independent format and find hybrid dense+sparse retrieval strategies perform best on this workload.</p>
-          <div class="why compact"><span>Why it matters</span><p>If your QA or validation workflows include RAG systems (e.g., document QA, SDK docs retrieval, or test-result summarization), this benchmark highlights retrieval failure modes specific to tabular data and offers a reproducible dataset and code to stress-test retrieval and reranking components of your pipeline.</p></div>
-          <a class="source-link" href="https://aclanthology.org/2026.eacl-long.8/" target="_blank" rel="noopener noreferrer">T²-RAGBench — ACL Anthology (EACL 2026) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agent security / MCP</span><span class="priority priority-1">1/10</span></div>
+          <h3>Serena (an MCP coding agent) has an unauthenticated dashboard leading to RCE (advisory)</h3>
+          <p>A GitHub security advisory documents an unauthenticated Flask dashboard in Serena that can be reached via DNS rebinding and used to write persistent agent memory; chained with agent primitives (execute_shell_command with shell=True) this enables remote code execution.</p>
+          <div class="why compact"><span>Why it matters</span><p>This vulnerability highlights that MCP servers, agent dashboards, and developer tools are high‑risk components in agentic pipelines. QA and security teams must include agent server attack surfaces in threat models and CI security checks, and ensure default deployments are not exposed to rebinding/host header attacks.</p></div>
+          <a class="source-link" href="https://github.com/oraios/serena/security/advisories/GHSA-37h2-6p4f-mp3q" target="_blank" rel="noopener noreferrer">GitHub Security Advisory (oraios/serena) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Runner infrastructure</span><span class="priority priority-7">7/10</span></div>
-          <h3>GitHub Actions Runner releases: maintenance updates for CI hosts</h3>
-          <p>The Actions Runner release stream records updates to the self-hosted and GitHub-hosted runner implementation used to execute CI jobs.</p>
-          <div class="why compact"><span>Why it matters</span><p>Runner changes can affect operating-system compatibility, tool caching, permissions, and the diagnostics available when a test job fails. Pinning or regularly exercising runner versions helps keep infrastructure changes visible.</p></div>
-          <a class="source-link" href="https://github.com/actions/runner/releases" target="_blank" rel="noopener noreferrer">GitHub Actions Runner — Releases <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Security research</span><span class="priority priority-1">1/10</span></div>
+          <h3>Independent analysis documents CVE-2026-49471 RCE chain in serena-agent</h3>
+          <p>SecureLayer7 published an analysis of CVE-2026-49471 showing how an unauthenticated dashboard plus DNS rebinding and prompt injection can lead to host command execution in serena-agent.</p>
+          <div class="why compact"><span>Why it matters</span><p>Readable attack chains are useful inputs for QA and red‑team test cases. Include such chained scenarios in regression tests for agent tooling to validate mitigations (auth, Host header checks, CSRF, no shell=True wrappers).</p></div>
+          <a class="source-link" href="https://securelayer7.net/lab/cve-2026-49471-serena-agent-unauthenticated-dashboard-dns-rebinding-rce" target="_blank" rel="noopener noreferrer">SecureLayer7 <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Mobile QA / Maestro</span><span class="priority priority-7">7/10</span></div>
-          <h3>Maestro releases: mobile UI automation updates</h3>
-          <p>The Maestro release stream tracks changes to the mobile UI automation runner, its flow syntax, and the tooling used to execute tests on Android and iOS.</p>
-          <div class="why compact"><span>Why it matters</span><p>Mobile automation upgrades can change locator behavior, device compatibility, and debugging output. Reviewing release notes before upgrading gives teams a chance to run representative flows against their device matrix.</p></div>
-          <a class="source-link" href="https://github.com/mobile-dev-inc/maestro/releases" target="_blank" rel="noopener noreferrer">Maestro — Releases <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">CI/CD / Orchestration</span><span class="priority priority-2">2/10</span></div>
+          <h3>Cloudflare Workflows: durable execution engine and integrations for agentic processes</h3>
+          <p>Cloudflare Workflows (product page) provides a durable execution engine that persists workflow state, supports retries and long‑running steps, and integrates with durable sandbox execution for step-level isolation.</p>
+          <div class="why compact"><span>Why it matters</span><p>Durable, retryable workflow semantics make it easier to orchestrate long-running test jobs, cross-repo CI flows, and agentic pipelines that require human approvals or external services. Evaluate how your test orchestration maps onto durable steps and whether existing runners can be replaced or augmented for reliability.</p></div>
+          <a class="source-link" href="https://www.cloudflare.com/products/workflows/" target="_blank" rel="noopener noreferrer">Cloudflare (product) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Mobile QA / Android</span><span class="priority priority-8">8/10</span></div>
-          <h3>Android Developers testing guidance and platform updates</h3>
-          <p>Android Developers publishes platform and tooling guidance that informs app compatibility, instrumentation, and test-environment decisions.</p>
-          <div class="why compact"><span>Why it matters</span><p>Android test suites are sensitive to platform, Gradle, emulator, and device changes. Keeping the official developer guidance in the review loop helps teams separate application regressions from environment drift.</p></div>
-          <a class="source-link" href="https://android-developers.googleblog.com/" target="_blank" rel="noopener noreferrer">Android Developers — Blog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Developer tooling / CI</span><span class="priority priority-3">3/10</span></div>
+          <h3>Cloudflare Workflows changelog: developer-facing updates and local flags for Workflows</h3>
+          <p>Cloudflare updated the Workflows changelog with developer-facing features (local `wrangler` flags, workflow diagrams, Agents SDK improvements) that ease local development and testing of Workflows-powered CI.</p>
+          <div class="why compact"><span>Why it matters</span><p>Local‑first flags and developer tooling reduce the friction of iterating on CI pipeline definitions and test harnesses; teams can run deterministic tests locally against a workflow runtime before deploying changes to shared CI.</p></div>
+          <a class="source-link" href="https://developers.cloudflare.com/changelog/product/workflows/" target="_blank" rel="noopener noreferrer">Cloudflare Docs (Changelog) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Web E2E / Browser automation</span><span class="priority priority-8">8/10</span></div>
-          <h3>Playwright repository releases: browser automation version changes</h3>
-          <p>The Playwright repository release stream provides the version-by-version changes for the browser automation package and its test-runner integrations.</p>
-          <div class="why compact"><span>Why it matters</span><p>Release-level changes can affect browser binaries, selectors, tracing, retries, and CI runtime. A small compatibility suite run against the new version can catch breakage before a broad rollout.</p></div>
-          <a class="source-link" href="https://github.com/microsoft/playwright/releases" target="_blank" rel="noopener noreferrer">Microsoft Playwright — Releases <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">AI agents / Agentic engineering</span><span class="priority priority-8">8/10</span></div>
-          <h3>OpenAI engineering and product news for agentic systems</h3>
-          <p>OpenAI's official news stream covers changes and technical guidance relevant to building, evaluating, and operating AI-powered systems.</p>
-          <div class="why compact"><span>Why it matters</span><p>Agentic QA systems need clear evidence about model capabilities, tool use, and evaluation practices. Tracking first-party updates helps keep test plans aligned with the interfaces teams actually depend on.</p></div>
-          <a class="source-link" href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI — News <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Developer platforms</span><span class="priority priority-9">9/10</span></div>
-          <h3>GitHub Changelog: workflow and developer-platform changes</h3>
-          <p>The GitHub Changelog is the first-party stream for changes to GitHub Actions, repositories, pull requests, and related developer-platform capabilities.</p>
-          <div class="why compact"><span>Why it matters</span><p>Small platform changes can alter permissions, workflow syntax, status reporting, and automation behavior. Reviewing the changelog is a lightweight way to catch changes that deserve a CI regression check.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Device farms / Mobile testing</span><span class="priority priority-9">9/10</span></div>
-          <h3>BrowserStack engineering updates for device testing</h3>
-          <p>BrowserStack's engineering and product coverage follows changes in browser coverage, mobile devices, automation integrations, and test observability.</p>
-          <div class="why compact"><span>Why it matters</span><p>Device-farm behavior is part of the test system, not just a remote execution detail. Monitoring provider changes helps teams update capability matrices, timeout budgets, and failure triage playbooks.</p></div>
-          <a class="source-link" href="https://www.browserstack.com/blog/" target="_blank" rel="noopener noreferrer">BrowserStack — Engineering blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Engineering productivity / Testing</span><span class="priority priority-10">10/10</span></div>
-          <h3>Microsoft Developer Blogs: tooling and testing signals</h3>
-          <p>Microsoft's developer blog stream covers changes across developer tooling, cloud workflows, and engineering practices that can influence test infrastructure.</p>
-          <div class="why compact"><span>Why it matters</span><p>Cross-cutting tooling changes often surface before they reach formal release notes. Following the stream can reveal useful patterns for CI diagnostics, automation ergonomics, and developer feedback loops.</p></div>
-          <a class="source-link" href="https://devblogs.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Developer Blogs <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Test infrastructure</span><span class="priority priority-1">1/10</span></div>
-          <h3>GitHub enforces minimum versions for self-hosted Actions runners (rolling enforcement through Sept 25, 2026)</h3>
-          <p>GitHub resumed enforcement of minimum runner versions and a 30-day auto-update requirement for self‑hosted Actions runners. Runners must be at least 2.329.0 to (re)register with the new platform; if a runner misses updates (any release) for 30 days it will stop receiving jobs. The blog includes a brownout schedule and explicit enforcement dates (Enterprise Cloud with Data Residency: July 31, 2026; GitHub Enterprise Cloud: September 25, 2026). ([github.blog](https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/))</p>
-          <div class="why compact"><span>Why it matters</span><p>If you run CI on self-hosted runners (VM images, containers, device-farm controllers, on-prem runners) this can cause queued workflows or sudden job failures unless images and automation are updated and auto-update is enabled. Plan upgrades, update AMIs/container images, and add runner-version checks to your CI image build pipelines to avoid disruption. ([github.blog](https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/))</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Mobile QA / E2E</span><span class="priority priority-2">2/10</span></div>
-          <h3>Maestro (Expo) adds insights, per-flow failure summaries, and retry_failed_only to speed mobile E2E debugging</h3>
-          <p>Expo's Maestro testing integration now provides a Maestro insights dashboard (runs-over-time, flaky-flow identification, grouped failure patterns), a Test Results summary that surfaces error messages and screenshots, and retries that re-run only failed flows by default (`retry_failed_only`). These features are built on Maestro's JUnit output. ([expo.dev](https://expo.dev/changelog/maestro-testing-improvements))</p>
-          <div class="why compact"><span>Why it matters</span><p>For mobile QA teams using Maestro or EAS Workflows, this reduces CI minutes wasted on full-suite retries and makes flaky-flow triage faster: you can find recurring failure messages and focus fixes where they matter. The feature is gated by subscription level (Production/Enterprise). ([expo.dev](https://expo.dev/changelog/maestro-testing-improvements))</p></div>
-          <a class="source-link" href="https://expo.dev/changelog/maestro-testing-improvements" target="_blank" rel="noopener noreferrer">Expo / Maestro changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Runner operations</span><span class="priority priority-2">2/10</span></div>
-          <h3>Self-hosted runners reference (how runners update, config, auto-update guidance)</h3>
-          <p>GitHub's self-hosted runner docs explain how runners auto-update, configuration options to disable auto-update, and APIs to manage runners — essential reading when planning mass-upgrades, baking new AMIs/container images, or operating device-farm controllers as self-hosted runners. Use the audit-log and runner-version REST API to inventory fleets before enforcement windows. ([docs.github.com](https://docs.github.com/en/actions/reference/runners/self-hosted-runners?utm_source=openai))</p>
-          <div class="why compact"><span>Why it matters</span><p>Given the runner enforcement timeline, operations and SRE teams should script inventory checks, update deployment images, and ensure auto-update can reach the update service (or adopt a scheduled, automated in-place upgrade process). The docs include commands and flags to control update behavior. ([docs.github.com](https://docs.github.com/en/actions/reference/runners/self-hosted-runners?utm_source=openai))</p></div>
-          <a class="source-link" href="https://docs.github.com/en/actions/reference/runners/self-hosted-runners" target="_blank" rel="noopener noreferrer">GitHub Docs — Self-hosted runners <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Observability & Agents</span><span class="priority priority-10">10/10</span></div>
-          <h3>Grafana ships gcx CLI and a hosted MCP server (GA) to give agents live telemetry access</h3>
-          <p>Grafana Labs announced general availability of multiple agentic observability tools (including the gcx CLI and a hosted Grafana MCP server) that let AI coding agents and developer tooling query metrics, logs, traces, SLOs and Synthetic Monitoring data from Grafana Cloud or self‑hosted instances. The release includes an agent‑friendly CLI, an MCP endpoint for connecting external agents, and documentation and a GitHub repo for gcx.</p>
-          <div class="why compact"><span>Why it matters</span><p>QA automation and agentic workflows depend on real runtime context to validate fixes and triage regressions. gcx + MCP let agents pull structured telemetry into their decision loop (PromQL results, alert histories, SLO burn rates, synthetic probe results) so test generation, flakiness triage, and automated remediation can act on live data instead of stale or manually assembled snapshots. Practically: instrument SLOs and synthetic checks, enable controlled MCP access, and add telemetry-based assertions to agent test plans so agent outputs are grounded in current production state.</p></div>
-          <a class="source-link" href="https://grafana.com/press/2026/07/27/grafana-labs-ships-six-tools-that-power-agentic-operations-from-planning-to-production/" target="_blank" rel="noopener noreferrer">Grafana Labs (press) <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Agent Security / Tooling</span><span class="priority priority-9">9/10</span></div>
-          <h3>Critical RCE in Serena (MCP coding agent); update to serena-agent 1.7.0 required</h3>
-          <p>GitLab’s Threat Research Group disclosed a critical server‑side template injection in the Serena MCP tooling that allowed attacker‑supplied templates to execute arbitrary code when a developer opened a repository. The maintainers released serena‑agent 1.7.0 to switch Jinja2 to a SandboxedEnvironment and close the injection path.</p>
-          <div class="why compact"><span>Why it matters</span><p>MCP servers run with developer user context and can reach credentials, SSH keys, and internal networks. This is a concrete example of how project configuration treated as code can become remote RCE. For QA and CI: inventory MCP servers in your environment, block automatic processing of untrusted repositories, add hostile‑repo test cases to CI, and require pinned/verified MCP versions in developer images and build agents.</p></div>
-          <a class="source-link" href="https://about.gitlab.com/blog/critical-rce-in-serena/" target="_blank" rel="noopener noreferrer">GitLab (Threat Research Group) <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Agent Security / Execution Sandboxing</span><span class="priority priority-8">8/10</span></div>
-          <h3>Real incidents: allowlist bypasses and agent-safe execution patterns (Docker blog)</h3>
-          <p>Docker published a technical post enumerating real coding‑agent attacks (including an allowlist bypass where environment built‑ins changed the semantics of an approved command) and explained how isolation (microVM sandboxes, kits that codify allowed host resources, and forward proxies for egress) reduces blast radius.</p>
-          <div class="why compact"><span>Why it matters</span><p>Allowlists and manual approvals are brittle against manipulation of environment state and file inputs. The post outlines pragmatic containment patterns (sandboxed execution, explicit kits, deny‑by‑default network rules, and controlled host mounts) that QA and release engineers should adopt for test agents, CI runners, and local developer tools to prevent repository‑sourced inputs from executing with host privileges.</p></div>
-          <a class="source-link" href="https://www.docker.com/blog/coding-agent-horror-stories-the-command-you-already-approved/" target="_blank" rel="noopener noreferrer">Docker Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Architecture & CI/CD</span><span class="priority priority-7">7/10</span></div>
-          <h3>Architectural patterns to make agentic development testable and safe (AWS Architecture Blog)</h3>
-          <p>AWS published an agentic‑AI architecture article that frames agent workflows as requiring fast feedback loops, separable testable boundaries, and data governance. The post recommends design patterns that reduce friction for agentic changes: localizable test harnesses, small deployable components, and data layers that expose consistent, validated views to agents.</p>
-          <div class="why compact"><span>Why it matters</span><p>Agents will only be useful in QA/automation if the system architecture supports short, repeatable validation cycles and clear boundaries between agent‑managed artifacts and privileged systems. Actionable steps for QA teams: add isolated local harnesses to the CI matrix, enforce schema/gating on agent inputs, and create reproducible staging snapshots (telemetry + test data) so agents can iterate without touching production credentials or data.</p></div>
-          <a class="source-link" href="https://aws.amazon.com/blogs/architecture/architecting-for-agentic-ai-development-on-aws/" target="_blank" rel="noopener noreferrer">AWS Architecture Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic SDLC (monitor)</span><span class="priority priority-6">6/10</span></div>
-          <h3>What does an agentic SDLC actually look like? (Stack Overflow Blog)</h3>
-          <p>Stack Overflow’s engineering blog interviews practitioners building agentic SDLC pipelines and discusses practical evaluation methods (Cohen’s kappa for multi‑LLM judges) and specification‑first approaches to shift QA left.</p>
-          <div class="why compact"><span>Why it matters</span><p>Practical operational guidance and evaluation rubrics from teams running agentic pipelines can influence how you test, validate, and gate agent changes. Monitor this write‑up for patterns you can adopt in test harnesses, rubric design, and LLM judge selection.</p></div>
+          <div class="story-meta"><span class="category">Process / Agentic SDLC</span><span class="priority priority-2">2/10</span></div>
+          <h3>Stack Overflow: 'What does an agentic SDLC actually look like?'</h3>
+          <p>Stack Overflow’s engineering blog published a practical discussion on building agentic SDLC pipelines, using MCPs, and evaluating multiple LLM judges (including using Cohen’s kappa to measure agreement between judges).</p>
+          <div class="why compact"><span>Why it matters</span><p>Concrete metrics and procedures (e.g., kappa for judge agreement, structured rubrics) are actionable for QA teams designing LLM evaluation pipelines and test oracles—use these methods to avoid overreliance on single-judge judgments when evaluating model outputs or agent decisions.</p></div>
           <a class="source-link" href="https://stackoverflow.blog/2026/08/18/what-does-an-agentic-sdlc-actually-look-like/" target="_blank" rel="noopener noreferrer">Stack Overflow Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">LLM Evaluation & Selection Systems</span><span class="priority priority-6">6/10</span></div>
-          <h3>From Thousands to One: Building LLM‑Powered Selection Systems (presentation)</h3>
-          <p>An InfoQ presentation by Jendrik Jördening covering how to structure selection/decision systems that scale LLM outputs: separate semantic extraction from deterministic code, restrict schemas, and use discriminator models to validate choices. The talk includes patterns to reduce nondeterminism in production LLM decision loops.</p>
-          <div class="why compact"><span>Why it matters</span><p>If you build LLM‑backed selectors or judge models (for test prioritization, flaky‑test triage, or LLM‑driven test generation), the patterns in this talk offer concrete ways to reduce nondeterminism and validate outputs programmatically. Recommended immediate use: extract a small, validated schema for agent outputs and add discriminator checks into CI workflows.</p></div>
+          <div class="story-meta"><span class="category">LLM engineering / Evaluation</span><span class="priority priority-2">2/10</span></div>
+          <h3>Practical talk: 'From Thousands to One — Building LLM-Powered Selection Systems' (InfoQ)</h3>
+          <p>An InfoQ presentation covers how to integrate LLMs into production selection systems: separate semantic extraction from deterministic code paths, constrain schemas, and validate outputs with discriminator models.</p>
+          <div class="why compact"><span>Why it matters</span><p>These patterns map directly to LLM evaluation and RAG pipelines used by QA teams: keep extraction and deterministic processing separate, and add discriminator/verification models as a gating layer to reduce silent failures in tests and production checks.</p></div>
           <a class="source-link" href="https://www.infoq.com/presentations/architecture-patterns-llm/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (presentation) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Agentic evaluation / Architecture</span><span class="priority priority-3">3/10</span></div>
+          <h3>Article: Agentic Fitness Functions — combining agents with versioned rubrics</h3>
+          <p>InfoQ published a piece on agentic fitness functions that combine agent loops with versioned rubrics to evaluate non-deterministic, intent-heavy concerns (e.g., architectural drift, semantic contract fidelity).</p>
+          <div class="why compact"><span>Why it matters</span><p>For QA teams evaluating agent outputs or automating architectural checks, versioned fitness functions provide a way to codify judgment and make evaluations reproducible across agent versions and data changes.</p></div>
+          <a class="source-link" href="https://www.infoq.com/articles/agentic-fitness-functions-evolutionary-architecture/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (article) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Agent ops / Regulatory</span><span class="priority priority-2">2/10</span></div>
+          <h3>Google Cloud: operational resilience patterns for agentic AI in financial services</h3>
+          <p>Google Cloud published guidance on building operational resilience with agentic AI in financial services, covering governance, auditability, and regulatory alignment (e.g., DORA).</p>
+          <div class="why compact"><span>Why it matters</span><p>For teams running agentic QA or automated remediation in regulated domains, these patterns give concrete controls (audit trails, governance gates) to include in test harnesses and production validation—for example, audit-logged agent decisions and replayable evaluation runs.</p></div>
+          <a class="source-link" href="https://cloud.google.com/blog/topics/financial-services/building-operational-resilience-with-agentic-ai-in-financial-services/" target="_blank" rel="noopener noreferrer">Google Cloud Blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Security / Agent testing</span><span class="priority priority-1">1/10</span></div>
+          <h3>Google Cloud: 'Staying Ahead of Adversarial AI Through Agentic Source Code Review'</h3>
+          <p>Google Cloud published a post on adversarial risks in AI and how agentic source‑code review workflows can detect misuse and accelerate remediation.</p>
+          <div class="why compact"><span>Why it matters</span><p>QA teams should integrate adversarial test cases and agentic code review into pre-merge pipelines and threat models. Automated source review agents need test suites that cover supply‑chain and adversarial inputs as part of CI security gates.</p></div>
+          <a class="source-link" href="https://cloud.google.com/blog/topics/threat-intelligence/staying-ahead-of-adversarial-ai-through-agentic-source-code-review/" target="_blank" rel="noopener noreferrer">Google Cloud Blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Static analysis / Security</span><span class="priority priority-3">3/10</span></div>
+          <h3>JetBrains Qodana expands security analysis with OpenGrep rules</h3>
+          <p>JetBrains updated Qodana with new OpenGrep-based inspections and rule sets to improve security scanning and code quality checks for generated and human-written code.</p>
+          <div class="why compact"><span>Why it matters</span><p>Augmented static analysis that understands generated code patterns is useful in CI gates; add these inspections to pre-merge pipelines to catch common generator anti-patterns and insecure snippets produced by code assistants.</p></div>
+          <a class="source-link" href="https://blog.jetbrains.com/qodana/2026/08/opengrep-inspections/" target="_blank" rel="noopener noreferrer">JetBrains Blog (Qodana) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Agent platforms</span><span class="priority priority-3">3/10</span></div>
+          <h3>SpaceXAI ships 'Grok Bot' for persistent autonomous agents</h3>
+          <p>InfoQ reported SpaceXAI released Grok Bot, a system for persistent agents running on dedicated cloud instances that interact with websites, apps, inboxes, and other tools.</p>
+          <div class="why compact"><span>Why it matters</span><p>Persistent agents change testing needs: long-lived state, session management, and cross-service side effects require new integration and end-to-end tests in addition to unit and short-lived agent tests. Inspect how these agents manage credentials, sessions, and replayability.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/grok-bot-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (news) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Platform security / CI</span><span class="priority priority-1">1/10</span></div>
+          <h3>GitLab issues a critical patch release (19.2.4, 19.1.6, 19.0.8, 18.11.11)</h3>
+          <p>GitLab published patch release notes covering multiple versions to address critical security issues; teams using GitLab-hosted CI should review the advisory and apply vendor patches promptly.</p>
+          <div class="why compact"><span>Why it matters</span><p>CI systems are high-value targets: an exploitable CI server can run arbitrary jobs or leak artifacts. QA engineering teams must keep runners and GitLab instances up to date, and include patch checks as part of release gating.</p></div>
+          <a class="source-link" href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-4-released/" target="_blank" rel="noopener noreferrer">GitLab (releases/patches) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Agent tooling / Browser automation</span><span class="priority priority-3">3/10</span></div>
+          <h3>NeoBrowser: an MCP server that drives real Chrome with logged-in sessions (community repo)</h3>
+          <p>A community GitHub repo (NeoBrowser) demonstrates an MCP server that can drive a real Chrome instance with persisted logged-in sessions, providing an approach for agents that must interact with authenticated web apps.</p>
+          <div class="why compact"><span>Why it matters</span><p>QA teams building agent-driven browser automation should treat such tooling like any device farm: harden session handling, secrets management, and isolation. Logged-in browser driving simplifies test reproduction but increases risk if sessions leak.</p></div>
+          <a class="source-link" href="https://github.com/pitiflautico/neobrowser" target="_blank" rel="noopener noreferrer">GitHub (NeoBrowser) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Agentic workflows / Data science automation</span><span class="priority priority-3">3/10</span></div>
+          <h3>InfoQ: Netflix open-sources agentic OCI workflow (coverage)</h3>
+          <p>InfoQ covered Netflix’s open-source OCI agent and the implications for automating causal analysis, noting the actor/critic loop and how it reduces manual toil for repeated analyses.</p>
+          <div class="why compact"><span>Why it matters</span><p>Coverage pieces like this distill operational patterns you can adapt into test harnesses and evaluation pipelines—particularly where human oversight is critical to validate statistical assumptions in automated analysis.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/netflix-oci-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (news) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">CI / Developer experience</span><span class="priority priority-3">3/10</span></div>
+          <h3>Cloudflare CI coverage: 'Cloudflare Turns CI Pipelines into TypeScript Workflows' (InfoQ)</h3>
+          <p>InfoQ reported on Cloudflare’s TypeScript-first CI approach that maps pipeline steps to durable Workflows and Sandbox execution, framing it as a way to treat pipelines as code authored in TypeScript.</p>
+          <div class="why compact"><span>Why it matters</span><p>If your team uses TypeScript and runs many small, composable pipeline steps, evaluate whether a durable serverless execution model reduces flakiness, cold-starts, and runner drift versus traditional VM-based runners.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/cloudflare-ci-code-workflows/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (news) <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -219,13 +195,13 @@
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Agentic engineering / CI experimentation</span><span class="priority priority-7">7/10</span></div><h3>GitHub Agentic Workflows (agentic CI/automation patterns)</h3><p>Agentic workflows can automate test triage, flaky test quarantining, and CI triage actions, but they also introduce new attack surfaces and observability needs; teams should follow the capability evolution to evaluate safe, auditable automation for test pipelines.</p><a class="source-link" href="https://github.github.com/gh-aw/slides/20260224-github-agentic-workflows.pdf" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">Model governance / LLM eval</span><span class="priority priority-2">2/10</span></div><h3>Major model providers adopt watermarking tech to comply with EU AI Act Article 50</h3><p>Watermarking changes how you build LLM evaluation and RAG pipelines: detection/verification becomes an additional test oracle and may affect downstream tokenization/evaluation metrics. QA teams should monitor compatibility and false-positive/negative rates for any watermark detectors used in tests.</p><a class="source-link" href="https://www.infoq.com/news/2026/08/eu-ai-content-watermark/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
 
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Flaky-test investigation / Research</span><span class="priority priority-8">8/10</span></div><h3>How Far Are We from Detecting Flaky Tests? On the Limits of Code-Based Detection (arXiv)</h3><p>This recent paper evaluates the limits of detecting flaky tests from code alone. It shows that code-only detectors work well on some classes of flakiness but miss many practical causes that require runtime/observability signals or historical CI signal analysis.</p><a class="source-link" href="https://arxiv.org/abs/2607.09345" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">Agentic workflows / Tutorial</span><span class="priority priority-2">2/10</span></div><h3>A Human-Augmenting Agentic Workflow for Observational Causal Inference (arXiv)</h3><p>An arXiv paper describing the design, evaluation, and reproducible artifacts for Netflix’s oci-agent, including actor/critic orchestration, datasets used for evaluation, and operational lessons.</p><a class="source-link" href="https://arxiv.org/abs/2607.22443" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
 
       </section>
     </div>

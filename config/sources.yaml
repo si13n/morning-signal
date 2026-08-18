@@ -35,3 +35,85 @@ sources:
     feed: https://testing.googleblog.com/feeds/posts/default
     category: Testing
     quality: 4
+
+  # Broader development and technology signal
+  - name: Hacker News
+    feed: https://news.ycombinator.com/rss
+    category: Technology
+    quality: 3
+  - name: InfoQ
+    feed: https://feed.infoq.com/
+    category: Software engineering
+    quality: 4
+  - name: Martin Fowler
+    feed: https://martinfowler.com/feed.atom
+    category: Software architecture
+    quality: 5
+  - name: Stack Overflow Blog
+    feed: https://stackoverflow.blog/feed/
+    category: Software engineering
+    quality: 4
+  - name: JetBrains Blog
+    feed: https://blog.jetbrains.com/feed/
+    category: Developer tools
+    quality: 5
+  - name: Cloudflare Blog
+    feed: https://blog.cloudflare.com/rss/
+    category: Infrastructure
+    quality: 5
+  - name: AWS Architecture Blog
+    feed: https://aws.amazon.com/blogs/architecture/feed/
+    category: Software architecture
+    quality: 5
+  - name: AWS DevOps Blog
+    feed: https://aws.amazon.com/blogs/devops/feed/
+    category: CI/CD
+    quality: 5
+  - name: Google Cloud Blog
+    feed: https://cloudblog.withgoogle.com/rss/
+    category: Cloud engineering
+    quality: 5
+  - name: Netflix TechBlog
+    feed: https://netflixtechblog.com/feed
+    category: Engineering practice
+    quality: 5
+  - name: Meta Engineering
+    feed: https://engineering.fb.com/feed/
+    category: Engineering practice
+    quality: 5
+  - name: Slack Engineering
+    feed: https://slack.engineering/feed/
+    category: Engineering practice
+    quality: 5
+  - name: GitLab Blog
+    feed: https://about.gitlab.com/atom.xml
+    category: DevOps
+    quality: 4
+  - name: Docker Blog
+    feed: https://www.docker.com/blog/feed/
+    category: DevOps
+    quality: 4
+  - name: Kubernetes Blog
+    feed: https://kubernetes.io/feed.xml
+    category: Cloud native
+    quality: 5
+  - name: Mozilla Hacks
+    feed: https://hacks.mozilla.org/feed/
+    category: Web engineering
+    quality: 4
+  - name: NVIDIA Developer Blog
+    feed: https://developer.nvidia.com/blog/feed/
+    category: AI engineering
+    quality: 5
+  - name: Sentry Blog
+    feed: https://blog.sentry.io/feed.xml
+    category: Observability
+    quality: 5
+  - name: CircleCI Blog
+    feed: https://circleci.com/blog/feed.xml
+    category: CI/CD
+    quality: 5
+  - name: Snyk Blog
+    feed: https://snyk.io/blog/feed.xml
+    category: Developer security
+    quality: 4

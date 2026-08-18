@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
+  <title>{{ digest.headline }} · {{ date_label }} · Morning Signal</title>
+  <link rel="stylesheet" href="{{ base_path }}assets/style.css">
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="brand" href="{{ base_path }}index.html"><span class="brand-mark">MS</span><span>Morning Signal</span></a>
+    <nav aria-label="Primary navigation"><a href="{{ base_path }}archive/index.html">Archive</a></nav>
+  </header>
+
+  <main class="shell">
+{% if digest.is_fixture %}
+    <div class="fixture-note">Bootstrap fixture · the first live edition will replace this sample.</div>
+{% endif %}
+    <section class="hero">
+      <p class="eyebrow">{{ date_label }} <span class="dot">·</span> Issue {{ digest.date }}</p>
+      <h1>{{ digest.headline }}</h1>
+      <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
+      <div class="chips" aria-label="Focus areas">
+        <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
+      </div>
+    </section>
+
+    <section class="signal-card" aria-labelledby="top-signal-heading">
+      <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-{{ digest.top_signal.priority }}">Priority {{ digest.top_signal.priority }}/10</span></div>
+      <h2 id="top-signal-heading">{{ digest.top_signal.title }}</h2>
+      <p class="story-summary">{{ digest.top_signal.summary }}</p>
+      <div class="why"><span>Why it matters</span><p>{{ digest.top_signal.why_it_matters }}</p></div>
+      <a class="source-link" href="{{ digest.top_signal.source_url }}" target="_blank" rel="noopener noreferrer">{{ digest.top_signal.source }} <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="content-section" aria-labelledby="moved-heading">
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">{{ digest["items"]|length }} signals</span></div>
+      <div class="story-grid">
+{% for story in digest["items"] %}
+        <article class="story-card">
+          <div class="story-meta"><span class="category">{{ story.category }}</span><span class="priority priority-{{ story.priority }}">{{ story.priority }}/10</span></div>
+          <h3>{{ story.title }}</h3>
+          <p>{{ story.summary }}</p>
+          <div class="why compact"><span>Why it matters</span><p>{{ story.why_it_matters }}</p></div>
+          <a class="source-link" href="{{ story.source_url }}" target="_blank" rel="noopener noreferrer">{{ story.source }} <span aria-hidden="true">↗</span></a>
+        </article>
+{% else %}<p class="empty-state">No additional signals cleared today’s editorial bar.</p>{% endfor %}
+      </div>
+    </section>
+
+    <div class="two-column">
+      <section class="side-section" aria-labelledby="watch-heading">
+        <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
+{% for story in digest["watch"] %}
+        <article class="mini-story"><div class="story-meta"><span class="category">{{ story.category }}</span><span class="priority priority-{{ story.priority }}">{{ story.priority }}/10</span></div><h3>{{ story.title }}</h3><p>{{ story.why_it_matters }}</p><a class="source-link" href="{{ story.source_url }}" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+{% else %}<p class="empty-state">Nothing new to watch closely.</p>{% endfor %}
+      </section>
+      <section class="side-section learning" aria-labelledby="learning-heading">
+        <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
+{% for story in digest["learning"] %}
+        <article class="mini-story"><div class="story-meta"><span class="category">{{ story.category }}</span><span class="priority priority-{{ story.priority }}">{{ story.priority }}/10</span></div><h3>{{ story.title }}</h3><p>{{ story.summary }}</p><a class="source-link" href="{{ story.source_url }}" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+{% else %}<p class="empty-state">No learning pick today.</p>{% endfor %}
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer shell"><span>Morning Signal · carefully filtered for useful signal</span><a href="{{ base_path }}archive/index.html">Browse the archive ↗</a></footer>
+</body>
+</html>

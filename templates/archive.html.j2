@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Morning Signal archive.">
+  <title>Archive · Morning Signal</title>
+  <link rel="stylesheet" href="{{ base_path }}assets/style.css">
+</head>
+<body>
+  <header class="site-header shell"><a class="brand" href="{{ base_path }}index.html"><span class="brand-mark">MS</span><span>Morning Signal</span></a><nav aria-label="Primary navigation"><a href="{{ base_path }}index.html">Today</a></nav></header>
+  <main class="shell archive-page">
+    <section class="hero archive-hero"><p class="eyebrow">A record of useful signal</p><h1>Archive</h1><p class="hero-copy">Past editions, kept static and easy to revisit.</p></section>
+    <section class="archive-list" aria-label="Digest editions">
+{% for digest in digests %}
+      <a class="archive-row" href="{{ digest.date }}.html">
+        <span class="archive-date"><strong>{{ digest.date|short_date }}</strong><small>{{ digest.date|date_label }}</small></span>
+        <span class="archive-title"><strong>{{ digest.headline }}</strong><small>{{ 1 + digest["items"]|length + digest["watch"]|length + digest["learning"]|length }} stories · {{ digest["items"]|map(attribute='category')|list|join(' · ') }}</small></span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+{% endfor %}
+    </section>
+  </main>
+  <footer class="site-footer shell"><span>Morning Signal</span><a href="{{ base_path }}index.html">Back to today ↗</a></footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+sources:
+  - name: OpenAI News
+    feed: https://openai.com/news/rss.xml
+    category: AI engineering
+    quality: 5
+  - name: Anthropic News
+    feed: https://www.anthropic.com/news/rss.xml
+    category: AI engineering
+    quality: 5
+  - name: GitHub Changelog
+    feed: https://github.blog/changelog/feed/
+    category: CI/CD
+    quality: 5
+  - name: GitHub Actions releases
+    feed: https://github.com/actions/runner/releases.atom
+    category: CI/CD
+    quality: 5
+  - name: Android Developers Blog
+    feed: https://android-developers.googleblog.com/feeds/posts/default
+    category: Android
+    quality: 5
+  - name: Playwright releases
+    feed: https://github.com/microsoft/playwright/releases.atom
+    category: Playwright
+    quality: 5
+  - name: Maestro releases
+    feed: https://github.com/mobile-dev-inc/maestro/releases.atom
+    category: Mobile QA
+    quality: 5
+  - name: BrowserStack engineering
+    feed: https://www.browserstack.com/blog/feed/
+    category: Test infrastructure
+    quality: 4
+  - name: Microsoft Developer Blogs
+    feed: https://devblogs.microsoft.com/feed/
+    category: Engineering practice
+    quality: 4
+  - name: Google Testing Blog
+    feed: https://testing.googleblog.com/feeds/posts/default
+    category: Testing
+    quality: 4

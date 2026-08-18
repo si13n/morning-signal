@@ -1,0 +1,42 @@
+high_priority:
+  - QA automation
+  - Agentic engineering
+  - AI agents
+  - AI testing
+  - LLM evals
+  - Mobile QA
+  - Android
+  - Maestro
+  - Espresso
+  - SDK testing
+  - Python
+  - Pytest
+  - Playwright
+  - GitHub Actions
+  - CI/CD
+  - test infrastructure
+
+medium_priority:
+  - RAG
+  - observability
+  - AdTech
+  - BrowserStack
+  - device farms
+  - flaky test investigation
+  - engineering management
+  - release engineering
+
+career_focus:
+  - Senior QA Automation Engineer
+  - QA Lead
+  - QA Manager
+  - Mobile Automation
+  - Agentic QA
+  - AI QA Engineering
+
+low_priority:
+  - generic consumer AI news
+  - generic startup funding
+  - cryptocurrency
+  - celebrity AI news
+  - generic gadget news

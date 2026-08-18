@@ -1,0 +1,18 @@
+{
+  "date": "2026-08-18",
+  "headline": "QA / Agentic AI Morning",
+  "is_fixture": true,
+  "top_signal": {
+    "title": "Bootstrap fixture — first live edition will replace this page",
+    "category": "Fixture",
+    "priority": 1,
+    "summary": "This clearly labeled sample keeps the static site testable before the first API-backed morning run.",
+    "why_it_matters": "It proves the archive, templates, links, and deployment surface without presenting invented news as a real edition.",
+    "source": "Morning Signal project",
+    "source_url": "https://github.com/",
+    "published_at": "2026-08-18T00:00:00Z"
+  },
+  "items": [],
+  "watch": [],
+  "learning": []
+}

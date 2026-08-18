@@ -1,0 +1,98 @@
+from __future__ import annotations
+
+import json
+from datetime import date
+from typing import Any, Dict, List
+
+from .schema import DIGEST_SCHEMA
+
+
+def _prompt(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, max_items: int, max_searches: int) -> str:
+    candidate_lines = []
+    for index, item in enumerate(candidates):
+        candidate_lines.append(
+            "%d. %s | %s | %s | %s | %s" % (
+                index + 1,
+                item["title"],
+                item["source"],
+                item["published_at"],
+                item["url"],
+                item.get("summary", "")[:300],
+            )
+        )
+    return """Create the Morning Signal technology digest for %s.
+
+Audience: a senior QA automation / agentic engineering practitioner. Prioritize practical, verifiable developments in QA automation, AI agents, LLM evals, RAG evaluation, mobile QA, Android, Maestro, Espresso, SDK testing, Python/Pytest, TypeScript/Playwright, GitHub Actions, CI/CD, test infrastructure, observability, flaky-test investigation, device farms, BrowserStack, engineering blogs, releases, documentation, and useful talks.
+
+Editorial rules:
+- Use primary sources whenever possible and preserve the exact source URL.
+- Explain what happened and why it matters in concise, non-hyped language.
+- Do not invent facts, dates, links, or quotes. Drop a candidate if it cannot be verified.
+- Avoid generic consumer AI, funding, cryptocurrency, gadgets, and celebrity news.
+- You may use web search to fill gaps or verify important developments, but use no more than %d focused searches. Keep the final `items` array to at most %d stories.
+- `top_signal` must be the single most useful signal and must not duplicate any other story.
+- Use `watch` for credible things worth monitoring and `learning` for one or two genuinely useful docs/talks/tutorials.
+
+Personalization:
+high priority: %s
+medium priority: %s
+career focus: %s
+low priority to avoid: %s
+
+Candidate feed entries:
+%s
+
+Return only the requested JSON schema. The date must be %s.""" % (
+        issue_date,
+        max_searches,
+        max_items,
+        ", ".join(interests.get("high_priority", [])),
+        ", ".join(interests.get("medium_priority", [])),
+        ", ".join(interests.get("career_focus", [])),
+        ", ".join(interests.get("low_priority", [])),
+        "\n".join(candidate_lines) or "No feed candidates were available; use web search sparingly.",
+        issue_date,
+    )
+
+
+def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, model: str, max_items: int, max_searches: int) -> Dict[str, Any]:
+    try:
+        from openai import OpenAI
+    except ImportError as exc:
+        raise RuntimeError("The openai package is required for live digest generation") from exc
+    client = OpenAI()
+    response = client.responses.create(
+        model=model,
+        tools=[{"type": "web_search", "search_context_size": "low"}],
+        input=[
+            {
+                "role": "developer",
+                "content": "You are a careful technical editor. Do not fabricate. Follow the JSON schema exactly.",
+            },
+            {"role": "user", "content": _prompt(candidates, interests, issue_date, max_items, max_searches)},
+        ],
+        text={
+            "format": {
+                "type": "json_schema",
+                "name": "morning_signal_digest",
+                "description": "A concise, source-grounded Morning Signal digest.",
+                "schema": DIGEST_SCHEMA,
+                "strict": True,
+            }
+        },
+        max_output_tokens=6000,
+        store=False,
+    )
+    search_calls = sum(1 for item in (getattr(response, "output", None) or []) if getattr(item, "type", "") == "web_search_call")
+    if search_calls > max_searches:
+        raise RuntimeError("OpenAI used %d web-search calls; configured maximum is %d" % (search_calls, max_searches))
+    output = getattr(response, "output_text", "")
+    if not output:
+        raise RuntimeError("OpenAI returned no structured output")
+    try:
+        digest = json.loads(output)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError("OpenAI returned invalid JSON") from exc
+    if digest.get("date") != issue_date:
+        raise RuntimeError("OpenAI returned the wrong digest date")
+    return digest

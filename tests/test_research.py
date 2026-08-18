@@ -1,3 +1,4 @@
+import copy
 import json
 import sys
 import types
@@ -40,3 +41,28 @@ def test_responses_api_contract_uses_web_search_and_structured_output(monkeypatc
     assert calls[0]["text"]["format"]["type"] == "json_schema"
     assert calls[0]["text"]["format"]["strict"] is True
     assert calls[0]["store"] is False
+
+
+def test_response_deduplicates_source_urls_across_sections(monkeypatch):
+    fixture = json.loads((ROOT / "data" / "2026-08-18.json").read_text(encoding="utf-8"))
+    duplicate = copy.deepcopy(fixture)
+    duplicate["items"][0]["source_url"] = duplicate["top_signal"]["source_url"]
+    duplicate["watch"][0]["source_url"] = duplicate["items"][1]["source_url"]
+
+    class FakeResponses:
+        def create(self, **kwargs):
+            return types.SimpleNamespace(output_text=json.dumps(duplicate), output=[])
+
+    class FakeClient:
+        def __init__(self):
+            self.responses = FakeResponses()
+
+    monkeypatch.setitem(sys.modules, "openai", types.SimpleNamespace(OpenAI=FakeClient))
+    result = create_digest([], {"high_priority": [], "medium_priority": [], "career_focus": [], "low_priority": []}, "2026-08-18", "gpt-5-mini", 10, 6)
+
+    stories = [result["top_signal"]] + result["items"] + result["watch"] + result["learning"]
+    urls = [story["source_url"].rstrip("/") for story in stories]
+    assert len(urls) == len(set(urls))
+    assert result["top_signal"]["source_url"] == fixture["top_signal"]["source_url"]
+    assert len(result["items"]) == len(fixture["items"]) - 1
+    assert result["watch"] == []

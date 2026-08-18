@@ -1,6 +1,6 @@
 {
   "date": "2026-08-18",
-  "headline": "Agentic operations move from experiment to engineering: telemetry-enabled agents, CI-as-code workflows, and several security incidents shifting QA priorities",
+  "headline": "Agentic QA moves into production",
   "top_signal": {
     "title": "Grafana ships gcx CLI and MCP server (GA) to let agents query live telemetry",
     "category": "Observability / Agentic Ops",

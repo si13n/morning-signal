@@ -3,10 +3,6 @@ sources:
     feed: https://openai.com/news/rss.xml
     category: AI engineering
     quality: 5
-  - name: Anthropic News
-    feed: https://www.anthropic.com/news/rss.xml
-    category: AI engineering
-    quality: 5
   - name: GitHub Changelog
     feed: https://github.blog/changelog/feed/
     category: CI/CD

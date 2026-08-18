@@ -80,12 +80,19 @@ def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], i
                 "strict": True,
             }
         },
+        max_tool_calls=max_searches,
+        parallel_tool_calls=False,
         max_output_tokens=6000,
         store=False,
     )
-    search_calls = sum(1 for item in (getattr(response, "output", None) or []) if getattr(item, "type", "") == "web_search_call")
+    search_calls = sum(
+        1
+        for item in (getattr(response, "output", None) or [])
+        if getattr(item, "type", "") == "web_search_call"
+        and getattr(getattr(item, "action", None), "type", "") == "search"
+    )
     if search_calls > max_searches:
-        raise RuntimeError("OpenAI used %d web-search calls; configured maximum is %d" % (search_calls, max_searches))
+        print("research warning: response reported %d search actions (configured cap: %d)" % (search_calls, max_searches))
     output = getattr(response, "output_text", "")
     if not output:
         raise RuntimeError("OpenAI returned no structured output")

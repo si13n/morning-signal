@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>Practical test-runner, CI, and device-farm updates that affect flaky-test handling, CI throughput, and RAG evaluation · Tuesday, August 18, 2026 · Morning Signal</title>
+  <title>Operational changes to CI runners, Playwright test-runner improvements, and mobile E2E tooling updates that affect QA automation pipelines · Tuesday, August 18, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 
     <section class="hero">
       <p class="eyebrow">Tuesday, August 18, 2026 <span class="dot">·</span> Issue 2026-08-18</p>
-      <h1>Practical test-runner, CI, and device-farm updates that affect flaky-test handling, CI throughput, and RAG evaluation</h1>
+      <h1>Operational changes to CI runners, Playwright test-runner improvements, and mobile E2E tooling updates that affect QA automation pipelines</h1>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -26,10 +26,10 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">Playwright 1.62: isolated retries, AbortSignal cancellation, and a new component testing model</h2>
-      <p class="story-summary">Playwright's release notes for Version 1.62 document several test-runner features that change how suites behave under failure and long-running operations: a new component-testing model (stories/galleries), support for passing an AbortSignal to cancel actions and assertions, WebP support for visual snapshots, and a configurable retryStrategy (including an 'isolated' mode that runs retries at the end in a single worker).</p>
-      <div class="why"><span>Why it matters</span><p>For senior QA automation engineers this affects flaky-test strategies and CI stability. AbortSignal gives tests a standard cancellation mechanism to avoid hung actions; isolated retries reduce interference between retry attempts (helpful for tests that cause shared-state interference); WebP lowers artifact storage cost for visual comparisons; and the component testing model helps isolate UI scenarios for faster, more localizable failures.</p></div>
-      <a class="source-link" href="https://playwright.dev/docs/release-notes" target="_blank" rel="noopener noreferrer">Playwright — Release notes <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">GitHub enforces minimum versions for self-hosted Actions runners (rolling enforcement through Sept 25, 2026)</h2>
+      <p class="story-summary">GitHub resumed enforcement of minimum runner versions and a 30-day auto-update requirement for self‑hosted Actions runners. Runners must be at least 2.329.0 to (re)register with the new platform; if a runner misses updates (any release) for 30 days it will stop receiving jobs. The blog includes a brownout schedule and explicit enforcement dates (Enterprise Cloud with Data Residency: July 31, 2026; GitHub Enterprise Cloud: September 25, 2026). ([github.blog](https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/))</p>
+      <div class="why"><span>Why it matters</span><p>If you run CI on self-hosted runners (VM images, containers, device-farm controllers, on-prem runners) this can cause queued workflows or sudden job failures unless images and automation are updated and auto-update is enabled. Plan upgrades, update AMIs/container images, and add runner-version checks to your CI image build pipelines to avoid disruption. ([github.blog](https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/))</p></div>
+      <a class="source-link" href="https://github.blog/changelog/2026-06-12-github-actions-minimum-version-enforcement-timeline-for-self-hosted-runners/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
@@ -37,43 +37,43 @@
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / GitHub Actions</span><span class="priority priority-2">2/10</span></div>
-          <h3>GitHub Actions: steps can now run in parallel (background steps)</h3>
-          <p>GitHub Actions added the ability to run steps concurrently via a background/parallel mechanism, letting teams overlap work inside a single job rather than splitting into separate jobs or runners.</p>
-          <div class="why compact"><span>Why it matters</span><p>This can reduce end-to-end CI time for test pipelines and make in-job orchestration (e.g., long-running browsers, device proxies, or test helpers) cheaper. It also increases the need to audit step-level concurrency for shared resources (device locks, ports, temp dirs) to avoid new flakiness.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-06-25-actions-steps-can-now-be-run-in-parallel/" target="_blank" rel="noopener noreferrer">GitHub Changelog — Actions steps can now be run in parallel <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Web QA / Test frameworks</span><span class="priority priority-2">2/10</span></div>
+          <h3>Playwright 1.62 introduces AbortSignal support, isolated retry strategy, and component-testing changes</h3>
+          <p>Playwright's release notes (v1.62) add AbortSignal support for cancelling long-running operations, an 'isolated' retryStrategy to run retries in a single worker (reduces cross-test interference), and a new component testing model (stories/galleries). These changes improve control over flaky tests and make retries less noisy. ([playwright.dev](https://playwright.dev/docs/release-notes))</p>
+          <div class="why compact"><span>Why it matters</span><p>AbortSignal lets test authors cancel waits/actions deterministically instead of relying only on timeouts; isolated retries reduce test cross-talk when diagnosing flakiness; component-testing changes can reduce integration-test surface area by exercising components in focused scenarios. Update your Playwright runner and review retry and reporting configs before enabling new defaults. ([playwright.dev](https://playwright.dev/docs/release-notes))</p></div>
+          <a class="source-link" href="https://playwright.dev/docs/release-notes" target="_blank" rel="noopener noreferrer">Playwright release notes <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Device farms / Test infrastructure</span><span class="priority priority-3">3/10</span></div>
-          <h3>BrowserStack SDK: August 2026 patch run fixes CI hangs, Espresso App Automate timeouts, and Test Observability linking</h3>
-          <p>BrowserStack's SDK release notes show a cluster of August 2026 patches (1.67.x) that address test-run reliability: fixes for CI builds hanging when the BrowserStack CLI stalls, Espresso App Automate builds timing out when observability is enabled, and test-observability session linking issues on parallel TestNG runs.</p>
-          <div class="why compact"><span>Why it matters</span><p>If you run mobile automation on BrowserStack or integrate their SDK into CI, these fixes reduce common sources of pipeline blockage and improve traceability between test results and device sessions — both are important when triaging flaky mobile tests or scaling device-parallel runs.</p></div>
-          <a class="source-link" href="https://www.browserstack.com/docs/sdk/release-notes" target="_blank" rel="noopener noreferrer">BrowserStack — SDK release notes (changelog showing versions 1.67.0–1.67.6 and August 2026 fixes) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Mobile QA / E2E</span><span class="priority priority-2">2/10</span></div>
+          <h3>Maestro (Expo) adds insights, per-flow failure summaries, and retry_failed_only to speed mobile E2E debugging</h3>
+          <p>Expo's Maestro testing integration now provides a Maestro insights dashboard (runs-over-time, flaky-flow identification, grouped failure patterns), a Test Results summary that surfaces error messages and screenshots, and retries that re-run only failed flows by default (`retry_failed_only`). These features are built on Maestro's JUnit output. ([expo.dev](https://expo.dev/changelog/maestro-testing-improvements))</p>
+          <div class="why compact"><span>Why it matters</span><p>For mobile QA teams using Maestro or EAS Workflows, this reduces CI minutes wasted on full-suite retries and makes flaky-flow triage faster: you can find recurring failure messages and focus fixes where they matter. The feature is gated by subscription level (Production/Enterprise). ([expo.dev](https://expo.dev/changelog/maestro-testing-improvements))</p></div>
+          <a class="source-link" href="https://expo.dev/changelog/maestro-testing-improvements" target="_blank" rel="noopener noreferrer">Expo / Maestro changelog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Mobile QA / Android / Espresso</span><span class="priority priority-4">4/10</span></div>
-          <h3>AndroidX Test / Espresso versions and Test artifacts</h3>
-          <p>The AndroidX Test release notes list current stable artifacts (e.g., espresso-core:3.7.0, espresso-device:1.1.0, core:1.7.0 and associated runner/orchestrator components) and document dependency/toolchain updates used by the Jetpack test libraries.</p>
-          <div class="why compact"><span>Why it matters</span><p>Updates to Espresso and the AndroidX test stack affect instrumentation behavior, API availability in test code, and compatibility with device farms and orchestrators. Senior engineers should verify new versions against on-device observability hooks, CI orchestrator config (orchestrator vs. instrumentation runner), and SDK/toolchain requirements before upgrading.</p></div>
+          <div class="story-meta"><span class="category">Device farms / Test infrastructure</span><span class="priority priority-2">2/10</span></div>
+          <h3>BrowserStack SDK: Playwright iOS support and Playwright-related stability fixes in 2026 SDK releases</h3>
+          <p>BrowserStack's SDK release notes document a June 18, 2026 SDK release that added Playwright iOS support and several Playwright-focused fixes (session marking, video/trace issues, Playwright+Jest/Cucumber compatibility). The SDK also lists ongoing improvements to Playwright Android/iOS integration and test-reporting features. ([browserstack.com](https://www.browserstack.com/docs/sdk/release-notes))</p>
+          <div class="why compact"><span>Why it matters</span><p>If you run Playwright against real mobile devices or use BrowserStack Test Reporting, these SDK updates improve iOS device coverage and reduce flaky session linkage and recording failures. Check the SDK version in your CI images and update any BrowserStack helpers/fixtures used by Playwright tests. ([browserstack.com](https://www.browserstack.com/docs/sdk/release-notes))</p></div>
+          <a class="source-link" href="https://www.browserstack.com/docs/sdk/release-notes" target="_blank" rel="noopener noreferrer">BrowserStack SDK release notes <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Android / Mobile QA</span><span class="priority priority-3">3/10</span></div>
+          <h3>AndroidX Test: current stable versions (core 1.7.0, espresso 3.7.0, orchestrator 1.6.1)</h3>
+          <p>AndroidX Test release page lists current stable artifacts (e.g., androidx.test:core 1.7.0, espresso-core 3.7.0, orchestrator 1.6.1) and accompanying migration notes; the page was last updated January 14, 2026. The release notes include API and dependency changes (Kotlin/toolchain updates) and bug fixes relevant to view capture and test runners. ([developer.android.com](https://developer.android.com/jetpack/androidx/releases/test))</p>
+          <div class="why compact"><span>Why it matters</span><p>Upgrading Espresso/AndroidX Test can change test behavior (idling, ViewCapture, orchestration). Validate your test harness, idling resources, and any custom test-runner code against these versions before rolling them into CI device farms to avoid hidden breakages. ([developer.android.com](https://developer.android.com/jetpack/androidx/releases/test))</p></div>
           <a class="source-link" href="https://developer.android.com/jetpack/androidx/releases/test" target="_blank" rel="noopener noreferrer">Android Developers — AndroidX Test release notes <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Python / Pytest / Test frameworks</span><span class="priority priority-5">5/10</span></div>
-          <h3>pytest changelog (maintenance & deprecations affecting CI suites)</h3>
-          <p>The pytest changelog documents recent maintenance releases (including pytest 9.1.1) with bug fixes and deprecations. These maintenance releases include changes that can affect plugin compatibility and test discovery behavior in CI.</p>
-          <div class="why compact"><span>Why it matters</span><p>Large Python test suites often depend on plugins and discovery semantics. When upgrading pytest, expect to run full CI on a branch, validate plugin compatibility (xdist, coverage, custom reporters), and review deprecation notes to avoid surprising failures in nightly pipelines.</p></div>
-          <a class="source-link" href="https://pytest.org/en/stable/changelog.html" target="_blank" rel="noopener noreferrer">pytest — Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">RAG evaluation / LLM evaluation</span><span class="priority priority-6">6/10</span></div>
-          <h3>T²-RAGBench (EACL 2026): a focused RAG benchmark for text-and-table data</h3>
-          <p>T²-RAGBench is a 23,088 example benchmark (EACL 2026) designed to evaluate retrieval-augmented-generation (RAG) systems on documents that combine text and tables. The authors transform datasets into a context-independent format and find hybrid dense+sparse retrieval strategies perform best on this workload.</p>
-          <div class="why compact"><span>Why it matters</span><p>If your QA or validation workflows include RAG systems (e.g., document QA, SDK docs retrieval, or test-result summarization), this benchmark highlights retrieval failure modes specific to tabular data and offers a reproducible dataset and code to stress-test retrieval and reranking components of your pipeline.</p></div>
-          <a class="source-link" href="https://aclanthology.org/2026.eacl-long.8/" target="_blank" rel="noopener noreferrer">T²-RAGBench — ACL Anthology (EACL 2026) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Python / Test frameworks</span><span class="priority priority-3">3/10</span></div>
+          <h3>pytest continues active maintenance (changelog highlights recent 2026 releases)</h3>
+          <p>pytest's changelog records maintenance releases through mid-2026 (e.g., pytest 9.1.1 and recent 8.x fixes). The changelog lists bug fixes and compatibility notes that affect plugins and test-runner integrations. ([pytest.org](https://pytest.org/en/stable/changelog.html?utm_source=openai))</p>
+          <div class="why compact"><span>Why it matters</span><p>If your Python test suites or CI images pin pytest or rely on plugins (salt-factories, pytest-asyncio, coverage integrations), confirm plugin compatibility with the pytest version in your CI images and test runners. Upgrading pytest without validating plugin ecosystem is a common source of CI breakage. ([pytest.org](https://pytest.org/en/stable/changelog.html?utm_source=openai))</p></div>
+          <a class="source-link" href="https://pytest.org/en/stable/changelog.html" target="_blank" rel="noopener noreferrer">pytest changelog <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -82,14 +82,12 @@
     <div class="two-column">
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
-
-        <article class="mini-story"><div class="story-meta"><span class="category">Agentic engineering / CI experimentation</span><span class="priority priority-7">7/10</span></div><h3>GitHub Agentic Workflows (agentic CI/automation patterns)</h3><p>Agentic workflows can automate test triage, flaky test quarantining, and CI triage actions, but they also introduce new attack surfaces and observability needs; teams should follow the capability evolution to evaluate safe, auditable automation for test pipelines.</p><a class="source-link" href="https://github.github.com/gh-aw/slides/20260224-github-agentic-workflows.pdf" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
-
+<p class="empty-state">Nothing new to watch closely.</p>
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Flaky-test investigation / Research</span><span class="priority priority-8">8/10</span></div><h3>How Far Are We from Detecting Flaky Tests? On the Limits of Code-Based Detection (arXiv)</h3><p>This recent paper evaluates the limits of detecting flaky tests from code alone. It shows that code-only detectors work well on some classes of flakiness but miss many practical causes that require runtime/observability signals or historical CI signal analysis.</p><a class="source-link" href="https://arxiv.org/abs/2607.09345" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">CI/CD / Runner operations</span><span class="priority priority-2">2/10</span></div><h3>Self-hosted runners reference (how runners update, config, auto-update guidance)</h3><p>GitHub's self-hosted runner docs explain how runners auto-update, configuration options to disable auto-update, and APIs to manage runners — essential reading when planning mass-upgrades, baking new AMIs/container images, or operating device-farm controllers as self-hosted runners. Use the audit-log and runner-version REST API to inventory fleets before enforcement windows. ([docs.github.com](https://docs.github.com/en/actions/reference/runners/self-hosted-runners?utm_source=openai))</p><a class="source-link" href="https://docs.github.com/en/actions/reference/runners/self-hosted-runners" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
 
       </section>
     </div>

@@ -29,7 +29,7 @@ Editorial rules:
 - Explain what happened and why it matters in concise, non-hyped language.
 - Do not invent facts, dates, links, or quotes. Drop a candidate if it cannot be verified.
 - Avoid generic consumer AI, funding, cryptocurrency, gadgets, and celebrity news.
-- You may use web search to fill gaps or verify important developments, but use no more than %d focused searches. Keep the final `items` array to at most %d stories.
+- You may use web search to fill gaps or verify important developments, but use no more than %d focused searches. Keep the total of `top_signal`, `items`, `watch`, and `learning` to at most %d concise stories; use at most one `watch` and one `learning` item.
 - `top_signal` must be the single most useful signal and must not duplicate any other story.
 - Use `watch` for credible things worth monitoring and `learning` for one or two genuinely useful docs/talks/tutorials.
 
@@ -82,7 +82,7 @@ def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], i
         },
         max_tool_calls=max_searches,
         parallel_tool_calls=False,
-        max_output_tokens=6000,
+        max_output_tokens=12000,
         store=False,
     )
     search_calls = sum(
@@ -93,6 +93,11 @@ def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], i
     )
     if search_calls > max_searches:
         print("research warning: response reported %d search actions (configured cap: %d)" % (search_calls, max_searches))
+    status = getattr(response, "status", None)
+    if status and status != "completed":
+        details = getattr(response, "incomplete_details", None)
+        reason = getattr(details, "reason", "unknown")
+        raise RuntimeError("OpenAI response was not complete: %s" % reason)
     output = getattr(response, "output_text", "")
     if not output:
         raise RuntimeError("OpenAI returned no structured output")

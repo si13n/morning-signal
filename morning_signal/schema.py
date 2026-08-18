@@ -33,9 +33,9 @@ DIGEST_SCHEMA = {
         "date": {"type": "string"},
         "headline": {"type": "string"},
         "top_signal": STORY_SCHEMA,
-        "items": {"type": "array", "items": STORY_SCHEMA},
-        "watch": {"type": "array", "items": STORY_SCHEMA},
-        "learning": {"type": "array", "items": STORY_SCHEMA},
+        "items": {"type": "array", "items": STORY_SCHEMA, "maxItems": 7},
+        "watch": {"type": "array", "items": STORY_SCHEMA, "maxItems": 1},
+        "learning": {"type": "array", "items": STORY_SCHEMA, "maxItems": 1},
     },
     "required": ["date", "headline", "top_signal", "items", "watch", "learning"],
 }

@@ -1,5 +1,6 @@
 high_priority:
   - QA automation
+  - Web QA
   - Agentic engineering
   - AI agents
   - AI testing
@@ -8,35 +9,46 @@ high_priority:
   - Android
   - Maestro
   - Espresso
+  - XCUITest
+  - Appium
+  - Selenium
+  - Cypress
+  - Robot Framework
   - SDK testing
   - Python
   - Pytest
   - Playwright
   - GitHub Actions
   - CI/CD
-  - test infrastructure
+  - Test infrastructure
+  - Coding
+  - Programming
+  - Developer tools
+  - Performance testing
+  - Load testing
+  - Stress testing
+  - JMeter
+  - k6
+  - Locust
 
 medium_priority:
-  - RAG
-  - observability
-  - AdTech
+  - Observability
   - BrowserStack
-  - device farms
-  - flaky test investigation
-  - engineering management
-  - release engineering
-
-career_focus:
-  - Senior QA Automation Engineer
-  - QA Lead
-  - QA Manager
-  - Mobile Automation
-  - Agentic QA
-  - AI QA Engineering
+  - Device farms
+  - Flaky test investigation
+  - Engineering management
+  - Release engineering
+  - Programming language updates
+  - Developer platform updates
+  - Company acquisitions
+  - Company engineering news
+  - Major company announcements
+  - Significant product and technology updates
+  - Relevant technology news and updates
 
 low_priority:
-  - generic consumer AI news
-  - generic startup funding
-  - cryptocurrency
-  - celebrity AI news
-  - generic gadget news
+  - Generic consumer AI news
+  - Generic startup funding
+  - Cryptocurrency
+  - Celebrity AI news
+  - Generic gadget news

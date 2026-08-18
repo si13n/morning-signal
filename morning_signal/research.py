@@ -7,6 +7,23 @@ from typing import Any, Dict, List
 from .schema import DIGEST_SCHEMA
 
 
+def _deduplicate_source_urls(digest: Dict[str, Any]) -> int:
+    """Remove later stories that reuse a source URL from an earlier section."""
+    seen = {digest["top_signal"]["source_url"].rstrip("/")}
+    removed = 0
+    for section in ("items", "watch", "learning"):
+        unique = []
+        for story in digest[section]:
+            canonical_url = story["source_url"].rstrip("/")
+            if canonical_url in seen:
+                removed += 1
+                continue
+            seen.add(canonical_url)
+            unique.append(story)
+        digest[section] = unique
+    return removed
+
+
 def _prompt(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, max_items: int, max_searches: int) -> str:
     candidate_lines = []
     for index, item in enumerate(candidates):
@@ -30,7 +47,7 @@ Editorial rules:
 - Do not invent facts, dates, links, or quotes. Drop a candidate if it cannot be verified.
 - Avoid generic consumer AI, funding, cryptocurrency, gadgets, and celebrity news.
 - You may use web search to fill gaps or verify important developments, but use no more than %d focused searches. Keep the total of `top_signal`, `items`, `watch`, and `learning` to at most %d concise stories; use at most one `watch` and one `learning` item.
-- `top_signal` must be the single most useful signal and must not duplicate any other story.
+- Every story must have a unique `source_url` across all sections. `top_signal` must be the single most useful signal and must not duplicate any other story.
 - Use `watch` for credible things worth monitoring and `learning` for one or two genuinely useful docs/talks/tutorials.
 
 Personalization:
@@ -107,4 +124,7 @@ def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], i
         raise RuntimeError("OpenAI returned invalid JSON") from exc
     if digest.get("date") != issue_date:
         raise RuntimeError("OpenAI returned the wrong digest date")
+    removed = _deduplicate_source_urls(digest)
+    if removed:
+        print("research warning: removed %d story/stories with duplicate source_url values" % removed)
     return digest

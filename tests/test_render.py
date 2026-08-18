@@ -13,7 +13,7 @@ def test_rendered_site_contains_expected_content(tmp_path):
     digests = render_site(ROOT, ROOT / "data", tmp_path)
     assert len(digests) == 1
     index = (tmp_path / "index.html").read_text(encoding="utf-8")
-    assert digest["headline"] in index
+    assert "<h1>" not in index
     assert "Top Signal" in index
     assert digest["top_signal"]["title"] in index
     assert digest["top_signal"]["source_url"] in index

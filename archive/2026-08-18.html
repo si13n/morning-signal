@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>Agentic QA moves into production · Tuesday, August 18, 2026 · Morning Signal</title>
+  <title>Tuesday, August 18, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -17,7 +17,6 @@
 
     <section class="hero">
       <p class="eyebrow">Tuesday, August 18, 2026 <span class="dot">·</span> Issue 2026-08-18</p>
-      <h1>Agentic QA moves into production</h1>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -26,10 +25,10 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">Grafana ships gcx CLI and MCP server (GA) to let agents query live telemetry</h2>
-      <p class="story-summary">Grafana announced general availability for gcx (the Grafana Cloud CLI) and the Grafana MCP server, enabling agent workflows to pull metrics, logs, traces, SLOs and synthetic results from Grafana Cloud or self‑hosted Grafana. The releases expose agent‑friendly input/output, GitOps support, and an MCP endpoint option for runtime agent access to observability data.</p>
-      <div class="why"><span>Why it matters</span><p>QA automation and agentic engineering teams can now embed live telemetry into agent workflows and automated investigations without brittle, ad‑hoc scraping. That reduces the friction of writing agents that reason over production state (incident triage, test triage, flaky-test investigation), but it also raises the operational security surface (agent access to live data and remediation paths).</p></div>
-      <a class="source-link" href="https://grafana.com/press/2026/07/27/grafana-labs-ships-six-tools-that-power-agentic-operations-from-planning-to-production/" target="_blank" rel="noopener noreferrer">Grafana Labs (press) <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">Grafana's gcx CLI and MCP server reach GA to let coding agents query live telemetry</h2>
+      <p class="story-summary">Grafana Labs announced general availability of gcx (a CLI for agent workflows) and the Grafana MCP server, plus agent skill bundles and Claude Code plugins — enabling agents to read metrics, logs, traces, SLOs and synthetic results from Grafana Cloud or self-hosted stacks so agents can ground changes in real telemetry during development and test generation (k6 scripts, mocked latencies, dashboard updates).</p>
+      <div class="why"><span>Why it matters</span><p>For QA automation and agentic engineering this directly addresses a core failure mode: agents make code changes without the mental-model feedback humans obtain from live telemetry. Teams can now integrate production observability into agent-driven test generation, load-test derivation, and local harnesses, reducing blind merges and improving the realism of agent-created tests.</p></div>
+      <a class="source-link" href="https://www.infoq.com/news/2026/08/grafana-mcp-server-telemetry/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
@@ -37,155 +36,155 @@
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Test infra</span><span class="priority priority-1">1/10</span></div>
-          <h3>Cloudflare open-sources cloudflare/ci: define CI pipelines in TypeScript on Workflows</h3>
-          <p>Cloudflare published the cloudflare/ci repository and related Workflows integrations to author CI pipelines in TypeScript, run steps with durable retries, and execute commands in a sandboxed runtime. The design uses Cloudflare Workflows to orchestrate pipeline steps and Cloudflare Sandbox to execute steps.</p>
-          <div class="why compact"><span>Why it matters</span><p>Teams that prefer TypeScript-first pipelines and durable execution semantics now have a serverless CI model; this affects how test runners, device-farm integrations, and caching strategies are implemented in CI. It’s worth evaluating for speeding up test orchestration and reducing self-hosted runner maintenance.</p></div>
-          <a class="source-link" href="https://github.com/cloudflare/ci" target="_blank" rel="noopener noreferrer">cloudflare/ci (GitHub) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Data / Agents</span><span class="priority priority-1">1/10</span></div>
+          <h3>Consistency is the new latency: matching replication models to agent workloads</h3>
+          <p>AWS Architecture Blog argues that as agents shift from chat to actions, the data layer consistency model (replication lag, read-after-write) becomes a primary failure vector for agent correctness and proposes mapping tasks to replication guarantees in Aurora, DynamoDB, and Keyspaces.</p>
+          <div class="why compact"><span>Why it matters</span><p>Agentic pipelines and RAG systems commonly rely on recent writes (annotations, certs, action logs). Choosing the wrong replication/consistency guarantees can produce stale context and incorrect agent decisions; this affects test determinism and RAG evaluation for CI-driven agents.</p></div>
+          <a class="source-link" href="https://aws.amazon.com/blogs/architecture/consistency-is-the-new-latency-ai-at-the-data-layer/" target="_blank" rel="noopener noreferrer">AWS Architecture Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Developer workflow / Code review</span><span class="priority priority-1">1/10</span></div>
-          <h3>GitHub launches Stacked Pull Requests (public preview)</h3>
-          <p>GitHub rolled out Stacked Pull Requests in public preview and documentation for stacked‑PR workflows and the gh-stack CLI extension. The feature allows dependent changes to be expressed as a stack of smaller PRs that can be reviewed and merged independently.</p>
-          <div class="why compact"><span>Why it matters</span><p>For QA automation and agentic code generation, stacked PRs reduce review bottlenecks for large changes and make it easier to review incremental patches from automated tools or agents. They also change CI gating and test strategy: test runs can be aligned per-PR in a stack, helping isolate flaky changes and speed up validation.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-07-30-stacked-pull-requests-are-now-in-public-preview/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">CI/CD / Agentic toolchain</span><span class="priority priority-2">2/10</span></div>
+          <h3>Streamline GitHub CI with AWS CodePipeline + AWS DevOps Agent</h3>
+          <p>AWS shows how the AWS DevOps Agent integrates CodePipeline and GitHub to reduce manual investigation across AWS services, by surfacing correlated logs and pipeline state to accelerate triage of CI/CD failures.</p>
+          <div class="why compact"><span>Why it matters</span><p>Practical pattern for test infra and SRE teams: adding an agent that aggregates pipeline signals cuts mean time to identify CI failure causes — useful when automating flaky-test investigation and reviewer workflows in GitHub Actions-based pipelines.</p></div>
+          <a class="source-link" href="https://aws.amazon.com/blogs/devops/streamline-your-github-journey-with-aws-codepipeline-and-aws-devops-agent/" target="_blank" rel="noopener noreferrer">AWS DevOps Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic workflows / LLM evals</span><span class="priority priority-2">2/10</span></div>
-          <h3>Netflix open-sources an agentic Observational Causal Inference workflow (oci-agent)</h3>
-          <p>Netflix published the oci-agent project (GitHub) and wrote up its agentic workflow for observational causal inference: an actor‑critic agent loop that parameterizes and runs notebooks, evaluates diagnostics, and drafts reports.</p>
-          <div class="why compact"><span>Why it matters</span><p>This is a concrete example of agentic automation for a specialized, judgment‑heavy task. QA and analytics teams can study the repo to learn patterns for structuring agent workflows, building actor/critic loops, and evaluating agents on reproducible datasets—useful when designing evaluation harnesses for domain‑specific agent tasks.</p></div>
-          <a class="source-link" href="https://github.com/Netflix-Skunkworks/oci-agent" target="_blank" rel="noopener noreferrer">Netflix Skunkworks (GitHub) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Security / Agent safety</span><span class="priority priority-1">1/10</span></div>
+          <h3>Coding-agent horror stories: how an approved command can expose you</h3>
+          <p>Docker outlines real attack patterns where an agent executes an attacker-supplied command that the developer previously approved, and shows how Docker Sandboxes limit blast radius of such commands.</p>
+          <div class="why compact"><span>Why it matters</span><p>Useful, concrete mitigation patterns for teams that let agents run system commands during test generation or CI: sandboxing, least privilege, and limiting agent-executed surface reduce risk from supply-chain or adversarial prompts when agents operate on build/test infrastructure.</p></div>
+          <a class="source-link" href="https://www.docker.com/blog/coding-agent-horror-stories-the-command-you-already-approved/" target="_blank" rel="noopener noreferrer">Docker Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agent security / Sandbox</span><span class="priority priority-1">1/10</span></div>
-          <h3>Docker publishes 'Coding Agent Horror Stories' — agents can run attacker-supplied commands</h3>
-          <p>Docker published an advisory-style blog post that walks through real cases where coding agents execute attacker-controlled commands and explains how Docker Sandboxes can constrain the blast radius.</p>
-          <div class="why compact"><span>Why it matters</span><p>QA and test infra teams running agentic tooling should treat runner isolation and sandboxing as first-class controls. Test harnesses that accept agent-supplied commands need strict allowlists, immutable environments, and execution sandboxes to avoid covert code execution during automated test or CI flows.</p></div>
-          <a class="source-link" href="https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/" target="_blank" rel="noopener noreferrer">Docker Blog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Security / Agent tooling</span><span class="priority priority-1">1/10</span></div>
+          <h3>Critical RCE in Serena (popular MCP coding agent) — immediate mitigation advised</h3>
+          <p>GitLab's Threat Research Group disclosed a server-side template injection in Serena that allows immediate execution of attacker code when a project is opened (GHSA-pp25-4cg4-qcr9 — CVE pending); GitLab published details and mitigations.</p>
+          <div class="why compact"><span>Why it matters</span><p>Teams using MCP-style coding agents — or depending on third-party agent servers — must treat agent servers as high-risk infrastructure. This incident underscores the need to isolate agent processes, review agent server CVEs in dependency scanning, and add runtime guardrails before giving agents repository access.</p></div>
+          <a class="source-link" href="https://about.gitlab.com/blog/critical-rce-in-serena/" target="_blank" rel="noopener noreferrer">GitLab Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agent security / MCP</span><span class="priority priority-1">1/10</span></div>
-          <h3>Serena (an MCP coding agent) has an unauthenticated dashboard leading to RCE (advisory)</h3>
-          <p>A GitHub security advisory documents an unauthenticated Flask dashboard in Serena that can be reached via DNS rebinding and used to write persistent agent memory; chained with agent primitives (execute_shell_command with shell=True) this enables remote code execution.</p>
-          <div class="why compact"><span>Why it matters</span><p>This vulnerability highlights that MCP servers, agent dashboards, and developer tools are high‑risk components in agentic pipelines. QA and security teams must include agent server attack surfaces in threat models and CI security checks, and ensure default deployments are not exposed to rebinding/host header attacks.</p></div>
-          <a class="source-link" href="https://github.com/oraios/serena/security/advisories/GHSA-37h2-6p4f-mp3q" target="_blank" rel="noopener noreferrer">GitHub Security Advisory (oraios/serena) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agentic workflows / Data science</span><span class="priority priority-2">2/10</span></div>
+          <h3>Netflix open-sources an agentic workflow for Observational Causal Inference</h3>
+          <p>Netflix published an agentic OCI workflow that, given observational data and a human analysis plan, runs an actor-critic loop to estimate causal effects, produce a written report, and suggest next steps; the repo and workflow aim to reduce manual toil in causal analyses.</p>
+          <div class="why compact"><span>Why it matters</span><p>For QA and analytics teams building agentic tooling for experiments and A/B analysis, this provides a reference agentic loop for reproducible causal work and for embedding review checkpoints into automated analytical pipelines.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/netflix-oci-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Security research</span><span class="priority priority-1">1/10</span></div>
-          <h3>Independent analysis documents CVE-2026-49471 RCE chain in serena-agent</h3>
-          <p>SecureLayer7 published an analysis of CVE-2026-49471 showing how an unauthenticated dashboard plus DNS rebinding and prompt injection can lead to host command execution in serena-agent.</p>
-          <div class="why compact"><span>Why it matters</span><p>Readable attack chains are useful inputs for QA and red‑team test cases. Include such chained scenarios in regression tests for agent tooling to validate mitigations (auth, Host header checks, CSRF, no shell=True wrappers).</p></div>
-          <a class="source-link" href="https://securelayer7.net/lab/cve-2026-49471-serena-agent-unauthenticated-dashboard-dns-rebinding-rce" target="_blank" rel="noopener noreferrer">SecureLayer7 <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Developer workflow / Code review</span><span class="priority priority-3">3/10</span></div>
+          <h3>GitHub Stacked Pull Requests enters public preview</h3>
+          <p>GitHub released Stacked Pull Requests in public preview to natively support splitting large changes into dependent, reviewable PRs that can be merged independently.</p>
+          <div class="why compact"><span>Why it matters</span><p>Breaks large change management into smaller, testable units — reduces review friction for test-suite changes, eases bisecting regressions caused by agent-generated changes, and helps CI run targeted test subsets for dependent PRs.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/github-stacked-pull-requests/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Orchestration</span><span class="priority priority-2">2/10</span></div>
-          <h3>Cloudflare Workflows: durable execution engine and integrations for agentic processes</h3>
-          <p>Cloudflare Workflows (product page) provides a durable execution engine that persists workflow state, supports retries and long‑running steps, and integrates with durable sandbox execution for step-level isolation.</p>
-          <div class="why compact"><span>Why it matters</span><p>Durable, retryable workflow semantics make it easier to orchestrate long-running test jobs, cross-repo CI flows, and agentic pipelines that require human approvals or external services. Evaluate how your test orchestration maps onto durable steps and whether existing runners can be replaced or augmented for reliability.</p></div>
-          <a class="source-link" href="https://www.cloudflare.com/products/workflows/" target="_blank" rel="noopener noreferrer">Cloudflare (product) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">CI/CD / Tooling</span><span class="priority priority-3">3/10</span></div>
+          <h3>Cloudflare releases a TypeScript-first CI SDK (cloudflare/ci)</h3>
+          <p>Cloudflare published cloudflare/ci, a CI SDK that lets you define durable pipelines in TypeScript on top of Cloudflare Workflows; it provides durable retries, concurrent steps, and sandbox snapshot caching and targets the Workers runtime.</p>
+          <div class="why compact"><span>Why it matters</span><p>TypeScript pipelines that treat steps as durable, replayable workflows simplify reproducing and debugging flaky CI steps, and the snapshot caching model is relevant for test infrastructure teams trying to reduce expensive device-farm or VM setup time during test runs.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/cloudflare-ci-code-workflows/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Developer tooling / CI</span><span class="priority priority-3">3/10</span></div>
-          <h3>Cloudflare Workflows changelog: developer-facing updates and local flags for Workflows</h3>
-          <p>Cloudflare updated the Workflows changelog with developer-facing features (local `wrangler` flags, workflow diagrams, Agents SDK improvements) that ease local development and testing of Workflows-powered CI.</p>
-          <div class="why compact"><span>Why it matters</span><p>Local‑first flags and developer tooling reduce the friction of iterating on CI pipeline definitions and test harnesses; teams can run deterministic tests locally against a workflow runtime before deploying changes to shared CI.</p></div>
-          <a class="source-link" href="https://developers.cloudflare.com/changelog/product/workflows/" target="_blank" rel="noopener noreferrer">Cloudflare Docs (Changelog) <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Process / Agentic SDLC</span><span class="priority priority-2">2/10</span></div>
-          <h3>Stack Overflow: 'What does an agentic SDLC actually look like?'</h3>
-          <p>Stack Overflow’s engineering blog published a practical discussion on building agentic SDLC pipelines, using MCPs, and evaluating multiple LLM judges (including using Cohen’s kappa to measure agreement between judges).</p>
-          <div class="why compact"><span>Why it matters</span><p>Concrete metrics and procedures (e.g., kappa for judge agreement, structured rubrics) are actionable for QA teams designing LLM evaluation pipelines and test oracles—use these methods to avoid overreliance on single-judge judgments when evaluating model outputs or agent decisions.</p></div>
+          <div class="story-meta"><span class="category">Agentic SDLC / QA</span><span class="priority priority-1">1/10</span></div>
+          <h3>What does an agentic SDLC actually look like? (practical examples from test engineering)</h3>
+          <p>Stack Overflow's engineering blog interviews test-leaders on end-to-end agentic SDLC pipelines, using MCPs, metric-based judge evaluation (Cohen’s kappa for multiple LLM judges), and shifting QA left via specification enrichment.</p>
+          <div class="why compact"><span>Why it matters</span><p>Provides practical, field-tested patterns test engineers can adopt: how to evaluate LLM judges, integrate agentic checks into pipelines, and operationalize human-in-the-loop gates for critical merges.</p></div>
           <a class="source-link" href="https://stackoverflow.blog/2026/08/18/what-does-an-agentic-sdlc-actually-look-like/" target="_blank" rel="noopener noreferrer">Stack Overflow Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">LLM engineering / Evaluation</span><span class="priority priority-2">2/10</span></div>
-          <h3>Practical talk: 'From Thousands to One — Building LLM-Powered Selection Systems' (InfoQ)</h3>
-          <p>An InfoQ presentation covers how to integrate LLMs into production selection systems: separate semantic extraction from deterministic code paths, constrain schemas, and validate outputs with discriminator models.</p>
-          <div class="why compact"><span>Why it matters</span><p>These patterns map directly to LLM evaluation and RAG pipelines used by QA teams: keep extraction and deterministic processing separate, and add discriminator/verification models as a gating layer to reduce silent failures in tests and production checks.</p></div>
-          <a class="source-link" href="https://www.infoq.com/presentations/architecture-patterns-llm/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (presentation) <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic evaluation / Architecture</span><span class="priority priority-3">3/10</span></div>
-          <h3>Article: Agentic Fitness Functions — combining agents with versioned rubrics</h3>
-          <p>InfoQ published a piece on agentic fitness functions that combine agent loops with versioned rubrics to evaluate non-deterministic, intent-heavy concerns (e.g., architectural drift, semantic contract fidelity).</p>
-          <div class="why compact"><span>Why it matters</span><p>For QA teams evaluating agent outputs or automating architectural checks, versioned fitness functions provide a way to codify judgment and make evaluations reproducible across agent versions and data changes.</p></div>
-          <a class="source-link" href="https://www.infoq.com/articles/agentic-fitness-functions-evolutionary-architecture/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (article) <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Agent ops / Regulatory</span><span class="priority priority-2">2/10</span></div>
-          <h3>Google Cloud: operational resilience patterns for agentic AI in financial services</h3>
-          <p>Google Cloud published guidance on building operational resilience with agentic AI in financial services, covering governance, auditability, and regulatory alignment (e.g., DORA).</p>
-          <div class="why compact"><span>Why it matters</span><p>For teams running agentic QA or automated remediation in regulated domains, these patterns give concrete controls (audit trails, governance gates) to include in test harnesses and production validation—for example, audit-logged agent decisions and replayable evaluation runs.</p></div>
-          <a class="source-link" href="https://cloud.google.com/blog/topics/financial-services/building-operational-resilience-with-agentic-ai-in-financial-services/" target="_blank" rel="noopener noreferrer">Google Cloud Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Security / Agent testing</span><span class="priority priority-1">1/10</span></div>
-          <h3>Google Cloud: 'Staying Ahead of Adversarial AI Through Agentic Source Code Review'</h3>
-          <p>Google Cloud published a post on adversarial risks in AI and how agentic source‑code review workflows can detect misuse and accelerate remediation.</p>
-          <div class="why compact"><span>Why it matters</span><p>QA teams should integrate adversarial test cases and agentic code review into pre-merge pipelines and threat models. Automated source review agents need test suites that cover supply‑chain and adversarial inputs as part of CI security gates.</p></div>
+          <div class="story-meta"><span class="category">Security / Agentic defenses</span><span class="priority priority-2">2/10</span></div>
+          <h3>Staying ahead of adversarial AI through agentic source-code review</h3>
+          <p>Google Cloud describes agentic code-review workflows and tooling to detect adversarially-introduced secrets, exfiltration, and malicious patterns in source code using automated review agents and prioritized human follow-up.</p>
+          <div class="why compact"><span>Why it matters</span><p>Agentic source-code review patterns and tooling are directly applicable to QA pipelines that need to detect adversarial changes or malicious code produced by coding agents; they offer concrete guardrails and triage patterns for high-risk code areas.</p></div>
           <a class="source-link" href="https://cloud.google.com/blog/topics/threat-intelligence/staying-ahead-of-adversarial-ai-through-agentic-source-code-review/" target="_blank" rel="noopener noreferrer">Google Cloud Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
+          <div class="story-meta"><span class="category">Regulation / Operational resilience</span><span class="priority priority-3">3/10</span></div>
+          <h3>Building operational resilience with agentic AI in financial services</h3>
+          <p>Google Cloud outlines architecture and governance patterns for operational resilience with agentic AI in finance, in the context of regulatory frameworks such as DORA.</p>
+          <div class="why compact"><span>Why it matters</span><p>For teams producing agentic test tooling or running agentic automation in highly regulated environments, the post lists controls and monitoring practices that map directly to risk mitigation, audit trails, and SLO-driven test acceptance criteria.</p></div>
+          <a class="source-link" href="https://cloud.google.com/blog/topics/financial-services/building-operational-resilience-with-agentic-ai-in-financial-services/" target="_blank" rel="noopener noreferrer">Google Cloud Blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Supply chain / Image hygiene</span><span class="priority priority-3">3/10</span></div>
+          <h3>Make zero CVEs your new default — Docker updates for safer images</h3>
+          <p>Docker announced updates to favour building more software from source in images, extended security coverage past EOL, and stronger policy enforcement to reduce vulnerable binary usage in images.</p>
+          <div class="why compact"><span>Why it matters</span><p>For test infra teams owning device-farm images or CI runners, adopting stricter image hygiene reduces noisy security alerts during test runs and lowers the risk of flaky failures caused by vulnerable dependency behavior.</p></div>
+          <a class="source-link" href="https://www.docker.com/blog/make-zero-cves-your-new-default/" target="_blank" rel="noopener noreferrer">Docker Blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
           <div class="story-meta"><span class="category">Static analysis / Security</span><span class="priority priority-3">3/10</span></div>
-          <h3>JetBrains Qodana expands security analysis with OpenGrep rules</h3>
-          <p>JetBrains updated Qodana with new OpenGrep-based inspections and rule sets to improve security scanning and code quality checks for generated and human-written code.</p>
-          <div class="why compact"><span>Why it matters</span><p>Augmented static analysis that understands generated code patterns is useful in CI gates; add these inspections to pre-merge pipelines to catch common generator anti-patterns and insecure snippets produced by code assistants.</p></div>
+          <h3>Qodana expands security analysis with OpenGrep rules</h3>
+          <p>JetBrains' Qodana added OpenGrep-based inspections and new rules to broaden security analysis coverage, particularly on generated or AI-written code.</p>
+          <div class="why compact"><span>Why it matters</span><p>Static analysis that understands generated code patterns helps QA and security teams catch risky patterns earlier in the pipeline, which is especially important when code is produced or modified by coding agents.</p></div>
           <a class="source-link" href="https://blog.jetbrains.com/qodana/2026/08/opengrep-inspections/" target="_blank" rel="noopener noreferrer">JetBrains Blog (Qodana) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agent platforms</span><span class="priority priority-3">3/10</span></div>
-          <h3>SpaceXAI ships 'Grok Bot' for persistent autonomous agents</h3>
-          <p>InfoQ reported SpaceXAI released Grok Bot, a system for persistent agents running on dedicated cloud instances that interact with websites, apps, inboxes, and other tools.</p>
-          <div class="why compact"><span>Why it matters</span><p>Persistent agents change testing needs: long-lived state, session management, and cross-service side effects require new integration and end-to-end tests in addition to unit and short-lived agent tests. Inspect how these agents manage credentials, sessions, and replayability.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/grok-bot-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (news) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Mobile / SDKs</span><span class="priority priority-4">4/10</span></div>
+          <h3>.NET 11 Preview 7: MAUI updates, passkeys, incremental XAML hot reload</h3>
+          <p>.NET 11 Preview 7 adds cross-platform passkey support for MAUI, a new incremental XAML hot reload implementation, Shell route templates, and improved AOT-safe bindings; continuing MAUI's modernization.</p>
+          <div class="why compact"><span>Why it matters</span><p>Mobile and integration test teams that run MAUI-based apps should note the hot-reload and binding changes because they affect local dev loops, test harnesses, and the stability of UI tests (Espresso/XCUITest interop for cross-platform builds).</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/dotnet-11-preview7-maui/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Platform security / CI</span><span class="priority priority-1">1/10</span></div>
-          <h3>GitLab issues a critical patch release (19.2.4, 19.1.6, 19.0.8, 18.11.11)</h3>
-          <p>GitLab published patch release notes covering multiple versions to address critical security issues; teams using GitLab-hosted CI should review the advisory and apply vendor patches promptly.</p>
-          <div class="why compact"><span>Why it matters</span><p>CI systems are high-value targets: an exploitable CI server can run arbitrary jobs or leak artifacts. QA engineering teams must keep runners and GitLab instances up to date, and include patch checks as part of release gating.</p></div>
-          <a class="source-link" href="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-4-released/" target="_blank" rel="noopener noreferrer">GitLab (releases/patches) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Platform engineering / Infra as code</span><span class="priority priority-3">3/10</span></div>
+          <h3>GitLab as your AWS control plane — a reproducible tutorial</h3>
+          <p>GitLab published a step-by-step tutorial showing how to use GitLab, OpenTofu and Argo CD to provision and manage an AWS environment as a single control plane.</p>
+          <div class="why compact"><span>Why it matters</span><p>Platform and test-infrastructure teams can reuse the pattern to create reproducible device-farm and test-run provisioning, reduce configuration drift, and run CI jobs against consistent ephemeral test environments.</p></div>
+          <a class="source-link" href="https://about.gitlab.com/blog/gitlab-as-your-aws-control-plane/" target="_blank" rel="noopener noreferrer">GitLab Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agent tooling / Browser automation</span><span class="priority priority-3">3/10</span></div>
-          <h3>NeoBrowser: an MCP server that drives real Chrome with logged-in sessions (community repo)</h3>
-          <p>A community GitHub repo (NeoBrowser) demonstrates an MCP server that can drive a real Chrome instance with persisted logged-in sessions, providing an approach for agents that must interact with authenticated web apps.</p>
-          <div class="why compact"><span>Why it matters</span><p>QA teams building agent-driven browser automation should treat such tooling like any device farm: harden session handling, secrets management, and isolation. Logged-in browser driving simplifies test reproduction but increases risk if sessions leak.</p></div>
-          <a class="source-link" href="https://github.com/pitiflautico/neobrowser" target="_blank" rel="noopener noreferrer">GitHub (NeoBrowser) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Developer platform / Language</span><span class="priority priority-4">4/10</span></div>
+          <h3>JEP 540 (Simple JSON API) proposed as target for JDK 28</h3>
+          <p>JEP 540 advances to 'Target' for JDK 28, proposing a compact built-in JSON parsing/generation API with immutable values and simple traversal without external dependencies.</p>
+          <div class="why compact"><span>Why it matters</span><p>Simpler, standard JSON APIs reduce test-kit dependency surface for Java-based test frameworks and may simplify lightweight test harnesses and fixtures in CI where pulling external JSON libraries is heavyweight or undesirable.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/java-native-json-api/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic workflows / Data science automation</span><span class="priority priority-3">3/10</span></div>
-          <h3>InfoQ: Netflix open-sources agentic OCI workflow (coverage)</h3>
-          <p>InfoQ covered Netflix’s open-source OCI agent and the implications for automating causal analysis, noting the actor/critic loop and how it reduces manual toil for repeated analyses.</p>
-          <div class="why compact"><span>Why it matters</span><p>Coverage pieces like this distill operational patterns you can adapt into test harnesses and evaluation pipelines—particularly where human oversight is critical to validate statistical assumptions in automated analysis.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/netflix-oci-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (news) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Architecture / Evaluation</span><span class="priority priority-3">3/10</span></div>
+          <h3>Agentic Fitness Functions: using agentic evaluation to extend architectural rules</h3>
+          <p>An InfoQ article discusses how agentic fitness functions combine agents and versioned rubrics to evaluate architectural qualities (boundary fidelity, semantic drift) where deterministic rules fall short.</p>
+          <div class="why compact"><span>Why it matters</span><p>Provides a structured approach QA teams can borrow when writing LLM-based evaluators for non-binary quality attributes (e.g., API contract fidelity, ADR drift), and suggests versioned rubrics that improve reproducibility of LLM-based judgments.</p></div>
+          <a class="source-link" href="https://www.infoq.com/articles/agentic-fitness-functions-evolutionary-architecture/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">CI / Developer experience</span><span class="priority priority-3">3/10</span></div>
-          <h3>Cloudflare CI coverage: 'Cloudflare Turns CI Pipelines into TypeScript Workflows' (InfoQ)</h3>
-          <p>InfoQ reported on Cloudflare’s TypeScript-first CI approach that maps pipeline steps to durable Workflows and Sandbox execution, framing it as a way to treat pipelines as code authored in TypeScript.</p>
-          <div class="why compact"><span>Why it matters</span><p>If your team uses TypeScript and runs many small, composable pipeline steps, evaluate whether a durable serverless execution model reduces flakiness, cold-starts, and runner drift versus traditional VM-based runners.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/cloudflare-ci-code-workflows/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ (news) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agentic automation / Case study</span><span class="priority priority-3">3/10</span></div>
+          <h3>Grab reduced mechanical analytics work from 44% to 30% using AI agents</h3>
+          <p>Grab reported reducing mechanical analyst tasks from 44% to 30% by combining agent autonomy, certified data, context management and human oversight for analytics workflows.</p>
+          <div class="why compact"><span>Why it matters</span><p>Concrete operational numbers showing agents can reduce manual toil in data workflows; useful when estimating ROI for agentic test data generation, automated metric chasing, or self-service analytics in QA teams.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/grab-ai-analytics-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Libraries / Mobile engineering</span><span class="priority priority-4">4/10</span></div>
+          <h3>klibs.io grows (Kotlin Multiplatform) with AI integrations for discovery</h3>
+          <p>JetBrains updated klibs.io with smarter discovery and AI integrations to surface KMP libraries and bring library data into developer AI workflows.</p>
+          <div class="why compact"><span>Why it matters</span><p>Mobile QA and SDK teams working with Kotlin Multiplatform can more easily discover up-to-date libraries and feed curated library metadata into agentic workflows or dependency checks used by CI and test infra.</p></div>
+          <a class="source-link" href="https://blog.jetbrains.com/kotlin/2026/08/klibsio-grows-to-4200-kmp-projects-with-smarter-discovery-and-new-ai-integrations/" target="_blank" rel="noopener noreferrer">JetBrains Blog (Kotlin) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Agent platforms / Risk</span><span class="priority priority-3">3/10</span></div>
+          <h3>SpaceXAI launches Grok Bot for persistent autonomous agents</h3>
+          <p>SpaceXAI announced Grok Bot, a system of persistent cloud-hosted agents that can interact with websites, applications, inboxes and other tools, positioned for long-running autonomous workflows.</p>
+          <div class="why compact"><span>Why it matters</span><p>Persistent agents that integrate into application surfaces raise operational and security considerations for QA teams — replayability, authorization, long-term state correctness, and test isolation must be rethought if agents have ongoing external effects.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/08/grok-bot-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -195,13 +194,13 @@
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Model governance / LLM eval</span><span class="priority priority-2">2/10</span></div><h3>Major model providers adopt watermarking tech to comply with EU AI Act Article 50</h3><p>Watermarking changes how you build LLM evaluation and RAG pipelines: detection/verification becomes an additional test oracle and may affect downstream tokenization/evaluation metrics. QA teams should monitor compatibility and false-positive/negative rates for any watermark detectors used in tests.</p><a class="source-link" href="https://www.infoq.com/news/2026/08/eu-ai-content-watermark/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">LLM evaluation / Regulation</span><span class="priority priority-2">2/10</span></div><h3>Major frontier model providers adopt watermarking tech to comply with EU regulation</h3><p>Watermarking changes the properties of synthetic outputs and therefore affects LLM-eval baselines, RAG filtering, and detectors used in QA and audit pipelines — worth monitoring for changes to eval methodology and false-positive/negative behavior in downstream tooling.</p><a class="source-link" href="https://www.infoq.com/news/2026/08/eu-ai-content-watermark/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
 
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Agentic workflows / Tutorial</span><span class="priority priority-2">2/10</span></div><h3>A Human-Augmenting Agentic Workflow for Observational Causal Inference (arXiv)</h3><p>An arXiv paper describing the design, evaluation, and reproducible artifacts for Netflix’s oci-agent, including actor/critic orchestration, datasets used for evaluation, and operational lessons.</p><a class="source-link" href="https://arxiv.org/abs/2607.22443" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">Practical talk / LLM engineering</span><span class="priority priority-2">2/10</span></div><h3>From Thousands to One: Building LLM-Powered Selection Systems — practical presentation</h3><p>Jendrik Jördening presents engineering strategies for integrating LLMs into production pipelines: handling non-determinism, restricting schemas, separating semantic extraction from deterministic code, and using discriminator models for validation.</p><a class="source-link" href="https://www.infoq.com/presentations/architecture-patterns-llm/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
 
       </section>
     </div>

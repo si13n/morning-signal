@@ -3,6 +3,10 @@ sources:
     feed: https://openai.com/news/rss.xml
     category: AI engineering
     quality: 5
+  - name: Claude Blog
+    feed: https://claude.com/blog
+    category: AI agents and Claude Code
+    quality: 5
   - name: GitHub Changelog
     feed: https://github.blog/changelog/feed/
     category: CI/CD

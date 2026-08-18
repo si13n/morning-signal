@@ -1,18 +1,90 @@
 {
   "date": "2026-08-18",
-  "headline": "QA / Agentic AI Morning",
-  "is_fixture": true,
+  "headline": "Practical test-runner, CI, and device-farm updates that affect flaky-test handling, CI throughput, and RAG evaluation",
   "top_signal": {
-    "title": "Bootstrap fixture — first live edition will replace this page",
-    "category": "Fixture",
+    "title": "Playwright 1.62: isolated retries, AbortSignal cancellation, and a new component testing model",
+    "category": "Web E2E / Test runner",
     "priority": 1,
-    "summary": "This clearly labeled sample keeps the static site testable before the first API-backed morning run.",
-    "why_it_matters": "It proves the archive, templates, links, and deployment surface without presenting invented news as a real edition.",
-    "source": "Morning Signal project",
-    "source_url": "https://github.com/",
-    "published_at": "2026-08-18T00:00:00Z"
+    "summary": "Playwright's release notes for Version 1.62 document several test-runner features that change how suites behave under failure and long-running operations: a new component-testing model (stories/galleries), support for passing an AbortSignal to cancel actions and assertions, WebP support for visual snapshots, and a configurable retryStrategy (including an 'isolated' mode that runs retries at the end in a single worker).",
+    "why_it_matters": "For senior QA automation engineers this affects flaky-test strategies and CI stability. AbortSignal gives tests a standard cancellation mechanism to avoid hung actions; isolated retries reduce interference between retry attempts (helpful for tests that cause shared-state interference); WebP lowers artifact storage cost for visual comparisons; and the component testing model helps isolate UI scenarios for faster, more localizable failures.",
+    "source": "Playwright — Release notes",
+    "source_url": "https://playwright.dev/docs/release-notes",
+    "published_at": "2026-08-18"
   },
-  "items": [],
-  "watch": [],
-  "learning": []
+  "items": [
+    {
+      "title": "GitHub Actions: steps can now run in parallel (background steps)",
+      "category": "CI/CD / GitHub Actions",
+      "priority": 2,
+      "summary": "GitHub Actions added the ability to run steps concurrently via a background/parallel mechanism, letting teams overlap work inside a single job rather than splitting into separate jobs or runners.",
+      "why_it_matters": "This can reduce end-to-end CI time for test pipelines and make in-job orchestration (e.g., long-running browsers, device proxies, or test helpers) cheaper. It also increases the need to audit step-level concurrency for shared resources (device locks, ports, temp dirs) to avoid new flakiness.",
+      "source": "GitHub Changelog — Actions steps can now be run in parallel",
+      "source_url": "https://github.blog/changelog/2026-06-25-actions-steps-can-now-be-run-in-parallel/",
+      "published_at": "2026-06-25"
+    },
+    {
+      "title": "BrowserStack SDK: August 2026 patch run fixes CI hangs, Espresso App Automate timeouts, and Test Observability linking",
+      "category": "Device farms / Test infrastructure",
+      "priority": 3,
+      "summary": "BrowserStack's SDK release notes show a cluster of August 2026 patches (1.67.x) that address test-run reliability: fixes for CI builds hanging when the BrowserStack CLI stalls, Espresso App Automate builds timing out when observability is enabled, and test-observability session linking issues on parallel TestNG runs.",
+      "why_it_matters": "If you run mobile automation on BrowserStack or integrate their SDK into CI, these fixes reduce common sources of pipeline blockage and improve traceability between test results and device sessions — both are important when triaging flaky mobile tests or scaling device-parallel runs.",
+      "source": "BrowserStack — SDK release notes (changelog showing versions 1.67.0–1.67.6 and August 2026 fixes)",
+      "source_url": "https://www.browserstack.com/docs/sdk/release-notes",
+      "published_at": "2026-08-12"
+    },
+    {
+      "title": "AndroidX Test / Espresso versions and Test artifacts",
+      "category": "Mobile QA / Android / Espresso",
+      "priority": 4,
+      "summary": "The AndroidX Test release notes list current stable artifacts (e.g., espresso-core:3.7.0, espresso-device:1.1.0, core:1.7.0 and associated runner/orchestrator components) and document dependency/toolchain updates used by the Jetpack test libraries.",
+      "why_it_matters": "Updates to Espresso and the AndroidX test stack affect instrumentation behavior, API availability in test code, and compatibility with device farms and orchestrators. Senior engineers should verify new versions against on-device observability hooks, CI orchestrator config (orchestrator vs. instrumentation runner), and SDK/toolchain requirements before upgrading.",
+      "source": "Android Developers — AndroidX Test release notes",
+      "source_url": "https://developer.android.com/jetpack/androidx/releases/test",
+      "published_at": "2026-01-14"
+    },
+    {
+      "title": "pytest changelog (maintenance & deprecations affecting CI suites)",
+      "category": "Python / Pytest / Test frameworks",
+      "priority": 5,
+      "summary": "The pytest changelog documents recent maintenance releases (including pytest 9.1.1) with bug fixes and deprecations. These maintenance releases include changes that can affect plugin compatibility and test discovery behavior in CI.",
+      "why_it_matters": "Large Python test suites often depend on plugins and discovery semantics. When upgrading pytest, expect to run full CI on a branch, validate plugin compatibility (xdist, coverage, custom reporters), and review deprecation notes to avoid surprising failures in nightly pipelines.",
+      "source": "pytest — Changelog",
+      "source_url": "https://pytest.org/en/stable/changelog.html",
+      "published_at": "2026-06-19"
+    },
+    {
+      "title": "T²-RAGBench (EACL 2026): a focused RAG benchmark for text-and-table data",
+      "category": "RAG evaluation / LLM evaluation",
+      "priority": 6,
+      "summary": "T²-RAGBench is a 23,088 example benchmark (EACL 2026) designed to evaluate retrieval-augmented-generation (RAG) systems on documents that combine text and tables. The authors transform datasets into a context-independent format and find hybrid dense+sparse retrieval strategies perform best on this workload.",
+      "why_it_matters": "If your QA or validation workflows include RAG systems (e.g., document QA, SDK docs retrieval, or test-result summarization), this benchmark highlights retrieval failure modes specific to tabular data and offers a reproducible dataset and code to stress-test retrieval and reranking components of your pipeline.",
+      "source": "T²-RAGBench — ACL Anthology (EACL 2026)",
+      "source_url": "https://aclanthology.org/2026.eacl-long.8/",
+      "published_at": "2026-03"
+    }
+  ],
+  "watch": [
+    {
+      "title": "GitHub Agentic Workflows (agentic CI/automation patterns)",
+      "category": "Agentic engineering / CI experimentation",
+      "priority": 7,
+      "summary": "Material and slide decks describing GitHub's work on 'Agentic Workflows' (proposals and demos for embedding agent-like orchestration into developer workflows) have started circulating; the idea is closer integration between agents and repo/cicd operations.",
+      "why_it_matters": "Agentic workflows can automate test triage, flaky test quarantining, and CI triage actions, but they also introduce new attack surfaces and observability needs; teams should follow the capability evolution to evaluate safe, auditable automation for test pipelines.",
+      "source": "GitHub — Agentic Workflows slides / project materials",
+      "source_url": "https://github.github.com/gh-aw/slides/20260224-github-agentic-workflows.pdf",
+      "published_at": "2026-02-24"
+    }
+  ],
+  "learning": [
+    {
+      "title": "How Far Are We from Detecting Flaky Tests? On the Limits of Code-Based Detection (arXiv)",
+      "category": "Flaky-test investigation / Research",
+      "priority": 8,
+      "summary": "This recent paper evaluates the limits of detecting flaky tests from code alone. It shows that code-only detectors work well on some classes of flakiness but miss many practical causes that require runtime/observability signals or historical CI signal analysis.",
+      "why_it_matters": "The paper reinforces that to reduce time spent triaging flaky tests you need runtime traces, CI-history telemetry, and reproducible device logs — not just static code analysis. Use this as a reference when deciding whether to invest in CI-level observability (traces, device logs, artifact retention) versus static detectors.",
+      "source": "arXiv — How Far Are We from Detecting Flaky Tests? On the Limits of Code-Based Detection",
+      "source_url": "https://arxiv.org/abs/2607.09345",
+      "published_at": "2026-07-10"
+    }
+  ]
 }

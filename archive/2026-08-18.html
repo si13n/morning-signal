@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>QA / Agentic AI Morning · Tuesday, August 18, 2026 · Morning Signal</title>
+  <title>Practical test-runner, CI, and device-farm updates that affect flaky-test handling, CI throughput, and RAG evaluation · Tuesday, August 18, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -15,11 +15,9 @@
 
   <main class="shell">
 
-    <div class="fixture-note">Bootstrap fixture · the first live edition will replace this sample.</div>
-
     <section class="hero">
       <p class="eyebrow">Tuesday, August 18, 2026 <span class="dot">·</span> Issue 2026-08-18</p>
-      <h1>QA / Agentic AI Morning</h1>
+      <h1>Practical test-runner, CI, and device-farm updates that affect flaky-test handling, CI throughput, and RAG evaluation</h1>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -28,27 +26,71 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">Bootstrap fixture — first live edition will replace this page</h2>
-      <p class="story-summary">This clearly labeled sample keeps the static site testable before the first API-backed morning run.</p>
-      <div class="why"><span>Why it matters</span><p>It proves the archive, templates, links, and deployment surface without presenting invented news as a real edition.</p></div>
-      <a class="source-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">Morning Signal project <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">Playwright 1.62: isolated retries, AbortSignal cancellation, and a new component testing model</h2>
+      <p class="story-summary">Playwright's release notes for Version 1.62 document several test-runner features that change how suites behave under failure and long-running operations: a new component-testing model (stories/galleries), support for passing an AbortSignal to cancel actions and assertions, WebP support for visual snapshots, and a configurable retryStrategy (including an 'isolated' mode that runs retries at the end in a single worker).</p>
+      <div class="why"><span>Why it matters</span><p>For senior QA automation engineers this affects flaky-test strategies and CI stability. AbortSignal gives tests a standard cancellation mechanism to avoid hung actions; isolated retries reduce interference between retry attempts (helpful for tests that cause shared-state interference); WebP lowers artifact storage cost for visual comparisons; and the component testing model helps isolate UI scenarios for faster, more localizable failures.</p></div>
+      <a class="source-link" href="https://playwright.dev/docs/release-notes" target="_blank" rel="noopener noreferrer">Playwright — Release notes <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
-      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">0 signals</span></div>
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">5 signals</span></div>
       <div class="story-grid">
-<p class="empty-state">No additional signals cleared today’s editorial bar.</p>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">CI/CD / GitHub Actions</span><span class="priority priority-2">2/10</span></div>
+          <h3>GitHub Actions: steps can now run in parallel (background steps)</h3>
+          <p>GitHub Actions added the ability to run steps concurrently via a background/parallel mechanism, letting teams overlap work inside a single job rather than splitting into separate jobs or runners.</p>
+          <div class="why compact"><span>Why it matters</span><p>This can reduce end-to-end CI time for test pipelines and make in-job orchestration (e.g., long-running browsers, device proxies, or test helpers) cheaper. It also increases the need to audit step-level concurrency for shared resources (device locks, ports, temp dirs) to avoid new flakiness.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-06-25-actions-steps-can-now-be-run-in-parallel/" target="_blank" rel="noopener noreferrer">GitHub Changelog — Actions steps can now be run in parallel <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Device farms / Test infrastructure</span><span class="priority priority-3">3/10</span></div>
+          <h3>BrowserStack SDK: August 2026 patch run fixes CI hangs, Espresso App Automate timeouts, and Test Observability linking</h3>
+          <p>BrowserStack's SDK release notes show a cluster of August 2026 patches (1.67.x) that address test-run reliability: fixes for CI builds hanging when the BrowserStack CLI stalls, Espresso App Automate builds timing out when observability is enabled, and test-observability session linking issues on parallel TestNG runs.</p>
+          <div class="why compact"><span>Why it matters</span><p>If you run mobile automation on BrowserStack or integrate their SDK into CI, these fixes reduce common sources of pipeline blockage and improve traceability between test results and device sessions — both are important when triaging flaky mobile tests or scaling device-parallel runs.</p></div>
+          <a class="source-link" href="https://www.browserstack.com/docs/sdk/release-notes" target="_blank" rel="noopener noreferrer">BrowserStack — SDK release notes (changelog showing versions 1.67.0–1.67.6 and August 2026 fixes) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Mobile QA / Android / Espresso</span><span class="priority priority-4">4/10</span></div>
+          <h3>AndroidX Test / Espresso versions and Test artifacts</h3>
+          <p>The AndroidX Test release notes list current stable artifacts (e.g., espresso-core:3.7.0, espresso-device:1.1.0, core:1.7.0 and associated runner/orchestrator components) and document dependency/toolchain updates used by the Jetpack test libraries.</p>
+          <div class="why compact"><span>Why it matters</span><p>Updates to Espresso and the AndroidX test stack affect instrumentation behavior, API availability in test code, and compatibility with device farms and orchestrators. Senior engineers should verify new versions against on-device observability hooks, CI orchestrator config (orchestrator vs. instrumentation runner), and SDK/toolchain requirements before upgrading.</p></div>
+          <a class="source-link" href="https://developer.android.com/jetpack/androidx/releases/test" target="_blank" rel="noopener noreferrer">Android Developers — AndroidX Test release notes <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Python / Pytest / Test frameworks</span><span class="priority priority-5">5/10</span></div>
+          <h3>pytest changelog (maintenance & deprecations affecting CI suites)</h3>
+          <p>The pytest changelog documents recent maintenance releases (including pytest 9.1.1) with bug fixes and deprecations. These maintenance releases include changes that can affect plugin compatibility and test discovery behavior in CI.</p>
+          <div class="why compact"><span>Why it matters</span><p>Large Python test suites often depend on plugins and discovery semantics. When upgrading pytest, expect to run full CI on a branch, validate plugin compatibility (xdist, coverage, custom reporters), and review deprecation notes to avoid surprising failures in nightly pipelines.</p></div>
+          <a class="source-link" href="https://pytest.org/en/stable/changelog.html" target="_blank" rel="noopener noreferrer">pytest — Changelog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">RAG evaluation / LLM evaluation</span><span class="priority priority-6">6/10</span></div>
+          <h3>T²-RAGBench (EACL 2026): a focused RAG benchmark for text-and-table data</h3>
+          <p>T²-RAGBench is a 23,088 example benchmark (EACL 2026) designed to evaluate retrieval-augmented-generation (RAG) systems on documents that combine text and tables. The authors transform datasets into a context-independent format and find hybrid dense+sparse retrieval strategies perform best on this workload.</p>
+          <div class="why compact"><span>Why it matters</span><p>If your QA or validation workflows include RAG systems (e.g., document QA, SDK docs retrieval, or test-result summarization), this benchmark highlights retrieval failure modes specific to tabular data and offers a reproducible dataset and code to stress-test retrieval and reranking components of your pipeline.</p></div>
+          <a class="source-link" href="https://aclanthology.org/2026.eacl-long.8/" target="_blank" rel="noopener noreferrer">T²-RAGBench — ACL Anthology (EACL 2026) <span aria-hidden="true">↗</span></a>
+        </article>
+
       </div>
     </section>
 
     <div class="two-column">
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
-<p class="empty-state">Nothing new to watch closely.</p>
+
+        <article class="mini-story"><div class="story-meta"><span class="category">Agentic engineering / CI experimentation</span><span class="priority priority-7">7/10</span></div><h3>GitHub Agentic Workflows (agentic CI/automation patterns)</h3><p>Agentic workflows can automate test triage, flaky test quarantining, and CI triage actions, but they also introduce new attack surfaces and observability needs; teams should follow the capability evolution to evaluate safe, auditable automation for test pipelines.</p><a class="source-link" href="https://github.github.com/gh-aw/slides/20260224-github-agentic-workflows.pdf" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
-<p class="empty-state">No learning pick today.</p>
+
+        <article class="mini-story"><div class="story-meta"><span class="category">Flaky-test investigation / Research</span><span class="priority priority-8">8/10</span></div><h3>How Far Are We from Detecting Flaky Tests? On the Limits of Code-Based Detection (arXiv)</h3><p>This recent paper evaluates the limits of detecting flaky tests from code alone. It shows that code-only detectors work well on some classes of flakiness but miss many practical causes that require runtime/observability signals or historical CI signal analysis.</p><a class="source-link" href="https://arxiv.org/abs/2607.09345" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+
       </section>
     </div>
   </main>

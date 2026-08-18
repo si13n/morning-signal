@@ -33,7 +33,7 @@ DIGEST_SCHEMA = {
         "date": {"type": "string"},
         "headline": {"type": "string"},
         "top_signal": STORY_SCHEMA,
-        "items": {"type": "array", "items": STORY_SCHEMA, "maxItems": 7},
+        "items": {"type": "array", "items": STORY_SCHEMA, "maxItems": 17},
         "watch": {"type": "array", "items": STORY_SCHEMA, "maxItems": 1},
         "learning": {"type": "array", "items": STORY_SCHEMA, "maxItems": 1},
     },
@@ -65,7 +65,7 @@ def _check_story(story: Any, label: str) -> None:
         raise DigestValidationError("%s source_url must be a valid http(s) URL" % label)
 
 
-def validate_digest(digest: Dict[str, Any], max_items: int = 10, expected_date: Optional[str] = None) -> None:
+def validate_digest(digest: Dict[str, Any], max_items: int = 20, expected_date: Optional[str] = None) -> None:
     if not isinstance(digest, dict):
         raise DigestValidationError("Digest must be an object")
     required = ["date", "headline", "top_signal", "items", "watch", "learning"]
@@ -108,6 +108,6 @@ def validate_digest(digest: Dict[str, Any], max_items: int = 10, expected_date: 
                 raise DigestValidationError("duplicate or near-duplicate story titles are not allowed")
 
 
-def validate_many(digests: Iterable[Dict[str, Any]], max_items: int = 10) -> None:
+def validate_many(digests: Iterable[Dict[str, Any]], max_items: int = 20) -> None:
     for digest in digests:
         validate_digest(digest, max_items=max_items)

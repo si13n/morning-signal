@@ -40,7 +40,7 @@ def runtime_config(root: Path) -> Dict[str, Any]:
     return {
         "model": os.getenv("OPENAI_MODEL", "gpt-5-mini"),
         "max_web_searches": env_int("MAX_WEB_SEARCHES", 6),
-        "max_digest_items": env_int("MAX_DIGEST_ITEMS", 10),
+        "max_digest_items": env_int("MAX_DIGEST_ITEMS", 20),
         "lookback_hours": env_int("LOOKBACK_HOURS", 72),
         "max_candidates": env_int("MAX_CANDIDATES", 40),
         "root": root,

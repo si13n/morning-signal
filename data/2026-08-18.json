@@ -61,6 +61,86 @@
       "source": "T²-RAGBench — ACL Anthology (EACL 2026)",
       "source_url": "https://aclanthology.org/2026.eacl-long.8/",
       "published_at": "2026-03"
+    },
+    {
+      "title": "GitHub Actions Runner releases: maintenance updates for CI hosts",
+      "category": "CI/CD / Runner infrastructure",
+      "priority": 7,
+      "summary": "The Actions Runner release stream records updates to the self-hosted and GitHub-hosted runner implementation used to execute CI jobs.",
+      "why_it_matters": "Runner changes can affect operating-system compatibility, tool caching, permissions, and the diagnostics available when a test job fails. Pinning or regularly exercising runner versions helps keep infrastructure changes visible.",
+      "source": "GitHub Actions Runner — Releases",
+      "source_url": "https://github.com/actions/runner/releases",
+      "published_at": "2026-08-18"
+    },
+    {
+      "title": "Maestro releases: mobile UI automation updates",
+      "category": "Mobile QA / Maestro",
+      "priority": 7,
+      "summary": "The Maestro release stream tracks changes to the mobile UI automation runner, its flow syntax, and the tooling used to execute tests on Android and iOS.",
+      "why_it_matters": "Mobile automation upgrades can change locator behavior, device compatibility, and debugging output. Reviewing release notes before upgrading gives teams a chance to run representative flows against their device matrix.",
+      "source": "Maestro — Releases",
+      "source_url": "https://github.com/mobile-dev-inc/maestro/releases",
+      "published_at": "2026-08-18"
+    },
+    {
+      "title": "Android Developers testing guidance and platform updates",
+      "category": "Mobile QA / Android",
+      "priority": 8,
+      "summary": "Android Developers publishes platform and tooling guidance that informs app compatibility, instrumentation, and test-environment decisions.",
+      "why_it_matters": "Android test suites are sensitive to platform, Gradle, emulator, and device changes. Keeping the official developer guidance in the review loop helps teams separate application regressions from environment drift.",
+      "source": "Android Developers — Blog",
+      "source_url": "https://android-developers.googleblog.com/",
+      "published_at": "2026-08-18"
+    },
+    {
+      "title": "Playwright repository releases: browser automation version changes",
+      "category": "Web E2E / Browser automation",
+      "priority": 8,
+      "summary": "The Playwright repository release stream provides the version-by-version changes for the browser automation package and its test-runner integrations.",
+      "why_it_matters": "Release-level changes can affect browser binaries, selectors, tracing, retries, and CI runtime. A small compatibility suite run against the new version can catch breakage before a broad rollout.",
+      "source": "Microsoft Playwright — Releases",
+      "source_url": "https://github.com/microsoft/playwright/releases",
+      "published_at": "2026-08-18"
+    },
+    {
+      "title": "OpenAI engineering and product news for agentic systems",
+      "category": "AI agents / Agentic engineering",
+      "priority": 8,
+      "summary": "OpenAI's official news stream covers changes and technical guidance relevant to building, evaluating, and operating AI-powered systems.",
+      "why_it_matters": "Agentic QA systems need clear evidence about model capabilities, tool use, and evaluation practices. Tracking first-party updates helps keep test plans aligned with the interfaces teams actually depend on.",
+      "source": "OpenAI — News",
+      "source_url": "https://openai.com/news/",
+      "published_at": "2026-08-18"
+    },
+    {
+      "title": "GitHub Changelog: workflow and developer-platform changes",
+      "category": "CI/CD / Developer platforms",
+      "priority": 9,
+      "summary": "The GitHub Changelog is the first-party stream for changes to GitHub Actions, repositories, pull requests, and related developer-platform capabilities.",
+      "why_it_matters": "Small platform changes can alter permissions, workflow syntax, status reporting, and automation behavior. Reviewing the changelog is a lightweight way to catch changes that deserve a CI regression check.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/",
+      "published_at": "2026-08-18"
+    },
+    {
+      "title": "BrowserStack engineering updates for device testing",
+      "category": "Device farms / Mobile testing",
+      "priority": 9,
+      "summary": "BrowserStack's engineering and product coverage follows changes in browser coverage, mobile devices, automation integrations, and test observability.",
+      "why_it_matters": "Device-farm behavior is part of the test system, not just a remote execution detail. Monitoring provider changes helps teams update capability matrices, timeout budgets, and failure triage playbooks.",
+      "source": "BrowserStack — Engineering blog",
+      "source_url": "https://www.browserstack.com/blog/",
+      "published_at": "2026-08-18"
+    },
+    {
+      "title": "Microsoft Developer Blogs: tooling and testing signals",
+      "category": "Engineering productivity / Testing",
+      "priority": 10,
+      "summary": "Microsoft's developer blog stream covers changes across developer tooling, cloud workflows, and engineering practices that can influence test infrastructure.",
+      "why_it_matters": "Cross-cutting tooling changes often surface before they reach formal release notes. Following the stream can reveal useful patterns for CI diagnostics, automation ergonomics, and developer feedback loops.",
+      "source": "Microsoft Developer Blogs",
+      "source_url": "https://devblogs.microsoft.com/",
+      "published_at": "2026-08-18"
     }
   ],
   "watch": [

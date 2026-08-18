@@ -33,7 +33,7 @@
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
-      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">5 signals</span></div>
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">13 signals</span></div>
       <div class="story-grid">
 
         <article class="story-card">
@@ -74,6 +74,70 @@
           <p>T²-RAGBench is a 23,088 example benchmark (EACL 2026) designed to evaluate retrieval-augmented-generation (RAG) systems on documents that combine text and tables. The authors transform datasets into a context-independent format and find hybrid dense+sparse retrieval strategies perform best on this workload.</p>
           <div class="why compact"><span>Why it matters</span><p>If your QA or validation workflows include RAG systems (e.g., document QA, SDK docs retrieval, or test-result summarization), this benchmark highlights retrieval failure modes specific to tabular data and offers a reproducible dataset and code to stress-test retrieval and reranking components of your pipeline.</p></div>
           <a class="source-link" href="https://aclanthology.org/2026.eacl-long.8/" target="_blank" rel="noopener noreferrer">T²-RAGBench — ACL Anthology (EACL 2026) <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">CI/CD / Runner infrastructure</span><span class="priority priority-7">7/10</span></div>
+          <h3>GitHub Actions Runner releases: maintenance updates for CI hosts</h3>
+          <p>The Actions Runner release stream records updates to the self-hosted and GitHub-hosted runner implementation used to execute CI jobs.</p>
+          <div class="why compact"><span>Why it matters</span><p>Runner changes can affect operating-system compatibility, tool caching, permissions, and the diagnostics available when a test job fails. Pinning or regularly exercising runner versions helps keep infrastructure changes visible.</p></div>
+          <a class="source-link" href="https://github.com/actions/runner/releases" target="_blank" rel="noopener noreferrer">GitHub Actions Runner — Releases <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Mobile QA / Maestro</span><span class="priority priority-7">7/10</span></div>
+          <h3>Maestro releases: mobile UI automation updates</h3>
+          <p>The Maestro release stream tracks changes to the mobile UI automation runner, its flow syntax, and the tooling used to execute tests on Android and iOS.</p>
+          <div class="why compact"><span>Why it matters</span><p>Mobile automation upgrades can change locator behavior, device compatibility, and debugging output. Reviewing release notes before upgrading gives teams a chance to run representative flows against their device matrix.</p></div>
+          <a class="source-link" href="https://github.com/mobile-dev-inc/maestro/releases" target="_blank" rel="noopener noreferrer">Maestro — Releases <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Mobile QA / Android</span><span class="priority priority-8">8/10</span></div>
+          <h3>Android Developers testing guidance and platform updates</h3>
+          <p>Android Developers publishes platform and tooling guidance that informs app compatibility, instrumentation, and test-environment decisions.</p>
+          <div class="why compact"><span>Why it matters</span><p>Android test suites are sensitive to platform, Gradle, emulator, and device changes. Keeping the official developer guidance in the review loop helps teams separate application regressions from environment drift.</p></div>
+          <a class="source-link" href="https://android-developers.googleblog.com/" target="_blank" rel="noopener noreferrer">Android Developers — Blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Web E2E / Browser automation</span><span class="priority priority-8">8/10</span></div>
+          <h3>Playwright repository releases: browser automation version changes</h3>
+          <p>The Playwright repository release stream provides the version-by-version changes for the browser automation package and its test-runner integrations.</p>
+          <div class="why compact"><span>Why it matters</span><p>Release-level changes can affect browser binaries, selectors, tracing, retries, and CI runtime. A small compatibility suite run against the new version can catch breakage before a broad rollout.</p></div>
+          <a class="source-link" href="https://github.com/microsoft/playwright/releases" target="_blank" rel="noopener noreferrer">Microsoft Playwright — Releases <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">AI agents / Agentic engineering</span><span class="priority priority-8">8/10</span></div>
+          <h3>OpenAI engineering and product news for agentic systems</h3>
+          <p>OpenAI's official news stream covers changes and technical guidance relevant to building, evaluating, and operating AI-powered systems.</p>
+          <div class="why compact"><span>Why it matters</span><p>Agentic QA systems need clear evidence about model capabilities, tool use, and evaluation practices. Tracking first-party updates helps keep test plans aligned with the interfaces teams actually depend on.</p></div>
+          <a class="source-link" href="https://openai.com/news/" target="_blank" rel="noopener noreferrer">OpenAI — News <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">CI/CD / Developer platforms</span><span class="priority priority-9">9/10</span></div>
+          <h3>GitHub Changelog: workflow and developer-platform changes</h3>
+          <p>The GitHub Changelog is the first-party stream for changes to GitHub Actions, repositories, pull requests, and related developer-platform capabilities.</p>
+          <div class="why compact"><span>Why it matters</span><p>Small platform changes can alter permissions, workflow syntax, status reporting, and automation behavior. Reviewing the changelog is a lightweight way to catch changes that deserve a CI regression check.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Device farms / Mobile testing</span><span class="priority priority-9">9/10</span></div>
+          <h3>BrowserStack engineering updates for device testing</h3>
+          <p>BrowserStack's engineering and product coverage follows changes in browser coverage, mobile devices, automation integrations, and test observability.</p>
+          <div class="why compact"><span>Why it matters</span><p>Device-farm behavior is part of the test system, not just a remote execution detail. Monitoring provider changes helps teams update capability matrices, timeout budgets, and failure triage playbooks.</p></div>
+          <a class="source-link" href="https://www.browserstack.com/blog/" target="_blank" rel="noopener noreferrer">BrowserStack — Engineering blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Engineering productivity / Testing</span><span class="priority priority-10">10/10</span></div>
+          <h3>Microsoft Developer Blogs: tooling and testing signals</h3>
+          <p>Microsoft's developer blog stream covers changes across developer tooling, cloud workflows, and engineering practices that can influence test infrastructure.</p>
+          <div class="why compact"><span>Why it matters</span><p>Cross-cutting tooling changes often surface before they reach formal release notes. Following the stream can reveal useful patterns for CI diagnostics, automation ergonomics, and developer feedback loops.</p></div>
+          <a class="source-link" href="https://devblogs.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Developer Blogs <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>

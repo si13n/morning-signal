@@ -17,6 +17,8 @@ def test_rendered_site_contains_expected_content(tmp_path):
     assert "Top Signal" in index
     assert digest["top_signal"]["title"] in index
     assert digest["top_signal"]["source_url"] in index
+    assert index.count('<article class="story-card">') == len(digest["items"])
+    assert index.count('<article class="mini-story">') == len(digest["watch"]) + len(digest["learning"])
     assert (tmp_path / "archive" / "2026-08-18.html").exists()
     assert (tmp_path / "archive" / "index.html").exists()
     assert internal_link_errors(tmp_path) == []

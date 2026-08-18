@@ -49,7 +49,8 @@ set -a; source .env; set +a
 export OPENAI_API_KEY='your-key'
 export OPENAI_MODEL='gpt-5-mini'
 export MAX_WEB_SEARCHES=6
-export MAX_DIGEST_ITEMS=20
+export MIN_DIGEST_ITEMS=20
+export MAX_DIGEST_ITEMS=25
 ```
 
 The current official API pattern is documented in the [OpenAI developer quickstart](https://platform.openai.com/docs/quickstart/make-your-first-api-request) and the [Responses API reference](https://platform.openai.com/docs/api-reference/responses).
@@ -93,7 +94,7 @@ To enable Pages, open Settings → Pages, choose **GitHub Actions** as the sourc
 
 ## Cost controls
 
-The pipeline is RSS-first and sends a compact candidate list to one editorial call. It defaults to at most six focused web searches (instructed at the API boundary), twenty total stories, 40 candidates, and a 72-hour lookback. These values can be changed with `MAX_WEB_SEARCHES`, `MAX_DIGEST_ITEMS`, `MAX_CANDIDATES`, and `LOOKBACK_HOURS`. There are no multi-agent loops or database calls.
+The pipeline is RSS-first and sends a compact candidate list to one editorial call. It defaults to at most six focused web searches (instructed at the API boundary), at least twenty and at most twenty-five total stories, 40 candidates, and a 72-hour lookback. These values can be changed with `MAX_WEB_SEARCHES`, `MIN_DIGEST_ITEMS`, `MAX_DIGEST_ITEMS`, `MAX_CANDIDATES`, and `LOOKBACK_HOURS`. Editions below the minimum are rejected before publication. There are no multi-agent loops or database calls.
 
 ## Archive design
 

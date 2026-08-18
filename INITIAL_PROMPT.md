@@ -171,7 +171,7 @@ Implement a hybrid research pipeline:
 4. Make the model configurable with `OPENAI_MODEL` and the key supplied by `OPENAI_API_KEY`.
 5. Produce strict structured JSON, never HTML.
 
-Keep the pipeline cheap: approximately six web-search operations maximum, twenty final stories maximum, RSS/API-first collection, compact prompts, one main ranking/editorial call where practical, and no uncontrolled loops. Expose limits through configuration/environment such as `MAX_WEB_SEARCHES=6` and `MAX_DIGEST_ITEMS=20`.
+Keep the pipeline cheap: approximately six web-search operations maximum, at least twenty and at most twenty-five final stories, RSS/API-first collection, compact prompts, one main ranking/editorial call where practical, and no uncontrolled loops. Expose limits through configuration/environment such as `MAX_WEB_SEARCHES=6`, `MIN_DIGEST_ITEMS=20`, and `MAX_DIGEST_ITEMS=25`.
 
 Validate required fields, URL validity, priority range, duplicate links, duplicate or near-duplicate stories, item count, and ISO date format. Prefer original source URLs. Avoid hype, clickbait, invented facts, generic tech-news noise, and random AI funding news.
 

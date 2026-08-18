@@ -4,6 +4,8 @@ import sys
 import types
 from pathlib import Path
 
+import pytest
+
 from morning_signal.research import create_digest
 
 
@@ -66,3 +68,23 @@ def test_response_deduplicates_source_urls_across_sections(monkeypatch):
     assert result["top_signal"]["source_url"] == fixture["top_signal"]["source_url"]
     assert len(result["items"]) == len(fixture["items"]) - 1
     assert result["watch"] == []
+
+
+def test_response_below_minimum_story_count_is_rejected(monkeypatch):
+    fixture = json.loads((ROOT / "data" / "2026-08-18.json").read_text(encoding="utf-8"))
+    undersized = copy.deepcopy(fixture)
+    undersized["items"] = undersized["items"][:3]
+    undersized["watch"] = []
+    undersized["learning"] = []
+
+    class FakeResponses:
+        def create(self, **kwargs):
+            return types.SimpleNamespace(output_text=json.dumps(undersized), output=[])
+
+    class FakeClient:
+        def __init__(self):
+            self.responses = FakeResponses()
+
+    monkeypatch.setitem(sys.modules, "openai", types.SimpleNamespace(OpenAI=FakeClient))
+    with pytest.raises(RuntimeError, match="at least 20"):
+        create_digest([], {"high_priority": [], "medium_priority": [], "career_focus": [], "low_priority": []}, "2026-08-18", "gpt-5-mini", 25, 6, 20)

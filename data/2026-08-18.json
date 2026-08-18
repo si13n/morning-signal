@@ -171,6 +171,66 @@
       "source": "GitHub Docs — Self-hosted runners",
       "source_url": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners",
       "published_at": "docs (maintained)"
+    },
+    {
+      "title": "Grafana ships gcx CLI and a hosted MCP server (GA) to give agents live telemetry access",
+      "category": "Observability & Agents",
+      "priority": 10,
+      "summary": "Grafana Labs announced general availability of multiple agentic observability tools (including the gcx CLI and a hosted Grafana MCP server) that let AI coding agents and developer tooling query metrics, logs, traces, SLOs and Synthetic Monitoring data from Grafana Cloud or self‑hosted instances. The release includes an agent‑friendly CLI, an MCP endpoint for connecting external agents, and documentation and a GitHub repo for gcx.",
+      "why_it_matters": "QA automation and agentic workflows depend on real runtime context to validate fixes and triage regressions. gcx + MCP let agents pull structured telemetry into their decision loop (PromQL results, alert histories, SLO burn rates, synthetic probe results) so test generation, flakiness triage, and automated remediation can act on live data instead of stale or manually assembled snapshots. Practically: instrument SLOs and synthetic checks, enable controlled MCP access, and add telemetry-based assertions to agent test plans so agent outputs are grounded in current production state.",
+      "source": "Grafana Labs (press)",
+      "source_url": "https://grafana.com/press/2026/07/27/grafana-labs-ships-six-tools-that-power-agentic-operations-from-planning-to-production/",
+      "published_at": "2026-07-27T00:00:00Z"
+    },
+    {
+      "title": "Critical RCE in Serena (MCP coding agent); update to serena-agent 1.7.0 required",
+      "category": "Agent Security / Tooling",
+      "priority": 9,
+      "summary": "GitLab’s Threat Research Group disclosed a critical server‑side template injection in the Serena MCP tooling that allowed attacker‑supplied templates to execute arbitrary code when a developer opened a repository. The maintainers released serena‑agent 1.7.0 to switch Jinja2 to a SandboxedEnvironment and close the injection path.",
+      "why_it_matters": "MCP servers run with developer user context and can reach credentials, SSH keys, and internal networks. This is a concrete example of how project configuration treated as code can become remote RCE. For QA and CI: inventory MCP servers in your environment, block automatic processing of untrusted repositories, add hostile‑repo test cases to CI, and require pinned/verified MCP versions in developer images and build agents.",
+      "source": "GitLab (Threat Research Group)",
+      "source_url": "https://about.gitlab.com/blog/critical-rce-in-serena/",
+      "published_at": "2026-08-17T00:00:00Z"
+    },
+    {
+      "title": "Real incidents: allowlist bypasses and agent-safe execution patterns (Docker blog)",
+      "category": "Agent Security / Execution Sandboxing",
+      "priority": 8,
+      "summary": "Docker published a technical post enumerating real coding‑agent attacks (including an allowlist bypass where environment built‑ins changed the semantics of an approved command) and explained how isolation (microVM sandboxes, kits that codify allowed host resources, and forward proxies for egress) reduces blast radius.",
+      "why_it_matters": "Allowlists and manual approvals are brittle against manipulation of environment state and file inputs. The post outlines pragmatic containment patterns (sandboxed execution, explicit kits, deny‑by‑default network rules, and controlled host mounts) that QA and release engineers should adopt for test agents, CI runners, and local developer tools to prevent repository‑sourced inputs from executing with host privileges.",
+      "source": "Docker Blog",
+      "source_url": "https://www.docker.com/blog/coding-agent-horror-stories-the-command-you-already-approved/",
+      "published_at": "2026-08-18T00:00:00Z"
+    },
+    {
+      "title": "Architectural patterns to make agentic development testable and safe (AWS Architecture Blog)",
+      "category": "Architecture & CI/CD",
+      "priority": 7,
+      "summary": "AWS published an agentic‑AI architecture article that frames agent workflows as requiring fast feedback loops, separable testable boundaries, and data governance. The post recommends design patterns that reduce friction for agentic changes: localizable test harnesses, small deployable components, and data layers that expose consistent, validated views to agents.",
+      "why_it_matters": "Agents will only be useful in QA/automation if the system architecture supports short, repeatable validation cycles and clear boundaries between agent‑managed artifacts and privileged systems. Actionable steps for QA teams: add isolated local harnesses to the CI matrix, enforce schema/gating on agent inputs, and create reproducible staging snapshots (telemetry + test data) so agents can iterate without touching production credentials or data.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/architecting-for-agentic-ai-development-on-aws/",
+      "published_at": "2026-03-26T00:00:00Z"
+    },
+    {
+      "title": "What does an agentic SDLC actually look like? (Stack Overflow Blog)",
+      "category": "Agentic SDLC (monitor)",
+      "priority": 6,
+      "summary": "Stack Overflow’s engineering blog interviews practitioners building agentic SDLC pipelines and discusses practical evaluation methods (Cohen’s kappa for multi‑LLM judges) and specification‑first approaches to shift QA left.",
+      "why_it_matters": "Practical operational guidance and evaluation rubrics from teams running agentic pipelines can influence how you test, validate, and gate agent changes. Monitor this write‑up for patterns you can adopt in test harnesses, rubric design, and LLM judge selection.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/08/18/what-does-an-agentic-sdlc-actually-look-like/",
+      "published_at": "2026-08-18T07:40:00Z"
+    },
+    {
+      "title": "From Thousands to One: Building LLM‑Powered Selection Systems (presentation)",
+      "category": "LLM Evaluation & Selection Systems",
+      "priority": 6,
+      "summary": "An InfoQ presentation by Jendrik Jördening covering how to structure selection/decision systems that scale LLM outputs: separate semantic extraction from deterministic code, restrict schemas, and use discriminator models to validate choices. The talk includes patterns to reduce nondeterminism in production LLM decision loops.",
+      "why_it_matters": "If you build LLM‑backed selectors or judge models (for test prioritization, flaky‑test triage, or LLM‑driven test generation), the patterns in this talk offer concrete ways to reduce nondeterminism and validate outputs programmatically. Recommended immediate use: extract a small, validated schema for agent outputs and add discriminator checks into CI workflows.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/architecture-patterns-llm/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-17T09:06:00Z"
     }
   ],
   "watch": [

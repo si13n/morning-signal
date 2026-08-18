@@ -24,7 +24,7 @@ def _deduplicate_source_urls(digest: Dict[str, Any]) -> int:
     return removed
 
 
-def _prompt(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, max_items: int, max_searches: int) -> str:
+def _prompt(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, max_items: int, max_searches: int, min_items: int = 0) -> str:
     candidate_lines = []
     for index, item in enumerate(candidates):
         candidate_lines.append(
@@ -46,7 +46,7 @@ Editorial rules:
 - Explain what happened and why it matters in concise, non-hyped language.
 - Do not invent facts, dates, links, or quotes. Drop a candidate if it cannot be verified.
 - Avoid generic consumer AI, funding, cryptocurrency, gadgets, and celebrity news.
-- You may use web search to fill gaps or verify important developments, but use no more than %d focused searches. Keep the total of `top_signal`, `items`, `watch`, and `learning` to at most %d concise stories; use at most one `watch` and one `learning` item.
+- You may use web search to fill gaps or verify important developments, but use no more than %d focused searches. Return at least %d and no more than %d concise stories across `top_signal`, `items`, `watch`, and `learning`; do not stop after a small handful when more verified candidates are available. Use at most one `watch` and one `learning` item.
 - Every story must have a unique `source_url` across all sections. `top_signal` must be the single most useful signal and must not duplicate any other story.
 - Use `watch` for credible things worth monitoring and `learning` for one or two genuinely useful docs/talks/tutorials.
 
@@ -62,6 +62,7 @@ Candidate feed entries:
 Return only the requested JSON schema. The date must be %s.""" % (
         issue_date,
         max_searches,
+        min_items,
         max_items,
         ", ".join(interests.get("high_priority", [])),
         ", ".join(interests.get("medium_priority", [])),
@@ -72,7 +73,7 @@ Return only the requested JSON schema. The date must be %s.""" % (
     )
 
 
-def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, model: str, max_items: int, max_searches: int) -> Dict[str, Any]:
+def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, model: str, max_items: int, max_searches: int, min_items: int = 0) -> Dict[str, Any]:
     try:
         from openai import OpenAI
     except ImportError as exc:
@@ -86,7 +87,7 @@ def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], i
                 "role": "developer",
                 "content": "You are a careful technical editor. Do not fabricate. Follow the JSON schema exactly.",
             },
-            {"role": "user", "content": _prompt(candidates, interests, issue_date, max_items, max_searches)},
+            {"role": "user", "content": _prompt(candidates, interests, issue_date, max_items, max_searches, min_items)},
         ],
         text={
             "format": {
@@ -127,4 +128,7 @@ def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], i
     removed = _deduplicate_source_urls(digest)
     if removed:
         print("research warning: removed %d story/stories with duplicate source_url values" % removed)
+    story_count = 1 + len(digest["items"]) + len(digest["watch"]) + len(digest["learning"])
+    if story_count < min_items:
+        raise RuntimeError("OpenAI returned %d stories; at least %d are required" % (story_count, min_items))
     return digest

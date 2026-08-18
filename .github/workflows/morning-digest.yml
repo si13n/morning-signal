@@ -56,7 +56,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5-mini' }}
           MAX_WEB_SEARCHES: '6'
-          MAX_DIGEST_ITEMS: '20'
+          MIN_DIGEST_ITEMS: '20'
+          MAX_DIGEST_ITEMS: '25'
         run: python scripts/generate_digest.py
 
       - name: Render and validate static site

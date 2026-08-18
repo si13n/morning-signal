@@ -83,3 +83,12 @@ def test_item_limit_is_checked():
         digest["items"].append(story)
     with pytest.raises(DigestValidationError, match="maximum of 2"):
         validate_digest(digest, max_items=2)
+
+
+def test_minimum_story_count_is_checked():
+    digest = fixture_digest()
+    digest["items"] = digest["items"][:3]
+    digest["watch"] = []
+    digest["learning"] = []
+    with pytest.raises(DigestValidationError, match="minimum is 20"):
+        validate_digest(digest, min_items=20)

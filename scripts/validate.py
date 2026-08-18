@@ -20,7 +20,8 @@ def main() -> int:
         parser.error("no digest JSON files found")
     for path in paths:
         digest = json.loads(path.read_text(encoding="utf-8"))
-        validate_digest(digest, max_items=runtime_config(root)["max_digest_items"])
+        config = runtime_config(root)
+        validate_digest(digest, max_items=config["max_digest_items"], min_items=config["min_digest_items"])
         print("valid: %s" % path)
     return 0
 

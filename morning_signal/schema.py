@@ -33,7 +33,7 @@ DIGEST_SCHEMA = {
         "date": {"type": "string"},
         "headline": {"type": "string"},
         "top_signal": STORY_SCHEMA,
-        "items": {"type": "array", "items": STORY_SCHEMA, "maxItems": 17},
+        "items": {"type": "array", "items": STORY_SCHEMA, "maxItems": 23},
         "watch": {"type": "array", "items": STORY_SCHEMA, "maxItems": 1},
         "learning": {"type": "array", "items": STORY_SCHEMA, "maxItems": 1},
     },
@@ -65,7 +65,7 @@ def _check_story(story: Any, label: str) -> None:
         raise DigestValidationError("%s source_url must be a valid http(s) URL" % label)
 
 
-def validate_digest(digest: Dict[str, Any], max_items: int = 20, expected_date: Optional[str] = None) -> None:
+def validate_digest(digest: Dict[str, Any], max_items: int = 25, expected_date: Optional[str] = None, min_items: int = 0) -> None:
     if not isinstance(digest, dict):
         raise DigestValidationError("Digest must be an object")
     required = ["date", "headline", "top_signal", "items", "watch", "learning"]
@@ -102,12 +102,14 @@ def validate_digest(digest: Dict[str, Any], max_items: int = 20, expected_date: 
         raise DigestValidationError("duplicate or near-duplicate story titles are not allowed")
     if len(stories) > max_items:
         raise DigestValidationError("digest exceeds maximum of %d stories" % max_items)
+    if len(stories) < min_items:
+        raise DigestValidationError("digest has %d stories; minimum is %d" % (len(stories), min_items))
     for index, title in enumerate(normalized_titles):
         for other in normalized_titles[index + 1:]:
             if SequenceMatcher(None, title, other).ratio() >= 0.90:
                 raise DigestValidationError("duplicate or near-duplicate story titles are not allowed")
 
 
-def validate_many(digests: Iterable[Dict[str, Any]], max_items: int = 20) -> None:
+def validate_many(digests: Iterable[Dict[str, Any]], max_items: int = 25, min_items: int = 0) -> None:
     for digest in digests:
-        validate_digest(digest, max_items=max_items)
+        validate_digest(digest, max_items=max_items, min_items=min_items)

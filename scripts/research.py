@@ -14,5 +14,5 @@ if __name__ == "__main__":
     config = runtime_config(root)
     from datetime import date
     candidates = collect_candidates(load_sources(root), load_interests(root), config["lookback_hours"], config["max_candidates"])
-    digest = create_digest(candidates, load_interests(root), date.today().isoformat(), config["model"], config["max_digest_items"], config["max_web_searches"])
+    digest = create_digest(candidates, load_interests(root), date.today().isoformat(), config["model"], config["max_digest_items"], config["max_web_searches"], config["min_digest_items"])
     print(digest)

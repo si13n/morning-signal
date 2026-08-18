@@ -37,10 +37,15 @@ def env_int(name: str, default: int, minimum: int = 1) -> int:
 
 
 def runtime_config(root: Path) -> Dict[str, Any]:
+    min_digest_items = env_int("MIN_DIGEST_ITEMS", 20)
+    max_digest_items = env_int("MAX_DIGEST_ITEMS", 25)
+    if min_digest_items > max_digest_items:
+        raise ValueError("MIN_DIGEST_ITEMS cannot exceed MAX_DIGEST_ITEMS")
     return {
         "model": os.getenv("OPENAI_MODEL", "gpt-5-mini"),
         "max_web_searches": env_int("MAX_WEB_SEARCHES", 6),
-        "max_digest_items": env_int("MAX_DIGEST_ITEMS", 20),
+        "min_digest_items": min_digest_items,
+        "max_digest_items": max_digest_items,
         "lookback_hours": env_int("LOOKBACK_HOURS", 72),
         "max_candidates": env_int("MAX_CANDIDATES", 40),
         "root": root,

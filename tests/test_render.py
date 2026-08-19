@@ -9,9 +9,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_rendered_site_contains_expected_content(tmp_path):
-    digest = json.loads((ROOT / "data" / "2026-08-18.json").read_text(encoding="utf-8"))
     digests = render_site(ROOT, ROOT / "data", tmp_path)
-    assert len(digests) == 1
+    expected_dates = sorted(path.stem for path in (ROOT / "data").glob("*.json"))
+    assert [digest["date"] for digest in digests] == sorted(expected_dates, reverse=True)
+    digest = digests[0]
     index = (tmp_path / "index.html").read_text(encoding="utf-8")
     assert "<h1>" not in index
     assert "Top Signal" in index

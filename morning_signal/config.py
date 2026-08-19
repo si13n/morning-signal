@@ -43,6 +43,7 @@ def runtime_config(root: Path) -> Dict[str, Any]:
         raise ValueError("MIN_DIGEST_ITEMS cannot exceed MAX_DIGEST_ITEMS")
     return {
         "model": os.getenv("OPENAI_MODEL", "gpt-5-mini"),
+        "max_output_tokens": env_int("MAX_OUTPUT_TOKENS", 30000),
         "max_web_searches": env_int("MAX_WEB_SEARCHES", 6),
         "min_digest_items": min_digest_items,
         "max_digest_items": max_digest_items,

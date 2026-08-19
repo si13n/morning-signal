@@ -48,6 +48,7 @@ Live generation needs `OPENAI_API_KEY`. The model is configurable with `OPENAI_M
 set -a; source .env; set +a
 export OPENAI_API_KEY='your-key'
 export OPENAI_MODEL='gpt-5-mini'
+export MAX_OUTPUT_TOKENS=30000
 export MAX_WEB_SEARCHES=6
 export MIN_DIGEST_ITEMS=20
 export MAX_DIGEST_ITEMS=25
@@ -82,7 +83,7 @@ Open <http://localhost:8000>. `make test`, `make generate`, `make render`, `make
 
 ## GitHub Actions
 
-`.github/workflows/morning-digest.yml` runs on two UTC cron entries that cover 07:35 Europe/Warsaw across daylight-saving time, then checks the local clock so only the correct invocation publishes. It also supports `workflow_dispatch`. The job installs dependencies, runs tests, generates and validates JSON, renders the site, runs the final tests, and commits only intended generated files.
+`.github/workflows/morning-digest.yml` runs once daily and also supports `workflow_dispatch`. The job installs dependencies, runs tests, generates and validates JSON, renders the site, runs the final tests, and commits only intended generated files.
 
 `.github/workflows/pages.yml` deploys the repository contents using the official GitHub Pages artifact/deploy actions.
 
@@ -94,7 +95,7 @@ To enable Pages, open Settings → Pages, choose **GitHub Actions** as the sourc
 
 ## Cost controls
 
-The pipeline is RSS-first and sends a compact candidate list to one editorial call. It defaults to at most six focused web searches (instructed at the API boundary), at least twenty and at most twenty-five total stories, 40 candidates, and a 72-hour lookback. These values can be changed with `MAX_WEB_SEARCHES`, `MIN_DIGEST_ITEMS`, `MAX_DIGEST_ITEMS`, `MAX_CANDIDATES`, and `LOOKBACK_HOURS`. Editions below the minimum are rejected before publication. There are no multi-agent loops or database calls.
+The pipeline is RSS-first and sends a compact candidate list to one editorial call. It defaults to a 30,000-token response budget, at most six focused web searches (instructed at the API boundary), at least twenty and at most twenty-five total stories, 40 candidates, and a 72-hour lookback. These values can be changed with `MAX_OUTPUT_TOKENS`, `MAX_WEB_SEARCHES`, `MIN_DIGEST_ITEMS`, `MAX_DIGEST_ITEMS`, `MAX_CANDIDATES`, and `LOOKBACK_HOURS`. Editions below the minimum are rejected before publication. There are no multi-agent loops or database calls.
 
 ## Archive design
 

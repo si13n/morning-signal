@@ -43,7 +43,7 @@ Audience: a senior QA automation / agentic engineering practitioner. Prioritize 
 
 Editorial rules:
 - Use primary sources whenever possible and preserve the exact source URL.
-- Explain what happened and why it matters in concise, non-hyped language.
+- Explain what happened and why it matters in concise, non-hyped language. Keep each summary to roughly 35 words and each why-it-matters field to roughly 25 words so the full edition fits the output budget.
 - Do not invent facts, dates, links, or quotes. Drop a candidate if it cannot be verified.
 - Avoid generic consumer AI, funding, cryptocurrency, gadgets, and celebrity news.
 - You may use web search to fill gaps or verify important developments, but use no more than %d focused searches. Return at least %d and no more than %d concise stories across `top_signal`, `items`, `watch`, and `learning`; do not stop after a small handful when more verified candidates are available. Use at most one `watch` and one `learning` item.
@@ -73,7 +73,7 @@ Return only the requested JSON schema. The date must be %s.""" % (
     )
 
 
-def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, model: str, max_items: int, max_searches: int, min_items: int = 0) -> Dict[str, Any]:
+def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], issue_date: str, model: str, max_items: int, max_searches: int, min_items: int = 0, max_output_tokens: int = 30000) -> Dict[str, Any]:
     try:
         from openai import OpenAI
     except ImportError as exc:
@@ -100,7 +100,7 @@ def create_digest(candidates: List[Dict[str, Any]], interests: Dict[str, Any], i
         },
         max_tool_calls=max_searches,
         parallel_tool_calls=False,
-        max_output_tokens=12000,
+        max_output_tokens=max_output_tokens,
         store=False,
     )
     search_calls = sum(

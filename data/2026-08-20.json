@@ -1,0 +1,239 @@
+{
+  "date": "2026-08-20",
+  "headline": "Practical signals for QA automation and agentic engineering — agent runtimes, evaluator tooling, CI/scan updates, Android app/runtime guidance, and safety controls for production agents.",
+  "top_signal": {
+    "title": "DeepSeek open-sources DeepSeek Harness (dsh) — a modular agent runtime",
+    "category": "AI agents / Runtime",
+    "priority": 1,
+    "summary": "DeepSeek released a developer preview of DeepSeek Harness (dsh), an open-source execution runtime for autonomous AI agents with a micro-kernel plugin model and append-only event logging for observability and replay.",
+    "why_it_matters": "A shared, auditable runtime removes friction for testing, instrumentation, and reproducible evals of multi-step agents in production engineering workflows.",
+    "source": "InfoQ",
+    "source_url": "https://www.infoq.com/news/2026/08/deep-seek-harness/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+    "published_at": "2026-08-20T05:05:00Z"
+  },
+  "items": [
+    {
+      "title": "CodeQL 2.26.3 improves GitHub Actions queries and JavaScript modeling",
+      "category": "Static analysis / CI",
+      "priority": 2,
+      "summary": "GitHub’s CodeQL 2.26.3 update improves modeling for JavaScript, TypeScript, Vue and refines several GitHub Actions queries used by code scanning and CI checks.",
+      "why_it_matters": "Better language and Actions modeling reduces false positives and increases scan coverage for web apps in CI pipelines and PR checks.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-19-codeql-2-26-3-improves-github-actions-queries-and-javascript-modeling",
+      "published_at": "2026-08-19T21:09:30Z"
+    },
+    {
+      "title": "Android: Preparing your app for broader memory limits",
+      "category": "Mobile QA / Android",
+      "priority": 2,
+      "summary": "Android team published guidance on adapting apps for devices with broader memory limit changes, including metrics to watch and memory-aware design patterns for background work and large-process apps.",
+      "why_it_matters": "QA and performance tests must target revised memory envelopes to prevent OOMs, flaky integration tests, and degraded UX on modern Android devices.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/app-broader-memory-limits.html",
+      "published_at": "2026-08-19T19:00:00Z"
+    },
+    {
+      "title": "Evaluating AI agent skill performance with NVIDIA SkillEvaluator",
+      "category": "LLM evals / Agent testing",
+      "priority": 3,
+      "summary": "NVIDIA published SkillEvaluator, a toolkit and methodology to measure agent skill performance across tasks and contexts, focusing on reproducible metrics and scenario-based evaluation.",
+      "why_it_matters": "A structured evaluator helps QA teams benchmark agent workflows and identify regressions in multi-step agent behavior before deployment.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/",
+      "published_at": "2026-08-19T16:00:00Z"
+    },
+    {
+      "title": "PyCharm 2026.2 list of fixes and improvements",
+      "category": "Developer tooling / Python",
+      "priority": 3,
+      "summary": "JetBrains published the fixes and improvements for PyCharm 2026.2, highlighting improved Python type inference, fewer false positives, and reliability fixes relevant to test code and refactors.",
+      "why_it_matters": "More accurate IDE analysis reduces noisy warnings and supports safer refactors and test maintenance in large Python/pytest codebases.",
+      "source": "JetBrains Blog (PyCharm)",
+      "source_url": "https://blog.jetbrains.com/pycharm/2026/08/what-s-fixed-and-improved-in-pycharm-2026-2/",
+      "published_at": "2026-08-19T13:54:13Z"
+    },
+    {
+      "title": "Tinder cuts cold-start time 47% with new R8 Configuration Analyzer",
+      "category": "Mobile QA / Android build",
+      "priority": 3,
+      "summary": "Tinder and Android team published a case study using a new R8 Configuration Analyzer to reduce app cold-start times by 47% through targeted configuration and build analysis.",
+      "why_it_matters": "Build-time tooling that surfaces R8 misconfigurations helps QA reproduce and prevent performance regressions introduced by obfuscation and shrinker changes.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/tinder-app-cold-start-r8-configuration-analyzer.html",
+      "published_at": "2026-08-18T18:00:00Z"
+    },
+    {
+      "title": "Jetpack XR SDK core libraries reach beta",
+      "category": "Mobile / SDK testing",
+      "priority": 4,
+      "summary": "Android’s Jetpack XR SDK core libraries entered beta, stabilizing APIs and adding guidance for testing immersive experiences across headsets and wired XR gear.",
+      "why_it_matters": "Mobile QA and SDK teams should add XR-specific device matrix entries and automation hooks earlier in release pipelines to catch platform differences.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/jetpack-xr-sdk-core-libraries-beta.html",
+      "published_at": "2026-08-18T17:00:00Z"
+    },
+    {
+      "title": "Building cost-effective, high-throughput gen‑AI workflows in Google Dataflow",
+      "category": "Infrastructure / GenAI pipelines",
+      "priority": 3,
+      "summary": "Google Cloud published patterns for running high-throughput generative-AI pipelines in Dataflow, including streaming DAG adjustments and cost controls for large model inference.",
+      "why_it_matters": "Test infra and load tests must reflect streaming gen‑AI costs and failure modes; these patterns help design realistic CI performance tests and throttling strategies.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/data-analytics/cost-effective-genai-workflows-in-google-dataflow/",
+      "published_at": "2026-08-18T16:00:00Z"
+    },
+    {
+      "title": "JetBrains: AI coding agents — adoption trends (Developer Ecosystem Survey 2026)",
+      "category": "Developer productivity / Agent adoption",
+      "priority": 4,
+      "summary": "JetBrains published adoption trends from their 2026 Developer Ecosystem Survey, showing increased, varied use-cases for AI coding agents among developers and enterprise teams.",
+      "why_it_matters": "Understanding adoption patterns helps QA teams set guardrails, choose appropriate evaluation targets, and prioritize automation that integrates with agent workflows.",
+      "source": "JetBrains Blog (Research)",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/",
+      "published_at": "2026-08-18T15:03:13Z"
+    },
+    {
+      "title": "AI-powered clinical trial eligibility and safety using Amazon Bedrock AgentCore",
+      "category": "Agent engineering / Healthcare",
+      "priority": 3,
+      "summary": "AWS Architecture blog shows how to design eligibility and safety screening agents using Bedrock AgentCore, AgentCore Evaluations, and HealthLake, with emphasis on clinician oversight.",
+      "why_it_matters": "Demonstrates production patterns for high-stakes agent workflows — useful reference for QA teams building evaluations, human-in-the-loop checks, and audit trails.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/ai-agents-for-clinical-trial-screening/",
+      "published_at": "2026-08-19T13:11:51Z"
+    },
+    {
+      "title": "How AgentFlo built always-on AI sales agents with Amazon Bedrock AgentCore (Part 1)",
+      "category": "Agent engineering / Production rollout",
+      "priority": 3,
+      "summary": "AgentFlo describes building always-on sales agents on Bedrock AgentCore and Strands Agents SDK, covering recipe-based deployment, tool routing, and elastic stateful runtime patterns.",
+      "why_it_matters": "Concrete deployment patterns and tool-routing examples help QA and SRE teams define test matrices and chaos scenarios for long-running agent instances.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-1/",
+      "published_at": "2026-08-20T00:32:52Z"
+    },
+    {
+      "title": "OpenAI reaffirms zero data retention for eligible frontier-model API customers",
+      "category": "Privacy / Model ops",
+      "priority": 2,
+      "summary": "OpenAI publicized Zero Data Retention for eligible API customers and previewed Private Safety Processing to keep safety checks private while respecting customer data privacy.",
+      "why_it_matters": "Clarifies data-retention and safety-processing choices for teams running sensitive evaluation workloads and production agents handling confidential data.",
+      "source": "OpenAI",
+      "source_url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "published_at": "2026-08-19T19:00:00Z"
+    },
+    {
+      "title": "Coding-agent horror stories: approved commands can run attacker code — Docker sandbox guidance",
+      "category": "Security / Agent safety",
+      "priority": 3,
+      "summary": "Docker published cases where coding agents executed attacker-supplied commands via user-approved operations and explains how Docker Sandboxes can limit attack scope.",
+      "why_it_matters": "QA and security teams should verify sandbox boundaries and incorporate negative tests for agent tool invocation and command sanitization.",
+      "source": "Docker Blog",
+      "source_url": "https://www.docker.com/blog/coding-agent-horror-stories-the-command-you-already-approved/",
+      "published_at": "2026-08-18T13:00:00Z"
+    },
+    {
+      "title": "Snyk Agent Fix benchmark: automated remediation improves model fix rates",
+      "category": "Security / DevSecOps",
+      "priority": 4,
+      "summary": "Snyk published a benchmark showing Snyk Agent Fix improves secure-and-functional remediation rates, reporting a >14% lift in frontier-model fix success across JS, Java, and Python.",
+      "why_it_matters": "Automated remediation tooling can meaningfully raise fix quality; QA should integrate remediation checks into CI and validate fixes against test suites.",
+      "source": "Snyk Blog",
+      "source_url": "https://snyk.io/blog/snyk-agent-fix-remediation-benchmark/",
+      "published_at": "2026-08-18T04:00:00Z"
+    },
+    {
+      "title": "Developing NVIDIA Holoscan applications with CLI, Skills, and AI coding agents",
+      "category": "Edge AI / Agent tooling",
+      "priority": 4,
+      "summary": "NVIDIA posted guidance for building Holoscan real-time edge AI apps using CLI, Skills, and AI coding agents plus the HoloHub repo for examples and patterns.",
+      "why_it_matters": "Useful reference for QA teams testing real-time inference at the edge, including latency budgets, deterministic inputs, and hardware-in-the-loop checks.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/developing-nvidia-holoscan-applications-with-cli-skills-and-ai-coding-agents/",
+      "published_at": "2026-08-19T22:22:37Z"
+    },
+    {
+      "title": "Building federated multimodal AI workflows with NVIDIA FLARE",
+      "category": "Data / Federated testing",
+      "priority": 4,
+      "summary": "NVIDIA FLARE patterns for federated multimodal VLM training and inference, focusing on privacy-preserving pipelines and edge-to-cloud orchestration.",
+      "why_it_matters": "Federated evaluation patterns matter when QA must validate models across siloed datasets without centralizing sensitive data—designs affect test harnesses and metrics.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/building-federated-multimodal-ai-workflows-with-nvidia-flare/",
+      "published_at": "2026-08-19T17:50:47Z"
+    },
+    {
+      "title": "Cloudflare revisits remote Spectre attack primitives on Workers",
+      "category": "Security / Infrastructure",
+      "priority": 2,
+      "summary": "Cloudflare published an analysis of new remote Spectre primitives against Workers, defenses used, and mitigations to further harden the Workers platform.",
+      "why_it_matters": "Teams relying on edge compute and serverless must validate threat models for speculative-execution attacks and test mitigations in staging environments.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/revisiting-spectre-attacks-on-workers/",
+      "published_at": "2026-08-19T16:00:28Z"
+    },
+    {
+      "title": "GitHub: Track organization code quality trends (new Trends tab)",
+      "category": "Code quality / Metrics",
+      "priority": 3,
+      "summary": "GitHub’s organization Code Quality dashboard gained a Trends tab to visualize code-quality changes across repositories over time rather than single snapshots.",
+      "why_it_matters": "Trend-based metrics help QA and engineering leaders spot regressions, prioritize code-health efforts, and correlate test/scan changes with quality shifts.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-19-track-organization-code-quality-trends",
+      "published_at": "2026-08-19T12:56:57Z"
+    },
+    {
+      "title": "Streamline GitHub CI with AWS CodePipeline and AWS DevOps Agent",
+      "category": "CI/CD / Observability",
+      "priority": 3,
+      "summary": "AWS published how AWS DevOps Agent integrates with CodePipeline to reduce time investigating GitHub-hosted CI/CD failures by collecting logs and cross-service context.",
+      "why_it_matters": "Faster triage for CI failures reduces MTTR; test infra teams can integrate agents to centralize failure signals and automate runbook triggers.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/streamline-your-github-journey-with-aws-codepipeline-and-aws-devops-agent/",
+      "published_at": "2026-08-17T13:25:12Z"
+    },
+    {
+      "title": "Rider hands AI agents the keys to its refactoring engine (refactoring-code skill)",
+      "category": "Developer tools / Agentic refactoring",
+      "priority": 4,
+      "summary": "JetBrains detailed how a refactoring-code agent skill drives Rider’s refactoring engine, including telemetry from thousands of agent tool calls during refactors.",
+      "why_it_matters": "Shows practical limits and tool-usage patterns for agent-driven refactors — useful when testing agent-initiated code changes and validating correctness-safety tradeoffs.",
+      "source": "JetBrains Blog (dotnet)",
+      "source_url": "https://blog.jetbrains.com/dotnet/2026/08/19/rider-refactoring-code-skill/",
+      "published_at": "2026-08-19T15:37:39Z"
+    },
+    {
+      "title": "Post-train NVIDIA Cosmos 3 Edge for on-device robot control",
+      "category": "Edge ML / Robotics testing",
+      "priority": 4,
+      "summary": "NVIDIA published guidance for post-training Cosmos 3 Edge policies aimed at on-device robot control, focusing on sensor adaptation and onboard compute constraints.",
+      "why_it_matters": "Robotics QA must include sensor-in-the-loop and safety-critical scenario tests; this guides realistic CI setups for on-device models.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/",
+      "published_at": "2026-08-19T16:00:00Z"
+    },
+    {
+      "title": "New in Air: integration with Claude subscriptions and multiproject view",
+      "category": "Agent tooling / Productivity",
+      "priority": 5,
+      "summary": "JetBrains Air added support for using existing Claude Pro/Max/Team subscriptions within Air, multiproject view, and improved Markdown handling in the product.",
+      "why_it_matters": "Practical for teams using Claude—reduces friction when integrating agent-driven workflows into developer tooling and shared project views.",
+      "source": "JetBrains Blog (Air)",
+      "source_url": "https://blog.jetbrains.com/air/2026/08/new-in-air-claude-subscriptions-multiproject-view-and-improved-markdown/",
+      "published_at": "2026-08-19T17:35:10Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Cloudflare WriteGuard: fine-grained security controls for MCP servers (private beta)",
+      "category": "Security / Agent safety",
+      "priority": 2,
+      "summary": "InfoQ reports Cloudflare’s WriteGuard (private beta) which gives fine-grained controls for Model Context Protocol (MCP) servers to restrict agents' write/modify capabilities.",
+      "why_it_matters": "If adopted, WriteGuard provides control points to mitigate agent-driven data-modification risks; worth tracking for production agent safety integrations.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/cloudflare-writeguard-mcp-safety/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-18T16:00:00Z"
+    }
+  ],
+  "learning": []
+}

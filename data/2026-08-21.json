@@ -1,0 +1,220 @@
+{
+  "date": "2026-08-21",
+  "headline": "Agent runtimes, agent evaluation tooling, and CI/runner improvements that matter for QA automation and agentic engineering",
+  "top_signal": {
+    "title": "Amazon Bedrock AgentCore adds 'runtime instances' — persistent, GPU-capable compute for production agents",
+    "category": "Agentic engineering / Infrastructure",
+    "priority": 1,
+    "summary": "AWS announced AgentCore runtime instances (persistent EC2-backed compute) that host multi-agent workloads with shared sessions, GPU support, and up to 14-day session persistence—reducing custom infra for long-running, stateful agent workflows.",
+    "why_it_matters": "QA and agent engineers can run stateful, long-lived test agents, multi-agent workflows, and GPU tasks without building bespoke orchestration or storage for persistent session state.",
+    "source": "AWS News Blog",
+    "source_url": "https://aws.amazon.com/jp/blogs/aws/runtime-instances-persistent-compute-for-production-ai-agents-on-amazon-bedrock-agentcore/",
+    "published_at": "2026-08-06"
+  },
+  "items": [
+    {
+      "title": "Windows 11 arm64 VS2026 runner image now generally available for GitHub-hosted Actions",
+      "category": "CI / Runners",
+      "priority": 2,
+      "summary": "GitHub released a Windows 11 arm64 image with Visual Studio 2026 on its hosted runners, enabling Actions workflows to target Arm64 Windows environments without self-hosting.",
+      "why_it_matters": "Run matrix CI jobs for Arm64 Windows builds and test Windows-specific automation on GitHub-hosted runners, reducing the need for custom infrastructure in CI pipelines.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
+      "published_at": "2026-08-20T17:52:38Z"
+    },
+    {
+      "title": "GitHub Actions: separate workflow path for GitHub Code Quality (CodeQL) runs",
+      "category": "CI / Code scanning",
+      "priority": 2,
+      "summary": "GitHub added a dedicated workflow path for CodeQL Code Quality runs so Actions usage and run history distinguish code-quality scans from regular CI runs.",
+      "why_it_matters": "Makes auditing, billing, and troubleshooting CodeQL runs easier in CI; helpful for test infra owners separating scanning from test execution telemetry and costs.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-separate-github-actions-path-for-github-code-quality",
+      "published_at": "2026-08-20T14:29:27Z"
+    },
+    {
+      "title": "CodeQL 2.26.3 improves GitHub Actions queries and JavaScript/TypeScript modeling",
+      "category": "Static analysis / Security",
+      "priority": 2,
+      "summary": "CodeQL 2.26.3 updates JavaScript, TypeScript, and Vue source modeling and refines GitHub Actions query accuracy to reduce false positives and improve scan relevance.",
+      "why_it_matters": "Better JS/TS modeling and Actions-aware queries reduce noisy alerts, improving triage accuracy and lowering interrupted CI/test runs from false-positive scanning results.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-19-codeql-2-26-3-improves-github-actions-queries-and-javascript-modeling",
+      "published_at": "2026-08-19T21:09:30Z"
+    },
+    {
+      "title": "Code scanning adds a 'Mitigated' dismissal reason",
+      "category": "Security / Triage",
+      "priority": 2,
+      "summary": "GitHub Code Scanning introduced a 'Mitigated' dismissal reason for alerts where external controls (WAFs, network rules) reduce operational risk while the vulnerable code remains.",
+      "why_it_matters": "Allows QA and security teams to document and track risk mitigations in place without deleting or hiding alerts, improving auditability in CI and release processes.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-code-scanning-adds-a-mitigated-alert-dismissal-reason",
+      "published_at": "2026-08-20T15:14:31Z"
+    },
+    {
+      "title": "Track GitHub Code Quality enablement changes in the audit log",
+      "category": "Compliance / Observability",
+      "priority": 3,
+      "summary": "GitHub Code Quality now emits audit-log events when repository settings are enabled, disabled, or changed, giving an exact change history for CodeQL/Code Quality adjustments.",
+      "why_it_matters": "Useful for release and test-platform owners who need traceable change histories when scanning behavior or CI policies change and cause pipeline failures.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-track-github-code-quality-enablement-changes-in-the-audit-log",
+      "published_at": "2026-08-20T14:28:41Z"
+    },
+    {
+      "title": "Pin saved views to the repository issues sidebar (GitHub)",
+      "category": "Developer workflow / Triage",
+      "priority": 4,
+      "summary": "GitHub added the ability to pin saved issue views to a repository’s issues sidebar so teams can surface common triage and test-failure filters.",
+      "why_it_matters": "QA and SRE teams can pin flaky-test dashboards or failure queries for quick triage, reducing time to identify failing test patterns across repos.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-pin-projects-views-and-milestones-to-the-repository-sidebar",
+      "published_at": "2026-08-20T23:29:34Z"
+    },
+    {
+      "title": "Preparing your app for broader memory limits (Android guidance)",
+      "category": "Mobile QA / Android",
+      "priority": 2,
+      "summary": "Android platform guidance explains broader memory limits across devices and recommends memory-safe patterns, profiling, and tested fallbacks to preserve UX across the device ecosystem.",
+      "why_it_matters": "Memory regressions cause flakiness and crashes in mobile tests; follow these guidelines to design tests and CI guards that surface memory-driven instability early.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/app-broader-memory-limits.html",
+      "published_at": "2026-08-19T19:00:00Z"
+    },
+    {
+      "title": "Tinder reduces app cold starts 47% using the R8 Configuration Analyzer",
+      "category": "Mobile performance / Tooling",
+      "priority": 2,
+      "summary": "Tinder used a new R8 Configuration Analyzer to identify configuration issues and reduce Android cold-start time by 47%, describing the diagnostic workflow and fixes.",
+      "why_it_matters": "Performance regressions often surface as flakiness in mobile E2E tests; this analyzer is a practical tool for CI performance gates and pre-release performance checks.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/tinder-app-cold-start-r8-configuration-analyzer.html",
+      "published_at": "2026-08-18T18:00:00Z"
+    },
+    {
+      "title": "Jetpack XR SDK core libraries reach beta",
+      "category": "Android SDK / Testing",
+      "priority": 4,
+      "summary": "Android's Jetpack XR SDK core libraries moved to beta, formalizing APIs and test surfaces for XR applications across supported headsets and platforms.",
+      "why_it_matters": "If your product includes XR components, the beta SDK gives predictable APIs and testability guarantees for CI integration and automated device testing strategies.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/jetpack-xr-sdk-core-libraries-beta.html",
+      "published_at": "2026-08-18T17:00:00Z"
+    },
+    {
+      "title": "Consistency is the new latency: how data-layer consistency affects agent reliability",
+      "category": "RAG / Observability",
+      "priority": 2,
+      "summary": "AWS Architecture outlines how replication lag and inconsistent data stores degrade agent context and proposes matching replication models to tasks for more reliable agent behavior.",
+      "why_it_matters": "RAG systems and agents depend on consistent context; test infra and RAG evals must include replication-lag scenarios to avoid brittle, context-driven failures in production.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/consistency-is-the-new-latency-ai-at-the-data-layer/",
+      "published_at": "2026-08-18T11:13:20Z"
+    },
+    {
+      "title": "How AgentFlo built AI sales agents with Amazon Bedrock AgentCore — Part 1",
+      "category": "Agentic engineering / Case study",
+      "priority": 3,
+      "summary": "AWS Architecture describes AgentFlo’s approach to production agents on Bedrock AgentCore: recipe-based deployments, tool routing via AgentCore Gateway, and elastic, stateful runtime patterns.",
+      "why_it_matters": "Concrete patterns for deploying production agents help QA teams design realistic system tests, staging setups, and rollout plans for agent-driven features and integrations.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-1/",
+      "published_at": "2026-08-20T00:32:52Z"
+    },
+    {
+      "title": "How AlloyDB ScaNN scales vector search to 10 billion vectors",
+      "category": "Vector search / RAG",
+      "priority": 2,
+      "summary": "Google Cloud explains AlloyDB’s ScaNN index improvements (four-level tree) to scale vector search to 10B vectors while reducing query costs and improving tail latency.",
+      "why_it_matters": "Large-scale RAG and retrieval tests must consider index architecture and tail-latency behavior; this shows practical indices that enable high-throughput retrieval testing strategies.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/databases/alloydb-scann-index-four-level-tree-improves-vector-search/",
+      "published_at": "2026-08-20T16:00:00Z"
+    },
+    {
+      "title": "Expanding Google Antigravity for enterprise customers",
+      "category": "Agent platforms / Enterprise governance",
+      "priority": 3,
+      "summary": "Google Cloud wrote about expanding Antigravity (Gemini Enterprise Agent Platform) with enterprise controls: governance, licensing, and developer access across surfaces.",
+      "why_it_matters": "QA and platform teams running coding or QA agents need governance controls and enterprise-grade policies; this clarifies available enterprise controls for agent deployments.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers/",
+      "published_at": "2026-08-20T17:30:00Z"
+    },
+    {
+      "title": "Rider exposes its refactoring engine to AI agents for safer automated refactors",
+      "category": "Developer tools / Agent integration",
+      "priority": 3,
+      "summary": "JetBrains explains experiments where an agent drove Rider’s refactoring engine, detailing the sequence of tool calls and safety controls used during structural code changes.",
+      "why_it_matters": "Shows how coding agents can safely invoke refactors; informs QA test scenarios and safety checks for automation that mutates production code or tests.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/dotnet/2026/08/19/rider-refactoring-code-skill/",
+      "published_at": "2026-08-19T15:37:39Z"
+    },
+    {
+      "title": "AI Coding Agents: Adoption Trends (JetBrains Developer Ecosystem Survey 2026)",
+      "category": "Developer tools / Agent adoption",
+      "priority": 4,
+      "summary": "JetBrains Research published adoption trends showing broad daily/weekly use of AI coding tools and insights on where agent workflows are moving beyond prompting.",
+      "why_it_matters": "Signals where teams adopt agent workflows; QA and platform engineers should plan for agent-driven CI tasks, code generation, and evaluation points in pipelines.",
+      "source": "JetBrains Research Blog",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/",
+      "published_at": "2026-08-18T15:03:13Z"
+    },
+    {
+      "title": "What’s Fixed and Improved in PyCharm 2026.2",
+      "category": "IDE / Python tooling",
+      "priority": 4,
+      "summary": "PyCharm 2026.2 lists 263 fixes and improvements, including better Python type inference, fewer false positives, and more reliable refactorings that aid test and QA workflows.",
+      "why_it_matters": "Improved IDE correctness reduces developer-introduced test regressions and speeds debugging of flaky tests, benefiting Python/Pytest test maintenance and local test iteration.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/pycharm/2026/08/what-s-fixed-and-improved-in-pycharm-2026-2/",
+      "published_at": "2026-08-19T13:54:13Z"
+    },
+    {
+      "title": "Coding Agent Horror Stories: the command you already approved",
+      "category": "Security / Agent safety",
+      "priority": 2,
+      "summary": "Docker documents attack patterns where coding agents run previously approved shell commands to execute attacker code, and shows how Docker Sandboxes limit blast radius.",
+      "why_it_matters": "Practical cautionary examples for test infra and CI: always sandbox agent-executed commands and add observable guardrails in test pipelines and production agent runners.",
+      "source": "Docker Blog",
+      "source_url": "https://www.docker.com/blog/coding-agent-horror-stories-the-command-you-already-approved/",
+      "published_at": "2026-08-18T13:00:00Z"
+    },
+    {
+      "title": "MCP vs API: how they work together and when to use each",
+      "category": "Agent integration / CI",
+      "priority": 3,
+      "summary": "CircleCI explains the tradeoffs between Model Context Protocol (MCP) servers and traditional APIs, and when to favor one approach for agent tool integration.",
+      "why_it_matters": "Guides architects choosing integration patterns for agents in CI systems and test harnesses—important when designing tool routing, observability, and test isolation.",
+      "source": "CircleCI Blog",
+      "source_url": "https://circleci.com/blog/mcp-vs-api/",
+      "published_at": "2026-08-20T21:30:00Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "DeepSeek Harness open-source developer preview — a plugin-first agent harness",
+      "category": "Agent infrastructure / Open source",
+      "priority": 2,
+      "summary": "DeepSeek released a developer-preview of DeepSeek Harness (dsh), an MIT-licensed, plugin-first agent execution harness intended to modularize agent toolchains and event logging.",
+      "why_it_matters": "A promising open harness that could change how teams run, instrument, and security-scan agent components; watch for stability, tooling integration, and security audits.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/deep-seek-harness/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-20T05:05:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Evaluating AI Agent Skill Performance with NVIDIA SkillEvaluator",
+      "category": "Agent evaluation / Tooling (tutorial & docs)",
+      "priority": 2,
+      "summary": "NVIDIA published SkillEvaluator, an open-source, multi-tier framework to evaluate agent skills across static checks, semantic overlap detection, synthetic eval generation, and live agent evaluation.",
+      "why_it_matters": "Provides a practical, repeatable pipeline for skill-level evaluation and quality gates, directly applicable to LLM- and agent-testing workflows and CI validation.",
+      "source": "NVIDIA Developer Blog / Documentation",
+      "source_url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/",
+      "published_at": "2026-08-19T16:00:00Z"
+    }
+  ]
+}

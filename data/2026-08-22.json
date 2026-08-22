@@ -1,0 +1,220 @@
+{
+  "date": "2026-08-22",
+  "headline": "Practical signals for QA automation and agentic engineering: agent runtimes in CI, agent evaluation, GitHub Actions runner updates, CodeQL and CI ergonomics, Android memory guidance, and infrastructure practices to test and observe.",
+  "top_signal": {
+    "title": "Run AI agents in GitHub Actions using Docker Sandboxes",
+    "category": "Agentic engineering / CI",
+    "priority": 1,
+    "summary": "Docker documented Docker Sandboxes integrated with GitHub Agentic Workflows so CI-hosted agents can run inside microVM sandboxes, use a private Docker daemon, execute Testcontainers, run tests, and open safe draft PRs from CI. Practical sample included.",
+    "why_it_matters": "This enables bounded, reproducible agent-driven test runs and fixes inside CI while limiting blast radius — directly applicable to agentic QA tasks that must run real integration tests safely.",
+    "source": "Docker Blog",
+    "source_url": "https://www.docker.com/blog/running-ai-agents-in-github-actions-with-docker-sandboxes/",
+    "published_at": "2026-08-21"
+  },
+  "items": [
+    {
+      "title": "Cloudflare cut Astro project GitHub issues by ~85% using AI agents for triage",
+      "category": "Agentic engineering / Triage",
+      "priority": 2,
+      "summary": "Cloudflare reported using AI agents to triage and manage Astro GitHub issues, automating categorization, triage, and some fixes to reduce human-handled issues substantially.",
+      "why_it_matters": "Shows a concrete, production example of agent-driven triage workflows and their operational impact — useful when designing automated issue workflows integrated with testing and CI.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/cloudflare-astro-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Cloudflare launches Bot Preference Sync to align robots.txt with bot policies",
+      "category": "Web QA / Crawling & data governance",
+      "priority": 3,
+      "summary": "Cloudflare released Bot Preference Sync to map robots.txt and site crawling settings to centralized bot policies for search, agent, and training use-cases, simplifying management of who can access site content.",
+      "why_it_matters": "QA and RAG datasets depend on controlled crawls and training access; this reduces accidental data exposure and ensures consistent robot behavior for tests and agents.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/bot-preference-sync/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "NVIDIA publishes SkillEvaluator for measuring AI agent skills",
+      "category": "Agent evaluation / LLM evals",
+      "priority": 2,
+      "summary": "NVIDIA released SkillEvaluator, a toolkit and methodology to evaluate agent skill performance across tasks, focusing on multi-step workflows and context efficiency for agentic systems.",
+      "why_it_matters": "Provides an operational framework and tooling to measure agent effectiveness in QA flows, enabling repeatable benchmarks for agent-driven testing tasks and regressions.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/",
+      "published_at": "2026-08-19"
+    },
+    {
+      "title": "NVIDIA AVO hits 100% on ARC-AGI-3 for long-horizon agent evaluation",
+      "category": "Agent benchmarks / Research",
+      "priority": 3,
+      "summary": "NVIDIA reported AVO achieving top scores on the ARC-AGI-3 benchmark, demonstrating a general-purpose architecture for long-horizon autonomous agents and the importance of harness design.",
+      "why_it_matters": "Highlights that agent harness and tooling (not just base models) determine long-run autonomous behavior — important when designing CI agents that must reliably follow multi-step test plans.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Azure DevOps Remote MCP Server reaches GA (with limited model integrations)",
+      "category": "CI / Platform integration",
+      "priority": 3,
+      "summary": "Microsoft shipped Azure DevOps Remote MCP Server as GA, offering a hosted endpoint into work items, repos and pipelines; notable caveat: some agent clients (Claude Desktop, Claude Code, ChatGPT, Cursor) can't connect yet due to Entra limitations.",
+      "why_it_matters": "GA gives teams a hosted MCP endpoint to integrate agent workflows and CI pipelines but signals remaining auth gaps for some agent tooling — important for integration planning.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/azure-devops-remote-mcp-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "GitHub Actions: Windows 11 arm64 VS2026 runner image now generally available",
+      "category": "CI / Runners",
+      "priority": 3,
+      "summary": "GitHub added a Windows 11 arm64 image preloaded with Visual Studio 2026 to its hosted runners, enabling native arm64 Windows builds and tests on GitHub-hosted runners.",
+      "why_it_matters": "Means teams can run Windows-arm64 builds and test suites in hosted CI without self-hosted runners — valuable for cross-architectural mobile/desktop test coverage and SDK validation.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available/",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "CodeQL 2.26.3 improves GitHub Actions queries and JavaScript/TypeScript modeling",
+      "category": "Static analysis / Security QA",
+      "priority": 2,
+      "summary": "GitHub released CodeQL 2.26.3 with improved modeling for JavaScript/TypeScript and better GitHub Actions query accuracy, reducing false positives and improving code-scanning fidelity.",
+      "why_it_matters": "More accurate modeling lowers noise from code scanning in CI pipelines, reducing developer churn and making SAST a more practical gate in QA workflows.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-19-codeql-2-26-3-improves-github-actions-queries-and-javascript-modeling/",
+      "published_at": "2026-08-19"
+    },
+    {
+      "title": "GitHub separates Code Quality (CodeQL) workflow path in Actions reporting",
+      "category": "CI / Developer ergonomics",
+      "priority": 3,
+      "summary": "GitHub introduced a dedicated workflow path for CodeQL/code-quality runs so Actions history and usage reports show Code Quality jobs separately from other workflow types.",
+      "why_it_matters": "Simplifies monitoring and cost attribution for code-scanning runs and helps teams tune when and how CodeQL runs in CI to avoid noisy gating during heavy test cycles.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-separate-github-actions-path-for-github-code-quality/",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "GitHub brings Copilot agent features into Slack (public preview)",
+      "category": "Developer tooling / Collaboration",
+      "priority": 4,
+      "summary": "GitHub updated its Slack integration to expose Copilot CLI and Copilot app agentic capabilities inside Slack, enabling collaborative agent sessions and actioning directly from channels.",
+      "why_it_matters": "Eases running light-weight agent workflows and collecting context from teams; relevant for ops-first QA triage and quick, collaborative test-debug cycles.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+      "category": "Developer tooling / Collaboration",
+      "priority": 4,
+      "summary": "GitHub added a Teams integration that lets channel participants start and steer a Copilot agent session collaboratively, converting discussions into agent-led workflows.",
+      "why_it_matters": "Makes agent sessions observable to teams and eases handoffs for agent-driven fixes or test tasks coordinated across engineering and QA stakeholders.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Android warns developers to prepare apps for broader memory limits",
+      "category": "Mobile QA / Android",
+      "priority": 2,
+      "summary": "Android Developers published guidance on preparing apps for devices with lower memory budgets and changes to memory limits to keep devices responsive across the ecosystem.",
+      "why_it_matters": "Mobile QA must test under tighter memory constraints and validate behavior for memory pressure to avoid regressions on lower-memory Android devices.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/app-broader-memory-limits.html",
+      "published_at": "2026-08-19"
+    },
+    {
+      "title": "AgentFlo case study: building AI sales agents with Amazon Bedrock AgentCore (Part 2)",
+      "category": "Agent architecture / Observability",
+      "priority": 3,
+      "summary": "AWS published a Part 2 case study showing how AgentFlo built trusted sales agents using Bedrock AgentCore, with a three-layer guardrail model, grounded data, and end-to-end observability.",
+      "why_it_matters": "Concrete architecture and observability patterns for production agent services help QA teams design validation and monitoring for agent-driven flows and regressions.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-2/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Build a unified AI agent architecture with DynamoDB and Bedrock",
+      "category": "Agent architecture / RAG infra",
+      "priority": 3,
+      "summary": "AWS shows a pattern storing vectors and operational data in a single DynamoDB table so Bedrock agents can use one table for semantic search and structured lookups, simplifying RAG architectures.",
+      "why_it_matters": "Operationalizes vector storage patterns that QA and RAG tests must validate (consistency, scaling, latency) when agents rely on combined vector/operational stores.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/build-a-unified-ai-agent-architecture-with-dynamodb-and-bedrock/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "JetBrains traced their refactoring engine during agent refactor experiments",
+      "category": "Developer tools / Agent testing",
+      "priority": 4,
+      "summary": "JetBrains analyzed a frontier model across refactoring tasks in Rider, tracking tool calls, git commands, and structural transformations to evaluate safety and operator behavior of coding agents.",
+      "why_it_matters": "Practical telemetry about agent tool usage and failure modes helps QA teams define guardrails, observability, and test cases for agent-powered refactors.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/dotnet/2026/08/19/rider-refactoring-code-skill/",
+      "published_at": "2026-08-19"
+    },
+    {
+      "title": "PyCharm 2026.2: fixes and reliability improvements for Python development",
+      "category": "Developer tooling / Python QA",
+      "priority": 4,
+      "summary": "PyCharm 2026.2 shipped 263 fixes improving type inference, completions, refactorings, and reducing false positives — changes that speed Python development and test maintenance.",
+      "why_it_matters": "More accurate editor tooling reduces developer friction when maintaining Pytest suites and test scaffolding, shaving time from QA iteration loops.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/pycharm/2026/08/what-s-fixed-and-improved-in-pycharm-2026-2/",
+      "published_at": "2026-08-19"
+    },
+    {
+      "title": "From ClickOps to governed IaC: CloudFormation drift detection in practice",
+      "category": "Test infra / IaC",
+      "priority": 3,
+      "summary": "AWS published a practical guide on detecting CloudFormation drift and moving from manual console changes to governed Infrastructure as Code with drift detection and remediation patterns.",
+      "why_it_matters": "Flaky environments and unreproducible test failures often stem from ClickOps; drift detection helps stabilize testbeds and reduce environment-induced test flakiness.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "CircleCI explains choosing MCP vs API and when to use each",
+      "category": "CI / Orchestration",
+      "priority": 4,
+      "summary": "CircleCI outlines the tradeoffs between using their MCP (Managed Control Plane) and direct API approaches for integrating builds and orchestrating jobs, with practical guidance for infra teams.",
+      "why_it_matters": "Clarifies integration choices for CI-driven test infrastructure, helping teams pick patterns that minimize flakiness and maximize observability for large test suites.",
+      "source": "CircleCI Blog",
+      "source_url": "https://circleci.com/blog/mcp-vs-api/",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "AlloyDB ScaNN index uses a four-level tree to scale vector search to billions of vectors",
+      "category": "RAG infra / Vector search",
+      "priority": 3,
+      "summary": "Google described a four-level tree ScaNN index in AlloyDB to scale vector search to ten billion vectors, focusing on index structure and search-time tradeoffs for enterprise agent workloads.",
+      "why_it_matters": "Large-scale RAG systems used by agents need validation across precision, recall, and latency — this design note helps QA test scaling and degradation scenarios.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/databases/alloydb-scann-index-four-level-tree-improves-vector-search/",
+      "published_at": "2026-08-20"
+    }
+  ],
+  "watch": [
+    {
+      "title": "DeepSeek open-sources Harness: modular execution runtime for AI agents (developer preview)",
+      "category": "Agent runtime / Open source",
+      "priority": 2,
+      "summary": "DeepSeek published a developer preview of DeepSeek Harness (dsh), an open-source micro-kernel execution runtime for building autonomous agents with modular plugins and append-only event logging.",
+      "why_it_matters": "If adopted, dsh could become a common harness for agent testing and reproducible agent telemetry; worth tracking for integration and eval tooling decisions.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/deep-seek-harness/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-20"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Presentation: Enchant Your AI and APIs with eBPF Magic (InfoQ)",
+      "category": "Observability / Security",
+      "priority": 3,
+      "summary": "Dan Finneran demonstrates using eBPF to intercept and control AI API traffic in Kubernetes for prompt filtering, model swapping, syscall restrictions, and transparent policy enforcement.",
+      "why_it_matters": "Practical techniques for kernel-level observability and enforcement that QA and SRE teams can use to monitor and constrain agent behavior in staging and production.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/ebpf-ai-gateway-kubernetes-security/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-21"
+    }
+  ]
+}

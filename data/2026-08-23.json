@@ -1,0 +1,240 @@
+{
+  "date": "2026-08-23",
+  "headline": "Agentic CI, isolating runtimes, and practical agent evaluation — updates that change test infra, CI workflows, and how engineering teams validate agent behavior",
+  "top_signal": {
+    "title": "Run AI agents in GitHub Actions using Docker Sandboxes",
+    "category": "CI/CD · Agentic AI",
+    "priority": 1,
+    "summary": "Docker documented using Docker Sandboxes (sbx) inside GitHub Actions to run isolated AI agents that can start containers, run Testcontainers integration tests, and open draft PRs — demonstrating agent-driven test-and-fix flows inside CI runners.",
+    "why_it_matters": "Teams can safely prototype agentic workflows that run tests, reproduce failures, and propose fixes in CI, changing how test automation and triage integrate with Git workflows.",
+    "source": "Docker Blog",
+    "source_url": "https://www.docker.com/blog/running-ai-agents-in-github-actions-with-docker-sandboxes/",
+    "published_at": "2026-08-21"
+  },
+  "items": [
+    {
+      "title": "Cloudflare announces Kitesurf, a browser engine for agents",
+      "category": "Web QA · Headless Browsers",
+      "priority": 2,
+      "summary": "Cloudflare (reported by InfoQ) introduced Kitesurf: a lightweight browser runtime built for automated workloads, running components in Wasm/Rust on Cloudflare Workers with CDP compatibility for Playwright and Puppeteer.",
+      "why_it_matters": "A smaller, secure browser runtime changes options for scalable headless test execution and agent-driven scraping/interaction in CI and device farms.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/cloudflare-kitesurf-browser/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-22"
+    },
+    {
+      "title": "Windows 11 arm64 VS2026 image generally available on GitHub-hosted runners",
+      "category": "CI/CD · Runners",
+      "priority": 2,
+      "summary": "GitHub released a Windows 11 arm64 image with Visual Studio 2026 for standard and larger hosted runners, letting workflows target arm64 Windows build and test matrices without custom self-hosted runners.",
+      "why_it_matters": "Mobile and desktop test matrices, cross-compilation, and native Windows arm64 coverage in CI become simpler to add to GitHub Actions matrices.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-windows-11-arm64-vs2026-image-generally-available",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "Separate GitHub Actions path for GitHub Code Quality workflows",
+      "category": "CI/CD · Code Scanning",
+      "priority": 3,
+      "summary": "GitHub added a dedicated workflow path so Code Quality / CodeQL runs are tracked separately in workflow history and Actions usage reports, improving visibility into scanning runs versus other CI jobs.",
+      "why_it_matters": "Teams get clearer audit and cost visibility for code-quality runs, making it easier to separate scan usage and troubleshoot workflow failures tied to scanning actions.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-separate-github-actions-path-for-github-code-quality",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "Cloudflare launches Bot Preference Sync to align robots.txt with bot policies",
+      "category": "Web Ops · Agent Governance",
+      "priority": 3,
+      "summary": "Cloudflare released Bot Preference Sync to keep robots.txt aligned with configured agent/search/training bot policies, removing the need to maintain separate static files for bot access rules.",
+      "why_it_matters": "Content owners and QA teams can centralize agent access policies and reduce accidental crawler/agent regressions that affect integration tests and monitoring.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/bot-preference-sync/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Where security fits in an AI agent stack (NVIDIA guidance)",
+      "category": "Agent Security · Observability",
+      "priority": 2,
+      "summary": "NVIDIA published guidance on embedding security controls into agent stacks, covering model access, trust boundaries, and runtime constraints to reduce risk from long-horizon agent actions.",
+      "why_it_matters": "Practical controls and architectural guardrails help test and platform teams instrument agent behavior, alerts, and runtime limits in production and CI environments.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Build unified AI agent architecture with DynamoDB and Bedrock (AWS)",
+      "category": "Agent Architecture · RAG",
+      "priority": 3,
+      "summary": "AWS published a hands-on guide showing how to store vectors and operational data in DynamoDB and use Amazon Bedrock agents for unified retrieval and lookups inside an agent architecture.",
+      "why_it_matters": "Practical patterns for context storage and semantic lookups matter to RAG testing, reproducible evals, and reliable grounding of agent outputs during integration tests.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/build-a-unified-ai-agent-architecture-with-dynamodb-and-bedrock/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "AgentFlo case study: building trusted sales agents with Amazon Bedrock AgentCore (Part 2)",
+      "category": "Agent Engineering · Observability",
+      "priority": 3,
+      "summary": "AWS posted AgentFlo’s Part 2 describing three-layer guardrails, grounded data, and observability architecture for Bedrock AgentCore-based sales agents, including real-time voice and server-side pipelines.",
+      "why_it_matters": "Shows concrete observability and guardrail patterns teams can reuse to validate agent outputs, build test harnesses, and instrument production agent behavior.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-2/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Cloudflare reduced Astro repo issues by ~85% with AI agents (case study)",
+      "category": "Agentic Workflows · Developer Tools",
+      "priority": 4,
+      "summary": "InfoQ reported Cloudflare used agent orchestration around OpenCode to triage and fix issues in the Astro repo, cutting issue volume substantially through automated triage and developer-in-the-loop workflows.",
+      "why_it_matters": "Concrete engineering results from agentic triage provide evidence teams can pilot agents for issue triage, reducing manual QA triage overhead while preserving human oversight.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/cloudflare-astro-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "LinkedIn describes multi-agent AI code review platform at scale",
+      "category": "Agentic QA · LLM Evals",
+      "priority": 2,
+      "summary": "InfoQ summarized LinkedIn’s multi-agent code-review platform: multiple independent reviewers, deep customization of conventions, and an acceptance-rate evaluation pipeline measuring developer adoption of suggestions.",
+      "why_it_matters": "LinkedIn’s measurement-driven approach and evaluation pipeline is a useful template for teams running LLM-based reviewers and measuring signal-to-noise and adoption rates.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/linkedin-ai-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-22"
+    },
+    {
+      "title": "New GitHub Copilot experience in Slack (public preview)",
+      "category": "Developer Tools · Agentic Workflows",
+      "priority": 4,
+      "summary": "GitHub announced a public preview bringing Copilot agent capabilities into Slack so teams can run collaborative, agentic sessions from Slack channels and threads.",
+      "why_it_matters": "Embedding agent workflows in chat surfaces shortens feedback loops and can be used to orchestrate small test triage workflows and developer-driven fixes from chat.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+      "category": "Developer Tools · Collaboration",
+      "priority": 4,
+      "summary": "GitHub added shared agent sessions to Microsoft Teams, letting teams start and collaboratively direct Copilot sessions from Teams conversations.",
+      "why_it_matters": "Teams running CI and test triage can centralize agent-driven diagnostics and patch proposals inside collaboration tools they already use.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "From ClickOps to governed IaC: CloudFormation drift detection in practice",
+      "category": "Test Infra · IaC",
+      "priority": 3,
+      "summary": "AWS published a practical guide showing how to detect and remediate CloudFormation drift in environments that grew via the console (ClickOps), including policy and remediation patterns.",
+      "why_it_matters": "Reliable environment provisioning is critical for reproducible integration tests and device-farm/CI environments; drift detection reduces flaky infra-related test failures.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+      "published_at": "2026-08-21"
+    },
+    {
+      "title": "AlloyDB ScaNN index improves vector search scaling to billions of vectors",
+      "category": "RAG · Vector DBs",
+      "priority": 3,
+      "summary": "Google Cloud detailed AlloyDB’s four-level ScaNN index that scales vector search to large datasets, targeting enterprise agentic workloads with billions of vectors.",
+      "why_it_matters": "Scalable vector search directly impacts RAG test coverage and stress-testing evaluation of retrieval quality under production-scale data volumes.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/databases/alloydb-scann-index-four-level-tree-improves-vector-search/",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "Cloudflare adds task-based OAuth consent (optional scopes)",
+      "category": "Auth · Agent Governance",
+      "priority": 3,
+      "summary": "Cloudflare introduced task-based OAuth consent allowing optional scopes and finer-grained consent for specific flows, helping apps request less privilege by default.",
+      "why_it_matters": "Finer OAuth scopes reduce blast radius for agents and help QA teams simulate realistic, least-privilege credentials in end-to-end tests.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/task-based-oauth-consent/",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "MCP vs API: When to use CircleCI’s MCP vs API",
+      "category": "CI/CD · Integrations",
+      "priority": 4,
+      "summary": "CircleCI explained trade-offs between using its MCP (managed control plane) and direct API approaches for integrations, covering latency, control, and operational differences.",
+      "why_it_matters": "Choosing the right control plane influences how test orchestration and agent harnesses integrate with CI, affecting observability and reliability.",
+      "source": "CircleCI Blog",
+      "source_url": "https://circleci.com/blog/mcp-vs-api/",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "Code scanning adds a 'Mitigated' dismissal reason in GitHub",
+      "category": "Security · Code Scanning",
+      "priority": 4,
+      "summary": "GitHub Code Scanning now supports dismissing alerts with a Mitigated reason when external controls (WAF, network) reduce the risk, making alert state clearer in the UI.",
+      "why_it_matters": "QA and security teams can track vulnerabilities that remain in code but are mitigated externally, improving triage and test acceptance criteria.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-code-scanning-adds-a-mitigated-alert-dismissal-reason",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "Track GitHub Code Quality enablement changes in the audit log",
+      "category": "Compliance · CI/CD",
+      "priority": 4,
+      "summary": "GitHub Code Quality now emits audit-log events when enabled, disabled, or reconfigured at repo level, giving admins a historical trail of code-quality feature changes.",
+      "why_it_matters": "Auditability helps test-platform and security teams detect configuration changes that could affect CI behavior or cause unexpected test coverage gaps.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-track-github-code-quality-enablement-changes-in-the-audit-log",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "Pin saved views to the repository issues sidebar (GitHub)",
+      "category": "Developer Productivity · Issue Triage",
+      "priority": 5,
+      "summary": "GitHub made it possible to pin saved project views to a repository’s issues sidebar, easing access to the filters teams use for triage and QA backlogs.",
+      "why_it_matters": "Faster access to consistent issue views reduces triage friction for QA teams responding to flaky-test reports and production regressions.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-20-pin-projects-views-and-milestones-to-the-repository-sidebar",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "InfoQ opens enrollment for AI-Assisted Engineering certification",
+      "category": "Training · Agent Governance",
+      "priority": 5,
+      "summary": "InfoQ announced a five-week AI-Assisted Engineering certification focused on senior engineers who run coding agents against production code and want governance and testing patterns.",
+      "why_it_matters": "A focused practitioner course may help QA and platform engineers adopt proven patterns for agent oversight, evals, and safe rollout.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/ai-assisted-engineering/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-20"
+    },
+    {
+      "title": "Spring Boot configuration management best practices (JetBrains)",
+      "category": "Frameworks · Test Stability",
+      "priority": 5,
+      "summary": "JetBrains published best practices for Spring Boot configuration management to keep artifacts environment-agnostic and reduce config drift between test, staging, and production.",
+      "why_it_matters": "Reducing config drift and standardizing config injection reduces flaky integration tests and makes test environments more predictable for QA automation.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/idea/2026/08/spring-boot-configuration-management-best-practices/",
+      "published_at": "2026-08-21"
+    }
+  ],
+  "watch": [
+    {
+      "title": "AWS releases aws-bench for evaluating agents on cloud tasks",
+      "category": "Agent Evaluation · Benchmarks",
+      "priority": 2,
+      "summary": "AWS published aws-bench, an open-source benchmark that runs agents against real AWS tasks in disposable accounts and scores behaviour via automated verifiers to measure task success and safety.",
+      "why_it_matters": "A standardized, infrastructure-backed agent benchmark helps QA and platform teams evaluate agent reliability, task fidelity, and possible side effects before production rollout.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/aws-bench-agent-evaluation/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-22"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Enchant Your AI and APIs with eBPF Magic — Dan Finneran (presentation)",
+      "category": "Security · Observability",
+      "priority": 3,
+      "summary": "InfoQ hosted a talk demonstrating how eBPF can intercept AI API traffic in Kubernetes for prompt filtering, model swapping, token limits, and syscall restrictions to secure agent-generated code and API calls.",
+      "why_it_matters": "Concrete eBPF patterns give platform and QA engineers low-latency controls to sandbox agent traffic and enforce runtime policies without app changes.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/presentations/ebpf-ai-gateway-kubernetes-security/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-21"
+    }
+  ]
+}

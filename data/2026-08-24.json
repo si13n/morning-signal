@@ -1,0 +1,230 @@
+{
+  "date": "2026-08-24",
+  "headline": "Agentic CI, sandboxed agent runtimes, and operational benchmarks dominate practical QA automation planning this week.",
+  "top_signal": {
+    "title": "Running AI agents in GitHub Actions with Docker Sandboxes",
+    "category": "CI/CD / Agentic engineering",
+    "priority": 1,
+    "summary": "Docker published a guide showing how Docker Sandboxes can host isolated AI agents inside GitHub Actions—running Testcontainers tests, reproducing failures, and opening draft PRs from CI jobs in a microVM sandboxed runtime.",
+    "why_it_matters": "Shows a practical pattern for running test-driving agents inside CI with isolation, secrets controls, and reproducible sandboxes you can integrate into existing GitHub Actions pipelines.",
+    "source": "Docker Blog",
+    "source_url": "https://www.docker.com/blog/running-ai-agents-in-github-actions-with-docker-sandboxes/",
+    "published_at": "2026-08-21T13:00:00Z"
+  },
+  "items": [
+    {
+      "title": "Cloudflare cuts Astro GitHub issues by ~85% using isolated agents",
+      "category": "Agentic engineering / Open-source QA",
+      "priority": 2,
+      "summary": "Cloudflare and the Astro maintainers deployed isolated subagents in GitHub Actions that reproduce, triage, and verify issues; the workflow shrank a backlog of ~200+ issues to roughly 30 and is open-sourced as Flue.",
+      "why_it_matters": "A concrete, production example of agent-driven triage with human-in-the-loop verification—useful pattern and codebase for teams automating issue triage and reproducible bug tests.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/cloudflare-astro-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-21T14:09:00Z"
+    },
+    {
+      "title": "Flue 1.0 Beta: an open agent framework (Astro team)",
+      "category": "Agent frameworks / Developer tooling",
+      "priority": 2,
+      "summary": "Flue published a 1.0 beta: a TypeScript-first agent framework with durable agents, sandboxes, channels (GitHub/Slack), observability hooks, and a declarative agent model designed for production agent workflows.",
+      "why_it_matters": "Flue packages a replicable developer experience (agents, sandboxes, channels), making it easier to run reproducible agent-driven test and triage flows inside CI and platform targets.",
+      "source": "Flue (project)",
+      "source_url": "https://flueframework.com/blog/flue-1-0-beta/",
+      "published_at": "2026-06-16T00:00:00Z"
+    },
+    {
+      "title": "Cloudflare publishes Agents SDK / Flue integration (agent primitives)",
+      "category": "Agentic engineering / Platform SDKs",
+      "priority": 2,
+      "summary": "Cloudflare opened its Agents SDK primitives—durable execution, durable filesystem, and bindings—and documented how frameworks like Flue plug into Workers, Browser Run, and AI Gateway for production agents.",
+      "why_it_matters": "Platform primitives reduce custom harness code; reuse these building blocks to standardize agent test harnesses, state recovery, and tracing across environments.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/agents-platform-flue-sdk/",
+      "published_at": "2026-06-17T00:00:00Z"
+    },
+    {
+      "title": "Kitesurf: Cloudflare’s agent-first browser (blog)",
+      "category": "Web automation / Browser tooling",
+      "priority": 2,
+      "summary": "Cloudflare introduced Kitesurf, a lightweight, stateless browser runtime built for AI agents that runs on Workers, optimizes token/cpu use, and exposes a CDP-like interface for automation tasks.",
+      "why_it_matters": "A thinner browser runtime reduces cost and scaling friction for agent-driven scraping and RAG pipelines; useful when pixel-perfect rendering is unnecessary for QA automation tasks.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/kitesurf/",
+      "published_at": "2026-08-06T00:00:00Z"
+    },
+    {
+      "title": "Kitesurf docs: Browser Run & agent-targeted APIs",
+      "category": "Web QA / Automation docs",
+      "priority": 3,
+      "summary": "Cloudflare’s developer docs describe how Kitesurf runs in V8 isolates on Workers, tradeoffs vs. full Chromium, and integration points for Playwright/Puppeteer-style automation via Browser Run.",
+      "why_it_matters": "Implementation details and API surface help QA teams decide if Kitesurf can replace heavier headless Chromium flows in device farms or CI runs.",
+      "source": "Cloudflare Developers",
+      "source_url": "https://developers.cloudflare.com/browser-run/kitesurf/",
+      "published_at": "2026-08-06T00:00:00Z"
+    },
+    {
+      "title": "aws-bench: AWS’s open benchmark for evaluating agents on real cloud tasks",
+      "category": "Agent evaluation / Benchmarks",
+      "priority": 2,
+      "summary": "AWS released aws-bench, an open-source benchmark that evaluates agent performance on realistic AWS tasks using disposable accounts and automated verifiers to score correctness and safety.",
+      "why_it_matters": "Provides an operational benchmark for agent harnesses and eval pipelines—useful for comparing agent versions, tuning tool use, and regression testing agent capabilities on infra tasks.",
+      "source": "AWS (What’s New)",
+      "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-bench/",
+      "published_at": "2026-07-01T00:00:00Z"
+    },
+    {
+      "title": "Docker Sandboxes: release notes and docs for reproducible sandboxes",
+      "category": "CI/CD / Test infrastructure",
+      "priority": 2,
+      "summary": "Docker published Sandboxes docs and release notes describing .sbxenv.yaml sandboxes, microVM isolation, resource limits, and workflow integration with GitHub Actions and Testcontainers.",
+      "why_it_matters": "Defines a reproducible, versioned sandbox spec that QA teams can commit to repos—improves local/dev-to-CI parity for agent-driven tests and risky sandboxed experiments.",
+      "source": "Docker Docs",
+      "source_url": "https://docs.docker.com/ai/sandboxes/release-notes/",
+      "published_at": "2026-08-?T00:00:00Z"
+    },
+    {
+      "title": "Azure DevOps Remote MCP Server reaches GA (hosted MCP endpoint)",
+      "category": "Agent integration / Dev tooling",
+      "priority": 2,
+      "summary": "Microsoft announced GA for the Azure DevOps Remote MCP Server, a hosted endpoint that lets MCP-compatible assistants access work items, repos, and pipelines without local install; some third-party clients still limited by Entra flows.",
+      "why_it_matters": "Hosted MCP servers lower friction for integrating agents into developer workflows and CI/CD; verify client auth compatibility before production adoption.",
+      "source": "Azure DevOps Blog",
+      "source_url": "https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-ga/",
+      "published_at": "2026-08-05T00:00:00Z"
+    },
+    {
+      "title": "AgentFlo on AWS: two-part architecture posts for production agents",
+      "category": "Agentic engineering / Observability",
+      "priority": 2,
+      "summary": "AWS Architecture Blog posted a two-part case study showing how AgentFlo built multi-tenant sales agents on Amazon Bedrock AgentCore with serverless scaling, Cedar policies, and end-to-end observability producing measurable revenue gains.",
+      "why_it_matters": "Concrete architecture and observability patterns (trace-level tool calls, token accounting) are immediately applicable to QA and incident playbooks for agentic systems.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-2/",
+      "published_at": "2026-08-21T10:01:18Z"
+    },
+    {
+      "title": "AgentFlo (Part 1): velocity, standardization, scalability on Bedrock AgentCore",
+      "category": "Agentic engineering / Devops",
+      "priority": 3,
+      "summary": "Part 1 explains recipe-based deployments, tool routing via AgentCore Gateway, and multi-region scalability for stateful agent conversations on Bedrock AgentCore.",
+      "why_it_matters": "Re-usable patterns for CI/CD, multi-tenant testing, and controlled tool access—relevant when building deterministic agent QA and staging environments.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-agentflo-built-ai-sales-agents-with-amazon-bedrock-agentcore-part-1/",
+      "published_at": "2026-08-19T00:00:00Z"
+    },
+    {
+      "title": "Build a unified AI agent architecture with DynamoDB and Bedrock (AWS)",
+      "category": "Agent architecture / RAG & storage",
+      "priority": 3,
+      "summary": "AWS published a how‑to showing how to store embeddings and operational data in a single DynamoDB table with native vector search for Bedrock-based agents and retrieval patterns for RAG workflows.",
+      "why_it_matters": "Practical pattern for QA teams validating RAG correctness: reduces data plumbing and simplifies reproducible tests for retrieval behavior across environments.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/build-a-unified-ai-agent-architecture-with-dynamodb-and-bedrock/",
+      "published_at": "2026-08-21T18:19:23Z"
+    },
+    {
+      "title": "Cloudflare Bot Preference Sync: keep robots.txt aligned with AI bot policies",
+      "category": "Web QA / Bot governance",
+      "priority": 3,
+      "summary": "Cloudflare launched Bot Preference Sync to automatically keep robots.txt in sync with zone-level AI bot settings (Search, Agent, Training), avoiding manual file maintenance when toggling bot policies.",
+      "why_it_matters": "If your QA or test agents scrape pages, this changes crawling expectations and reduces accidental agent blocks; update test harnesses and allowed-crawler configs accordingly.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/bot-preference-sync/",
+      "published_at": "2026-08-21T23:19:57Z"
+    },
+    {
+      "title": "GitHub: Copilot experience in Slack (public preview)",
+      "category": "Developer tooling / Agent UX",
+      "priority": 3,
+      "summary": "GitHub rolled a public preview Copilot integration for Slack, bringing Copilot CLI and app agentic capabilities into Slack channels for collaborative agent sessions and workflows.",
+      "why_it_matters": "Puts agent-driven developer interactions into chat platforms you might already use for triage and on-call flows—evaluate access controls and audit trails before enabling.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "published_at": "2026-08-21T16:07:15Z"
+    },
+    {
+      "title": "GitHub: Shared agentic work with Copilot in Microsoft Teams",
+      "category": "Developer tooling / Collaboration",
+      "priority": 3,
+      "summary": "GitHub added a Copilot integration for Teams that turns a conversation into a visible, shared agent session so colleagues can co-direct an agent in context.",
+      "why_it_matters": "Useful for collaborative triage and code changes driven by agents; ensure conversation-level permissions, audit logs, and CI gating remain enforced.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
+      "published_at": "2026-08-21T16:03:36Z"
+    },
+    {
+      "title": "From clickops to governed IaC: CloudFormation drift detection in practice",
+      "category": "CI/CD / Infrastructure testing",
+      "priority": 3,
+      "summary": "AWS DevOps blog details patterns for detecting CloudFormation drift and converting manual console changes into governed IaC workflows and drift remediation tests.",
+      "why_it_matters": "Drift detection and automated remediation tests reduce flaky infra-dependent tests and make environment parity more testable in CI pipelines.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/from-clickops-to-governed-iac-cloudformation-drift-detection-in-practice/",
+      "published_at": "2026-08-21T10:48:22Z"
+    },
+    {
+      "title": "DoorDash presentation: SafeChat moderation architecture (hybrid pipeline)",
+      "category": "Observability / LLM evals / Safety",
+      "priority": 3,
+      "summary": "DoorDash described SafeChat, a hybrid moderation pipeline using fast internal models to filter clear cases, LLM multi-axis scoring for nuanced decisions, and no-code workflows with backtesting for moderation policies.",
+      "why_it_matters": "Hybrid moderation patterns and multi-axis scoring are practical approaches for building evaluation and guardrail tests for customer-facing agent behaviors.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/doordash-llm-ai-moderation-platform/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-22T11:00:00Z"
+    },
+    {
+      "title": "Netflix TechBlog: A tale of two Flink autoscalers",
+      "category": "Test infrastructure / Autoscaling",
+      "priority": 4,
+      "summary": "Netflix described running two Flink autoscalers (an in-house and community autoscaler), the operational tradeoffs, and migration considerations for production streaming workloads.",
+      "why_it_matters": "Autoscaling behavior can affect end-to-end test determinism and load-test setup; learn their operational tradeoffs for more reliable performance test harnesses.",
+      "source": "Netflix TechBlog",
+      "source_url": "https://netflixtechblog.com/a-tale-of-two-flink-autoscalers-e9f6a1b1492b?source=rss----2615bd06b42e---4",
+      "published_at": "2026-08-21T16:01:01Z"
+    },
+    {
+      "title": "JDK 27 update: release candidate and feature set overview",
+      "category": "SDK / Language / Tooling",
+      "priority": 4,
+      "summary": "InfoQ summarized JDK 27’s first release candidate and the nine final JEPs affecting libraries, HotSpot, security, and language-level behavior that can impact test interoperability and CI environments.",
+      "why_it_matters": "Language/runtime changes affect test frameworks (Espresso/JUnit/Gradle builds); validate CI images and test runners against JDK 27 RC before upgrading build pipelines.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/java-27-so-far/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-24T02:30:00Z"
+    },
+    {
+      "title": "VoidZero releases Vite+ beta (unified web toolchain)",
+      "category": "Web QA / Tooling",
+      "priority": 4,
+      "summary": "VoidZero published Vite+ beta—an opinionated, single-command web toolchain combining runtime, package management, hot reload, and common frontend tools to streamline dev workflows.",
+      "why_it_matters": "Simplifies local dev and hot-reload behavior; QA teams should test against the bundled toolchain to prevent build/test divergence in CI.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/vite-plus-beta/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-22T06:32:00Z},{"
+    }
+  ],
+  "watch": [
+    {
+      "title": "OVHcloud raises prices as AI memory demand reshapes infrastructure costs",
+      "category": "Infrastructure / Cost risk",
+      "priority": 4,
+      "summary": "OVHcloud announced price increases across selected server types in September 2026, citing elevated memory demand driven by AI workloads and HBM shifts in supplier allocations.",
+      "why_it_matters": "Rising memory costs can increase CI/device-farm and cloud-device pricing for large-scale test grids; budget for memory-driven price changes in capacity planning.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/ovhcloud-memory-price-rise/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-23T08:43:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Presentation: Enchant Your AI and APIs with eBPF Magic",
+      "category": "Security / Observability / Agent safety",
+      "priority": 3,
+      "summary": "Dan Finneran’s talk demonstrates using eBPF to intercept AI API traffic, apply prompt filtering, model swapping, token limits, and syscall restrictions at kernel level for Kubernetes services.",
+      "why_it_matters": "Practical techniques to add runtime controls and observability for agents and API traffic—relevant to protecting CI runners and agent harnesses from untrusted code paths.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/ebpf-ai-gateway-kubernetes-security/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-21T11:00:00Z"
+    }
+  ]
+}

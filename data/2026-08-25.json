@@ -1,0 +1,240 @@
+{
+  "date": "2026-08-25",
+  "headline": "Agentic tooling, agent benchmarks, and agent-first browsers reshape test infrastructure and QA workflows — practical signals for automation engineers.",
+  "top_signal": {
+    "title": "Cloudflare launches Kitesurf — an agent-first, Workers-hosted browser (passes 215k+ WPT tests)",
+    "category": "Browser / Automation",
+    "priority": 1,
+    "summary": "Cloudflare released Kitesurf, a lightweight browser built on Workers and V8 isolates that exposes a Chrome DevTools Protocol-compatible Engine. It trades full visual fidelity for efficiency and already passes 215,000+ Web Platform Tests.",
+    "why_it_matters": "Kitesurf lets Playwright/Puppeteer-style tooling drive a far cheaper, scalable browser for automated agent workloads, changing cost, isolation, and compatibility trade-offs for test farms and CI browsers.",
+    "source": "Cloudflare Blog",
+    "source_url": "https://blog.cloudflare.com/kitesurf/",
+    "published_at": "2026-08-06"
+  },
+  "items": [
+    {
+      "title": "AWS publishes aws-bench: an open benchmark for evaluating AI agents on real AWS tasks",
+      "category": "Agent evaluation / Benchmarks",
+      "priority": 1,
+      "summary": "AWS released aws-bench (research preview), an open benchmark and CLI that runs AI agents against disposable AWS accounts to measure task success on realistic provisioning, troubleshooting, and misconfiguration scenarios.",
+      "why_it_matters": "Provides a reproducible, verifiable harness for scoring agentic automation on real cloud tasks — essential for testing agents that operate on infrastructure and for regression tracking.",
+      "source": "AWS What's New",
+      "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-bench/",
+      "published_at": "2026-07-24"
+    },
+    {
+      "title": "LinkedIn details a multi-agent AI code-review platform at scale",
+      "category": "Agentic engineering / Code review",
+      "priority": 2,
+      "summary": "LinkedIn described a multi-agent approach to automated code review that uses multiple specialized agents plus context about corporate code and exemplars to produce high-precision reviews at scale.",
+      "why_it_matters": "At enterprise scale, multi-agent review becomes production infrastructure; implementers should design agent harnesses, test suites, and audit trails around multi-agent verdicts.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/linkedin-ai-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-22"
+    },
+    {
+      "title": "Google Cloud: 'Empowering autonomous agents with advanced security governance'",
+      "category": "Security / Agent governance",
+      "priority": 1,
+      "summary": "Google Cloud published guidance from its State of AI Infrastructure report on agent governance, promoting a control plane model, runtime guardrails, and observability to manage agent permissions and actions.",
+      "why_it_matters": "Operational teams must instrument agent actions, map permissions, and add runtime enforcement and auditability to safely promote agents from experiment to production.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-agent-governance-and-security",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Microsoft shifts AI governance from policy documents toward runtime enforcement",
+      "category": "Governance / Observability",
+      "priority": 2,
+      "summary": "Microsoft outlined an AI governance architecture that connects policy, controls, visibility, and proof with runtime enforcement and continuous evaluation to build auditable, enforceable agent governance.",
+      "why_it_matters": "QA and SRE teams designing incident playbooks should add runtime hooks and monitoring for agentic actions so policy violations are detectable and blockable in production.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/microsoft-ai-governance/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "JetBrains: How we optimized Qwen‑3.6 for the Junie agent",
+      "category": "IDE / Agent tooling",
+      "priority": 3,
+      "summary": "JetBrains published a technical post explaining optimizations they applied to Qwen‑3.6 to run efficiently inside the Junie coding agent on local hardware (MacBook M5 demo), including quantization and runtime tuning.",
+      "why_it_matters": "Teams building local agent-based developer tooling should benchmark model optimizations and verify behavior with integration tests that run models in target runtimes.",
+      "source": "JetBrains Blog (Junie)",
+      "source_url": "https://blog.jetbrains.com/junie/2026/08/qwen-for-junie/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "JetBrains: Junie coding agent leaves beta (product update)",
+      "category": "Developer tools / Agents",
+      "priority": 3,
+      "summary": "JetBrains announced Junie leaving beta and described integration points for IDEs, run configurations, and local model support, making coding agents more directly part of developer workflows.",
+      "why_it_matters": "IDE-integrated agents change how developers write and verify code; teams must add tests and CI checks to validate agent-produced changes before merge.",
+      "source": "JetBrains Blog (Junie)",
+      "source_url": "https://blog.jetbrains.com/junie/2026/06/junie-coding-agent-out-of-beta/",
+      "published_at": "2026-06-01"
+    },
+    {
+      "title": "Cloudflare Blog migration case study: EmDash at scale",
+      "category": "Performance / Platform engineering",
+      "priority": 3,
+      "summary": "Cloudflare documented migrating its blog to EmDash to validate their stack: stress-testing performance, routing production safely, and redesigning the frontend experience for scale.",
+      "why_it_matters": "Platform and test infra teams can reuse Cloudflare’s load-testing and incremental rollout patterns when validating large content or docs sites under CI-driven release workflows.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Cloudflare OS open-sourced: capability-based enterprise AI platform",
+      "category": "Agent platform / Internal developer platforms",
+      "priority": 2,
+      "summary": "Cloudflare open-sourced Cloudflare OS, a capability-based AI platform for enterprise teams to produce grounded artifacts, provision connectors, and automate repetitive workflows with cost-aware agent patterns.",
+      "why_it_matters": "Teams building internal agent platforms can study Cloudflare OS design and reuse connectors and capability models to reduce drift between developer expectations and runtime behavior.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/cloudflare-os-ai-platform-secure/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-23"
+    },
+    {
+      "title": "Android Developers: AAOS SDV — Secure by Design (Android Automotive OS for SDV)",
+      "category": "Mobile / Android / Security",
+      "priority": 2,
+      "summary": "Google detailed AAOS SDV architecture and security choices (Microdroid lineage, Rust usage, APEX, DICE attestation, and deny-by-default process isolation) for Software Defined Vehicles.",
+      "why_it_matters": "Mobile and embedded QA teams working on automotive or constrained Android variants must add VM-level and APEX-focused tests, attestation checks, and automated security verification into CI pipelines.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/aaos-sdv-secure-by-design.html",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "How a payments processor preserved AWS RAM shares and Lake Formation during an org migration",
+      "category": "Cloud / Infrastructure",
+      "priority": 3,
+      "summary": "An AWS Architecture blog explains using temporary bridge shares to preserve AWS RAM and Lake Formation permissions across a 382-account migration, plus steps to restore state post-migration.",
+      "why_it_matters": "Large-scale infra migrations break resource-sharing controls; test plans and automated verifiers should include permission-preservation checks to prevent prolonged outages.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-a-global-payment-processor-preserved-aws-ram-shares-and-lake-formation-permissions-during-an-aws-organizations-migration/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "OpenAI: GPT‑5.6 is available in Kiro (developer-focused announcement)",
+      "category": "Developer tools / Models",
+      "priority": 3,
+      "summary": "OpenAI announced GPT‑5.6 availability in Kiro, claiming improved price-performance for developer tasks like planning, building, reviewing, and testing software.",
+      "why_it_matters": "Teams calibrating model-driven test generation and review should benchmark GPT‑5.6 latency, cost, and failure modes in CI and include verifiable golden outputs in tests.",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/gpt-5-6-in-kiro",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Inside LinkedIn’s cognitive memory agent (Stack Overflow blog)",
+      "category": "Agent design / Memory systems",
+      "priority": 2,
+      "summary": "Stack Overflow published a walkthrough of LinkedIn’s four-layer memory system used in a hiring assistant, covering persistent state design and personalization trade-offs for agents.",
+      "why_it_matters": "Persistent memory design affects reproducibility and testability; QA teams should add deterministic memory-mocking strategies to unit and integration tests for agents.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/08/25/inside-linkedin-s-cognitive-memory-agent/",
+      "published_at": "2026-08-25"
+    },
+    {
+      "title": "Responsible AI adoption needs developer workflow design (Stack Overflow blog)",
+      "category": "Developer workflows / Responsible AI",
+      "priority": 2,
+      "summary": "Stack Overflow argued organizations must bake responsible AI into developer workflows rather than rely on one-off policy docs, focusing on tool integration and developer ergonomics.",
+      "why_it_matters": "Practical governance requires CI-integrated guardrails and dev-friendly enforcement; QA should verify policy checks run in pre-merge and CI stages, not only at audits.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/08/24/responsible-ai-adoption-needs-developer-workflow-design/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "NVIDIA: Vera Rubin and Blackwell platforms set new agentic AI performance-per-watt targets",
+      "category": "AI infrastructure / Hardware",
+      "priority": 4,
+      "summary": "NVIDIA detailed Vera Rubin and Blackwell platforms oriented to agentic inference and multi-step workflows, emphasizing performance-per-watt improvements for interactive agent workloads.",
+      "why_it_matters": "Teams running large-scale agent fleets and on-prem inference should benchmark model/task mixes against these platforms to estimate cost and latency for production agent services.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "MetaRoCE: Meta’s RDMA transport tuned for AI-scale Ethernet",
+      "category": "Networking / Infrastructure",
+      "priority": 4,
+      "summary": "Meta Engineering described MetaRoCE, a new RDMA transport protocol designed for AI-scale Ethernet to reduce communication overhead for distributed training and serving workloads.",
+      "why_it_matters": "Distributed training and large-agent serving need predictable network behavior; platform engineers should validate interconnect assumptions in performance tests and CI benchmarks.",
+      "source": "Meta Engineering",
+      "source_url": "https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "JDK 27 and JDK 28: progress update and features to note",
+      "category": "Programming languages / Tooling",
+      "priority": 3,
+      "summary": "InfoQ summarized JDK 27 reaching a release candidate and discussed planned JEPs across libraries, HotSpot, security, and the language spec as Java continues incremental, non-LTS releases.",
+      "why_it_matters": "Test suites and CI pipelines should run early compatibility suites and upgraded HotSpot regression tests to catch JVM-level regressions before adoption in QA environments.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/java-27-so-far/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Rightsizing platform engineering: build the platform your organization actually needs",
+      "category": "Platform engineering / Test infrastructure",
+      "priority": 3,
+      "summary": "InfoQ’s piece reviews trade-offs in platform engineering, highlighting duplication, cognitive load, and how to scope platform responsibilities to reduce developer friction and maintenance burden.",
+      "why_it_matters": "QA and platform teams should re-evaluate which responsibilities to centralize (test runners, device farms, verifiers) vs. leave with product teams to reduce flaky-test sources.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/articles/rightsizing-platform-engineering/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Docker: MinIO EOL — staying patched and audit-ready with Docker ELS",
+      "category": "Software supply chain / Security",
+      "priority": 3,
+      "summary": "Docker published guidance for keeping MinIO-dependent images patched after MinIO’s EOL by building from source, extended lifecycle support, and embedding policy enforcement in images.",
+      "why_it_matters": "Test infra that builds images must include EOL and patch automation in CI and verify image provenance; failing to do so creates audit and runtime risk for device farms and runners.",
+      "source": "Docker Blog",
+      "source_url": "https://www.docker.com/blog/minio-end-of-life-how-to-stay-patched-and-audit-ready-with-docker-els/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Martin Fowler: Fragments — agents, unexpected behavior, and engineering trade-offs",
+      "category": "Engineering management / Agent risk",
+      "priority": 3,
+      "summary": "Martin Fowler reflected on recent agent incidents and the systemic engineering and organizational choices that lead to surprises when agentic components behave unexpectedly.",
+      "why_it_matters": "QA leaders should use incident learnings to define observable invariants and guardrails that prevent agents from making unchecked changes in production systems.",
+      "source": "Martin Fowler (Fragments)",
+      "source_url": "https://martinfowler.com/fragments/2026-08-24.html",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "SafeChat (DoorDash): building AI-powered safety systems at scale (presentation)",
+      "category": "Safety / Content moderation",
+      "priority": 3,
+      "summary": "DoorDash explained a hybrid moderation pipeline using fast internal models for obvious cases plus LLM multi-axis scoring for nuanced decisions, and backtesting workflows for calibration.",
+      "why_it_matters": "Organizations building content or action safety for agentic systems can adopt hybrid pipelines, backtesting, and no-code workflows to reduce false positives and speed operational response.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/doordash-llm-ai-moderation-platform/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-22"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Junie can now run entirely on your Mac — no credits, no cloud (Junie Local)",
+      "category": "Agent tooling / Local devops",
+      "priority": 2,
+      "summary": "JetBrains announced Junie Local, enabling the Junie coding agent to run with local model runtimes on macOS—removing the need for cloud credits and letting teams run agents offline for testing and debugging.",
+      "why_it_matters": "Local agent runs let QA teams reproduce agent behavior deterministically, speed iteration, and run integration tests against local model variants without cloud cost or flakiness.",
+      "source": "JetBrains Blog (Junie)",
+      "source_url": "https://blog.jetbrains.com/junie/2026/08/junie-local-launch/",
+      "published_at": "2026-08-24"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Prompt to Prod: Engineering an Autonomous SDLC at Scale (Roblox) — presentation",
+      "category": "Talk / Agentic SDLC",
+      "priority": 1,
+      "summary": "Andrew Swerdlow (Roblox) walks through building an autonomous SDLC: security sandboxes, code-review exemplars, infrastructure updates for agentic workflows, and new metrics for agent-driven productivity.",
+      "why_it_matters": "Practical patterns for moving agents from prototype to production — useful playbook for QA, CI, and infra teams designing end-to-end agent testing and control planes.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/autonomous-ai-software-development-roblox/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-24"
+    }
+  ]
+}

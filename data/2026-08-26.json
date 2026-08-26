@@ -1,0 +1,240 @@
+{
+  "date": "2026-08-26",
+  "headline": "Practical signals for QA automation, agentic engineering, and test infrastructure — local agents, agent governance, inference reliability, CI policy, and mobile safety.",
+  "top_signal": {
+    "title": "Junie Local: run JetBrains’ coding agent entirely on-device",
+    "category": "Agentic AI / Coding Agents",
+    "priority": 1,
+    "summary": "JetBrains released Junie Local: a one-command, on‑device agent that ships a tuned Qwen3.6-27B model (≈20GB) and runs on M5 Macs (64GB), keeping code, prompts, and diffs local and unmetered. (Aug 24–25, 2026).",
+    "why_it_matters": "Enables private, offline agent-driven refactors, test-generation, and coverage work without cloud tokens — useful for teams with NDAs and for iterating expensive QA tasks locally.",
+    "source": "JetBrains Blog",
+    "source_url": "https://blog.jetbrains.com/junie/2026/08/junie-local-launch/",
+    "published_at": "2026-08-24T14:10:39Z"
+  },
+  "items": [
+    {
+      "title": "Android Developers: Ensuring safety for generative AI features in apps",
+      "category": "Mobile QA / Safety",
+      "priority": 1,
+      "summary": "Google Play guidance on preventing non-consensual intimate content in generative-AI app features, clarifying detection, reporting, and developer responsibilities for safer model integrations in Android apps.",
+      "why_it_matters": "Mobile QA teams must validate AI features against these safety controls and reporting flows to avoid app removals and to ensure user protection.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/ensuring-safety-genai-preventing-non-consensual-intimate-content.html",
+      "published_at": "2026-08-25T17:00:00Z"
+    },
+    {
+      "title": "CUDA Python 1.0: stable APIs and unified Python GPU access",
+      "category": "GPU / Developer Tools",
+      "priority": 2,
+      "summary": "NVIDIA announced CUDA Python 1.0 — a stable, unified Python API surface for direct access to CUDA features and the full platform without writing C++ extensions.",
+      "why_it_matters": "QA and test infra that run GPU-accelerated tests (model inference, performance tests) can standardize on Python APIs and simplify test harnesses and CI GPU integrations.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/cuda-python-1-0-stable-apis-one-foundation-full-platform-access/",
+      "published_at": "2026-08-25T15:00:00Z"
+    },
+    {
+      "title": "AAOS SDV: Secure-by-design guidance for Android Automotive",
+      "category": "Mobile / Platform Security",
+      "priority": 2,
+      "summary": "Android Automotive OS for Software Defined Vehicles (AAOS SDV) documentation explains secure-by-design principles, platform hardening, and developer/partner responsibilities for in-vehicle apps.",
+      "why_it_matters": "Mobile QA teams testing automotive apps must align with these platform security requirements and test for privilege separation and attack surface in vehicle contexts.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/aaos-sdv-secure-by-design.html",
+      "published_at": "2026-08-24T16:00:31Z"
+    },
+    {
+      "title": "Google Cloud: agent governance and runtime enforcement for autonomous agents",
+      "category": "Agent Governance / Security",
+      "priority": 1,
+      "summary": "Google Cloud discussed governance for autonomous agents, emphasizing runtime enforcement, continuous evaluation, identity, observability, and audit evidence to govern agents that act on behalf of users.",
+      "why_it_matters": "Teams building agentic QA or dev assistants need runtime controls and observability hooks to audit actions, revoke capabilities, and test agent safety in CI and staging environments.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-agent-governance-and-security/",
+      "published_at": "2026-08-24T16:00:00Z"
+    },
+    {
+      "title": "NVIDIA: Vera Rubin and Blackwell claim new agentic-AI perf-per-watt standard",
+      "category": "Inference / Infrastructure",
+      "priority": 3,
+      "summary": "NVIDIA documented performance-per-watt gains for its Vera Rubin and Blackwell platforms aimed at agentic AI workloads, highlighting throughput and efficiency improvements for multi-step agents.",
+      "why_it_matters": "Teams running large-scale agent tests should re-evaluate test capacity planning and per-task cost assumptions when sizing device farms or cloud inference pools.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/",
+      "published_at": "2026-08-24T15:00:05Z"
+    },
+    {
+      "title": "InfoQ: Continuous Delivery for Foundational Platforms (presentation)",
+      "category": "CI/CD / Progressive Delivery",
+      "priority": 2,
+      "summary": "Ian Nowland outlines why conventional CI/CD breaks for stateful core infrastructure and shares techniques: progressive deployments, synthetic production testing, and blast-radius mitigation for platform teams.",
+      "why_it_matters": "Test infra teams should apply progressive rollout and synthetic tests to limit blast radius and validate platform changes before wide rollout.",
+      "source": "InfoQ Presentations",
+      "source_url": "https://www.infoq.com/presentations/cd-reliability-innovation/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-25T13:34:00Z"
+    },
+    {
+      "title": "Cursor launches Origin: agent-native, git-based hosting inside editor",
+      "category": "Developer Platforms / Code Hosting",
+      "priority": 3,
+      "summary": "Cursor introduced Origin, a git-based code hosting experience embedded in its AI-powered editor, aimed at teams who already use Cursor’s agent workflows.",
+      "why_it_matters": "If teams adopt agent-native code hosting, CI and test triggers, and repository policies may need integration adjustments to handle novel workflows and code provenance.",
+      "source": "InfoQ News",
+      "source_url": "https://www.infoq.com/news/2026/08/cursor-origin-alternative-github/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-25T08:00:00Z"
+    },
+    {
+      "title": "InfoQ: Microsoft moves AI governance from policy to runtime enforcement",
+      "category": "AI Governance / Observability",
+      "priority": 2,
+      "summary": "Microsoft described a governance architecture mapping policy, control, visibility, and proof to runtime enforcement, continuous evaluation, and audit evidence across nine governance domains.",
+      "why_it_matters": "QA and security teams should incorporate runtime policy tests and evidence collection into pipelines to meet enterprise governance expectations for AI features.",
+      "source": "InfoQ News",
+      "source_url": "https://www.infoq.com/news/2026/08/microsoft-ai-governance/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-24T13:49:00Z"
+    },
+    {
+      "title": "NVIDIA Dynamo: shadow engine recovery to restore LLM capacity in seconds",
+      "category": "Inference Reliability",
+      "priority": 1,
+      "summary": "NVIDIA’s Dynamo introduces shadow engine recovery: keep a fully initialized standby engine (shared weights via GMS) to cut failover from minutes to seconds on process failures, improving TTFT and SLA adherence.",
+      "why_it_matters": "Makes large-model inference more resilient; QA and SRE teams can design chaos tests that expect near-instant recovery rather than long cold restarts.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/restore-llm-inference-capacity-in-seconds-with-shadow-engine-recovery-in-nvidia-dynamo/",
+      "published_at": "2026-08-25T20:57:54Z"
+    },
+    {
+      "title": "Google Cloud: gVisor sandboxes for Ray clusters on GKE",
+      "category": "Runtime Sandboxing / Secure Testing",
+      "priority": 2,
+      "summary": "Google Cloud documented bringing gVisor sandboxing to distributed Ray clusters to isolate execution for reinforcement-learning and agent workloads on GKE.",
+      "why_it_matters": "Sandboxed runtimes reduce risk when running untrusted agent code during large-scale testing and make distributed test jobs safer by isolating worker processes.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/containers-kubernetes/gvisor-sandboxes-for-ray-clusters-on-gke/",
+      "published_at": "2026-08-25T16:00:00Z"
+    },
+    {
+      "title": "Cloudflare: migrated the Cloudflare Blog to EmDash and stress-tested the stack",
+      "category": "Performance / Observability",
+      "priority": 3,
+      "summary": "Cloudflare migrated its public blog front-end to EmDash and published how they stress-tested performance, routed production traffic, and validated safe rollouts.",
+      "why_it_matters": "Concrete case study for test infra teams on large-site rollout testing, traffic shadowing, and performance validation techniques for content and developer portals.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/cloudflare-blog-uses-emdash/",
+      "published_at": "2026-08-24T19:00:00Z"
+    },
+    {
+      "title": "AWS Architecture: preserving RAM shares and Lake Formation during org migration",
+      "category": "Cloud Migrations / Data Access",
+      "priority": 3,
+      "summary": "A payments company documented a migration pattern that preserved AWS RAM shares and Lake Formation permissions across a 382-account AWS Organizations migration using temporary bridge shares.",
+      "why_it_matters": "Test plans for large org migrations must include permission-preservation steps and automated verification to prevent production data access regressions.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/how-a-global-payment-processor-preserved-aws-ram-shares-and-lake-formation-permissions-during-an-aws-organizations-migration/",
+      "published_at": "2026-08-24T15:23:21Z"
+    },
+    {
+      "title": "Docker: moving from Minimus to Docker Hardened Images (migration guide)",
+      "category": "Supply Chain / CI Images",
+      "priority": 2,
+      "summary": "Docker published a migration guide from Minimus to Docker Hardened Images and announced Minimus goes offline on Oct 22, plus free migration help and steps to update CI images.",
+      "why_it_matters": "CI pipelines must update base images before Oct 22 to avoid build failures; QA infra should validate image-scanning and hardened-image compatibility in test stages.",
+      "source": "Docker Blog",
+      "source_url": "https://www.docker.com/blog/moving-from-minimus-to-docker-hardened-images/",
+      "published_at": "2026-08-25T22:27:06Z"
+    },
+    {
+      "title": "GitHub: Copilot app ‘Customize’ tab generally available",
+      "category": "Developer Tooling / Automation",
+      "priority": 2,
+      "summary": "GitHub made the Copilot app’s Customize tab generally available so teams can configure Copilot behavior, integrations, and knowledge connectors inside the app.",
+      "why_it_matters": "Test automation and code review workflows should validate Copilot customizations and ensure they don’t alter linting or CI expectations unexpectedly.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026/08/25-github-copilot-app-customize-tab-is-generally-available",
+      "published_at": "2026-08-25T20:05:26Z"
+    },
+    {
+      "title": "Push rules in rulesets now support path exceptions (GitHub)",
+      "category": "Repo Policies / CI Guardrails",
+      "priority": 2,
+      "summary": "GitHub added support for path exceptions in push rules within rulesets, letting rules apply everywhere except explicitly exempted paths.",
+      "why_it_matters": "Allows test and CI teams to preserve legacy directories or generated artifacts while enforcing rules broadly — reduces noisy blockers during migrations.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026/08/25-push-rules-in-rulesets-now-support-path-exceptions",
+      "published_at": "2026-08-25T17:40:15Z"
+    },
+    {
+      "title": "GitHub: block users directly from security advisories",
+      "category": "Security / Moderation",
+      "priority": 3,
+      "summary": "GitHub added the ability to block a user directly from a security advisory page for public repo owners and orgs, streamlining moderation on vulnerability disclosures.",
+      "why_it_matters": "Streamlines handling of abusive disclosure activity and helps maintainers protect security processes and communication channels during incident handling.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026/08/25-block-users-directly-from-security-advisories",
+      "published_at": "2026-08-25T18:38:57Z"
+    },
+    {
+      "title": "Seth Larson: When str.lower() is a security vulnerability",
+      "category": "Security / Language Pitfalls",
+      "priority": 2,
+      "summary": "A developer write-up demonstrates cases where using str.lower() in Python can introduce security or correctness vulnerabilities due to unicode case-folding and attacker-controlled inputs.",
+      "why_it_matters": "QA engineers should add unit tests for unicode and adversarial inputs and avoid simplistic case transforms in security-sensitive code paths.",
+      "source": "Personal Blog (Seth Larson)",
+      "source_url": "https://sethmlarson.dev/when-str-lower-is-a-security-vulnerability",
+      "published_at": "2026-08-25T20:49:03Z"
+    },
+    {
+      "title": "Meta Engineering: MetaRoCE — RDMA transport optimized for AI-scale Ethernet",
+      "category": "Networking / Data Center",
+      "priority": 3,
+      "summary": "Meta published MetaRoCE, an RDMA transport protocol built for AI-scale Ethernet to improve GPU-to-GPU communication efficiency on commodity networks.",
+      "why_it_matters": "Large-scale testbeds and device farms running distributed model training should track network transport changes that affect data shuffles and test timing variability.",
+      "source": "Meta Engineering",
+      "source_url": "https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet/",
+      "published_at": "2026-08-24T18:02:29Z"
+    },
+    {
+      "title": "OpenAI: Jalapeño chip and infrastructure posts (inference performance updates)",
+      "category": "Inference Hardware / Cost",
+      "priority": 3,
+      "summary": "OpenAI posted early results for its Jalapeño inference chip claiming improved throughput, latency, and power efficiency for modern model inference workloads.",
+      "why_it_matters": "Inference hardware shifts change cost and latency baselines for model-based tests; load and SLA tests should be re-run with updated hardware assumptions.",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/jalapeno-first-results",
+      "published_at": "2026-08-25T07:00:00Z"
+    },
+    {
+      "title": "OpenAI: GPT‑5.6 in Kiro — improving developer price-performance",
+      "category": "Model / Developer Tools",
+      "priority": 3,
+      "summary": "OpenAI announced GPT‑5.6 availability in Kiro, aimed at developers for planning, building, reviewing, and testing code with improved price-performance.",
+      "why_it_matters": "Choosing cost-effective models for test automation and agent evaluations can reduce per-job cost and enable more frequent test iterations in CI.",
+      "source": "OpenAI News",
+      "source_url": "https://openai.com/index/gpt-5-6-in-kiro",
+      "published_at": "2026-08-24T12:00:00Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Rule insights dashboard generally available (GitHub)",
+      "category": "Repo Policy / Observability",
+      "priority": 1,
+      "summary": "GitHub released a rule insights dashboard (repo and org levels) to visualize how repository rules are evaluated and enforced across code and workflows.",
+      "why_it_matters": "Monitor how enforcement affects CI, pre-submit checks, and policy drift; an important signal for teams tightening automated enforcement in pipelines.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026/08/25-rule-insights-dashboard-generally-available",
+      "published_at": "2026-08-25T20:05:35Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "How We Optimized the Qwen 3.6 Model for Our Junie Agent (deep dive)",
+      "category": "Agent Tuning / Model Ops",
+      "priority": 1,
+      "summary": "JetBrains’ technical deep-dive describes optimizations (prefill, KV-cache reuse, speculative decoding) that made Qwen3.6 the practical local choice for Junie Local and explains hardware tradeoffs.",
+      "why_it_matters": "Concrete techniques for reducing prefill cost and improving agent throughput — directly applicable when benchmarking or tuning agent-based QA tools and local test agents.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/junie/2026/08/qwen-for-junie/",
+      "published_at": "2026-08-24T14:11:34Z"
+    }
+  ]
+}

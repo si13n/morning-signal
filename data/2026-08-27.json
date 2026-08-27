@@ -1,0 +1,220 @@
+{
+  "date": "2026-08-27",
+  "headline": "Practical updates for QA automation, agentable infra, mobile testing, CI, and reproducible agent evaluation (selected signals)",
+  "top_signal": {
+    "title": "Maestro 2.9.0 / CLI 2.9.0 released",
+    "category": "Mobile QA / Test Automation",
+    "priority": 10,
+    "summary": "Maestro 2.9.0 (including CLI 2.9.0) shipped with changelog updates and CLI improvements focused on mobile orchestration and scripting for Android/iOS device farms.",
+    "why_it_matters": "Maestro coordinates mobile test runs and device farms—upgrades can change test orchestration, runner behavior, and CI integration; verify changelog in your pipelines.",
+    "source": "Maestro (mobile-dev-inc) releases",
+    "source_url": "https://github.com/mobile-dev-inc/Maestro/releases/tag/v2.9.0",
+    "published_at": "2026-08-26T13:53:05Z"
+  },
+  "items": [
+    {
+      "title": "GitHub Actions runner v2.337.0",
+      "category": "CI/CD / Runner",
+      "priority": 9,
+      "summary": "Actions runner v2.337.0 updates embedded SDKs and bumps actions like setup-node and dotnet; these dependency bumps landed in the official runner release.",
+      "why_it_matters": "Runner dependency updates can affect workflow reproducibility and self-hosted runner images; validate CI images and pinned action versions after upgrade.",
+      "source": "GitHub Actions releases",
+      "source_url": "https://github.com/actions/runner/releases/tag/v2.337.0",
+      "published_at": "2026-08-26T14:34:15Z"
+    },
+    {
+      "title": "Cloud Run instances for personal, long‑lived AI agents",
+      "category": "AI agents / Infrastructure",
+      "priority": 9,
+      "summary": "Google Cloud announced Cloud Run instances to host long‑lived, stateful workloads—targeting personal or developer-run AI agents with persistent connections and lower-cost long-running tenancy.",
+      "why_it_matters": "Provides a practical hosting pattern for agent testing, e2e evaluation, and CI-installed agent services; expect new integration points for test harnesses and cost controls.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/serverless/introducing-cloud-run-instances/",
+      "published_at": "2026-08-27T16:00:00Z"
+    },
+    {
+      "title": "Google Cloud Fault Injection Testing (preview)",
+      "category": "Resilience testing / Platform",
+      "priority": 8,
+      "summary": "Google Cloud previewed a managed Fault Injection Testing service to run controlled chaos experiments against cloud services and confirm failure-handling behavior.",
+      "why_it_matters": "Brings fault injection into CI/CD and production readiness tooling—use it to codify resilience checks and automated blast-radius controls in pipelines.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/networking/introducing-google-cloud-fault-injection-testing-in-preview/",
+      "published_at": "2026-08-26T16:00:00Z"
+    },
+    {
+      "title": "CircleCI: Smarter testing — stop running tests that don't matter",
+      "category": "CI/CD / Test optimization",
+      "priority": 8,
+      "summary": "CircleCI published its smarter-testing features to reduce test runs by skipping irrelevant tests based on change impact and test selection heuristics.",
+      "why_it_matters": "Selective test execution shortens feedback loops and reduces CI costs—validate selection heuristics and flakiness exposure before enabling in critical pipelines.",
+      "source": "CircleCI Blog",
+      "source_url": "https://circleci.com/blog/smarter-testing-stop-running-tests-that-dont-matter/",
+      "published_at": "2026-08-26T19:00:00Z"
+    },
+    {
+      "title": "Android Developers: Elevating app quality — memory, device migration",
+      "category": "Mobile QA / Android",
+      "priority": 8,
+      "summary": "Google Play introduced new quality requirements focused on memory optimization and smoother device migration to promote stable user experiences across Android devices.",
+      "why_it_matters": "New Play quality requirements will affect release gating and automated checks; integrate memory profiling and device-migration validation into pre-release pipelines.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/app-quality-memory-optimization-secure-onboarding.html",
+      "published_at": "2026-08-26T17:00:00Z"
+    },
+    {
+      "title": "Android Developers: Ensuring safety in generative AI — preventing non‑consensual intimate content",
+      "category": "Mobile QA / Safety",
+      "priority": 6,
+      "summary": "Google Play published guidance and protections to reduce non‑consensual intimate content in apps that use generative AI, describing detection and enforcement approaches.",
+      "why_it_matters": "App review automation and content-safety tests must include AI-generated content checks; update test suites and preflight validators accordingly.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/ensuring-safety-genai-preventing-non-consensual-intimate-content.html",
+      "published_at": "2026-08-25T17:00:00Z"
+    },
+    {
+      "title": "CUDA Python 1.0: stable APIs and full platform access",
+      "category": "Performance / ML testing",
+      "priority": 7,
+      "summary": "NVIDIA released CUDA Python 1.0 with stable APIs providing a single foundation for Python GPU access across the CUDA platform, simplifying GPU-accelerated Python workflows.",
+      "why_it_matters": "Stabilized GPU Python APIs make CI GPU test harnesses and reproducible ML evaluation easier to maintain and port across runners and images.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/cuda-python-1-0-stable-apis-one-foundation-full-platform-access/",
+      "published_at": "2026-08-25T15:00:00Z"
+    },
+    {
+      "title": "NVIDIA NVLink Fusion and NVHBM for next‑gen AI infra",
+      "category": "AI infrastructure / Capacity planning",
+      "priority": 7,
+      "summary": "NVIDIA described NVLink Fusion delivering NVHBM memory capabilities intended for next‑generation AI infrastructure to support larger models and reasoning workloads.",
+      "why_it_matters": "Larger in‑lab model tests and evaluation suites require updated capacity planning—device farms and GPU testbeds should track NVHBM impacts on performance tests.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-nvlink-fusion-brings-nvhbm-to-next-generation-ai-infrastructure/",
+      "published_at": "2026-08-26T21:06:58Z"
+    },
+    {
+      "title": "Open Knowledge Format (OKF) + Knowledge Catalog for agent context",
+      "category": "RAG / Agent data engineering",
+      "priority": 7,
+      "summary": "Google Cloud described OKF v0.1 and how to scale OKF bundles across organizations using Knowledge Catalog for governance and sharing of agent context bundles.",
+      "why_it_matters": "Formalized context bundles improve reproducibility of RAG and agent tests; adopt OKF bundles to version and audit context used in evaluations.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/data-analytics/scale-okf-bundles-across-an-organization-with-knowledge-catalog/",
+      "published_at": "2026-08-26T16:00:00Z"
+    },
+    {
+      "title": "Agent Valley — hands‑on path for building AI agents from basics",
+      "category": "AI agents / Training",
+      "priority": 6,
+      "summary": "Google Cloud launched Agent Valley, a free five‑week hands‑on program to teach building agent basics, intended for practitioners without deep ML backgrounds.",
+      "why_it_matters": "Good onboarding path for engineers building agent tests and evaluation harnesses; useful when defining reproducible agent integration tests and metrics.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/developers-practitioners/your-chance-to-start-building-ai-agents-from-the-absolute-basics/",
+      "published_at": "2026-08-26T09:07:00Z"
+    },
+    {
+      "title": "Google Cloud: AI‑powered Database Operations Agents (summary)",
+      "category": "AI agents / Database ops",
+      "priority": 7,
+      "summary": "InfoQ reported Google Cloud introduced Database Operations Agents—Onboarding and Observability Agents—to automate DB setup, troubleshooting, and tuning with Gemini Cloud Assist integration.",
+      "why_it_matters": "Automates parts of test data provisioning, DB tuning, and observability; test infra teams should evaluate these agents for reliable test environments.",
+      "source": "InfoQ (news summary)",
+      "source_url": "https://www.infoq.com/news/2026/08/google-database-operation-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-27T15:00:00Z"
+    },
+    {
+      "title": "DataGrip adds AI agents integration",
+      "category": "Developer tools / DB testing",
+      "priority": 6,
+      "summary": "JetBrains updated DataGrip to expose AI agents (Claude Code, Codex, Junie) inside the IDE, plus a video demo to show workflows for DB interaction.",
+      "why_it_matters": "Tightens developer workflows for DB queries and test data generation—validate any generated SQL and incorporate guardrails into DB test setups.",
+      "source": "JetBrains Blog (DataGrip)",
+      "source_url": "https://blog.jetbrains.com/datagrip/2026/08/26/ai-agents-in-datagrip/",
+      "published_at": "2026-08-26T13:45:49Z"
+    },
+    {
+      "title": "JetBrains Research: How much code developers let agents write?",
+      "category": "Agent usage / Research",
+      "priority": 5,
+      "summary": "JetBrains Research published survey results measuring the share of agent-generated code across developers and regions to quantify agent adoption in engineering workflows.",
+      "why_it_matters": "Survey findings help QA and release engineers measure risk exposure from generated code and prioritize tests around agent-produced artifacts.",
+      "source": "JetBrains Research Blog",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/how-much-code-do-developers-really-let-agents-write/",
+      "published_at": "2026-08-26T17:17:37Z"
+    },
+    {
+      "title": "Differential Privacy for Hugging Face Trainers (no loop rewrite)",
+      "category": "Privacy / ML testing",
+      "priority": 6,
+      "summary": "JetBrains Research published a technique to apply differential privacy to Hugging Face Trainers without rewriting the training loop, lowering engineering friction for private training.",
+      "why_it_matters": "Simplifies privacy-preserving model evaluation; incorporate DP checks into model test suites and CI to meet privacy requirements.",
+      "source": "JetBrains Research Blog",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/dp-trainer/",
+      "published_at": "2026-08-27T15:31:12Z"
+    },
+    {
+      "title": "Compose Multiplatform 1.12.0 released",
+      "category": "UI / Mobile testing",
+      "priority": 5,
+      "summary": "Compose Multiplatform 1.12.0 adds tooling for AI assistants, web resource management improvements, and finer desktop window control features.",
+      "why_it_matters": "UI frameworks changes affect element semantics and test selectors; update UI test harnesses and snapshot baselines accordingly.",
+      "source": "JetBrains Blog (Kotlin)",
+      "source_url": "https://blog.jetbrains.com/kotlin/2026/08/compose-multiplatform-1-12-0/",
+      "published_at": "2026-08-26T13:28:41Z"
+    },
+    {
+      "title": "Enterprise-managed plugin marketplaces now support autoUpdate",
+      "category": "Developer platform / Governance",
+      "priority": 6,
+      "summary": "GitHub added enterprise-managed settings to opt plugin marketplaces into automatic updates by setting autoUpdate in extraKnownMarketplaces.",
+      "why_it_matters": "Auto-updating plugins reduce manual maintenance but require validation jobs in CI to catch breaking plugin changes before rollout.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
+      "published_at": "2026-08-26T01:52:19Z"
+    },
+    {
+      "title": "Global model policy for Copilot models generally available",
+      "category": "AI tooling / Governance",
+      "priority": 6,
+      "summary": "GitHub rolled out enforcement of a default model policy for generally available Copilot models on Copilot Business and Enterprise plans.",
+      "why_it_matters": "Model policy enforcement changes which models are permitted in enterprise workflows; update agent testing matrices and compliance checks accordingly.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+      "published_at": "2026-08-26T22:08:38Z"
+    },
+    {
+      "title": "GitHub Apps can now access enterprise billing data",
+      "category": "Platform / Integrations",
+      "priority": 4,
+      "summary": "GitHub added an enterprise billing permission so configured GitHub Apps can read enterprise billing data for automation and reporting.",
+      "why_it_matters": "Useful for cost-aware CI/CD automation and billing assertions; ensure Apps with billing access are audited and tested for least privilege.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-26-github-apps-can-now-access-enterprise-billing-data",
+      "published_at": "2026-08-26T12:18:59Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Diagrid Catalyst 2.0: durable, verifiable execution for AI agents",
+      "category": "AI agents / Observability",
+      "priority": 7,
+      "summary": "Diagrid Catalyst 2.0 adds Dapr-based recovery, signed workflow history, and execution attestation to improve agent durability and auditable runs.",
+      "why_it_matters": "If your team runs agent experiments, track Catalyst for auditability and reproducible execution patterns that affect test traceability and failure analysis.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/diagrid-catalyst-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-26T07:00:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Continuous Delivery for Foundational Platforms — talk",
+      "category": "CI/CD / Platform engineering",
+      "priority": 7,
+      "summary": "Ian Nowland’s InfoQ presentation explains why conventional CI/CD breaks for stateful platform components and presents techniques for progressive deployments and synthetic testing in production.",
+      "why_it_matters": "Actionable tactics for safely rolling platform changes and integrating synthetic tests into CI/CD — directly applicable to release and test reliability engineering.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/cd-reliability-innovation/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-25T13:34:00Z"
+    }
+  ]
+}

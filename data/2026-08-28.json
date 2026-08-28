@@ -1,0 +1,230 @@
+{
+  "date": "2026-08-28",
+  "headline": "Practical signals for QA automation, agentic engineering, and test infrastructure — CI retention, agent hosting, Android quality, and observability changes to act on now.",
+  "top_signal": {
+    "title": "GitHub Actions retention will cover checks, workflow runs, and statuses",
+    "category": "CI/CD",
+    "priority": 1,
+    "summary": "GitHub will extend Actions retention policies to include checks, workflow runs, and statuses starting October 1, 2026, consolidating artifact/log retention under one setting to govern historical CI metadata.",
+    "why_it_matters": "Teams must update retention settings and retention-aware tooling to preserve test logs, flaky-test history, and diagnostics before data is pruned on Oct 1, 2026.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+    "published_at": "2026-08-27T21:50:39Z"
+  },
+  "items": [
+    {
+      "title": "Kubernetes v1.37: metrics.k8s.io graduates to stable",
+      "category": "Observability / Test infra",
+      "priority": 1,
+      "summary": "Kubernetes v1.37 promotes the metrics.k8s.io API to stable (v1), standardizing node and Pod CPU/memory metrics used by kubectl top and resource-based autoscaling.",
+      "why_it_matters": "Stable metrics API simplifies reliable autoscaling and resource observability for test clusters, improving reproducible load and performance test environments.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/",
+      "published_at": "2026-08-27T18:30:00Z"
+    },
+    {
+      "title": "Deploy personal AI agents with Cloud Run instances",
+      "category": "AI agents / Infra",
+      "priority": 1,
+      "summary": "Google Cloud launched Cloud Run instances to host long‑lived, stateful workloads (including personal AI agents), with pricing and controls aimed at low-cost persistent agent processes.",
+      "why_it_matters": "Enables practical, low-cost deployment of agent-driven test runners and long‑lived QA assistants that need session state and background processing.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/serverless/introducing-cloud-run-instances/",
+      "published_at": "2026-08-27T16:00:00Z"
+    },
+    {
+      "title": "Closing the AI agent trust gap with graduated autonomy",
+      "category": "Agentic engineering / Security",
+      "priority": 1,
+      "summary": "AWS describes a graduated-autonomy pattern where agents earn expanded permissions through measured reliability and lose them when performance degrades, with reference architectures and Bedrock integration.",
+      "why_it_matters": "Useful pattern for automated test agents: limit blast radius, implement progressive privileges, and add observability gates to reduce risky automated changes.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/closing-the-ai-agent-trust-gap-with-graduated-autonomy/",
+      "published_at": "2026-08-26T17:33:03Z"
+    },
+    {
+      "title": "WhatsApp rolls out passkey sign-in upgrade and integration notes",
+      "category": "Mobile QA / Android",
+      "priority": 2,
+      "summary": "Android Developers posts a walkthrough of WhatsApp's migration to passkeys for ~1B users, detailing compatibility, onboarding flows, and platform integration choices.",
+      "why_it_matters": "QA teams must update sign‑in test suites, device matrices, and account-recovery scenarios to cover passkey UX, edge cases, and cross-device migrations.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/whatsapp-passkeys-secure-sign-in.html",
+      "published_at": "2026-08-27T17:00:00Z"
+    },
+    {
+      "title": "Google Play: memory usage and device migration requirements for app quality",
+      "category": "Mobile QA / Android",
+      "priority": 2,
+      "summary": "Google Play introduced new quality requirements focused on reducing memory usage and improving device migration to maintain store listing eligibility and improve user experience.",
+      "why_it_matters": "App teams must add memory-pressure tests and migration scenarios to CI to avoid Play policy regressions and catch crashes on low‑memory devices.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/app-quality-memory-optimization-secure-onboarding.html",
+      "published_at": "2026-08-26T17:00:00Z"
+    },
+    {
+      "title": "Sentry replaces sendDefaultPii with granular dataCollection controls",
+      "category": "Observability / SDKs",
+      "priority": 1,
+      "summary": "Sentry SDKs replace the old sendDefaultPii boolean with a dataCollection control panel offering granular toggles for user data, headers, bodies, GenAI data, and more.",
+      "why_it_matters": "QA and infra teams must review SDK config to ensure test telemetry complies with privacy policies and to avoid accidental PII collection in test logs.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/datacollection-control-panel/",
+      "published_at": "2026-08-28T09:00:00Z"
+    },
+    {
+      "title": "Security incident affecting JetBrains Cadence service",
+      "category": "Tooling / Security",
+      "priority": 1,
+      "summary": "JetBrains confirmed unauthorized access to Cadence, the cloud service that integrates with PyCharm to run projects on hosted compute; investigation and remediation are ongoing.",
+      "why_it_matters": "Teams using Cadence for cloud CI/test execution should validate artifacts, rotate credentials, and consider alternate runners until root cause and impact are confirmed.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/pycharm/2026/08/cadence-security-incident-august-2026/",
+      "published_at": "2026-08-28T09:50:14Z"
+    },
+    {
+      "title": "Copilot code review adds resolution reasons and broader coverage",
+      "category": "Developer automation / Code review",
+      "priority": 1,
+      "summary": "GitHub expanded Copilot Code Review to handle more PR types (including bot-authored PRs) and added structured resolution reasons to improve automation traceability.",
+      "why_it_matters": "Improves auditability of automated reviews and helps QA teams decide when to rely on machine reviews versus manual checks for test-affecting changes.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
+      "published_at": "2026-08-27T22:46:04Z"
+    },
+    {
+      "title": "Better label management on issues is generally available",
+      "category": "Developer workflow",
+      "priority": 3,
+      "summary": "GitHub introduced label archiving and suggested labels to help maintain large label sets, aimed at repositories with extensive issue/PR triage lists.",
+      "why_it_matters": "Simplifies triage and automation triggers for large test repos where labels drive workflows, flaky-test triage, and CI gating rules.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-27-label-archiving-is-generally-available",
+      "published_at": "2026-08-27T23:33:22Z"
+    },
+    {
+      "title": "Google Cloud: Database Operations Agents (InfoQ summary)",
+      "category": "AI agents / Database ops",
+      "priority": 1,
+      "summary": "InfoQ reports Google Cloud’s new Database Operations Agents: onboarding and observability agents that automate setup, tuning, and troubleshooting using Gemini Cloud Assist.",
+      "why_it_matters": "Database-centric test infra can leverage these agents for automated instance onboarding and diagnostics during CI-driven integration and performance tests.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/google-database-operation-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-27T15:00:00Z"
+    },
+    {
+      "title": "Cloudflare BotBase for Operators adds submission tracking and behavior model",
+      "category": "Bots / Agent ecosystems",
+      "priority": 2,
+      "summary": "Cloudflare’s BotBase adds operator-facing submission status, editing, and a behavior model field to better declare bot behaviors when joining the Cloudflare directory.",
+      "why_it_matters": "Helpful when registering test agents/bots for public endpoints; improves operational clarity and reduces surprise traffic classification during automated tests.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/botbase-for-operators/",
+      "published_at": "2026-08-28T12:59:44Z"
+    },
+    {
+      "title": "When you keep AI Lean, you keep AI correct (Stack Overflow interview)",
+      "category": "AI agents / Formal methods",
+      "priority": 2,
+      "summary": "Stack Overflow interviews Leo de Moura on using the Lean proof assistant to complement probabilistic models and prove properties about agent behavior and correctness.",
+      "why_it_matters": "Practical for teams building safety checks and provable invariants around agent actions used in automated testing and CI pipelines.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/08/28/when-you-keep-ai-lean-you-keep-ai-correct/",
+      "published_at": "2026-08-28T07:40:00Z"
+    },
+    {
+      "title": "How much code do developers really let agents write? (JetBrains Research)",
+      "category": "Agent adoption / Developer workflows",
+      "priority": 2,
+      "summary": "JetBrains Research publishes survey findings on the share of agent-generated code and how developer trust and regional patterns influence outsourcing development to agents.",
+      "why_it_matters": "Quantifies risk appetite for agent-authored changes; informs policy and test gating decisions for automated PRs and agent-driven CI commits.",
+      "source": "JetBrains Blog (Research)",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/how-much-code-do-developers-really-let-agents-write/",
+      "published_at": "2026-08-26T17:17:37Z"
+    },
+    {
+      "title": "AI Agents in DataGrip: IDE integration for database workflows",
+      "category": "Developer tooling / Agents",
+      "priority": 2,
+      "summary": "JetBrains added AI agent integrations to DataGrip (supporting Claude Code, Codex, Junie), with guides and a demo video on agent-assisted database tasks.",
+      "why_it_matters": "Agent integrations in IDEs change how DB-related test scaffolding and data migrations are prototyped; teams should validate generated DB operations before CI runs.",
+      "source": "JetBrains Blog (DataGrip)",
+      "source_url": "https://blog.jetbrains.com/datagrip/2026/08/26/ai-agents-in-datagrip/",
+      "published_at": "2026-08-26T13:45:49Z"
+    },
+    {
+      "title": "Deploy an open model from checkpoint to inference in two commands (NVIDIA TensorRT Model Connect)",
+      "category": "Model infra / Testing",
+      "priority": 2,
+      "summary": "NVIDIA released TensorRT Model Connect to convert and deploy open models from checkpoint to inference quickly, reducing per-model conversion effort.",
+      "why_it_matters": "Speeds spinning up model-backed test fixtures and local inference services used by RAG and LLM evaluator pipelines in QA environments.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/",
+      "published_at": "2026-08-28T17:06:28Z"
+    },
+    {
+      "title": "Experiment with Qwen3.8-Flash-Next on NVIDIA GB300 for agentic coding",
+      "category": "Agentic coding / Model experiments",
+      "priority": 2,
+      "summary": "NVIDIA provides guidance for running Alibaba's Qwen3.8-Flash-Next on GB300 (NVL72) hardware to test agentic coding workloads and throughput tradeoffs.",
+      "why_it_matters": "Useful reference for benchmarking model-backed code generators and for LLM evaluation work that underpins automated test-generation agents.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/experiment-with-qwen3-8-flash-next-on-nvidia-gb300-nvl72-for-agentic-coding/",
+      "published_at": "2026-08-26T17:07:12Z"
+    },
+    {
+      "title": "Best practices for dynamic capacity management for AI infrastructure",
+      "category": "AI infra / FinOps",
+      "priority": 1,
+      "summary": "Google Cloud published guidance for dynamic capacity and FinOps controls for Gemini Enterprise, covering autoscaling, cost controls, and workload shaping for agent fleets.",
+      "why_it_matters": "Helps teams cost-effectively scale test and agent infrastructure, preventing runaway costs from long-lived agents or CI model workloads during stress tests.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/best-practices-for-dynamic-capacity-management/",
+      "published_at": "2026-08-26T13:30:00Z"
+    },
+    {
+      "title": "Differential Privacy for Hugging Face Trainers without rewriting loops",
+      "category": "Privacy / Model QA",
+      "priority": 2,
+      "summary": "JetBrains Research released a DP Trainer that adds differential privacy to Hugging Face training flows without requiring a full rewrite of existing training loops.",
+      "why_it_matters": "Eases private data testing for model fine‑tuning and evaluation, reducing privacy risk in QA datasets and reproducible model tests.",
+      "source": "JetBrains Blog (Research)",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/dp-trainer/",
+      "published_at": "2026-08-27T15:31:12Z"
+    },
+    {
+      "title": "Saved 100 TB by optimizing DNS cache memory layout at Cloudflare",
+      "category": "Performance / Infrastructure",
+      "priority": 2,
+      "summary": "Cloudflare published five Rust-level DNS cache optimizations that reduced per-entry memory by 56%, freeing roughly 100 TB across their fleet.",
+      "why_it_matters": "Shows practical low-level optimizations that matter for high-scale test infrastructure and device-farm backends where memory efficiency reduces cost and OOM flakiness.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/",
+      "published_at": "2026-08-27T17:02:35Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "GitHub Classroom deprecated (effective Aug 28, 2026)",
+      "category": "Developer tooling / Education",
+      "priority": 2,
+      "summary": "GitHub announced deprecation of GitHub Classroom as of August 28, 2026, and is directing users to partner solutions and decommissioning related APIs and sites.",
+      "why_it_matters": "If you run training labs, student CI, or device-farm exercises on Classroom, plan migration now to avoid disruptions to automated grading and lab pipelines.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-27-github-classroom-deprecated",
+      "published_at": "2026-08-27T22:42:40Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Agent Valley — hands-on course to start building AI agents",
+      "category": "Tutorial / Agent engineering",
+      "priority": 1,
+      "summary": "Google Cloud's Agent Valley is a free, hands-on, five-week course that walks practitioners through building simple agent architectures and sample deployments.",
+      "why_it_matters": "Practical, project-based learning for teams that want to prototype agent-driven QA tooling, pipelines, and long‑lived test assistants quickly.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/developers-practitioners/your-chance-to-start-building-ai-agents-from-the-absolute-basics/",
+      "published_at": "2026-08-26T09:07:00Z"
+    }
+  ]
+}

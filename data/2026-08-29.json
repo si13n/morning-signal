@@ -1,0 +1,240 @@
+{
+  "date": "2026-08-29",
+  "headline": "CI/CD retention changes, agent runtimes, and QA-focused platform updates — curated for senior QA automation and agent engineering",
+  "top_signal": {
+    "title": "GitHub Actions retention will cover checks, workflow runs, and statuses",
+    "category": "CI/CD / Test Infrastructure",
+    "priority": 1,
+    "summary": "GitHub is changing Actions retention: starting Oct 1, 2026 checks, workflow runs, and statuses will be governed by the repository Actions retention setting, consolidating logs, artifacts, and run metadata under one retention policy.",
+    "why_it_matters": "Teams must update retention and compliance plans; shorter retention can delete test run context and flakiness data needed for flaky-test diagnosis and long-term observability.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses/",
+    "published_at": "2026-08-27T21:50:39Z"
+  },
+  "items": [
+    {
+      "title": "GitHub Copilot in Visual Studio — August update",
+      "category": "Developer Tools / Agentic Coding",
+      "priority": 2,
+      "summary": "Copilot's August update adds finer reasoning controls, model selection, and team-shared specialized agents inside Visual Studio to help shape how suggestions and agent behaviors appear in IDE workflows.",
+      "why_it_matters": "More control over model choice and agent sharing affects CI gating, reproducible code generation, and how teams integrate Copilot into code-review and testing workflows.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/",
+      "published_at": "2026-08-28T20:24:20Z"
+    },
+    {
+      "title": "Copilot code review: Resolution reasons and expanded capabilities",
+      "category": "Code Review / Automation",
+      "priority": 2,
+      "summary": "Copilot code review now covers bot-authored PRs and larger pull requests, and records resolution reasons—extending automated review coverage for CI-triggered or large-scale automated changes.",
+      "why_it_matters": "Expanded coverage means CI and bot workflows can get machine-reviewed context; teams should validate automated reviews before trusting them for release decisions.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/",
+      "published_at": "2026-08-27T22:46:04Z"
+    },
+    {
+      "title": "GitHub Copilot weekly releases — August 24",
+      "category": "Developer Tools / Agentic Coding",
+      "priority": 3,
+      "summary": "Weekly Copilot updates add controls for sessions, customization across IDE/CLI, and team features (Slack/Teams sessions) to coordinate agent-assisted coding and collaboration.",
+      "why_it_matters": "Incremental features change how teams integrate Copilot into branch workflows and pair-programming; verify CI templates and linting still enforce standards when agents author code.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24/",
+      "published_at": "2026-08-28T20:13:22Z"
+    },
+    {
+      "title": "Deploy personal AI agents with Cloud Run instances",
+      "category": "Agentic AI / Infrastructure",
+      "priority": 2,
+      "summary": "Cloud Run Instances provide low-cost, long-lived containers optimized for stateful, agent-style workloads—making it easier to run personal or single-developer agents with stable connections and background state.",
+      "why_it_matters": "QA teams and engineers can host persistent agent test runners or stateful simulators cheaply; evaluate scaling, security boundaries, and sigh-off for agents that access test systems.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/serverless/introducing-cloud-run-instances/",
+      "published_at": "2026-08-27T16:00:00Z"
+    },
+    {
+      "title": "Google Cloud launches AI-powered Database Operations Agents",
+      "category": "Observability / Database Automation",
+      "priority": 2,
+      "summary": "Google introduced Database Operations Agents for onboarding and observability that automate routine tuning, troubleshooting, and lifecycle tasks integrated with Gemini Cloud Assist.",
+      "why_it_matters": "Automated DB ops can reduce toil in test environments but require validation; QA must monitor agent actions and include rollback and audit checks in pipelines.",
+      "source": "InfoQ (reporting Google Cloud)",
+      "source_url": "https://www.infoq.com/news/2026/08/google-database-operation-agents/",
+      "published_at": "2026-08-27T15:00:00Z"
+    },
+    {
+      "title": "Best practices for dynamic capacity management for AI infrastructure",
+      "category": "AI Infrastructure / Test Labs",
+      "priority": 2,
+      "summary": "Google Cloud published operational FinOps and autoscaling practices for handling dynamic AI workloads, including agent fleets and token-cost controls for large-model deployments.",
+      "why_it_matters": "Test and device-farm teams should adopt capacity controls to avoid runaway inference costs and to preserve reproducible test windows for performance and agent evaluation.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/best-practices-for-dynamic-capacity-management/",
+      "published_at": "2026-08-26T13:30:00Z"
+    },
+    {
+      "title": "Closing the AI agent trust gap with graduated autonomy (AWS)",
+      "category": "Agent Governance / Security",
+      "priority": 2,
+      "summary": "AWS describes a graduated-autonomy pattern where agents earn increased permissions after sustained reliability and lose them when performance drops, with monitoring built on Bedrock integrations.",
+      "why_it_matters": "Adopt graduated access patterns in test harnesses: give ephemeral permissions to agents during experiments and require metrics-based escalation for production access.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/closing-the-ai-agent-trust-gap-with-graduated-autonomy/",
+      "published_at": "2026-08-26T17:33:03Z"
+    },
+    {
+      "title": "AI Agents in DataGrip (JetBrains)",
+      "category": "Developer Tools / Agentic SQL",
+      "priority": 3,
+      "summary": "DataGrip adds AI agent integrations (Claude Code, Codex, Junie) to assist database exploration, query generation, and schema tasks inside the IDE, plus a video walkthrough.",
+      "why_it_matters": "Database-focused agents speed exploratory testing of SQL and fixtures; validate generated queries and include guards to prevent destructive operations in test databases.",
+      "source": "JetBrains Blog (DataGrip)",
+      "source_url": "https://blog.jetbrains.com/datagrip/2026/08/26/ai-agents-in-datagrip/",
+      "published_at": "2026-08-26T13:45:49Z"
+    },
+    {
+      "title": "How much code do developers really let agents write? (JetBrains research)",
+      "category": "Developer Productivity / Agent Evaluation",
+      "priority": 3,
+      "summary": "JetBrains Research measures how much developers delegate to agents across regions and tasks, providing empirical data about agent-assigned code percentages and team practices.",
+      "why_it_matters": "Use these metrics to set realistic guardrails and to craft CI checks assessing agent-authored changes for test coverage and security risks.",
+      "source": "JetBrains Research Blog",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/how-much-code-do-developers-really-let-agents-write/",
+      "published_at": "2026-08-26T17:17:37Z"
+    },
+    {
+      "title": "Security incident affecting JetBrains Cadence",
+      "category": "Security / Developer Tools",
+      "priority": 1,
+      "summary": "JetBrains reported unauthorized access to its Cadence service (integration with PyCharm that runs projects on hosted compute); investigation and mitigation are ongoing.",
+      "why_it_matters": "Teams using Cadence must audit usage, secrets, and build artifacts; consider pausing remote-run integrations until JetBrains publishes a full post-incident review and remediation steps.",
+      "source": "JetBrains Blog (PyCharm)",
+      "source_url": "https://blog.jetbrains.com/pycharm/2026/08/cadence-security-incident-august-2026/",
+      "published_at": "2026-08-28T09:50:14Z"
+    },
+    {
+      "title": "From one switch to a control panel: meet dataCollection (Sentry)",
+      "category": "Observability / SDKs",
+      "priority": 2,
+      "summary": "Sentry replaces the coarse sendDefaultPii boolean with a granular dataCollection control panel to configure collection of user data, headers, bodies, and GenAI inputs across SDKs.",
+      "why_it_matters": "More granular controls let QA and security teams limit sensitive data in test telemetry and maintain compliance while preserving actionable observability for flaky tests.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/datacollection-control-panel/",
+      "published_at": "2026-08-28T09:00:00Z"
+    },
+    {
+      "title": "Kubernetes v1.37: Metrics API graduates to stable",
+      "category": "Infrastructure / Observability",
+      "priority": 2,
+      "summary": "metrics.k8s.io is now stable in Kubernetes v1.37 (v1), standardizing Pod and node CPU/memory metrics and enabling stable resource-metrics-based autoscaling and kubectl top usage.",
+      "why_it_matters": "Stable metrics API simplifies autoscaling and resource-based test lab policies; update monitoring and autoscaler configs to rely on the stable API surface.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/",
+      "published_at": "2026-08-27T18:30:00Z"
+    },
+    {
+      "title": "Kubernetes v1.37: Pod certificates and cluster trust bundles",
+      "category": "Infrastructure / Security",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 adds Pod certificate rotation and cluster trust bundles to simplify in-cluster TLS trust management and reduce manual CA handling.",
+      "why_it_matters": "Improved in-cluster trust reduces friction for device-farm and lab services that rely on secure mTLS; plan upgrades and test certificate rotation flows in staging.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles/",
+      "published_at": "2026-08-28T18:30:00Z"
+    },
+    {
+      "title": "Elevating app quality: reducing memory usage and improving device migration (Android)",
+      "category": "Mobile QA / Android",
+      "priority": 2,
+      "summary": "Google Play introduces two new quality signals for apps: memory-use guidance and device-migration improvements to help developers optimize RAM and onboarding on lower-end devices.",
+      "why_it_matters": "Mobile QA teams must add memory/regression tests and device-migration scenarios to preserve Play quality signals and avoid rollout blocks or reduced exposure.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/app-quality-memory-optimization-secure-onboarding.html",
+      "published_at": "2026-08-26T17:00:00Z"
+    },
+    {
+      "title": "How WhatsApp upgraded to passkeys for 1 billion users",
+      "category": "Mobile QA / Android / Security",
+      "priority": 3,
+      "summary": "Google and Meta engineers describe how WhatsApp implemented passkeys at scale on Android, covering UX, key migration, and platform integration for many users.",
+      "why_it_matters": "Passkey rollout patterns and migration techniques are testable artifacts; QA should add passkey edge cases, migration tests, and security validation to mobile test matrices.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/whatsapp-passkeys-secure-sign-in.html",
+      "published_at": "2026-08-27T17:00:00Z"
+    },
+    {
+      "title": "Deploy an open model from checkpoint to inference in two commands (NVIDIA TensorRT Model Connect)",
+      "category": "ML Ops / Model Deployment",
+      "priority": 3,
+      "summary": "NVIDIA's TensorRT Model Connect streamlines deploying open models from checkpoints to optimized inference artifacts with two commands, reducing model conversion and runtime friction.",
+      "why_it_matters": "Simpler deployment lowers friction for smoke testing and integration testing of models in QA pipelines; verify model numeric parity and latency on target infra.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/",
+      "published_at": "2026-08-28T17:06:28Z"
+    },
+    {
+      "title": "Build your own continuous modernization pipeline with AWS Transform Custom",
+      "category": "DevOps / CI/CD",
+      "priority": 3,
+      "summary": "AWS published a guide for continuous modernization pipelines that automate code modernization and refactoring tasks using Transform Custom, integrating with CI to reduce legacy risk.",
+      "why_it_matters": "Automated modernization can change code shape and test surfaces; include modernization steps in CI test matrices and add regression tests for transformed code paths.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/build-your-own-continuous-modernization-pipeline-with-aws-transform-custom/",
+      "published_at": "2026-08-28T13:27:12Z"
+    },
+    {
+      "title": "The State of Django 2026: Boring is so back",
+      "category": "Frameworks / Python / Testing",
+      "priority": 3,
+      "summary": "JetBrains and the Django Software Foundation published survey findings from ~3,500 developers, highlighting usage patterns, deployment habits, and stability-focused practices in Django projects.",
+      "why_it_matters": "Survey insights inform where to focus integration and regression tests for Django stacks and which third-party integrations require extra QA attention.",
+      "source": "JetBrains Blog (PyCharm)",
+      "source_url": "https://blog.jetbrains.com/pycharm/2026/08/the-state-of-django-2026-boring-is-so-back/",
+      "published_at": "2026-08-28T14:17:28Z"
+    },
+    {
+      "title": "How we saved 100 terabytes of memory by optimizing 1.1.1.1’s DNS cache (Cloudflare)",
+      "category": "Performance Engineering / Observability",
+      "priority": 3,
+      "summary": "Cloudflare detailed Rust-level memory optimizations to its DNS cache that reduced per-entry memory by 56%, freeing about 100 TB across their fleet.",
+      "why_it_matters": "Memory-efficient data structures and profiling techniques in this post are actionable for test infra and device-farm services to cut hosting costs and improve stability.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/",
+      "published_at": "2026-08-27T17:02:35Z"
+    },
+    {
+      "title": "Reimagining work: Pythian’s internal AI playbook",
+      "category": "Internal Tooling / Agent Adoption",
+      "priority": 3,
+      "summary": "Pythian describes rolling out Gemini Enterprise across 500 staff to discover practical ROI and operational patterns for internal agent use and governance.",
+      "why_it_matters": "Practical rollout experiences provide templates for QA and infra teams to pilot agents safely, including audit logs, escalation, and rollback strategies for agent actions.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/startups/how-pythians-internal-ai-playbook-delivers-customer-roi/",
+      "published_at": "2026-08-27T16:00:00Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "FreeToken: Unlocks frontier MoE inference on consumer hardware via dynamic co-execution",
+      "category": "Local ML Inference / Agent Infrastructure",
+      "priority": 2,
+      "summary": "FreeToken (UC Berkeley + MIT) is an open-source runtime that schedules MoE models across CPU and GPU resources, enabling larger sparse models to run on personal hardware via bandwidth-adaptive co-execution.",
+      "why_it_matters": "If FreeToken matures, QA teams can run larger agent tests locally for reproducibility and offline agent evaluation; monitor stability, model parity, and security of local runtimes.",
+      "source": "InfoQ (reporting FreeToken research)",
+      "source_url": "https://www.infoq.com/news/2026/08/freetoken-local-inference/",
+      "published_at": "2026-08-29T05:05:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Architecting the Data Layer for AI Agents: From Transactional Systems to MCP and Semantic Models (InfoQ presentation)",
+      "category": "Data Engineering / Agent Design",
+      "priority": 2,
+      "summary": "Fabiane Nardon covers preparing enterprise data for agentic systems: balancing deterministic logic and LLMs, semantic models, low-latency storage, and cost trade-offs for token-hungry agents.",
+      "why_it_matters": "This talk gives practical patterns for building reliable test datasets and semantic layers that agents rely on, improving agent evaluation and reproducibility in QA infra.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/enterprise-data-architecture-ai-agents/",
+      "published_at": "2026-08-29T11:00:00Z"
+    }
+  ]
+}

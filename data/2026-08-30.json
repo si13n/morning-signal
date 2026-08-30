@@ -1,0 +1,250 @@
+{
+  "date": "2026-08-30",
+  "headline": "Daily brief: CI/log retention, agent runtimes, Kubernetes observability, Copilot controls, and SDK/SDK-observability changes that affect QA automation and test infrastructure",
+  "top_signal": {
+    "title": "GitHub: Actions retention will also govern checks, workflow runs, and statuses (effective Oct 1, 2026)",
+    "category": "CI/CD",
+    "priority": 1,
+    "summary": "GitHub will make checks, workflow runs, and status records subject to the same Actions retention setting that already controls artifacts and logs, with the UI label updated to reflect unified retention. Announcement published Aug 27, 2026.",
+    "why_it_matters": "Retention now controls how long CI runs and check results are kept—affects post-failure debugging, flaky-test analysis, compliance evidence, and storage cost planning for test infra.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses",
+    "published_at": "2026-08-27T21:50:39Z"
+  },
+  "items": [
+    {
+      "title": "Deploy long‑lived AI agents to Cloud Run instances",
+      "category": "Agentic AI / Infrastructure",
+      "priority": 2,
+      "summary": "Google Cloud introduced Cloud Run instances to host long‑lived, stateful workloads (for example personal AI agents), with guidance and tutorials for deploying agent runtimes and keeping costs low. Post published Aug 27, 2026.",
+      "why_it_matters": "Cloud Run instances change tradeoffs for running agentic workloads: simpler serverless deployment for persistent agents, with implications for testing, stateful integration tests, and observability pipelines.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/serverless/introducing-cloud-run-instances/",
+      "published_at": "2026-08-27T16:00:00Z"
+    },
+    {
+      "title": "AWS open‑sources Kiro Crew for asynchronous coding agents",
+      "category": "Agentic AI / Tooling",
+      "priority": 2,
+      "summary": "Amazon released Kiro Crew — an open source workspace for coordinating multiple asynchronous coding agents across sessions, tools, and tasks, aimed at automating investigation, triage, and PR monitoring. InfoQ reported Aug 30, 2026.",
+      "why_it_matters": "Kiro Crew gives teams an orchestrated pattern for agent concurrency and task handoff—important to evaluate for agent-driven test triage, CI automation, and reproducible agent workflows.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/kiro-crew-coding-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-30T08:23:00Z"
+    },
+    {
+      "title": "Google Cloud ships AI‑powered Database Operations Agents",
+      "category": "Agentic AI / Database Ops",
+      "priority": 2,
+      "summary": "Google Cloud announced Database Operations Agents that automate onboarding, observability, and troubleshooting for managed databases; they integrate with Gemini Cloud Assist. InfoQ coverage published Aug 27, 2026.",
+      "why_it_matters": "Automated DB ops agents can reduce manual triage and shift-left DB testing, but require test suites that validate agent actions and guardrails for destructive operations.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/google-database-operation-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-27T15:00:00Z"
+    },
+    {
+      "title": "GitHub Copilot in Visual Studio — August update",
+      "category": "Developer tools / AI coding",
+      "priority": 2,
+      "summary": "GitHub updated Copilot in Visual Studio with more control over reasoning, model selection, team agent sharing, and new code‑review triggers in the August 2026 release notes (post Aug 28, 2026).",
+      "why_it_matters": "IDE-level Copilot controls let teams standardize code suggestions and agent behavior—relevant when using Copilot for test generation, refactorings, or automated PR changes.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2",
+      "published_at": "2026-08-28T20:24:20Z"
+    },
+    {
+      "title": "Copilot code review: resolution reasons and expanded capabilities",
+      "category": "CI/CD / Code review automation",
+      "priority": 2,
+      "summary": "Copilot code review now supports reviewing PRs authored by bots and expands automated resolution reasons, increasing automation coverage for large or bot-created PRs. GitHub changelog posted Aug 27, 2026.",
+      "why_it_matters": "Automated code review for bot PRs affects how teams test and approve CI-generated changes—update your test-review pipeline and gating rules accordingly.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
+      "published_at": "2026-08-27T22:46:04Z"
+    },
+    {
+      "title": "Upcoming GitHub Copilot policy and billing changes",
+      "category": "Developer tools / Policy",
+      "priority": 3,
+      "summary": "GitHub announced three upcoming Copilot policy and billing changes that may affect tenant settings and access. Teams should review the changelog entry posted Aug 28, 2026.",
+      "why_it_matters": "Policy or billing shifts can change who can run automation agents or which models are available—plan audits for Copilot usage in CI and developer environments.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing",
+      "published_at": "2026-08-28T11:37:19Z"
+    },
+    {
+      "title": "Kubernetes v1.37: metrics.k8s.io graduates to stable (v1)",
+      "category": "Kubernetes / Observability",
+      "priority": 1,
+      "summary": "Kubernetes v1.37 promotes the metrics.k8s.io API to v1, stabilizing the API that provides CPU/memory usage for nodes and pods; release blog posted Aug 27, 2026.",
+      "why_it_matters": "Stable metrics API reduces version churn for autoscaling and observability tooling—easier, more reliable retrieval of pod/node metrics for test infrastructure and performance tests.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/08/27/kubernetes-v1-37-metrics-api-ga/",
+      "published_at": "2026-08-27T18:30:00Z"
+    },
+    {
+      "title": "Kubernetes v1.37: pod certificates and cluster trust bundles",
+      "category": "Kubernetes / Security",
+      "priority": 2,
+      "summary": "Kubernetes added pod certificate features and cluster trust bundles in v1.37, easing workload TLS management and trust configuration; the blog post went live Aug 28, 2026.",
+      "why_it_matters": "New pod-cert and trust-bundle mechanics change test fixture setups for mTLS and integration tests—update local and CI cluster manifests and cert rotation checks.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/08/28/kubernetes-v1-37-pod-certificates-and-cluster-trust-bundles/",
+      "published_at": "2026-08-28T18:30:00Z"
+    },
+    {
+      "title": "Cloudflare: BotBase for Operators — bot submission and behavior model",
+      "category": "Agentic AI / Bot management",
+      "priority": 3,
+      "summary": "Cloudflare added a BotBase operator flow in its dashboard to manage bot submissions, edit submissions, and declare behavior models, improving transparency for bot operators (post Aug 28, 2026).",
+      "why_it_matters": "Bot registries and behavior models matter for test environments that interact with third‑party bots; use the directory to validate bot behavior and avoid accidental blocking during test runs.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/botbase-for-operators/",
+      "published_at": "2026-08-28T12:59:44Z"
+    },
+    {
+      "title": "Sentry replaces sendDefaultPii with granular dataCollection controls",
+      "category": "Observability / SDKs",
+      "priority": 2,
+      "summary": "Sentry replaced the all‑or‑nothing sendDefaultPii flag with a new dataCollection control panel to toggle user data, headers, bodies, and GenAI data in SDKs. Blog post published Aug 28, 2026.",
+      "why_it_matters": "Granular data controls let QA and security teams keep debugging data while limiting PII—update SDK config in test and CI environments to match compliance requirements.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/datacollection-control-panel/",
+      "published_at": "2026-08-28T09:00:00Z"
+    },
+    {
+      "title": "JetBrains: security incident affecting Cadence (PyCharm integration)",
+      "category": "Developer tools / Security",
+      "priority": 2,
+      "summary": "JetBrains announced an ongoing security incident affecting Cadence, the hosted service used by a PyCharm plugin to run projects on cloud compute—post published Aug 28, 2026.",
+      "why_it_matters": "If your team uses Cadence or PyCharm cloud runs in CI/test pipelines, pause or audit those integrations and rotate credentials as directed by JetBrains.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/pycharm/2026/08/cadence-security-incident-august-2026/",
+      "published_at": "2026-08-28T09:50:14Z"
+    },
+    {
+      "title": "NVIDIA: TensorRT Model Connect — two‑command checkpoint→inference",
+      "category": "Model deployment / Inference",
+      "priority": 3,
+      "summary": "NVIDIA published a guide for deploying open models from checkpoint to inference using TensorRT Model Connect in two commands, simplifying production inference packaging (Aug 28, 2026).",
+      "why_it_matters": "Faster model packaging reduces friction for smoke and integration tests that validate inference correctness and performance in CI and device farms.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/",
+      "published_at": "2026-08-28T17:06:28Z"
+    },
+    {
+      "title": "Cloudflare Workers accept inbound TCP; gRPC supported via Spectrum",
+      "category": "Edge / Integration testing",
+      "priority": 3,
+      "summary": "Cloudflare Workers can now accept inbound TCP connections routed via Spectrum, enabling gRPC (containers get full‑duplex gRPC; Workers get unary and server streaming through gRPC‑web translation). InfoQ reported Aug 29, 2026.",
+      "why_it_matters": "Inbound TCP support changes how you test gRPC and full‑duplex services at the edge—adjust integration tests and mock environments accordingly.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/workers-inbound-tcp-grpc/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-29T09:55:00Z"
+    },
+    {
+      "title": "Uber’s GitFarm: Git operations as a centralized service for monorepos",
+      "category": "Developer workflows / Monorepos",
+      "priority": 3,
+      "summary": "Uber open‑sourced GitFarm to run Git operations as a service (prewarmed checkouts, ephemeral sandboxes, gRPC streaming) to avoid large local clones for monorepos. InfoQ coverage Aug 28, 2026.",
+      "why_it_matters": "Centralizing expensive git operations reduces CI startup latency and local machine load—useful for scaling test runners and prewarmed CI sandboxes.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/uber-gitfarm-git-as-a-service/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-28T14:30:00Z"
+    },
+    {
+      "title": "AKS guidance on Node Auto‑Provisioning (NAP) and controlled disruption",
+      "category": "Platform / Reliability",
+      "priority": 3,
+      "summary": "Microsoft published guidance to make node disruption from AKS Node Auto‑Provisioning more predictable, helping platform teams balance consolidation efficiency with application availability (InfoQ, Aug 28, 2026).",
+      "why_it_matters": "If your test infrastructure runs on AKS, follow the new NAP guidance to avoid unexpected test failures from node consolidation and improve CI stability.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/aks-node-disruption/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-28T12:00:00Z"
+    },
+    {
+      "title": "JetBrains Research: Differential Privacy for Hugging Face Trainers",
+      "category": "ML / Privacy",
+      "priority": 3,
+      "summary": "JetBrains Research published a DP trainer for Hugging Face that integrates differential privacy without rewriting training loops, offering practical privacy controls for model training (Aug 27, 2026).",
+      "why_it_matters": "If you train models for test‑data generation or RAG, this reduces privacy risk and simplifies compliance for training loops used in testing pipelines.",
+      "source": "JetBrains Research Blog",
+      "source_url": "https://blog.jetbrains.com/research/2026/08/dp-trainer/",
+      "published_at": "2026-08-27T15:31:12Z"
+    },
+    {
+      "title": "Project Loom support appears in IntelliJ IDEA (virtual threads, structured concurrency)",
+      "category": "Programming / Testing",
+      "priority": 3,
+      "summary": "JetBrains documented Project Loom support in IntelliJ IDEA—virtual threads, scoped values, and structured concurrency guidance for Java developers (blog post Aug 28, 2026).",
+      "why_it_matters": "Virtual threads change concurrency testing strategies and stress tests; update your concurrency tests and CI resource configs when adopting Loom-enabled builds.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/idea/2026/08/project-loom-in-intellij-idea-virtual-threads-scoped-values-and-structured-concurrency/",
+      "published_at": "2026-08-28T05:03:34Z"
+    },
+    {
+      "title": "CLion roadmap highlights agentic workflows and embedded support",
+      "category": "Developer tools / C++ testing",
+      "priority": 3,
+      "summary": "JetBrains published the CLion roadmap for late‑2026, with a focus on agentic workflows and embedded development support—relevant to C/C++ test and build flows (Aug 27, 2026).",
+      "why_it_matters": "Roadmap items point to upcoming IDE features for embedded debugging and agent integrations—plan CI/test pipelines that depend on CLion-driven workflows.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/clion/2026/08/roadmap/",
+      "published_at": "2026-08-27T11:49:51Z"
+    },
+    {
+      "title": "WhatsApp upgrades to passkeys for 1B users (Android sign‑in changes)",
+      "category": "Mobile QA / Android",
+      "priority": 2,
+      "summary": "Android Developers Blog describes WhatsApp's rollout of passkey‑based sign‑in for roughly one billion users to improve security and seamless sign‑in (post Aug 27, 2026).",
+      "why_it_matters": "Passkeys change authentication flows to test in Android apps—update automated login flows, device‑farm credentials handling, and account provisioning in mobile test suites.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/whatsapp-passkeys-secure-sign-in.html",
+      "published_at": "2026-08-27T17:00:00Z"
+    },
+    {
+      "title": "GitHub: better label management on issues is generally available",
+      "category": "Dev workflows / Issue management",
+      "priority": 4,
+      "summary": "GitHub released label archiving and suggested labels to help teams keep issue label sets organized; changelog entry published Aug 27, 2026.",
+      "why_it_matters": "Cleaner label management reduces noise in test‑triage workflows and automations that rely on labels—update bots and automation that depend on label names or presence.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-27-label-archiving-is-generally-available",
+      "published_at": "2026-08-27T23:33:22Z"
+    },
+    {
+      "title": "GitHub Copilot weekly releases — Aug 24: more Copilot controls",
+      "category": "Developer tools / AI coding",
+      "priority": 4,
+      "summary": "A weekly Copilot changelog describes extended controls for Copilot behavior across IDE, CLI, and team sessions (entry dated Aug 24; reported Aug 28, 2026).",
+      "why_it_matters": "Frequent Copilot updates may affect reproducibility of code suggestions used in automated test generation—pin versions and validate generated test code.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24",
+      "published_at": "2026-08-28T20:13:22Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "FreeToken: local MoE inference with dynamic co‑execution on consumer hardware",
+      "category": "Model inference / Local testing",
+      "priority": 3,
+      "summary": "Researchers from UC Berkeley and MIT released FreeToken, an open source inference engine that improves Mixture‑of‑Experts model decoding speed and execution efficiency on consumer hardware (InfoQ report Aug 29, 2026).",
+      "why_it_matters": "If validated, FreeToken could let QA and model teams run larger MoE inference locally for regression and CI smoke tests—watch for stable releases and benchmarks.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/08/freetoken-local-inference/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-29T05:05:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Architecting the data layer for AI agents (presentation)",
+      "category": "Agentic AI / Data",
+      "priority": 2,
+      "summary": "Fabiane Nardon’s InfoQ presentation explains preparing enterprise data for token‑hungry AI agents—covering data mesh, low‑latency stores, semantic models, and cost/security tradeoffs (posted Aug 29, 2026).",
+      "why_it_matters": "A practical guide to data shaping for agent accuracy and cost; useful when designing test datasets, RAG evaluation harnesses, and agent integration tests.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/enterprise-data-architecture-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-08-29T11:00:00Z"
+    }
+  ]
+}

@@ -37,8 +37,8 @@ def env_int(name: str, default: int, minimum: int = 1) -> int:
 
 
 def runtime_config(root: Path) -> Dict[str, Any]:
-    min_digest_items = env_int("MIN_DIGEST_ITEMS", 20)
-    max_digest_items = env_int("MAX_DIGEST_ITEMS", 25)
+    min_digest_items = env_int("MIN_DIGEST_ITEMS", 6)
+    max_digest_items = env_int("MAX_DIGEST_ITEMS", 10)
     if min_digest_items > max_digest_items:
         raise ValueError("MIN_DIGEST_ITEMS cannot exceed MAX_DIGEST_ITEMS")
     return {

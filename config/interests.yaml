@@ -1,55 +1,67 @@
 high_priority:
+  - QA
+  - Quality engineering
+  - Software testing
   - QA automation
-  - Web QA
-  - Agentic engineering
-  - AI agents
-  - Claude Code
-  - AI testing
-  - LLM evals
+  - Test automation
+  - Agentic QA
+  - QA agents
+  - AI for QA
+  - AI-assisted testing
+  - AI test automation
+  - AI/LLM testing
+  - LLM evaluation
   - Mobile QA
-  - Android
-  - Maestro
-  - Espresso
-  - XCUITest
-  - Appium
-  - Selenium
-  - Cypress
-  - Robot Framework
+  - Web QA
+  - API testing
   - SDK testing
-  - Python
-  - Pytest
-  - Playwright
-  - GitHub Actions
-  - CI/CD
+  - Flaky test investigation
+  - Test reliability
+  - Test observability
   - Test infrastructure
-  - Coding
-  - Programming
-  - Developer tools
   - Performance testing
   - Load testing
   - Stress testing
+  - Playwright
+  - Cypress
+  - Selenium
+  - Pytest
+  - Appium
+  - Espresso
+  - XCUITest
+  - Maestro
+  - BrowserStack
+  - Device farms
   - JMeter
   - k6
   - Locust
 
 medium_priority:
-  - Observability
-  - BrowserStack
-  - Device farms
-  - Flaky test investigation
-  - Engineering management
-  - Release engineering
-  - Programming language updates
-  - Developer platform updates
-  - Company acquisitions
-  - Company engineering news
-  - Major company announcements
-  - Significant product and technology updates
-  - Relevant technology news and updates
+  - CI quality gates
+  - Release quality
+  - Testability
+  - Test data management
+  - Defect analysis
+  - Root cause analysis
+
+career_focus:
+  - Senior QA Automation Engineer
+  - QA Lead
+  - QA Manager
+  - AI QA Engineer
+  - Agentic QA Engineer
 
 low_priority:
-  - Generic consumer AI news
-  - Generic startup funding
+  - General software development news
+  - Generic AI news
+  - Coding agents not related to QA
+  - Agentic engineering not related to QA
+  - Programming language updates without QA impact
+  - Developer tools without QA impact
+  - Cloud infrastructure without QA impact
+  - Company acquisitions
+  - Generic company announcements
+  - Generic product launches
+  - Startup funding
   - Cryptocurrency
-  - Celebrity AI news
-  - Generic gadget news
+  - Gadget news

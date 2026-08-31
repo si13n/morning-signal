@@ -41,8 +41,8 @@ jobs:
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5-mini' }}
           MAX_OUTPUT_TOKENS: '30000'
           MAX_WEB_SEARCHES: '6'
-          MIN_DIGEST_ITEMS: '20'
-          MAX_DIGEST_ITEMS: '25'
+          MIN_DIGEST_ITEMS: '6'
+          MAX_DIGEST_ITEMS: '10'
         run: python scripts/generate_digest.py
 
       - name: Render and validate static site

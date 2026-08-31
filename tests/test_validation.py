@@ -1,6 +1,8 @@
 import copy
 import json
 from pathlib import Path
+import subprocess
+import sys
 
 import pytest
 
@@ -92,3 +94,13 @@ def test_minimum_story_count_is_checked():
     digest["learning"] = []
     with pytest.raises(DigestValidationError, match="minimum is 20"):
         validate_digest(digest, min_items=20)
+
+
+def test_full_archive_validation_is_not_bound_to_current_editorial_limits():
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "validate.py")],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr

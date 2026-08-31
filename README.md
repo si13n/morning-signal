@@ -1,6 +1,8 @@
 # Morning Signal
 
-Morning Signal is an autonomous, personal technology digest for QA automation, agentic engineering, AI/LLM testing, mobile quality, and the infrastructure that makes software dependable. It creates a small structured JSON edition each morning, validates it, renders static HTML, archives it, and publishes it with GitHub Pages.
+Morning Signal is an autonomous, personal **QA-only** digest focused on QA automation, Agentic QA, AI for QA, software testing, test reliability, and modern quality engineering practices. It creates a small structured JSON edition each morning, validates it, renders static HTML, archives it, and publishes it with GitHub Pages.
+
+Generic AI, coding-agent, software-development, cloud, platform, company, and technology news is intentionally excluded unless it has a clear and substantial impact on software testing or quality engineering.
 
 The checked-in `2026-08-18` issue is an explicitly labeled bootstrap fixture. It is there to make the first deployment useful and testable; it is not presented as live news.
 
@@ -12,7 +14,7 @@ GitHub Actions schedule (07:35 Europe/Warsaw)
         v
 RSS / release feeds ---> normalized candidates
         |                         |
-        +----> OpenAI Responses API + bounded web search
+        +----> OpenAI Responses API + bounded QA-focused web search
                                       |
                                       v
                          strict structured digest JSON
@@ -27,6 +29,23 @@ RSS / release feeds ---> normalized candidates
 ```
 
 The site is static. The browser never calls OpenAI and no API key is included in frontend assets.
+
+## Editorial scope
+
+Morning Signal publishes only items with direct QA/testing relevance. The primary areas are:
+
+- QA automation and quality engineering
+- Agentic QA and QA agents
+- AI-assisted testing and AI for QA
+- testing/evaluation of AI-powered software
+- mobile QA: Appium, Espresso, XCUITest, Maestro, device farms and SDK testing
+- web/API automation: Playwright, Cypress, Selenium, Pytest and related testing tools
+- flaky-test investigation, test reliability, test observability and test infrastructure
+- performance, load and stress testing
+- CI quality gates and release quality when directly connected to QA
+- QA-focused releases, documentation, research, talks and engineering practices
+
+Adjacent technology news is ignored unless it materially changes how software is tested, validated or released.
 
 ## Local setup
 
@@ -103,7 +122,7 @@ Each successful issue creates `data/YYYY-MM-DD.json` and `archive/YYYY-MM-DD.htm
 
 ## Personalization and sources
 
-Edit `config/interests.yaml` to change ranking guidance. Edit `config/sources.yaml` to add a primary RSS/Atom feed with a category and quality score. Collection failures are logged as warnings and do not erase an existing site; a run that cannot produce a valid digest fails before promotion.
+Edit `config/interests.yaml` to change QA ranking guidance. Edit `config/sources.yaml` to add a primary RSS/Atom feed with a category and quality score. Broad engineering feeds may remain as discovery inputs, but their articles are ignored by the editorial stage unless they have direct QA/testing relevance. Collection failures are logged as warnings and do not erase an existing site; a run that cannot produce a valid digest fails before promotion.
 
 ## Troubleshooting
 

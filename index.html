@@ -25,158 +25,46 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">From Leaderboards to Model Profiles — deep LLM evaluation for agentic coding</h2>
-      <p class="story-summary">JetBrains outlines a reproducible evaluation pipeline that moves beyond single-number leaderboards to behaviour, process, and semantic metrics when comparing LLMs driving coding agents.</p>
-      <div class="why"><span>Why it matters</span><p>Gives QA and agent teams a practical framework to compare models by failure mode, reproducibility, and process quality — critical for test validation and agent selection.</p></div>
-      <a class="source-link" href="https://blog.jetbrains.com/junie/2026/08/from-leaderboards-to-profiles/" target="_blank" rel="noopener noreferrer">JetBrains Blog <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">Cypress releases 'cypress‑tap' — lets AI agents debug live Cypress sessions</h2>
+      <p class="story-summary">Cypress published the cypress‑tap AI skill (Aug 25, 2026) that instructs AI agents how to interact with a running cypress open session to run specs, read the Command Log, and inspect the app under test.</p>
+      <div class="why"><span>Why it matters</span><p>Allows agents to verify and triage test runs interactively, reducing blind pass/fail reports and making agentic failure diagnosis and self‑validation practical.</p></div>
+      <a class="source-link" href="https://www.cypress.io/releases/cypress-tap-ai-skill" target="_blank" rel="noopener noreferrer">Cypress (Releases) <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
-      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">18 signals</span></div>
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">4 signals</span></div>
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic engineering / Dev tooling</span><span class="priority priority-2">2/10</span></div>
-          <h3>AWS open-sources 'Kiro Crew' for asynchronous coding agents</h3>
-          <p>InfoQ reports AWS released Kiro Crew, a persistent workspace for coordinating asynchronous coding agents across sessions, tools, and long-running tasks like migrations and PR monitoring.</p>
-          <div class="why compact"><span>Why it matters</span><p>Kiro Crew gives engineering teams a durable orchestration layer for agent workflows — think CI-adjacent scheduling, context retention, and safer multi-agent runs.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/kiro-crew-coding-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Mobile QA / Test Automation</span><span class="priority priority-2">2/10</span></div>
+          <h3>Maestro v2.10.0 released — mobile automation improvements</h3>
+          <p>Maestro published v2.10.0 (GitHub release tag v2.10.0 on Aug 31, 2026) with multiple mobile automation fixes and improvements; see the release assets and changelog for details and CLI updates.</p>
+          <div class="why compact"><span>Why it matters</span><p>Mobile QA teams get updated device scripting, CLI fixes and stability patches that affect emulator/device reliability and CI mobile runs.</p></div>
+          <a class="source-link" href="https://github.com/mobile-dev-inc/maestro/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">Maestro (GitHub releases) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">RAG / Retrieval infrastructure</span><span class="priority priority-2">2/10</span></div>
-          <h3>Cloudflare extends AI Search to support agents and custom data</h3>
-          <p>InfoQ summaries Cloudflare AI Search: a managed search + vector service designed to give agents and apps a ready retrieval layer with multimodal search and agent integrations.</p>
-          <div class="why compact"><span>Why it matters</span><p>Simplifies building retrieval pipelines for RAG and agents — reduces custom vector-store plumbing and speeds reproducible evaluation of retrieval in tests.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/cloudflare-ai-search/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Mobile QA / Test Infrastructure</span><span class="priority priority-2">2/10</span></div>
+          <h3>Android Emulator gRPC/EmulatorControl now documented for test access</h3>
+          <p>Android's EmulatorControl API documents gRPC‑enabled emulator control (EmulatorControl API reference, updated Jun 18, 2026) so tests can programmatically enable and talk to emulator gRPC endpoints during runs.</p>
+          <div class="why compact"><span>Why it matters</span><p>Enables deterministic programmatic control of emulator state from tests or agents — useful for reproducible device posture, multi‑device scenarios, and agentic test orchestration.</p></div>
+          <a class="source-link" href="https://developer.android.com/reference/tools/gradle-api/9.4/com/android/build/api/dsl/EmulatorControl?authuser=14" target="_blank" rel="noopener noreferrer">Android Developers (EmulatorControl API) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">AIOps / Incident response</span><span class="priority priority-2">2/10</span></div>
-          <h3>Optimize EKS operations with AWS DevOps Agent and a Kubernetes operator</h3>
-          <p>AWS DevOps Blog shows how an agent plus operator automates EKS incident triage: collecting logs, building knowledge graphs, and correlating telemetry to shorten investigations.</p>
-          <div class="why compact"><span>Why it matters</span><p>Operational agents can cut triage time and centralize evidence collection — useful for test infra and flaky-production investigation workflows.</p></div>
-          <a class="source-link" href="https://aws.amazon.com/blogs/devops/optimize-eks-operations-with-agents-reduce-mttr-with-aws-devops-agent-and-a-kubernetes-operator/" target="_blank" rel="noopener noreferrer">AWS DevOps Blog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Performance Testing / Tooling</span><span class="priority priority-3">3/10</span></div>
+          <h3>k6 Studio 2.0 GA adds browser test authoring and autocorrelation</h3>
+          <p>Grafana announced k6 Studio 2.0 (Aug 19, 2026) generally available: browser test authoring, structured JSON results, and autocorrelation to reduce noise in long performance runs.</p>
+          <div class="why compact"><span>Why it matters</span><p>Makes performance test creation and noisy-result triage faster; structured outputs and autor‑correlation improve automated failure detection and agentic performance triage.</p></div>
+          <a class="source-link" href="https://grafana.com/whats-new/2026-08-19-k6-studio-20--browser-test-authoring-and-autocorrelation-are-generally-available/" target="_blank" rel="noopener noreferrer">Grafana / k6 Studio announcement <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Platform</span><span class="priority priority-3">3/10</span></div>
-          <h3>Kubernetes v1.37: Pod certificates and ClusterTrustBundles go stable</h3>
-          <p>Kubernetes v1.37 graduates PodCertificate and ClusterTrustBundle features to stable, providing first-class in-cluster pod identities and trust anchor distribution.</p>
-          <div class="why compact"><span>Why it matters</span><p>Stable pod identity primitives simplify secure service-to-service testing, TLS lifecycle in CI clusters, and ephemeral test workloads that need short-lived certs.</p></div>
-          <a class="source-link" href="https://kubernetes.io/blog/2026/08/26/kubernetes-v1-37-release/" target="_blank" rel="noopener noreferrer">Kubernetes Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Model deployment / Test tooling</span><span class="priority priority-2">2/10</span></div>
-          <h3>NVIDIA: TensorRT Model Connect — checkpoint to inference in two commands</h3>
-          <p>NVIDIA published TensorRT Model Connect: a developer workflow to convert Hugging Face/checkpoint models into native TensorRT bundles and run inference with simple CLI commands and examples.</p>
-          <div class="why compact"><span>Why it matters</span><p>Provides a reproducible, inspectable path to native inference — useful for performance tests, baseline comparisons, and CI jobs validating model bundles.</p></div>
-          <a class="source-link" href="https://developer.nvidia.com/blog/deploy-an-open-model-from-checkpoint-to-inference-in-two-commands-with-nvidia-tensorrt-model-connect/" target="_blank" rel="noopener noreferrer">NVIDIA Developer Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Multimodal systems / QA for personalization</span><span class="priority priority-4">4/10</span></div>
-          <h3>Netflix MAPS: multimodal asset personalization at scale</h3>
-          <p>Netflix describes MAPS, a system that uses multimodal embeddings and multimodal retrieval to scale artwork previews and personalization for new content at production scale.</p>
-          <div class="why compact"><span>Why it matters</span><p>Personalization pipelines need multimodal test harnesses and reproducible offline tests; MAPS shows practical embedding pipelines and test points for RAG/embedding QA.</p></div>
-          <a class="source-link" href="https://netflixtechblog.com/maps-netflixs-multimodal-asset-personalization-at-scale-32f96320785e?source=rss----2615bd06b42e---4" target="_blank" rel="noopener noreferrer">Netflix TechBlog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">CI/CD / Migration automation</span><span class="priority priority-3">3/10</span></div>
-          <h3>Build a continuous modernization pipeline with AWS Transform Custom</h3>
-          <p>AWS DevOps Blog demonstrates a continuous modernization pipeline using AWS Transform Custom to automate incremental modernization steps for legacy services.</p>
-          <div class="why compact"><span>Why it matters</span><p>Helps QA teams validate incremental modernization paths and automate regression checks during staged migrations of legacy systems in CI.</p></div>
-          <a class="source-link" href="https://aws.amazon.com/blogs/devops/build-your-own-continuous-modernization-pipeline-with-aws-transform-custom/" target="_blank" rel="noopener noreferrer">AWS DevOps Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Developer infrastructure / CI optimization</span><span class="priority priority-3">3/10</span></div>
-          <h3>Uber’s GitFarm: run Git operations as a service for large monorepos</h3>
-          <p>InfoQ covers Uber's GitFarm — a centralized Git-as-a-service that serves prewarmed checkouts and runs Git commands over gRPC to avoid expensive local clones for monorepos.</p>
-          <div class="why compact"><span>Why it matters</span><p>Reduces CI job cold-starts, lowers local resource usage, and provides a better foundation for agentic tools that repeatedly read and write large repos.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/uber-gitfarm-git-as-a-service/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Edge runtime / Integration testing</span><span class="priority priority-3">3/10</span></div>
-          <h3>Cloudflare Workers can accept inbound TCP; gRPC is first on top</h3>
-          <p>InfoQ reports Cloudflare Workers added a connect(socket) handler enabling inbound TCP; gRPC support (via gRPC-web translation) is the first protocol on top, in private beta.</p>
-          <div class="why compact"><span>Why it matters</span><p>Edge-based gRPC endpoints change how teams test mobile and agent traffic; platform teams should evaluate compatibility and test harness implications.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/workers-inbound-tcp-grpc/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Local inference / Model serving</span><span class="priority priority-3">3/10</span></div>
-          <h3>FreeToken: dynamic co-execution for MoE inference on consumer hardware</h3>
-          <p>InfoQ covers FreeToken, an open-source edge inference engine that dynamically co-schedules CPU/GPU and streams experts to run MoE models effectively on consumer machines.</p>
-          <div class="why compact"><span>Why it matters</span><p>Enables local model testing and cheaper performance experiments for agents and RAG systems that want to validate model behaviour at scale without large cloud spend.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/freetoken-local-inference/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Security / CI credentials</span><span class="priority priority-2">2/10</span></div>
-          <h3>GCP at scale: eliminating long-lived credentials with Workload Identity Federation</h3>
-          <p>InfoQ covers a case study scaling GCP Workload Identity Federation across 120+ projects to remove long-lived service account keys and simplify machine identity management.</p>
-          <div class="why compact"><span>Why it matters</span><p>Short-lived, federated identities reduce leaked-key risk in CI and device-farm integrations — adopt WIF patterns to simplify secure test-agent credentials.</p></div>
-          <a class="source-link" href="https://www.infoq.com/articles/gcp-wif-scale/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Agent directory / Bot governance</span><span class="priority priority-4">4/10</span></div>
-          <h3>Cloudflare BotBase for Operators — manage bot/operator submissions</h3>
-          <p>Cloudflare’s BotBase gives bot operators a dashboard to submit, track, and edit bot registrations with declared behaviour models and submission status tracking.</p>
-          <div class="why compact"><span>Why it matters</span><p>Helps platform and security teams standardize how bots/agents are listed and tested; useful for QA that validates agent behaviour against declared models.</p></div>
-          <a class="source-link" href="https://blog.cloudflare.com/botbase-for-operators/" target="_blank" rel="noopener noreferrer">Cloudflare Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Developer tools / Agentic coding</span><span class="priority priority-2">2/10</span></div>
-          <h3>GitHub Copilot in Visual Studio — August update</h3>
-          <p>GitHub Changelog details August updates to Copilot in Visual Studio: more control over reasoning, model choice, team-shared agents, and code-review integrations.</p>
-          <div class="why compact"><span>Why it matters</span><p>IDE-level agent controls make agent-generated changes easier to audit and test; incorporate these controls into CI gating and review workflows.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Developer tools / Agent orchestration</span><span class="priority priority-3">3/10</span></div>
-          <h3>GitHub Copilot weekly releases — August 24 summary</h3>
-          <p>GitHub’s weekly changelog summarizes cross-product Copilot improvements: shared sessions in Slack/Teams, customization, CLI session defaults, and MCP/plugin updates.</p>
-          <div class="why compact"><span>Why it matters</span><p>Operational Copilot updates affect how teams automate code suggestions and agent sessions; QA should validate agent-produced PRs and session-sourced changes in CI pipelines.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-aug-24" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Data architecture / Agent design</span><span class="priority priority-3">3/10</span></div>
-          <h3>Architecting the data layer for AI agents — enterprise presentation</h3>
-          <p>InfoQ presentation walks through preparing transactional systems for token-hungry AI agents, covering semantic models, data mesh patterns, and low-latency stores.</p>
-          <div class="why compact"><span>Why it matters</span><p>Provides concrete guidance for building testable agent data layers and designing reproducible datasets for RAG and agent validation.</p></div>
-          <a class="source-link" href="https://www.infoq.com/presentations/enterprise-data-architecture-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ Presentations <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Developer tooling / Education</span><span class="priority priority-5">5/10</span></div>
-          <h3>JetBrains is sunsetting the Teacher Pack for Bootcamps</h3>
-          <p>JetBrains announced sunsetting its Teacher Pack for Bootcamps; final applications accepted through September 30, 2026, after which support ends.</p>
-          <div class="why compact"><span>Why it matters</span><p>If your org used the Teacher Pack for training QA or onboarding, plan alternatives before October 1, 2026, to avoid tooling gaps for training cohorts.</p></div>
-          <a class="source-link" href="https://blog.jetbrains.com/education/2026/08/31/sunsetting-of-the-jetbrains-teacher-pack-for-bootcamps/" target="_blank" rel="noopener noreferrer">JetBrains Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Language ecosystem / Test stability</span><span class="priority priority-4">4/10</span></div>
-          <h3>Java news roundup — library and runtime updates that affect testing</h3>
-          <p>InfoQ’s Java roundup lists recent releases and point updates (GraalVM, Quarkus, WildFly, etc.) that could affect JVM-based test suites and CI images.</p>
-          <div class="why compact"><span>Why it matters</span><p>Upgrade or pin Java stacks carefully — runtime and library updates can change test timing, classloading, or serialization behaviours that cause flaky tests.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/java-news-roundup-aug24-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Platform reliability / Test infra</span><span class="priority priority-4">4/10</span></div>
-          <h3>AKS guidance: making node disruption more predictable with NAP guidance</h3>
-          <p>InfoQ covers new AKS Node Auto‑Provisioning guidance from Microsoft to help platform teams balance consolidation efficiency against application availability and predictable disruption.</p>
-          <div class="why compact"><span>Why it matters</span><p>Predictable node disruption matters for distributed test farms and CI runners: follow guidance to avoid flakey test failures during autoscaling and consolidation events.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/08/aks-node-disruption/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Test Observability / Agentic QA</span><span class="priority priority-2">2/10</span></div>
+          <h3>Cypress Cloud MCP: AI assistant for debugging and run exploration (Cloud feature)</h3>
+          <p>Cypress Cloud's MCP product includes an AI assistant to debug, triage and explore test runs (listed in Cypress releases; Cloud MCP entries appear in 2026 release notes).</p>
+          <div class="why compact"><span>Why it matters</span><p>Brings agentic triage into test observability — faster root‑cause workflows, guided failure investigation, and reproducible evidence capture for flaky tests.</p></div>
+          <a class="source-link" href="https://www.cypress.io/releases" target="_blank" rel="noopener noreferrer">Cypress (Releases index) <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -186,13 +74,13 @@
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Model ops / Agent model routing</span><span class="priority priority-2">2/10</span></div><h3>Foundry Model Router expands from two regions to 28 (model pool refresh)</h3><p>Regional model routing and pool changes affect reproducible evals and latency-sensitive agent tests — track router pool and region availability for CI and benchmarks.</p><a class="source-link" href="https://www.infoq.com/news/2026/08/foundry-model-router-regions/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">Web/API Automation / Tooling</span><span class="priority priority-3">3/10</span></div><h3>Playwright release videos and ongoing reliability notes — watch for agent/recorder features</h3><p>Playwright updates frequently change test reliability and recorder behavior — important to monitor before upgrading suites and when adopting agentic test authors.</p><a class="source-link" href="https://playwright.dev/community/release-videos" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
 
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Practical tutorial / Edge inference</span><span class="priority priority-3">3/10</span></div><h3>Running AI at the Edge: run real workloads directly in the browser</h3><p>InfoQ presentation covers running agent workloads at the edge using WebGPU, Transformers.js, and DuckDB, with case studies and practical performance tips.</p><a class="source-link" href="https://www.infoq.com/presentations/local-ai-browser-inference-privacy/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">Mobile QA / Agentic QA (Learning)</span><span class="priority priority-4">4/10</span></div><h3>Maestro CHANGELOG (read for AI command usage and mobile QA changes)</h3><p>Maestro's CHANGELOG (repository) documents recent fixes, CLI changes, and notes about enabling AI command usage on mobile.dev — useful reading before adopting agentic mobile flows.</p><a class="source-link" href="https://github.com/mobile-dev-inc/maestro/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
 
       </section>
     </div>

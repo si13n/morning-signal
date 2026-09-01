@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-01",
+  "headline": "Agentic QA, mobile emulator controls, and infra changes that affect test fleets — concise signals for senior QA leads",
+  "top_signal": {
+    "title": "Maestro 2.10.0 release (mobile test automation)",
+    "category": "Mobile QA / Test automation",
+    "priority": 1,
+    "summary": "Maestro v2.10.0 (tagged Aug 31, 2026) and accompanying CLI update add several stability and AI-command-related fixes (see changelog). Improvements include better AI-command logging and handling of AI-powered command warnings.",
+    "why_it_matters": "Maestro is a lightweight mobile automation runner; AI-command behavior changes and improved logging directly affect test reproducibility, flaky-run triage, and integrating agentic test steps into device farms.",
+    "source": "GitHub — mobile-dev-inc/Maestro release v2.10.0",
+    "source_url": "https://github.com/mobile-dev-inc/Maestro/releases/tag/v2.10.0",
+    "published_at": "2026-08-31T17:12:39Z"
+  },
+  "items": [
+    {
+      "title": "Emulator control CLI for adaptive Android testing",
+      "category": "Mobile QA / Emulator automation",
+      "priority": 2,
+      "summary": "Android’s blog details adb emu console commands (fold/unfold, posture, resize-display, rotate) to control emulator form-factors programmatically, enabling fire-and-forget terminal-driven tests for foldables, tablets and resizable AVDs.",
+      "why_it_matters": "Programmatic emulator control lets QA teams run adaptive layout and posture scenarios in CI/dev pipelines without provisioning many separate images, lowering test matrix cost and improving deterministic UI checks.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/emulator-adaptive.html?m=1",
+      "published_at": "2026-08-31"
+    },
+    {
+      "title": "Kubernetes v1.37: StorageVersionMigration (SVM) enabled by default",
+      "category": "Test infrastructure / Kubernetes",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 graduates StorageVersionMigration (storagemigration.k8s.io/v1) to GA and enables it by default, changing how stored API object versions are migrated in control planes.",
+      "why_it_matters": "Default SVM can change serialized resource versions and control-plane behavior in test clusters — plan test-cluster upgrade steps, conversion checks, and fixture migrations to avoid flaky E2E tests and CI regressions.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/08/31/kubernetes-v1-37-storage-version-migration-ga/",
+      "published_at": "2026-08-31"
+    },
+    {
+      "title": "GitHub Copilot/VS Code agent-session and review features (Aug 2026)",
+      "category": "Agentic QA / Tooling",
+      "priority": 2,
+      "summary": "GitHub’s Aug 31 changelog for Copilot in VS Code adds agent session organization, side-conversations, token-usage visibility, and diffs integrated with chat — plus model-switching and a `/rubber-duck` second-opinion command.",
+      "why_it_matters": "Better session management, diff+chat integration, and token visibility make it easier to run, reproduce and audit agent-driven test-generation, test-fix workflows and human review of agent patches in QA pipelines.",
+      "source": "GitHub Changelog — GitHub Copilot in VS Code (Aug 31, 2026)",
+      "source_url": "https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases/",
+      "published_at": "2026-08-31"
+    },
+    {
+      "title": "Cloudflare AI Search — a retrieval service for agents and testing pipelines",
+      "category": "Agentic QA / Retrieval infrastructure",
+      "priority": 3,
+      "summary": "Cloudflare AI Search provides an agent-ready search/retrieval service for custom data, re-indexing, metadata filters, and isolated instances per project — documented in their developer docs and release notes.",
+      "why_it_matters": "Agentic QA workflows that rely on retrieval-augmented prompts (RAG) for test generation, test-data discovery, or evidence retrieval can use AI Search to standardize and isolate test corpora and reduce flakiness from stale retrievals.",
+      "source": "Cloudflare Developers — AI Search",
+      "source_url": "https://developers.cloudflare.com/ai-search/",
+      "published_at": "2026-07-06"
+    }
+  ],
+  "watch": [
+    {
+      "title": "VS Code Agent Host and Agent Host Protocol (AHP) — enabling persistent agent sessions",
+      "category": "Agentic QA / Tooling — watch",
+      "priority": 3,
+      "summary": "VS Code introduced the Agent Host architecture (Aug 26, 2026) and an open Agent Host Protocol to run agent sessions outside editor windows, make sessions portable across clients, and support multiple harnesses.",
+      "why_it_matters": "Persistent, portable agent sessions change how QA runs long-lived agent tasks (test harvesters, flaky test investigators). Monitor AHP adoption to plan agent harness integration and reproducible agent-run capture in QA tooling.",
+      "source": "Visual Studio Code Blog — Introducing the Agent Host",
+      "source_url": "https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture",
+      "published_at": "2026-08-26"
+    }
+  ],
+  "learning": [
+    {
+      "title": "From leaderboards to model profiles — evaluation pipeline for agentic coding (Junie)",
+      "category": "AI-for-QA evaluation / Techniques",
+      "priority": 4,
+      "summary": "JetBrains’ Junie team describes an evaluation pipeline that combines outcome, efficiency, patch quality, and process-quality metrics to profile LLM-driven coding agents beyond resolve rate.",
+      "why_it_matters": "Provides a practical evaluation framework for QA teams testing coding agents: how to measure process, patch hygiene, validation behaviour, and failure-stage diagnostics to reduce risky agent patches.",
+      "source": "JetBrains Blog — From Leaderboards to Model Profiles",
+      "source_url": "https://blog.jetbrains.com/junie/2026/08/from-leaderboards-to-profiles/",
+      "published_at": "2026-08-31"
+    }
+  ]
+}

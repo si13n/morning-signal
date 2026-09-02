@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-02",
+  "headline": "QA-focused signals: mobile testing with local models, Playwright trace improvements, Copilot entering approval gates, Maestro mobile automation update, and Kubernetes APIserver memory reductions",
+  "top_signal": {
+    "title": "Android Studio Quail 4 stable: Gemma 4 and 23 curated Android Agent Skills arrive",
+    "category": "Mobile QA / Agentic QA",
+    "priority": 1,
+    "summary": "Android Studio Quail 4 reached stable with built-in Gemma 4 (local model) and 23 curated Android Agent Skills, plus agent-mode tooling and peer-to-peer emulator multi-device testing to support agentic workflows and local AI assistance for app dev.",
+    "why_it_matters": "Local model + agent skills change how teams automate test generation, on-device verification, and agent-driven exploratory testing without sending code or APKs to external services.",
+    "source": "Android Developers Blog",
+    "source_url": "https://android-developers.googleblog.com/2026/09/leverage-gemma-4-android-studio-quail.html",
+    "published_at": "2026-09-01"
+  },
+  "items": [
+    {
+      "title": "Playwright release notes: new trace mode 'retain-on-first-failure' and test-generator updates",
+      "category": "Web/API Automation / Test Observability",
+      "priority": 2,
+      "summary": "Playwright's release notes add a trace mode 'retain-on-first-failure' and other test-runner improvements that reduce noise from retries and make failed-run diagnostics more actionable for triage and flaky-test investigation.",
+      "why_it_matters": "Keeping traces for first failures reduces storage and noise while preserving the most useful evidence for root-cause and flaky-test debugging in CI pipelines.",
+      "source": "Playwright release notes",
+      "source_url": "https://playwright.dev/docs/release-notes",
+      "published_at": "2026-09-01"
+    },
+    {
+      "title": "Maestro v2.10.0 (mobile-dev-inc) — CLI and runtime update",
+      "category": "Mobile Automation / Test Infrastructure",
+      "priority": 2,
+      "summary": "Maestro published v2.10.0 (including CLI 2.10.0), updating the mobile test orchestration toolchain used for cross-device synthetic tests and device-farm automation orchestration.",
+      "why_it_matters": "Teams relying on Maestro for app UI automation should evaluate changelog items (CLI behavior, install scripts, dependency bumps) to avoid regressions in device-farm runs and test runners.",
+      "source": "Maestro (mobile-dev-inc) GitHub releases",
+      "source_url": "https://github.com/mobile-dev-inc/Maestro/releases/tag/v2.10.0",
+      "published_at": "2026-08-31"
+    },
+    {
+      "title": "GitHub Copilot code review can now approve pull requests (public preview)",
+      "category": "Agentic QA / QA Governance",
+      "priority": 2,
+      "summary": "Copilot code review now surfaces an approval assessment and — when enabled by admins — can submit approvals that count toward repository required-approvals rules (feature in public preview and off by default).",
+      "why_it_matters": "Copilot as a merge gate changes QA review workflows and governance; teams must update policies, auditability, and required-approvals configuration before enabling automated approvals.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests/",
+      "published_at": "2026-09-01"
+    },
+    {
+      "title": "Selected GitHub Copilot models deprecated — update Copilot-based QA workflows",
+      "category": "Agentic QA / AI for QA",
+      "priority": 3,
+      "summary": "GitHub announced deprecation (effective Sept 1, 2026) for several Copilot models (e.g., Gemini 3.1 Pro, older Claude variants) and recommended alternative models for Copilot experiences.",
+      "why_it_matters": "If your test-generation, test-maintenance, or QA agents rely on specific Copilot models, update configurations and admin policies to avoid sudden behavior changes or missing model access in CI and IDE workflows.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated/",
+      "published_at": "2026-08-31"
+    },
+    {
+      "title": "Kubernetes v1.37: etcd RangeStream (beta) reduces API server memory on large list reads",
+      "category": "Test Infrastructure / Platform QA",
+      "priority": 3,
+      "summary": "Kubernetes v1.37 promotes etcd RangeStream (beta) which streams large etcd reads in chunks (requires etcd v3.7), lowering memory spikes during watch-cache initialization and large list requests.",
+      "why_it_matters": "Test clusters and platform teams can expect reduced OOM risk and more predictable memory during large e2e or scale tests; verify etcd version and feature-gate to use RangeStream.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream/",
+      "published_at": "2026-09-01"
+    }
+  ],
+  "watch": [],
+  "learning": [
+    {
+      "title": "Emulator control for adaptive app development — programmatic fold/unfold and form-factor control",
+      "category": "Mobile QA / Test Automation Techniques",
+      "priority": 3,
+      "summary": "Android docs show terminal adb emu commands for programmatic emulator control (fold/unfold, form-factor changes, targeting by serial), enabling reproducible automated tests for foldables and adaptive UI.",
+      "why_it_matters": "Use these emulator commands to reliably exercise adaptive UI paths in CI and device labs, improving deterministic test coverage for foldables and multi-form-factor scenarios.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/08/emulator-adaptive.html",
+      "published_at": "2026-08-31"
+    }
+  ]
+}

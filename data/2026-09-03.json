@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-03",
+  "headline": "Morning Signal — QA-focused updates for 2026-09-03",
+  "top_signal": {
+    "title": "GitHub Copilot code review can now approve pull requests",
+    "category": "AI-assisted code review / Quality gates",
+    "priority": 1,
+    "summary": "GitHub’s Copilot code review adds approval assessments and, when enabled by admins, can submit approvals that count toward a repository’s required-approvals rule. Feature is off by default and offered in public preview to paid plans.",
+    "why_it_matters": "Automated approvals alter who (or what) can satisfy merge gates — QA leads must review policy controls, path restrictions, and auditability before enabling approvals.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests/",
+    "published_at": "2026-09-01"
+  },
+  "items": [
+    {
+      "title": "Mantis: Google publishes an open-source harness to find, reproduce and fix bugs",
+      "category": "Agentic QA / Automated triage & reproduction",
+      "priority": 2,
+      "summary": "Google open-sourced Mantis, an agentic harness that combines critic/review agents with sandboxed reproduction to improve true-positive rates, repository-aware context, and automated patch suggestions for discovered vulnerabilities.",
+      "why_it_matters": "QA and QA-security teams can adopt Mantis patterns to reproduce findings reliably, reduce false positives, and integrate agentic discovery into verification workflows and pipelines.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/identity-security/getting-started-with-the-mantis-harness-to-find-and-fix-bugs/",
+      "published_at": "2026-09-02"
+    },
+    {
+      "title": "CLion adds an AI skill to decode and triage hard faults in embedded projects",
+      "category": "Agentic debugging / Failure triage",
+      "priority": 3,
+      "summary": "CLion 2026.2.2 ships clion-embedded-hardfault: an MCP-backed AI skill that decodes fault registers, inspects memory/disassembly, and traces the root cause across debug probes and vendor tools.",
+      "why_it_matters": "Embedded QA can speed failure triage and verification: agents produce actionable root-cause evidence and can re-run debug checks as part of automated test flows.",
+      "source": "JetBrains CLion Blog",
+      "source_url": "https://blog.jetbrains.com/clion/2026/09/hard-fault-debugging/",
+      "published_at": "2026-09-02"
+    },
+    {
+      "title": "Copilot app and CLI now honor enterprise content exclusions",
+      "category": "AI-for-QA governance / Test data protection",
+      "priority": 4,
+      "summary": "GitHub made content-exclusion policies generally available in the Copilot app and CLI so enterprise-configured exclusions aren’t used as model context for suggestions and reviews.",
+      "why_it_matters": "Protects sensitive test fixtures, proprietary code, and PII in repositories from being used as AI context — important for test-data governance and compliance in automated QA workflows.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli/",
+      "published_at": "2026-09-02"
+    },
+    {
+      "title": "Android Studio Quail 4: Gemma 4 and Android skills for test generation and developer flows",
+      "category": "Mobile QA / AI-assisted test generation",
+      "priority": 4,
+      "summary": "Android Studio Quail 4 (stable) integrates Gemma 4 Android skills and Android-specific AI features intended to speed development and create AI-assisted test workflows within the IDE.",
+      "why_it_matters": "Mobile QA engineers should evaluate generated test cases, emulator flows, and device-coverage impacts; validate generated tests and guard against brittle or unsafe test artifacts.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/09/leverage-gemma-4-android-studio-quail.html",
+      "published_at": "2026-09-01"
+    },
+    {
+      "title": "Automating the experimentation lifecycle with Kiro, AWS DevOps Agent, and LaunchDarkly",
+      "category": "Experimentation validation / Feature-flag QA",
+      "priority": 4,
+      "summary": "AWS DevOps Blog demonstrates automating experiment lifecycles by combining Kiro, the AWS DevOps Agent, and LaunchDarkly to detect events, apply validated changes, and open PRs for human review.",
+      "why_it_matters": "QA can automate experiment validation and evidence collection, tying feature-flag experiments to reproducible verification steps and gating rollouts on test/evidence outcomes.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/automating-the-experimentation-lifecycle-with-kiro-aws-devops-agent-and-launchdarkly/",
+      "published_at": "2026-09-03"
+    }
+  ],
+  "watch": [
+    {
+      "title": "TeamCity 2026.2: pipelines GA and AI assistant integrations worth monitoring",
+      "category": "CI quality gates / Agentic QA orchestration",
+      "priority": 3,
+      "summary": "TeamCity 2026.2 moves pipeline features out of EAP and introduces AI-related extensions (including BYOK for AI Assistant) that affect pipeline design and agent tooling integration.",
+      "why_it_matters": "Watch for changes that affect how QA gates, approvals, and agent-driven test tooling are wired into CI pipelines and enterprise policy controls.",
+      "source": "JetBrains TeamCity Blog",
+      "source_url": "https://blog.jetbrains.com/teamcity/2026/09/teamcity-20262/",
+      "published_at": "2026-09-02"
+    }
+  ],
+  "learning": [
+    {
+      "title": "MPS 2026.2 EAP: flexible result matching and clearer editor test failures",
+      "category": "Test design / Failure diagnostics",
+      "priority": 2,
+      "summary": "MPS 2026.2 EAP adds flexible result matching for editor tests and more informative failure messages, reducing brittle assertions and making failures point to the offending node and cell.",
+      "why_it_matters": "Study flexible result matching to reduce brittle tests and speed triage; practical technique for making GUI/editor tests more resilient and maintainable.",
+      "source": "JetBrains MPS Blog",
+      "source_url": "https://blog.jetbrains.com/mps/2026/09/the-mps-2026-2-eap-has-started-2-2/",
+      "published_at": "2026-09-02"
+    }
+  ]
+}

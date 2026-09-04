@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-04",
+  "headline": "QA-focused updates: AI-first bug-harnesses, agent-ready test tooling, runner-deprecation visibility, and test-reporting improvements",
+  "top_signal": {
+    "title": "Google releases Mantis — an open-source harness to find, reproduce, and fix bugs at machine speed",
+    "category": "AI-assisted bug finding & repair",
+    "priority": 1,
+    "summary": "Google published Mantis, an open-source harness that automates discovery, reproduction, triage, and patch validation for bugs and vulnerabilities — designed to run at scale as part of security and QA workflows.",
+    "why_it_matters": "Mantis directly automates end-to-end bug workflows: reproductions, triage, and patch verification — useful for QA teams scaling automated failure triage and bug-forging pipelines.",
+    "source": "Google Cloud Blog",
+    "source_url": "https://cloud.google.com/blog/products/identity-security/getting-started-with-the-mantis-harness-to-find-and-fix-bugs/",
+    "published_at": "2026-09-02"
+  },
+  "items": [
+    {
+      "title": "TeamCity 2026.2 makes pipelines GA and adds BYOK for its AI Assistant",
+      "category": "Test orchestration & agentic QA",
+      "priority": 1,
+      "summary": "JetBrains shipped TeamCity 2026.2: YAML pipelines move out of EAP to GA and the AI Assistant gains BYOK (bring-your-own-key) + MCP integrations so teams can run agents against self-hosted or chosen LLMs.",
+      "why_it_matters": "Pipelines GA simplifies replacing legacy build chains with pipeline-as-code; BYOK + MCP lets QA teams run agentic test automation while keeping model data and prompts under enterprise control.",
+      "source": "JetBrains Blog (TeamCity)",
+      "source_url": "https://blog.jetbrains.com/teamcity/2026/09/teamcity-20262/",
+      "published_at": "2026-09-02"
+    },
+    {
+      "title": "GitHub Actions adds a runner-deprecation REST API and finer workflow permissions",
+      "category": "CI test infrastructure",
+      "priority": 1,
+      "summary": "GitHub Actions added GET /actions/runners/deprecations/{version} to show registration/runtime deprecation dates; workflows also get a new vulnerability-alerts GITHUB_TOKEN permission and new job context properties for reusable workflows.",
+      "why_it_matters": "Runner-deprecation visibility helps QA own runner-version compatibility and avoid brownouts; vulnerability-alerts reduces scope creep for security-aware test workflows.",
+      "source": "GitHub Changelog (Actions)",
+      "source_url": "https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/",
+      "published_at": "2026-09-03"
+    },
+    {
+      "title": "Playwright 1.62 (1.62.1 patch) folds MCP/agent tooling in and adds 'isolated' retries",
+      "category": "Web test automation & agentic QA",
+      "priority": 1,
+      "summary": "Playwright's 1.62 line bundles the MCP server/CLI, introduces an 'isolated' retry strategy to isolate flaky tests from concurrency-related failures, and improves diagnostics and reporter hooks.",
+      "why_it_matters": "Bundled MCP lowers friction for running LLM/agent-driven test generation and execution; isolated retries reduce false positives and improve flaky-test triage workflows.",
+      "source": "Playwright release notes",
+      "source_url": "https://playwright.dev/docs/release-notes",
+      "published_at": "2026-07-30"
+    },
+    {
+      "title": "CLion adds an AI 'hard fault debugging' skill to speed root-cause on embedded failures",
+      "category": "Failure triage & root-cause analysis",
+      "priority": 3,
+      "summary": "JetBrains announced a CLion AI skill that aids hard-fault debugging on embedded targets, using MCP-backed tooling to gather register/stack context and propose likely root causes and reproduction steps.",
+      "why_it_matters": "For teams testing on hardware, automated suggestions reduce hands-on debugging time and produce reproducible failure artifacts QA can use in regression tests and flaky-investigation pipelines.",
+      "source": "JetBrains Blog (CLion)",
+      "source_url": "https://blog.jetbrains.com/clion/2026/09/hard-fault-debugging/",
+      "published_at": "2026-09-02"
+    },
+    {
+      "title": "MPS 2026.2 EAP improves test reporting and flexible result matching for editor tests",
+      "category": "Test reporting & brittle-test reduction",
+      "priority": 3,
+      "summary": "JetBrains MPS 2026.2 EAP adds flexible result-matching for editor tests and richer failure messages that point to specific nodes and cells — reducing brittle assertions and easing diagnosis.",
+      "why_it_matters": "Better matching and informative failure messages cut fixture maintenance and speed triage for fragile editor/unit tests, reducing test flakiness and developer/QA overhead.",
+      "source": "JetBrains Blog (MPS)",
+      "source_url": "https://blog.jetbrains.com/mps/2026/09/the-mps-2026-2-eap-has-started-2-2/",
+      "published_at": "2026-09-02"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Kubernetes v1.37 promotes HPA scale-to-zero to Beta — watch for e2e and infra impacts",
+      "category": "Test infrastructure & reliability",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 graduates HorizontalPodAutoscaler scale-to-zero to Beta and enables it by default, adding e2e coverage for scale-down/startup behavior and updating metrics to include CSI driver info.",
+      "why_it_matters": "Scale-to-zero changes cold-start behavior and test-cluster resource availability; QA teams should monitor flakiness from cold starts and update e2e timing, health probes, and observability checks.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/",
+      "published_at": "2026-09-03"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Deep-dive: Playwright 1.62 — MCP in the box, isolated retries, and upgrade gotchas",
+      "category": "Tooling tutorials & diagnostic technique",
+      "priority": 2,
+      "summary": "A focused analysis explains how Playwright 1.62 integrates MCP, how 'isolated' retries change flaky-test investigation, and which 1.62.x patches to prefer when upgrading to avoid TypeScript/config regressions.",
+      "why_it_matters": "Practical upgrade guidance and diagnostic patterns help QA teams adopt MCP-driven agent workflows and use isolated retries to separate flaky tests from concurrency/ordering bugs.",
+      "source": "Bug0 analysis (Playwright 1.62 deep-dive)",
+      "source_url": "https://bug0.com/blog/whats-new-playwright-1-62",
+      "published_at": "2026-07-31"
+    }
+  ]
+}

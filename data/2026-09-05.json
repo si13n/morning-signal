@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-05",
+  "headline": "QA-focused morning signals: Playwright test-locks, agentic triage/experiment automation, Kubernetes rootless beta, and CI runner lifecycle visibility",
+  "top_signal": {
+    "title": "Playwright v1.63.0 — named Test locks to serialize access to shared resources",
+    "category": "Web/API automation / Test runner",
+    "priority": 1,
+    "summary": "Playwright 1.63 adds named `lock` support so tests that touch a shared resource never run concurrently across files, workers and projects, while other tests remain parallel.",
+    "why_it_matters": "Makes it easier to eliminate flakiness from shared-resource tests without sacrificing parallelism — simplifies test design, CI runner configuration, and resource isolation strategies.",
+    "source": "GitHub Releases (microsoft/playwright)",
+    "source_url": "https://github.com/microsoft/playwright/releases/tag/v1.63.0",
+    "published_at": "2026-09-04T22:40:31Z"
+  },
+  "items": [
+    {
+      "title": "Kubernetes v1.37 — KubeletInUserNamespace (rootless) graduates to Beta",
+      "category": "Test infrastructure / Containerized test runners",
+      "priority": 2,
+      "summary": "Kubernetes 1.37 promotes KubeletInUserNamespace (rootless) to Beta, enabling node components to run in a non-root user namespace on hosts.",
+      "why_it_matters": "Enables safer, non-privileged test runners and local CI agents, reducing need for privileged containers and improving test environment parity and isolation.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
+      "published_at": "2026-09-04T18:30:00Z"
+    },
+    {
+      "title": "Investigate DMS migration issues with AWS DevOps Agent",
+      "category": "Agentic QA / Failure triage",
+      "priority": 2,
+      "summary": "AWS shows how to extend AWS DevOps Agent to autonomously investigate and triage Database Migration Service migration problems using read-only tools, runbooks and evidence collection.",
+      "why_it_matters": "QA teams can automate pre-cutover readiness checks and post-cutover triage, reducing manual investigation time and preserving reproducible evidence for failures.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/investigate-dms-migration-issues-with-aws-devops-agent/",
+      "published_at": "2026-09-04T18:13:04Z"
+    },
+    {
+      "title": "Automating the experimentation lifecycle with Kiro, AWS DevOps Agent, and LaunchDarkly",
+      "category": "Agentic QA / Experimentation & feature-flag testing",
+      "priority": 3,
+      "summary": "Demonstrates an end-to-end Plan→Prove→Iterate flow where Kiro and AWS DevOps Agent orchestrate feature-flagged experiments, guarded rollouts and PR creation via LaunchDarkly.",
+      "why_it_matters": "Provides a blueprint for embedding automated experiment validation and quality checks into release pipelines, reducing manual gating and improving repeatable experiment testing.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/automating-the-experimentation-lifecycle-with-kiro-aws-devops-agent-and-launchdarkly/",
+      "published_at": "2026-09-03T02:11:19Z"
+    },
+    {
+      "title": "GitHub Actions: new REST API for runner deprecations, vulnerability-alerts permission, and job context properties",
+      "category": "Test infrastructure / CI runners",
+      "priority": 3,
+      "summary": "GitHub Actions added a REST API to query when runner versions stop being supported, plus a `vulnerability-alerts` GITHUB_TOKEN permission and new `job` context properties for reusable workflows.",
+      "why_it_matters": "Test-infra owners can proactively plan runner upgrades to avoid broken test agents; new permissions and job context values help lock down and trace test workflows.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/",
+      "published_at": "2026-09-03T20:30:53Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Upcoming deprecation of selected GitHub Copilot models (effective Oct 2, 2026)",
+      "category": "Agentic QA / QA agents",
+      "priority": 4,
+      "summary": "GitHub announced several Copilot models will be deprecated across Copilot Chat, inline edits and agent modes on October 2, 2026.",
+      "why_it_matters": "Teams using Copilot-based test-generation or agentic QA workflows must validate replacements and update agent configurations before Oct 2 to avoid disruptions.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models/",
+      "published_at": "2026-09-03T19:40:14Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "AWS DevOps Agent — User Guide (comprehensive agent documentation)",
+      "category": "Agentic QA / Documentation",
+      "priority": 2,
+      "summary": "AWS published a 520-page user guide covering agent concepts (skills, memories), MCP integrations, webhooks, sample skills, onboarding and troubleshooting for AWS DevOps Agent.",
+      "why_it_matters": "Practical reference for QA engineers building agent-driven test investigators, triage skills, and experiment orchestration using AWS DevOps Agent.",
+      "source": "AWS DevOps Agent User Guide (PDF)",
+      "source_url": "https://docs.aws.amazon.com/pdfs/devopsagent/latest/userguide/devops-agent-ug.pdf",
+      "published_at": "2026-03-30T00:00:00Z"
+    }
+  ]
+}

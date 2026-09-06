@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-06",
+  "headline": "QA Morning Signal — 2026-09-06: Playwright adds test locks; infra and testing tools require revalidation",
+  "top_signal": {
+    "title": "Playwright v1.63 adds named 'lock' to serialize tests that share external resources",
+    "category": "Test framework",
+    "priority": 1,
+    "summary": "Playwright v1.63 (released Sep 4, 2026) introduces named test `lock` so tests that access a shared resource never run concurrently across files, workers and projects; also adds visible-only locators and richer trace snapshots.",
+    "why_it_matters": "Lets teams eliminate concurrency-driven flakiness for shared resources without serializing entire suites; simplifies safe parallelism and test scheduling.",
+    "source": "GitHub Releases - microsoft/playwright",
+    "source_url": "https://github.com/microsoft/playwright/releases/tag/v1.63.0",
+    "published_at": "2026-09-04"
+  },
+  "items": [
+    {
+      "title": "CodeQL 2.26.4: improved language support and GitHub Actions query adjustments",
+      "category": "Static analysis",
+      "priority": 2,
+      "summary": "CodeQL 2.26.4 (Sep 3, 2026) adds Go 1.27 support, tighter Rust alert locations, and accuracy fixes across C#, Java/Kotlin, JS/TS and Python; GitHub Actions modeling changes may shift alert locations or counts.",
+      "why_it_matters": "SAST rule/model changes can change alert noise and triage outcomes — QA/security teams must rebaseline scans and update triage/playbooks accordingly.",
+      "source": "GitHub Changelog - CodeQL 2.26.4",
+      "source_url": "https://github.blog/changelog/2026-09-03-codeql-2-26-4-improves-github-actions-security-detections/",
+      "published_at": "2026-09-03"
+    },
+    {
+      "title": "Kubernetes v1.37: rootless Kubelet (KubeletInUserNamespace) promoted to Beta",
+      "category": "Test infrastructure",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 (Sep 4, 2026) promotes KubeletInUserNamespace (rootless mode) to beta; kind, minikube and k3s examples and Kubernetes' own CI run node conformance on rootless clusters.",
+      "why_it_matters": "Rootless clusters change CI/e2e test environments and host-risk assumptions — validate CNI/CSI compatibility, node labels/taints, and CI images before switching test fleets.",
+      "source": "Kubernetes Blog - v1.37 rootless beta",
+      "source_url": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
+      "published_at": "2026-09-04"
+    },
+    {
+      "title": "k6 v2.0 (current major) stabilizes TypeScript and schema changes for load testing platforms",
+      "category": "Performance testing",
+      "priority": 3,
+      "summary": "k6's v2.0 line (released May 11, 2026) completed API cleanup and first-class TypeScript scripting; platform authors and test authors should expect changes in test-definition formats and metric/tag conventions.",
+      "why_it_matters": "Upgrading k6 can break test scripts and metrics ingestion; performance QA must revalidate test definitions, dashboards, and CI pipeline compatibility before upgrading.",
+      "source": "Load testing platform analysis referencing k6 v2.0",
+      "source_url": "https://www.vervali.com/blog/load-testing-platform-architecture-2026-data-models-schema-design-and-infrastructure-patterns-for-k6-gatling-and-jmeter",
+      "published_at": "2026-05-11"
+    },
+    {
+      "title": "Appium module packaging changes (mid‑2026) remove CommonJS entrypoints — update Node test harnesses",
+      "category": "Mobile automation",
+      "priority": 2,
+      "summary": "Appium component releases in 2026 (e.g., appium-xcode 7.1.0) removed CommonJS entrypoints, requiring `import`/dynamic import() instead of `require()` in consumer code and test harnesses.",
+      "why_it_matters": "Mobile automation suites using `require()` will break on updated Appium packages; QA teams must test and migrate Node-based runners and CI images to ESM-compatible runtimes.",
+      "source": "GitHub Releases - appium/appium-xcode",
+      "source_url": "https://github.com/appium/appium-xcode/releases",
+      "published_at": "2026-07-25"
+    }
+  ],
+  "watch": [
+    {
+      "title": "GitHub Actions: new runner deprecation REST API, GITHUB_TOKEN permission, reusable-workflow job context",
+      "category": "CI / Actions",
+      "priority": 2,
+      "summary": "GitHub Actions (Sep 3, 2026) added a REST API to query registration and runtime deprecation dates for runner versions, a `vulnerability-alerts` permission for GITHUB_TOKEN, and new `job` context properties for reusable workflows.",
+      "why_it_matters": "Monitor runner deprecation dates to schedule self-hosted runner and test-image upgrades; the new token permission supports least-privilege access for workflow-based test checks.",
+      "source": "GitHub Changelog - Actions updates",
+      "source_url": "https://github.blog/changelog/2026-09-03-github-actions-early-september-2026-updates/",
+      "published_at": "2026-09-03"
+    }
+  ],
+  "learning": []
+}

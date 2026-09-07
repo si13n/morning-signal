@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-07",
+  "headline": "QA-focused roundup: Playwright adds test locks; agentic vulnerability harnesses and package-manager changes that affect test reliability",
+  "top_signal": {
+    "title": "Playwright v1.63.0 — named test locks and richer traces to reduce parallel-test interference",
+    "category": "Web/API automation",
+    "priority": 1,
+    "summary": "Playwright 1.63.0 adds named test locks so tests that touch a shared resource never run concurrently, plus richer tracing (ARIA/screen snapshots) and step params for better failure triage and reporting.",
+    "why_it_matters": "Named locks let teams run tests in parallel while preventing shared-resource collisions, reducing flaky failures and simplifying CI shard design and triage.",
+    "source": "GitHub (microsoft/playwright release)",
+    "source_url": "https://github.com/microsoft/playwright/releases/tag/v1.63.0",
+    "published_at": "2026-09-04"
+  },
+  "items": [
+    {
+      "title": "Google open-sources Mantis — an agentic harness for finding, reproducing and fixing vulnerabilities",
+      "category": "Agentic QA / Security testing",
+      "priority": 2,
+      "summary": "Google published Mantis, an open-source harness combining agentic analysis, repository-history summarization, sandboxed reproduction and critic/review agents to reduce hallucinated findings and increase true positives in automated vulnerability discovery.",
+      "why_it_matters": "QA teams can integrate Mantis to triage AI-discovered security findings, reproduce issues in sandboxes, and reduce false positives before test or release gates.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/identity-security/getting-started-with-the-mantis-harness-to-find-and-fix-bugs",
+      "published_at": "2026-09-02"
+    },
+    {
+      "title": "vlt 1.0 GA — drop-in npm replacement with phased installs and malware-blocking registries",
+      "category": "Test environment / Package management",
+      "priority": 2,
+      "summary": "vlt 1.0 (by the original npm team) ships phased installs (separate download and build steps), queryable dependency-graph selectors, and hosted registries that reject known-malicious packages by default.",
+      "why_it_matters": "Phased installs and registry malware-blocking improve reproducibility and reduce supply-chain risk in test runners and CI agents, changing how teams should validate test environment setup.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/09/vlt-npm-replacement/",
+      "published_at": "2026-09-07"
+    },
+    {
+      "title": "Figma documents internal use of AI agents for security alert triage and investigation",
+      "category": "Agentic QA / Incident triage",
+      "priority": 3,
+      "summary": "Figma published an internal engineering write-up describing AI agents that search incidents, summarize past investigations, run checks across systems, and prepare candidate fixes to accelerate security triage.",
+      "why_it_matters": "Shows practical agent patterns QA teams can adapt for failure triage, automated root-cause searches, and surfacing reproducible evidence for flaky or failing tests.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/09/figma-security-agents/",
+      "published_at": "2026-09-06"
+    },
+    {
+      "title": "Kubernetes v1.37 promotes KubeletInUserNamespace (rootless kubelet) to Beta",
+      "category": "Test infrastructure / Kubernetes",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 moves KubeletInUserNamespace (rootless mode) to Beta, enabling node components (kubelet, CRI, CNI, kube-proxy) to run as non-root using Linux user namespaces.",
+      "why_it_matters": "Running kubelet and runtimes non-root reduces blast radius for test infrastructure and CI agents, but QA teams must validate privileged assumptions in device/cluster tests and update test images and tooling.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/04/kubernetes-v1-37-rootless-beta/",
+      "published_at": "2026-09-04"
+    },
+    {
+      "title": "Kubernetes v1.37 DRA updates — Device Resource API improvements affecting node scheduling and resource tests",
+      "category": "Test infrastructure / Resource scheduling",
+      "priority": 3,
+      "summary": "v1.37 advances Device Resource API (DRA) updates into Beta/Alpha stages, changing how device attributes and fractional capacities are expressed to the scheduler and kubelet.",
+      "why_it_matters": "QA responsible for performance, device-specific, or node-resource tests must revisit testbeds and assertions: DRA changes affect resource claims, scheduling behavior, and node oversubscription assumptions.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/",
+      "published_at": "2026-09-03"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-08",
+  "headline": "QA-focused roundup: agentic testing moves toward production, payment-system chaos lessons, agentic vulnerability triage, and supply‑chain/testing hygiene to watch",
+  "top_signal": {
+    "title": "From AI Agent Demo to Production: Simulation-driven testing for multi-turn agents (QCon AI)",
+    "category": "AI-assisted testing / Agentic QA",
+    "priority": 1,
+    "summary": "Zhou Yu (QCon AI) presents simulation-driven testing for multi-turn agents: synthetic user personas, trajectory entropy metrics, automated simulation CI, and scalable self-learning pipelines to catch edge cases before deployment.",
+    "why_it_matters": "Provides concrete evaluation patterns and CI integration for QA teams validating multi-turn agent reliability, safety, and compliance in production.",
+    "source": "InfoQ (QCon AI presentation)",
+    "source_url": "https://www.infoq.com/presentations/ai-agent-testing-evaluation/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+    "published_at": "2026-09-07"
+  },
+  "items": [
+    {
+      "title": "Implementing chaos engineering in financial payment systems: ECS-specific lessons",
+      "category": "Resilience testing / Chaos engineering",
+      "priority": 2,
+      "summary": "InfoQ outlines ECS and payment-system pitfalls: task startup windows, DNS TTL caching causing longer failovers, AZ rebalancing side effects, and the need for formal steady-state definitions and rollback automation.",
+      "why_it_matters": "Shows QA must design transaction-aware chaos experiments, define steady states, and automate rollback/approval to safely validate payment resilience and compliance (PCI/SOC2).",
+      "source": "InfoQ (article)",
+      "source_url": "https://www.infoq.com/articles/chaos-engineering-ecs-payments/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-09-08"
+    },
+    {
+      "title": "Google Mantis — agentic framework to reduce vulnerability scanner false positives",
+      "category": "Agentic QA / Security testing",
+      "priority": 2,
+      "summary": "InfoQ reports Google open-sourced Mantis, an AI-agent framework that automates vulnerability identification, validation, reproduction and lifecycle steps to cut false positives from AI-powered scanning.",
+      "why_it_matters": "QA/security teams can adopt agentic validation to produce reproducible security test cases and reduce noisy findings that waste triage time.",
+      "source": "InfoQ (news)",
+      "source_url": "https://www.infoq.com/news/2026/09/google-mantis-vulnerability-scan/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-09-06"
+    },
+    {
+      "title": "How Figma uses AI agents to speed security investigations",
+      "category": "Agentic QA / Failure triage",
+      "priority": 3,
+      "summary": "InfoQ summarizes Figma’s writeup: agents built on Panther SIEM and osquery query many sources, search past incidents, and can open PRs for fixes — shortening investigation time while keeping human oversight.",
+      "why_it_matters": "Illustrates practical agent-assisted triage patterns QA and SRE teams can replicate to accelerate failure diagnosis and collect test evidence without removing human checks.",
+      "source": "InfoQ (news, summarizing Figma blog)",
+      "source_url": "https://www.infoq.com/news/2026/09/figma-security-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-09-06"
+    },
+    {
+      "title": "Scaling validation of AI-generated code and autonomous SDLC harnesses (Stack Overflow Blog interview)",
+      "category": "AI-for-QA / Validation",
+      "priority": 3,
+      "summary": "Stack Overflow’s interview with PayPal leadership covers validating AI-generated deterministic code, creating autonomous SDLC harnesses with iterative feedback, and approaches for testing generated checkout flows end-to-end.",
+      "why_it_matters": "Provides practical validation patterns and autonomous-testing ideas QA leads can apply when integrating AI code generation into CI and release gates.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/09/08/scaling-your-money-safely-with-ai/",
+      "published_at": "2026-09-08"
+    }
+  ],
+  "watch": [
+    {
+      "title": "vlt 1.0: npm replacement with phased installs, graph queries, and malware-blocking registries",
+      "category": "Test environment / Dependency hygiene",
+      "priority": 4,
+      "summary": "InfoQ reports vlt 1.0 (by original npm team) features phased installs to avoid automatic script execution, a queryable dependency graph, and hosted registries that block malicious packages.",
+      "why_it_matters": "Could materially reduce test-environment supply-chain risk and improve reproducible installs; QA should monitor adoption and impacts on CI/test reproducibility and flaky-install failures.",
+      "source": "InfoQ (news)",
+      "source_url": "https://www.infoq.com/news/2026/09/vlt-npm-replacement/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-09-07"
+    }
+  ],
+  "learning": [
+    {
+      "title": "How well do agents use test/verification techniques? — empirical evaluation",
+      "category": "Agentic QA / Evaluation research",
+      "priority": 5,
+      "summary": "Dan Luu’s empirical study tests many agent guidance conditions (TDD, PBT, formal methods, skills) and finds agents often misapply testing techniques and write weak or superficial tests.",
+      "why_it_matters": "An evidence-based guide showing which naive agent-guidance strategies fail and where QA should invest in better harnesses, prompts, or training to improve agentic testing outcomes.",
+      "source": "Dan Luu (technical blog)",
+      "source_url": "https://danluu.com/agentic-testing/",
+      "published_at": "2026-09-08"
+    }
+  ]
+}

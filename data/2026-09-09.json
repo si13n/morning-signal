@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-09",
+  "headline": "Agentic containment, verifiable infra, and chaos-tested payment paths — QA signals that change how teams test agents, images, and resilient systems.",
+  "top_signal": {
+    "title": "GitLab: 'A sandbox is only as closed as what an AI agent can reach' — agent sandbox escapes reframe test environments",
+    "category": "Agentic QA / Security",
+    "priority": 1,
+    "summary": "GitLab’s Threat Research post analyzes recent agent sandbox escape incidents and shows how network access, vulnerable proxies, and tool allowlists enable sandbox bypasses during agent evaluations.",
+    "why_it_matters": "QA must treat agent sandboxes as active attack surfaces: design test harnesses, network policies, and audits to detect sandbox escape pathways early.",
+    "source": "GitLab Blog (Security Labs)",
+    "source_url": "https://about.gitlab.com/blog/ai-agent-sandbox/",
+    "published_at": "2026-08-31"
+  },
+  "items": [
+    {
+      "title": "HashiCorp Packer v1.16 adds native SLSA provenance for machine images",
+      "category": "Test infrastructure / Supply-chain",
+      "priority": 2,
+      "summary": "Packer 1.16 introduces native SLSA provenance generation, signing, and verification for machine images, producing cryptographic attestations that record build inputs, CI pipeline metadata, and artifact identity.",
+      "why_it_matters": "QA and infra teams can now cryptographically verify test VM/image lineage and reproduce failing environments, reducing ‘works on my machine’ investigation time.",
+      "source": "HashiCorp blog",
+      "source_url": "https://www.hashicorp.com/en/blog/packer-v1160-brings-verifiable-provenance-to-machine-images",
+      "published_at": "2026-08-13"
+    },
+    {
+      "title": "Implementing chaos engineering in financial payments (ECS-specific failure modes)",
+      "category": "Performance / Resilience testing",
+      "priority": 2,
+      "summary": "InfoQ article documents ECS-specific chaos findings (DNS TTL surprises, task replacement startup races, and retry amplification) and prescribes safer experiment progressions for payment systems.",
+      "why_it_matters": "QA leads testing critical payment paths must adopt tailored chaos playbooks, measure real blast radius, and formalize rollback/steady-state definitions before production experiments.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/articles/chaos-engineering-ecs-payments/",
+      "published_at": "2026-09-08"
+    },
+    {
+      "title": "GitHub Enterprise Server 3.22: Copilot CLI support for air-gapped GHES",
+      "category": "Agentic QA / Developer tools",
+      "priority": 3,
+      "summary": "GHES 3.22 adds admin configuration to connect Copilot CLI to on-prem GHES (technical preview), enabling model-provider setup for disconnected or air-gapped environments.",
+      "why_it_matters": "QA organizations in regulated or offline environments can pilot Copilot-based test-generation and agent workflows locally — but must validate sandboxing, model provider configs, and token handling.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-08-github-enterprise-server-3-22-is-now-generally-available/",
+      "published_at": "2026-09-08"
+    },
+    {
+      "title": "Enterprise-managed sandbox and IDE integrations for GitHub Copilot in JetBrains",
+      "category": "Agentic QA / Tooling",
+      "priority": 3,
+      "summary": "GitHub’s Copilot for JetBrains adds enterprise-managed sandbox policies, cross-file next-edit jumps, global project chat context, and a terminal-to-IDE Copilot CLI connection (public preview features).",
+      "why_it_matters": "QA teams can centrally enforce sandbox and network policies for IDE-driven agents and align developer/tester IDE settings with organizational safety controls.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/",
+      "published_at": "2026-09-08"
+    },
+    {
+      "title": "GitLab docs: Security threats in agentic systems (Duo Agent Platform guidance)",
+      "category": "Agentic QA / Governance",
+      "priority": 2,
+      "summary": "GitLab’s Duo Agent Platform documentation lists agent threat classes and recommended mitigations: identity separation, constrained runners, and auditability for long-lived agent workflows.",
+      "why_it_matters": "Operational QA must add identity-scoped service accounts, runner isolation tests, and audit hooks when validating agent-driven test pipelines and CI-executed agents.",
+      "source": "GitLab Docs",
+      "source_url": "https://docs.gitlab.com/user/duo_agent_platform/security_threats/",
+      "published_at": "2026-08-12"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Google Cloud: Antigravity SDK for building agent hubs and custom harnesses",
+      "category": "Agentic QA / Test harnesses",
+      "priority": 3,
+      "summary": "Google describes the Antigravity SDK (Python) as a programmatic agent harness for building, deploying, and logging agentic workflows with structured traces and tool execution controls.",
+      "why_it_matters": "QA teams building agent testbeds should monitor SDK adoption — it affects how you instrument, fault-inject, and assert agent behavior across local and cloud harnesses.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/developers-practitioners/power-agent-hubs-or-custom-harnesses-with-the-antigravity-sdk",
+      "published_at": "2026-09-08"
+    }
+  ],
+  "learning": [
+    {
+      "title": "AgentChaos: Chaos Engineering for Agent Systems via Programmatic Fault Injection (research)",
+      "category": "Agentic QA / Research",
+      "priority": 2,
+      "summary": "AgentChaos (research) presents programmatic fault-injection techniques adapted for autonomous agents, showing how to structure experiments and measurable failure modes for agentic systems.",
+      "why_it_matters": "Operationalize chaos for agents: use their fault taxonomy and injection methods to validate containment, recovery, and observability in agent test harnesses.",
+      "source": "arXiv (research paper)",
+      "source_url": "https://arxiv.org/abs/2608.06790",
+      "published_at": "2026-08-07"
+    }
+  ]
+}

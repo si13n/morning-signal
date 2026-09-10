@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-10",
+  "headline": "Morning Signal — QA edition (agentic QA, test tooling, mobile/device debugging, resilience testing)",
+  "top_signal": {
+    "title": "Remediate Code Quality findings with agentic autofix",
+    "category": "Agentic QA / Code quality automation",
+    "priority": 1,
+    "summary": "GitHub added 'agentic autofix' to Code Quality: you can select up to 25 findings and assign them to Copilot, which applies fixes on a branch, self-validates changes, then opens a pull request under your existing enterprise policy.",
+    "why_it_matters": "Automated bulk fixes change remediation workflows — QA must add PR verification, CI gates, and test-coverage checks to catch regressions from agentic fixes.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-09-09-remediate-code-quality-findings-with-agentic-autofix/",
+    "published_at": "2026-09-09"
+  },
+  "items": [
+    {
+      "title": "Introducing ADB Wi‑Fi 2.0: faster, more reliable wireless debugging",
+      "category": "Mobile QA / Device lab tooling",
+      "priority": 2,
+      "summary": "Android published ADB Wi‑Fi 2.0: reworked adb server, adbd daemon, and Android Studio discoverability. Google reports ~32% higher auto‑connection success and 66% faster connections for 90% of sessions.",
+      "why_it_matters": "Improves wireless device stability for local and CI device labs, reducing flaky device connections and setup time for mobile test runs and exploratory debugging.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/09/wireless-debugging-adb-wifi-2.html",
+      "published_at": "2026-09-09"
+    },
+    {
+      "title": "Testing application resilience with Amazon SQS and AWS Fault Injection Service",
+      "category": "Resilience testing / Fault injection",
+      "priority": 2,
+      "summary": "AWS published a hands‑on guide and reusable FIS+SSM Automation templates to simulate progressive SQS access loss, define hypotheses, stop conditions, and observability metrics for producer/consumer behavior.",
+      "why_it_matters": "Provides a repeatable resilience experiment and metrics model QA teams can adapt to validate retry logic, circuit breakers, DLQs, and stop‑condition safety for production tests.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/testing-application-resilience-with-amazon-sqs-and-aws-fault-injection-service/",
+      "published_at": "2026-09-09"
+    },
+    {
+      "title": "CodeQL 2.27.0 adds support for Linux ARM64",
+      "category": "Static analysis / Test tooling",
+      "priority": 3,
+      "summary": "CodeQL 2.27.0 is available on Linux ARM64, adds a new Rust security query, expanded Java/Kotlin and C# framework modelling, and accuracy improvements; per‑platform CLI assets provided.",
+      "why_it_matters": "Native ARM64 code scanning lets QA run CodeQL on ARM CI runners and devices without emulation, improving scan coverage and reducing cross‑platform analysis friction.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-09-codeql-2-27-0-adds-support-for-linux-arm64/",
+      "published_at": "2026-09-09"
+    },
+    {
+      "title": "Enterprise managed permissions for GitHub Copilot agent operations",
+      "category": "Agent governance / QA safety",
+      "priority": 3,
+      "summary": "GitHub added enterprise‑managed permissions to centrally block, require approval for, or allow specific Copilot agent operations (shell commands, file reads/edits, network domains) across app, CLI, and VS Code Agent Host.",
+      "why_it_matters": "Allows QA and platform teams to enforce guardrails for agentic autofix and test agents, control risky operations, and require approvals for changes touching tests, infra, or secrets.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/",
+      "published_at": "2026-09-09"
+    },
+    {
+      "title": "GitHub Advanced Security expands trial availability",
+      "category": "Code scanning / Security testing",
+      "priority": 4,
+      "summary": "GitHub expanded self‑serve GitHub Advanced Security trials from enterprises with up to 100 licenses to enterprises with up to 300 licenses, easing evaluation of Code Security and Secret Protection.",
+      "why_it_matters": "Eases piloting of code scanning and secret-detection across larger QA organizations, useful for validating security gates and scanning workflows before wide rollout.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-09-github-advanced-security-expands-trial-availability/",
+      "published_at": "2026-09-09"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

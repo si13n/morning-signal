@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-11",
+  "headline": "QA-focused signals: agent governance, AI-assisted PR scanning, Apple runner updates, static analysis, and resilience testing",
+  "top_signal": {
+    "title": "Enterprise-managed permissions for GitHub Copilot agent operations (generally available)",
+    "category": "Agentic QA / Agent Governance",
+    "priority": 1,
+    "summary": "GitHub now lets Copilot Business and Enterprise admins centrally block, require approval, or allow specific agent operations (shell commands, file reads/edits, network domains) to enforce fine-grained guardrails across teams.",
+    "why_it_matters": "Provides QA leaders control over agentic testing workflows — enable automated test agents while preventing unsafe operations and ensuring reproducible, auditable agent behavior.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/",
+    "published_at": "2026-09-09"
+  },
+  "items": [
+    {
+      "title": "AI Scan for pull request APIs enter public preview (GitHub code scanning)",
+      "category": "AI-assisted Testing / Security Scanning",
+      "priority": 2,
+      "summary": "GitHub released REST APIs in public preview to programmatically enable or disable AI Scan for pull requests at org and repo levels, letting teams roll out AI-powered PR security detections at scale.",
+      "why_it_matters": "QA teams can automate enrollment and governance for AI-based PR scans, integrating AI detections into test gates and audit logs across many repositories.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-10-ai-scan-for-pull-request-apis-in-public-preview/",
+      "published_at": "2026-09-10"
+    },
+    {
+      "title": "Xcode 27 runner image now runs on macOS 27 (public preview)",
+      "category": "Mobile QA / CI Runners",
+      "priority": 3,
+      "summary": "GitHub-hosted macOS runner image for Xcode 27 now runs on macOS 27 (arm64) in public preview; workflows continue to target labels like `xcode-27` and `xcode-27-xlarge`.",
+      "why_it_matters": "iOS/macOS app teams and QA can validate builds/tests against macOS 27 earlier — update device matrices, simulator test targets, and runner expectations to avoid compatibility drift.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-10-xcode-27-runner-image-now-runs-on-macos-27/",
+      "published_at": "2026-09-10"
+    },
+    {
+      "title": "CodeQL 2.27.0 adds Linux ARM64 support and new language coverage",
+      "category": "Static Analysis / Test Coverage",
+      "priority": 3,
+      "summary": "CodeQL 2.27.0 is available for Linux ARM64, adds Rust security queries, improves Java/Kotlin and C# framework modelling, and increases analysis accuracy across languages.",
+      "why_it_matters": "Static analysis in CI and pre-merge scanning gains broader platform parity and new queries (Rust), improving early detection and test-orchestration accuracy for ARM-based builds.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-09-codeql-2-27-0-adds-support-for-linux-arm64/",
+      "published_at": "2026-09-09"
+    }
+  ],
+  "watch": [
+    {
+      "title": "AI x QA Leadership Summit 2026 — BrowserStack (virtual, Sept 23)",
+      "category": "Event / AI for QA",
+      "priority": 4,
+      "summary": "BrowserStack’s QA Leadership Summit (Sept 23, 2026) runs two tracks: AI strategy/governance for QA leaders and hands-on applied AI testing workshops for practitioners.",
+      "why_it_matters": "Useful forum to compare AI-native QA governance patterns, agent controls, and practical demos that influence QA roadmaps and automation policies.",
+      "source": "BrowserStack Blog",
+      "source_url": "https://www.browserstack.com/blog/ai-x-qa-leadership-summit-2026/",
+      "published_at": "2026-09-11"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Testing application resilience with Amazon SQS and AWS Fault Injection Service (how-to)",
+      "category": "Resilience Testing / Chaos Experiments",
+      "priority": 4,
+      "summary": "AWS provides a step-by-step resilience experiment that uses AWS FIS and SSM Automation to progressively deny SQS data-plane operations, observe recovery, and validate retry/circuit-breaker behavior and observability metrics.",
+      "why_it_matters": "Practical guide for QA leads to design measurable chaos tests for message-driven systems, verify failure-handling and observability, and produce testable hypotheses for resilience SLAs.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/testing-application-resilience-with-amazon-sqs-and-aws-fault-injection-service/",
+      "published_at": "2026-09-09"
+    }
+  ]
+}

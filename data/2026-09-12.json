@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-12",
+  "headline": "AI-assisted testing adoption, test observability upgrades, and resilience testing playbooks — practical QA signals for leads and automation engineers",
+  "top_signal": {
+    "title": "Cognition uses GPT‑6 Astra to autonomously test and produce executable evidence",
+    "category": "AI-assisted testing",
+    "priority": 1,
+    "summary": "Cognition’s Devin (an autonomous engineer) uses GPT‑6 Astra to run tests (including an iPhone simulator), produce video recordings and pass/fail reports, and return fixes and evidence to engineers. Published case study shows end-to-end test outputs.",
+    "why_it_matters": "Shows a production example of LLMs executing tests, producing evidence, and reducing manual code review — directly relevant for QA automation pilots and governance planning.",
+    "source": "OpenAI — Cognition case study",
+    "source_url": "https://openai.com/index/cognition-devin-testing-with-astra/",
+    "published_at": "2026-09-11"
+  },
+  "items": [
+    {
+      "title": "Kubernetes v1.37: native histograms graduate to Beta (enabled by default)",
+      "category": "Test observability",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 graduates Prometheus Native Histograms to Beta and enables them by default, offering higher-resolution latency/duration metrics with lower cardinality and reduced telemetry overhead compared with classic histograms.",
+      "why_it_matters": "Higher-resolution, lower-cardinality metrics improve test telemetry accuracy and make failure triage, flaky-test correlation, and performance test analysis more reliable.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta/",
+      "published_at": "2026-09-11"
+    },
+    {
+      "title": "Xcode 27 runner image now runs on macOS 27 (public preview)",
+      "category": "Mobile QA / CI runners",
+      "priority": 3,
+      "summary": "GitHub-hosted macOS runner image for Xcode 27 now runs on macOS 27 (public preview). Workflows continue to use runs-on labels like `xcode-27`; the image runs on arm64 macOS runners only.",
+      "why_it_matters": "QA teams must validate iOS/macOS test matrices and CI workflows against macOS 27 and arm64 runners to avoid test environment drift and broken signing or simulator behaviours.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-10-xcode-27-runner-image-now-runs-on-macos-27/",
+      "published_at": "2026-09-10"
+    },
+    {
+      "title": "Testing application resilience with Amazon SQS using AWS Fault Injection Service",
+      "category": "Chaos & resilience testing",
+      "priority": 2,
+      "summary": "AWS Architecture provides a step-by-step resilience experiment that uses AWS FIS and SSM Automation to progressively block SQS data-plane operations, measure CloudWatch metrics, and validate producer/consumer failure handling.",
+      "why_it_matters": "Gives a practical test-plan and artifacts for injecting SQS failures, framing hypotheses, and measuring recovery — directly reusable for QA stress and resilience suites.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/testing-application-resilience-with-amazon-sqs-and-aws-fault-injection-service/",
+      "published_at": "2026-09-09"
+    },
+    {
+      "title": "Validating multi-Region disaster recovery for Terraform Enterprise with AWS FIS",
+      "category": "Infrastructure QA / DR testing",
+      "priority": 3,
+      "summary": "AWS, HashiCorp, and Athenahealth published a multi-Region DR validation playbook for Terraform Enterprise that uses AWS FIS experiments to surface hidden dependencies and validate failover/failback workflows.",
+      "why_it_matters": "Provides a tested methodology and code to validate infrastructure failover workflows—essential for QA that owns release reliability and infra test plans.",
+      "source": "AWS Architecture Blog",
+      "source_url": "https://aws.amazon.com/blogs/architecture/validating-multi-region-dr-for-terraform-enterprise-with-aws-fis/",
+      "published_at": "2026-09-09"
+    }
+  ],
+  "watch": [
+    {
+      "title": "BrowserStack — AI x QA Leadership Summit 2026: Building the AI‑Native QA Engine (virtual, Sep 23)",
+      "category": "Event / AI for QA",
+      "priority": 4,
+      "summary": "BrowserStack’s QA Leadership Summit (Sep 23, 2026) runs two tracks: AI strategy and governance for leaders, and applied AI testing workshops for practitioners with speakers from major QA organizations.",
+      "why_it_matters": "Worth monitoring for practical governance patterns, operational controls, and practitioner demos you can pilot for AI-assisted testing and QA metrics.",
+      "source": "BrowserStack Blog",
+      "source_url": "https://www.browserstack.com/blog/ai-x-qa-leadership-summit-2026/",
+      "published_at": "2026-09-11"
+    }
+  ],
+  "learning": []
+}

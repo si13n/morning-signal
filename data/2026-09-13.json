@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-13",
+  "headline": "QA-focused signals: iOS 27 virtualization for automated testing, agentic self-testing with GPT‑6 Astra, Xcode 27 CI runners, and programmatic AI scan controls",
+  "top_signal": {
+    "title": "vphone-cli brings full iOS 27 virtualization to Apple Silicon (open-source)",
+    "category": "Mobile QA / Test Infrastructure",
+    "priority": 1,
+    "summary": "The vphone-cli open-source project now boots full iOS 27 userland on Apple Silicon via Apple's Virtualization.framework and adds tooling to create, patch and manage virtual iPhone VMs for local and CI use.",
+    "why_it_matters": "Enables running authentic iOS 27 VMs without physical devices—reduces device-farm dependency, lowers CI matrix cost, and makes OS‑level regression testing and automation easier to reproduce locally.",
+    "source": "GitHub — Lakr233/vphone-cli",
+    "source_url": "https://github.com/Lakr233/vphone-cli",
+    "published_at": "2026-09-08"
+  },
+  "items": [
+    {
+      "title": "Xcode 27 runner image now runs on macOS 27 (GitHub Changelog)",
+      "category": "Mobile QA / CI",
+      "priority": 2,
+      "summary": "GitHub-hosted macOS runner images now run Xcode 27 on macOS 27 in public preview, letting teams validate builds and simulator-based tests against the latest Apple SDK/OS in CI.",
+      "why_it_matters": "CI teams can detect SDK/OS regressions earlier by running tests on the actual Xcode 27/macOS 27 environment, reducing release-day breakage for iOS/macOS apps.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-10-xcode-27-runner-image-now-runs-on-macos-27/",
+      "published_at": "2026-09-10"
+    },
+    {
+      "title": "Cognition wires GPT‑6 Astra into Devin to autonomously test its own code (OpenAI)",
+      "category": "Agentic QA / AI for QA",
+      "priority": 1,
+      "summary": "Cognition integrated OpenAI’s GPT‑6 Astra into its autonomous engineering agent (Devin) so the agent generates tests and evidence that its code changes work, aiming to reduce manual code review.",
+      "why_it_matters": "Marks a shift toward agentic self‑verification: QA leads must evaluate evidence quality, test coverage, and auditability when agents both write and validate code or tests.",
+      "source": "OpenAI — Cognition case study",
+      "source_url": "https://openai.com/index/cognition-devin-testing-with-astra/",
+      "published_at": "2026-09-11"
+    },
+    {
+      "title": "GitHub exposes AI Scan for pull request APIs (public preview)",
+      "category": "QA Automation / Code Scanning",
+      "priority": 2,
+      "summary": "GitHub code scanning’s 'AI Scan for pull requests' can now be enabled and managed via REST API endpoints at organization and repository levels (public preview), allowing programmatic rollout and control.",
+      "why_it_matters": "QA and platform teams can automate enabling/disabling AI‑driven PR scans across many repos, integrate scan toggles into release gates, and standardize AI‑scan governance at scale.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-10-ai-scan-for-pull-request-apis-in-public-preview/",
+      "published_at": "2026-09-10"
+    }
+  ],
+  "watch": [
+    {
+      "title": "BrowserStack — AI x QA Leadership Summit 2026 (virtual, Sept 23)",
+      "category": "Event / AI for QA",
+      "priority": 3,
+      "summary": "BrowserStack’s QA Leadership Summit (Sept 23) runs two tracks: AI strategy/governance for QA leaders and practitioner workshops on applied AI testing and agents with speakers from large enterprises.",
+      "why_it_matters": "Watch for practical governance patterns, production examples of AI‑assisted testing and agent workflows that senior QA teams can adapt or benchmark against.",
+      "source": "BrowserStack Blog",
+      "source_url": "https://www.browserstack.com/blog/ai-x-qa-leadership-summit-2026/",
+      "published_at": "2026-09-11"
+    }
+  ],
+  "learning": [
+    {
+      "title": "From Retrieval to Reasoning: Building Production‑Ready Agentic AI Systems with Knowledge Graphs (InfoQ presentation)",
+      "category": "Agentic QA / Evaluation & Architecture",
+      "priority": 2,
+      "summary": "Cassie Shum’s presentation explains four production patterns—context bundling, decision provenance, 'code as truth', and agent visibility—using knowledge graphs to ground agentic systems for reliable, auditable behavior.",
+      "why_it_matters": "These patterns give QA engineers concrete design and provenance techniques to evaluate, trace and test agentic QA workflows and evidence produced by AI agents.",
+      "source": "InfoQ presentation",
+      "source_url": "https://www.infoq.com/presentations/graph-rag-llm/",
+      "published_at": "2026-09-12"
+    }
+  ]
+}

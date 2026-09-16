@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-16",
+  "headline": "Agent runtimes and control planes reshape how QA scales agentic testing and stabilizes test infrastructure",
+  "top_signal": {
+    "title": "Agent Substrate available on GKE — high-density, secure runtime for agent sandboxes",
+    "category": "Agentic QA / Test infrastructure",
+    "priority": 1,
+    "summary": "Google Cloud announced Agent Substrate on GKE: a high-density, secure agent execution runtime that runs millions of isolated sandboxes with fast suspend/resume and native zero-trust isolation.",
+    "why_it_matters": "QA teams running many agentic test tasks can scale isolated test agents, reduce shared-state flakiness, and standardize reproducible sandboxed execution environments.",
+    "source": "Google Cloud Blog",
+    "source_url": "https://cloud.google.com/blog/products/containers-kubernetes/agent-substrate-available-on-gke/",
+    "published_at": "2026-09-15T16:00:00Z"
+  },
+  "items": [
+    {
+      "title": "Atlassian automates root-cause analysis by correlating metrics, logs and traces",
+      "category": "Test observability / Failure triage",
+      "priority": 2,
+      "summary": "Atlassian outlined an automated RCA approach that correlates metrics, logs, distributed traces, and service topology to generate ranked hypotheses about failure origin and propagation.",
+      "why_it_matters": "Automated RCA provides QA faster, ranked failure hypotheses and clearer evidence to separate infra vs. application test failures and to prioritize regression tests.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/09/atlassian-automated-rca/",
+      "published_at": "2026-09-15T12:00:00Z"
+    },
+    {
+      "title": "Kubernetes v1.37: Memory QoS graduates to Beta (enabled by default)",
+      "category": "Test infrastructure / Resource determinism",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 graduated Memory QoS to Beta and enables it by default on cgroup v2, using requests/limits to protect requested memory and throttle before hard OOM limits.",
+      "why_it_matters": "Memory QoS changes how test nodes behave under contention—QA should revalidate node sizing, flaky-test thresholds, and test concurrency assumptions under the new defaults.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/",
+      "published_at": "2026-09-14T18:30:00Z"
+    },
+    {
+      "title": "Kubernetes v1.37: Pod-Level Resource Managers graduate to Beta",
+      "category": "Test infrastructure / Scheduling determinism",
+      "priority": 3,
+      "summary": "Pod-Level Resource Managers in Kubernetes v1.37 let Kubelet components (Topology, CPU, Memory managers) use pod-level resource declarations for hardware placement decisions.",
+      "why_it_matters": "Improved pod-level placement reduces scheduling-induced variability in parallel test runs and helps QA achieve more reproducible test-node placement and timing.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/",
+      "published_at": "2026-09-15T18:30:00Z"
+    },
+    {
+      "title": "Kubernetes v1.37: etcd RangeStream cuts memory use for large list reads",
+      "category": "Test infrastructure / Control-plane reliability",
+      "priority": 3,
+      "summary": "etcd RangeStream graduated to Beta in v1.37, lowering memory consumption during large list reads and improving API-server scalability for clusters with many objects.",
+      "why_it_matters": "Device farms and large test farms that list many API objects will see lower control-plane memory spikes, reducing control-plane–caused test failures and instability.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/01/kubernetes-v1-37-etcd-range-stream/",
+      "published_at": "2026-09-01T00:00:00Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Introducing Filestore agent volumes for isolated, per-agent workspaces",
+      "category": "Agentic QA / Test infrastructure (watch)",
+      "priority": 2,
+      "summary": "Google Cloud launched Filestore agent volumes: a managed, high-performance file service that auto-allocates isolated per-agent workspaces for sandboxed agent tasks.",
+      "why_it_matters": "Filestore simplifies ephemeral workspace isolation, artifact capture, and faster sandbox spin-up for agentic test jobs—worth monitoring when sizing agentic QA infrastructure.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/products/storage-data-transfer/filestore-agent-volumes/",
+      "published_at": "2026-09-15T16:00:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "When the model has never seen your code — pitfalls for coding-agent evaluation",
+      "category": "Agentic QA / Evaluation guidance",
+      "priority": 2,
+      "summary": "Microsoft’s developer post explains how coding agents can misapply memorized patterns and why realistic, contamination-free evaluation environments are essential for valid results.",
+      "why_it_matters": "Practical guidance for QA: design contamination-free evals, use realistic sandboxes and verifiers, and instrument traces so failures are reproducible and diagnosable.",
+      "source": "Microsoft Developer Blog",
+      "source_url": "https://developer.microsoft.com/blog/when-the-model-has-never-seen-your-code/",
+      "published_at": "2026-06-24T00:00:00Z"
+    }
+  ]
+}

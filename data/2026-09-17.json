@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-17",
+  "headline": "Agentic QA moves into simulation and IDEs; AI PR scanning broadens; observability and infra changes affect test reliability",
+  "top_signal": {
+    "title": "NVIDIA demonstrates agentic workflows to prepare 3D scenes for simulation",
+    "category": "Agentic QA / Simulation",
+    "priority": 1,
+    "summary": "NVIDIA shows agentic workflows that inspect Blender scenes, tag assets, generate metadata, and export sim-ready sensor outputs — enabling automated creation and validation of simulation environments used for robotics and perception testing.",
+    "why_it_matters": "Automates test-scene and sensor-data generation, improving reproducibility and scaling system-in-the-loop QA for perception and embodied AI systems.",
+    "source": "NVIDIA Developer Blog",
+    "source_url": "https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/",
+    "published_at": "2026-09-16T23:20:33Z"
+  },
+  "items": [
+    {
+      "title": "GitHub AI Scan no longer requires CodeQL default setup",
+      "category": "AI-assisted code scanning / QA pipelines",
+      "priority": 2,
+      "summary": "GitHub’s AI Scan now runs across eligible repositories even when the CodeQL default setup isn’t configured, widening PR-level AI scanning without a full CodeQL repo configuration step.",
+      "why_it_matters": "QA teams can adopt AI-powered PR scanning faster, but must tune evaluation and triage workflows to manage false positives and align fixes with existing CodeQL pipelines.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-16-code-scanning-ai-scan-no-longer-requires-codeql-default-setup/",
+      "published_at": "2026-09-16T13:26:06Z"
+    },
+    {
+      "title": "Rider & ReSharper 2026.2.2 add AI Agent Setup widget and agent-focused hooks",
+      "category": "AI-assisted testing / Agentic QA",
+      "priority": 2,
+      "summary": "JetBrains’ Rider and ReSharper add an AI Agent Setup widget and file-inspection scoping for agents, improving in-IDE agent integration for multi-step code edits, test scaffolding, and debugging flows.",
+      "why_it_matters": "Simplifies configuring coding agents for test generation and in-IDE debugging, reducing friction when adopting agentic QA workflows and generating developer-facing test scaffolds.",
+      "source": "JetBrains Blog (Dotnet)",
+      "source_url": "https://blog.jetbrains.com/dotnet/2026/09/16/rd-rs-2026-2-2/",
+      "published_at": "2026-09-16T14:12:44Z"
+    },
+    {
+      "title": "OpenTelemetry plugin auto-maps microservices in JetBrains IDEs",
+      "category": "Test observability / Test diagnostics",
+      "priority": 3,
+      "summary": "JetBrains’ OpenTelemetry plugin auto-generates real-time service maps from traces, logs, and metrics and surfaces them in the IDE, giving developers and testers an up-to-date call graph without separate tooling.",
+      "why_it_matters": "Enables faster root-cause analysis for failing tests by correlating traces and failures in the IDE, reducing MTTR for flaky or integration test failures.",
+      "source": "JetBrains Blog (Platform)",
+      "source_url": "https://blog.jetbrains.com/platform/2026/09/how-to-service-map-with-opentelemetry/",
+      "published_at": "2026-09-16T12:34:47Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Kubernetes v1.37 graduates Pod-Level Resource Managers to Beta",
+      "category": "Test infrastructure / Environment determinism",
+      "priority": 3,
+      "summary": "Kubernetes 1.37 moves Pod-Level Resource Managers to Beta (feature gate) so kubelet can use Pod-level resource declarations for NUMA-aware CPU/memory placement, changing scheduling and placement behavior on nodes.",
+      "why_it_matters": "Test infra teams should validate CI and device-farm node behavior—scheduling changes can shift performance characteristics and increase flaky test surface on resource-constrained runners.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/",
+      "published_at": "2026-09-15T18:30:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Logpoints Walkthrough — using log-only breakpoints to gather runtime evidence",
+      "category": "Testing techniques / Debugging",
+      "priority": 4,
+      "summary": "JetBrains documents using logpoints (log-only breakpoints) to capture runtime values without pausing execution, enabling continuous capture of diagnostic data during long-running or high-throughput test runs.",
+      "why_it_matters": "Logpoints let QA collect low-overhead evidence from CI and ephemeral environments, improving flaky-test triage and post-failure analysis without interrupting test execution.",
+      "source": "JetBrains Blog (IDEA)",
+      "source_url": "https://blog.jetbrains.com/idea/2026/09/logpoints-walkthrough/",
+      "published_at": "2026-09-16T14:14:04Z"
+    }
+  ]
+}

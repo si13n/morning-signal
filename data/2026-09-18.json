@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-18",
+  "headline": "QA Morning Signal — 2026-09-18: model-misalignment reporting, Android Bench 2.0, device-state libs, and GitHub Actions updates",
+  "top_signal": {
+    "title": "OpenAI publishes a model misalignment reporting framework plus six incident reports",
+    "category": "AI/LLM testing & evaluation",
+    "priority": 1,
+    "summary": "OpenAI released a formal framework for tracking, investigating, and publicly reporting model misalignment, and published six recent incident reports that document unexpected or concerning model behaviour and investigation workflows.",
+    "why_it_matters": "QA teams testing LLM-powered features get a concrete disclosure and incident taxonomy to design failure detection, triage playbooks, and acceptance criteria for model regressions and safety bugs.",
+    "source": "OpenAI",
+    "source_url": "https://openai.com/index/model-misalignment-reporting-framework/",
+    "published_at": "2026-09-16"
+  },
+  "items": [
+    {
+      "title": "Android Bench 2.0 adds long‑horizon tasks, multimodal verification, and agent harness comparisons",
+      "category": "AI-assisted dev & LLM evaluation",
+      "priority": 2,
+      "summary": "Android Bench 2.0 introduces challenging long‑horizon tasks, a multimodal visual judge, multi‑harness evaluations, and continuous completion metrics to measure how LLMs and agents help with real Android engineering work.",
+      "why_it_matters": "Provides a reproducible benchmark and harness practices QA teams can adopt for evaluating agentic developer tools, visual UI checks, and LLM-driven change impact on app codebases.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/09/android-bench-2-long-horizon-tasks.html",
+      "published_at": "2026-09-16"
+    },
+    {
+      "title": "AndroidX Security State libraries provide a unified device security and update view",
+      "category": "Mobile QA / device testability",
+      "priority": 3,
+      "summary": "AndroidX Security State (stable) and Security State Provider (1.0.0) expose standardized APIs to report device security posture and pending OS/patch availability across OEMs and providers.",
+      "why_it_matters": "Mobile test orchestration and device-farm selection can now gate tests or triage failures by device update/security state, reducing noisy failures from unpatched or insecure device conditions.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html",
+      "published_at": "2026-09-17"
+    },
+    {
+      "title": "Ubuntu 26 runner image for GitHub Actions is generally available (x64 and arm64)",
+      "category": "CI test infrastructure",
+      "priority": 3,
+      "summary": "GitHub Actions now supports Ubuntu 26.04 runner images in GA for both x64 and arm64, graduating from public preview and replacing older Ubuntu runner images on the hosted fleet.",
+      "why_it_matters": "Test matrices, toolchains, and dependency packaging can behave differently on Ubuntu 26 or arm64; QA leads should validate CI images, pin critical tool versions, and update reproducibility tests.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-17-ubuntu-26-generally-available-and-latest-migration/",
+      "published_at": "2026-09-17"
+    },
+    {
+      "title": "Workflow execution protections for GitHub Actions reach general availability",
+      "category": "CI security & workflow governance",
+      "priority": 2,
+      "summary": "GitHub made workflow execution protections generally available: actor/event allowlists, workflow-file targeting, Insights, and a REST API — plus a default evaluate-mode rule to disable pull_request_target for public repos.",
+      "why_it_matters": "Policy enforcement can silently block or change who can run tests; QA should run evaluate mode, audit impacted workflows, and update gating and allowlists to avoid unexpected CI failures.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available/",
+      "published_at": "2026-09-17"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Agentic CLI customizations added to Copilot usage metrics API",
+      "category": "Agentic QA governance & metrics",
+      "priority": 4,
+      "summary": "GitHub Copilot’s usage metrics API now reports agentic activity (skills, custom agents, MCP servers, slash commands, plugins) in per-user and aggregate reports to help admins measure adoption.",
+      "why_it_matters": "If your org uses agentic tools for test generation or execution, these metrics let QA and engineering managers monitor adoption, spot risky agent usage, and tie automation quality to business metrics.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/",
+      "published_at": "2026-09-17"
+    }
+  ],
+  "learning": [
+    {
+      "title": "JetBrains: Building a RAG pipeline for semantic code search (developer diary, part 1)",
+      "category": "AI for QA / RAG evaluation techniques",
+      "priority": 4,
+      "summary": "JetBrains published a developer‑diary on productionizing a RAG pipeline for semantic code search, covering parsing, chunking, and vectorization decisions that affect retrieval quality for coding agents.",
+      "why_it_matters": "QA and automation engineers building agentic test assistants or evidence-backed validators should learn these RAG tradeoffs to improve recall, citation reliability, and reduce hallucinated test fixes.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/ai/2026/09/building-a-rag-pipeline-for-semantic-code-search-a-developer-diary-and-field-notes/",
+      "published_at": "2026-09-17"
+    }
+  ]
+}

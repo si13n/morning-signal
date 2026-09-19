@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-19",
+  "headline": "QA-focused roundup: agentic QA tools, LLM evaluation benchmarks, mobile-device security APIs, and programmatic quality gates that change how teams test and enforce release quality.",
+  "top_signal": {
+    "title": "Android Bench 2.0 adds long‑horizon tasks and agentic evaluation",
+    "category": "AI-assisted testing / LLM evaluation",
+    "priority": 1,
+    "summary": "Google upgraded Android Bench to 2.0 with long‑horizon tasks, continuous scoring, and agent-level evaluations to measure LLMs and agents on multi‑day, multi‑step Android engineering work. The leaderboard and methodology were updated.",
+    "why_it_matters": "Provides a rigorous, reproducible framework QA teams can use to evaluate LLMs and agents for real developer workflows and to design acceptance criteria for agentic test automation.",
+    "source": "Android Developers Blog",
+    "source_url": "https://developer.android.google.cn/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks",
+    "published_at": "2026-09-17"
+  },
+  "items": [
+    {
+      "title": "Junie Local: JetBrains ships a fully on‑device coding agent",
+      "category": "Agentic QA / AI-assisted testing tools",
+      "priority": 2,
+      "summary": "JetBrains released Junie Local (on‑device Junie) that runs a tuned Qwen3.6‑27B model on M5 Macs (64GB RAM). It runs the same agent loop locally, removing network/tokens and enabling private, unlimited agent runs.",
+      "why_it_matters": "Local agents let QA run many iterations privately, reduce cost of repeated test-generation tasks, and enable offline, NDA‑safe experimentation with agentic test flows.",
+      "source": "JetBrains Junie Blog",
+      "source_url": "https://blog.jetbrains.com/junie/2026/08/junie-local-launch/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Junie /demo: a reproducible demo VM for agentic UI testing and video evidence",
+      "category": "Agentic QA / Test execution",
+      "priority": 2,
+      "summary": "Junie’s /demo mode provides a reproducible demo VM template (demo‑base image + tooling) that agents can use to launch apps, drive UI, capture screenshots, video, and HTML reports for review.",
+      "why_it_matters": "Makes agentic UI runs auditable and repeatable — useful for automated exploratory flows, regression video evidence, and machine‑reviewable test artifacts in QA pipelines.",
+      "source": "Junie Documentation (Junie CLI demo)",
+      "source_url": "https://junie.jetbrains.com/docs/junie-cli-demo.html",
+      "published_at": "2026-09-18"
+    },
+    {
+      "title": "GitHub adds REST API to manage 'Restrict code coverage' ruleset",
+      "category": "Test governance / Quality gates",
+      "priority": 2,
+      "summary": "GitHub now exposes a REST API to create, read, and update the 'Restrict code coverage' repository ruleset option, enabling programmatic enforcement of minimum coverage or maximum PR coverage drop.",
+      "why_it_matters": "QA leads can now enforce coverage gates across many repos via infrastructure-as-code, automating coverage thresholds and integrating coverage policy into release pipelines.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-18-manage-the-code-coverage-ruleset-condition-with-the-rest-api/",
+      "published_at": "2026-09-18"
+    },
+    {
+      "title": "AndroidX Security State libraries provide component‑level device patch posture",
+      "category": "Mobile QA / Device testing",
+      "priority": 3,
+      "summary": "AndroidX Security State (v1.1.0) and Security State Provider (v1.0.0) expose component‑level patch and update status so apps can programmatically query OS/module/kernel patch posture instead of a single SPL value.",
+      "why_it_matters": "Mobile QA can now gate features, simulate patch states, and validate enterprise flows against real component‑level device security posture for more accurate device compatibility testing.",
+      "source": "Android Developers Blog",
+      "source_url": "https://developer.android.com/blog/posts/introducing-the-android-x-security-state-libraries-a-unified-view-of-device-security",
+      "published_at": "2026-09-17"
+    },
+    {
+      "title": "NVIDIA publishes AIPerf for realistic, high‑concurrency LLM inference benchmarking",
+      "category": "Performance testing / LLM benchmarking",
+      "priority": 2,
+      "summary": "NVIDIA introduced AIPerf (replacing GenAI‑Perf), a multiprocess LLM benchmarking tool that avoids client bottlenecks, supports 15+ endpoint types, and uses public datasets and trace replays for realistic workloads.",
+      "why_it_matters": "QA and SRE teams evaluating LLM‑backed test agents can use AIPerf to measure latency, throughput, concurrency, and detect client-side bottlenecks under realistic traces.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+      "published_at": "2026-09-18"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-20",
+  "headline": "QA-focused digest: agentic UI demos, coverage-as-code, CI protections, mobile testability, and LLM evaluation practices",
+  "top_signal": {
+    "title": "Junie adds /demo mode — agentic UI demos with video, report, and CI integration",
+    "category": "Agentic QA",
+    "priority": 1,
+    "summary": "JetBrains’ Junie CLI introduced /demo: an agent mode that builds, launches, and interacts with apps using Computer Use-capable models, producing video, screenshots and an HTML report that can be stored as CI artifacts.",
+    "why_it_matters": "Lets QA delegate routine UI smoke checks to an agent while keeping inspectable evidence (video/report) for reviewers and CI smoke tests.",
+    "source": "JetBrains Junie Blog",
+    "source_url": "https://blog.jetbrains.com/junie/2026/09/junie-demo/",
+    "published_at": "2026-09-18T11:51:27Z"
+  },
+  "items": [
+    {
+      "title": "Manage 'Restrict code coverage' via REST API — automate coverage gates",
+      "category": "CI / Test Quality Gates",
+      "priority": 1,
+      "summary": "GitHub’s Changelog: the REST API now supports the 'Restrict code coverage' ruleset option so teams can programmatically create, read and update minimum coverage or maximum drop conditions for PRs.",
+      "why_it_matters": "Enables enforcing coverage-based quality gates at scale via infra-as-code and pipeline automation, improving consistency across many repositories.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-18-manage-the-code-coverage-ruleset-condition-with-the-rest-api/",
+      "published_at": "2026-09-18"
+    },
+    {
+      "title": "Workflow execution protections for Actions generally available",
+      "category": "CI / Test Infrastructure",
+      "priority": 2,
+      "summary": "GitHub made workflow execution protections generally available, letting organizations define allowlists to control who or what events can trigger Actions workflows.",
+      "why_it_matters": "QA teams can restrict who triggers expensive or release-scoped test suites, reducing accidental or malicious workflow runs and improving test-run predictability.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available/",
+      "published_at": "2026-09-17"
+    },
+    {
+      "title": "Stage-only npm tokens for safer automation",
+      "category": "Test Automation Security",
+      "priority": 2,
+      "summary": "GitHub adds 'Read and write (stage only)' for npm granular access tokens so automation can stage package versions for review without full publish privileges.",
+      "why_it_matters": "Reduces credential blast radius for build and release automation used in test pipelines and package-based smoke tests, improving safety of automation credentials.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-18-stage-only-npm-tokens-for-safer-automation",
+      "published_at": "2026-09-18"
+    },
+    {
+      "title": "AndroidX Security State Libraries — standardized device security signals",
+      "category": "Mobile QA",
+      "priority": 3,
+      "summary": "AndroidX Security State Libraries expose device security state (patch level, update availability, security fixes) through a consistent API for apps and OEMs to surface device condition.",
+      "why_it_matters": "Mobile QA can programmatically filter devices and target tests based on concrete security-patch and update states, improving test coverage for security-dependent behaviors.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html",
+      "published_at": "2026-09-17"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Ubuntu 26 runner image for GitHub Actions now GA — validate CI images",
+      "category": "CI / Test Infrastructure",
+      "priority": 3,
+      "summary": "Ubuntu 26.04 runner image for GitHub Actions is generally available for x64 and arm64; GitHub provides migration guidance for workflows and runners.",
+      "why_it_matters": "Runner image changes can alter toolchains, libraries, and test behavior — QA teams should run canary pipelines and validate tests before broad migration.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-17-ubuntu-26-generally-available-and-latest-migration",
+      "published_at": "2026-09-17"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Android Bench 2.0 — benchmark methodology for evaluating LLMs on long‑horizon Android tasks",
+      "category": "AI for QA / LLM Evaluation",
+      "priority": 2,
+      "summary": "Android Bench 2.0 extends its benchmark with long‑horizon developer tasks (dependency updates, multi-step builds, feature additions) and model cards to surface strengths and failure modes for LLMs and agents.",
+      "why_it_matters": "Use its scenario design and model-card approach as a template for robust LLM evaluation when validating AI assistants or agentic QA tools used in development and testing workflows.",
+      "source": "Android Developers Blog",
+      "source_url": "https://developer.android.google.cn/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks",
+      "published_at": "2026-09-17"
+    }
+  ]
+}

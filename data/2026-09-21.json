@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-21",
+  "headline": "QA-focused signals: GitHub adds coverage ruleset API; agentic QA moves into production (WSO2, DoorDash, Junie); OpenCodeReview and related research worth studying.",
+  "top_signal": {
+    "title": "GitHub adds REST API to manage 'Restrict code coverage' ruleset",
+    "category": "CI quality gates / Test policy",
+    "priority": 1,
+    "summary": "GitHub published a changelog entry announcing a generally available REST API to create, read, and update the 'Restrict code coverage' repository ruleset, enabling programmatic enforcement of minimum or patch coverage thresholds across repos.",
+    "why_it_matters": "QA teams can now automate code-coverage gates at scale and embed coverage policy in infrastructure-as-code and onboarding automation.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-09-18-manage-the-code-coverage-ruleset-condition-with-the-rest-api/",
+    "published_at": "2026-09-18"
+  },
+  "items": [
+    {
+      "title": "WSO2 Agent Manager reaches GA for enterprise agent governance",
+      "category": "Agentic QA / Governance",
+      "priority": 2,
+      "summary": "WSO2 announced general availability of Agent Manager, an open control plane that provides identity, governance, observability, and operational controls for AI agents running across frameworks and runtimes.",
+      "why_it_matters": "Teams deploying test-design or test-execution agents gain a single governance plane to enforce identity, audit, and operational invariants for agentic QA workflows at scale.",
+      "source": "WSO2 news",
+      "source_url": "https://wso2.com/about/news/wso2-agent-manager-sovereign-ai-governance/",
+      "published_at": "2026-09-15"
+    },
+    {
+      "title": "DoorDash published a production multi-agent LLM system for feature-flag cleanup",
+      "category": "Agentic QA / Test automation",
+      "priority": 2,
+      "summary": "DoorDash described a two-phase agentic pipeline (analysis + parallel cleanup agents) that produces merge-ready PRs for stale feature flags; the system validates builds, tests, patch coverage, and static analysis before opening PRs.",
+      "why_it_matters": "This is a concrete production example of agents executing code changes with CI-level validation and human checkpoints — a template QA teams can adapt for safe, automated remediation workflows.",
+      "source": "DoorDash engineering blog",
+      "source_url": "https://careersatdoordash.com/blog/automating-feature-flag-cleanup-at-scale-with-a-multi-agent-llm-system/",
+      "published_at": "2026-08-24"
+    },
+    {
+      "title": "Alibaba open-sources OpenCodeReview — an agentic, deterministic-first code-review CLI",
+      "category": "AI-assisted testing / Code review",
+      "priority": 3,
+      "summary": "OpenCodeReview is a Go-based CLI that combines deterministic pipelines (file selection, rule matching) with an LLM agent for dynamic analysis; it ships benchmarks and prioritizes precision via deterministic components.",
+      "why_it_matters": "QA and engineering-review pipelines can adopt a hybrid deterministic/agent approach to improve review precision while keeping AI-driven analysis auditable and reproducible.",
+      "source": "InfoQ (coverage of Alibaba OpenCodeReview)",
+      "source_url": "https://www.infoq.com/news/2026/09/alibaba-opencodereview/",
+      "published_at": "2026-09-20"
+    },
+    {
+      "title": "JetBrains adds /demo to Junie CLI to record agent-driven UI demos and smoke tests",
+      "category": "Agentic QA / Test evidence",
+      "priority": 3,
+      "summary": "Junie’s /demo mode builds and launches apps in Docker, drives the UI via a model with Computer Use capability, records video/screenshots, and generates an HTML report for reviewer inspection and CI integration.",
+      "why_it_matters": "Provides structured, reviewable evidence from agent-driven UI runs; useful for release smoke tests, reviewer sign-off, and making agent results auditable in PRs and CI artifacts.",
+      "source": "JetBrains Junie blog",
+      "source_url": "https://junie.jetbrains.com/blog/demo-agent/",
+      "published_at": "2026-09-17"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Junie Local: on-device coding agent for Mac (high-resource) — watch adoption",
+      "category": "Agentic QA / Tooling",
+      "priority": 4,
+      "summary": "JetBrains published Junie Local (on-device agent) that runs a tuned Qwen3.6-27B model on Apple M5 Macs (≈64 GB RAM), enabling local agent runs with no cloud tokens or telemetry.",
+      "why_it_matters": "On-device agents remove data-exfiltration concerns and change cost calculus for long-running QA tasks (large refactors, coverage work); watch hardware and scale requirements for team adoption.",
+      "source": "JetBrains Junie blog",
+      "source_url": "https://junie.jetbrains.com/blog/junie-local-launch/",
+      "published_at": "2026-08-24"
+    }
+  ],
+  "learning": [
+    {
+      "title": "OpenCodeReview paper — 'Determinism over Non-Determinism for Agent-Based Code Review' (arXiv)",
+      "category": "AI-assisted testing / Research",
+      "priority": 5,
+      "summary": "An arXiv preprint accompanying OpenCodeReview explains the deterministic-first architecture for agentic code review and presents benchmarks and trade-offs between precision and recall for agent-driven reviews.",
+      "why_it_matters": "Studying this paper helps QA leads design hybrid deterministic/agent pipelines, understand evaluation metrics, and plan guardrails to reduce false positives and drift in agent reviews.",
+      "source": "arXiv / OpenCodeReview paper",
+      "source_url": "https://arxiv.org/abs/2608.09290",
+      "published_at": "2026-08-10"
+    }
+  ]
+}

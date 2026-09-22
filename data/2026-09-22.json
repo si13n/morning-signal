@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-22",
+  "headline": "Agent harness reliability and agentic evaluation advance; CI/scan and observability changes QA teams must act on",
+  "top_signal": {
+    "title": "The Agent Harness: Control Planes, Invariants, and Approval Boundaries for Production AI Agents",
+    "category": "Agentic QA",
+    "priority": 1,
+    "summary": "Vinoth Govindarajan (OpenAI) explains common production-agent failures and prescribes harness controls: single-owner state, ordered commits, scoped execution, and provable receipts to avoid silent, unrecoverable state losses.",
+    "why_it_matters": "QA leads must validate harness invariants (state ownership, ordering, receipts) and add tests that detect silent state-losses standard model benchmarks miss.",
+    "source": "InfoQ (QCon AI presentation)",
+    "source_url": "https://www.infoq.com/presentations/ai-agent-harness/",
+    "published_at": "2026-09-21"
+  },
+  "items": [
+    {
+      "title": "GitHub deprecates all-platform CodeQL bundle",
+      "category": "Tooling & Test Infrastructure",
+      "priority": 2,
+      "summary": "GitHub marked the all-platform CodeQL bundle deprecated in CodeQL CLI 2.27.0 and will remove it in mid‑March 2027; teams must switch to platform-specific downloads (including ARM64) before removal.",
+      "why_it_matters": "Automation that fetches the all-platform bundle will break CI code-scanning; update pipeline scripts, installers, and artifact mirrors to avoid scan failures.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-22-deprecation-notice-all-platform-codeql-bundle/",
+      "published_at": "2026-09-22"
+    },
+    {
+      "title": "Sentry adds zero-config Agent Tracing for Laravel AI",
+      "category": "Observability for AI/Agent Testing",
+      "priority": 2,
+      "summary": "Sentry shipped a laravel integration (sentry-laravel 4.27) that auto-instruments Laravel AI: it matches LLM HTTP requests to agent tool calls and surfaces conversations, tool inputs/outputs, and trace evidence in Explore.",
+      "why_it_matters": "Makes failure triage, tool-call debugging, and E2E agent test evidence collection straightforward for PHP apps — useful for flaky-agent analysis and regression investigations.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/sentry-laravel-ai-integration/",
+      "published_at": "2026-09-21"
+    },
+    {
+      "title": "Microsoft: 'Knowledge cutoff is a poor proxy for model capability'",
+      "category": "AI Testing & Evaluation",
+      "priority": 3,
+      "summary": "Microsoft research shows a model's stated knowledge-cutoff date does not reliably indicate what it actually knows about a product; results vary by task and version, producing mixed passes and failures.",
+      "why_it_matters": "QA teams validating agents should create representative task suites and controlled baselines rather than relying on cutoff dates to decide what to test or provide as context.",
+      "source": "Microsoft for Developers Blog",
+      "source_url": "https://developer.microsoft.com/blog/knowledge-cutoff-is-a-poor-proxy-for-model-capability/",
+      "published_at": "2026-09-21"
+    },
+    {
+      "title": "OpenCodeReview: deterministic, agent-based AI code review (paper + OSS)",
+      "category": "AI-assisted Testing & Code Review",
+      "priority": 3,
+      "summary": "Alibaba's OpenCodeReview (paper + open-source) describes a deterministic pipeline for agent-based code review that injects determinism at key pipeline points to make reviews reproducible and auditable.",
+      "why_it_matters": "Deterministic review pipelines help QA make LLM-driven code-review outputs testable, reproducible, and suitable for gating and audit trails in automated workflows.",
+      "source": "arXiv / Alibaba (OpenCodeReview)",
+      "source_url": "https://arxiv.org/abs/2608.09290",
+      "published_at": "2026-08-10"
+    }
+  ],
+  "watch": [],
+  "learning": [
+    {
+      "title": "How to Evaluate AI Agents — from tool calls to task completion",
+      "category": "Agent Evaluation (learning)",
+      "priority": 2,
+      "summary": "NVIDIA outlines layered agent evaluation: step-level traces, tool-call accuracy, task-success metrics, and harness requirements (real execution, replayable traces, and labeled evidence) for reproducible agent evals.",
+      "why_it_matters": "Provides practical metrics and harness patterns QA teams can adopt to build reproducible agent evaluations, detect state drift, and measure trajectory efficiency.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+      "published_at": "2026-09-21"
+    }
+  ]
+}

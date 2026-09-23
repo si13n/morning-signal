@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-23",
+  "headline": "QA-focused brief: agent evaluation, agent observability, edge test harnesses, and infra hygiene",
+  "top_signal": {
+    "title": "How to evaluate AI agents from tool calls to task completion",
+    "category": "AI-for-QA / Agentic QA evaluation",
+    "priority": 1,
+    "summary": "NVIDIA outlines an agent evaluation framework that scores both step-level (process) traces and end-to-end outcome checks using executable environments, offering concrete metrics (success rate, consistency, tool-call precision, argument accuracy, steps, cost).",
+    "why_it_matters": "Provides a practical, debuggable evaluation stack for QA teams validating agentic test automation and LLM-driven tooling against live stateful environments.",
+    "source": "NVIDIA Developer Blog",
+    "source_url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+    "published_at": "2026-09-21"
+  },
+  "items": [
+    {
+      "title": "OpenTelemetry support added to the GitHub Copilot app",
+      "category": "Agent observability / Test diagnostics",
+      "priority": 2,
+      "summary": "GitHub Copilot app now lets enterprises export agent traces via OpenTelemetry, with enterprise-managed telemetry configuration and prompt/response capture off by default.",
+      "why_it_matters": "Enables QA teams to ingest agent session traces into existing observability pipelines to triage agent failures, reproduce multi-step runs, and audit tool calls. ",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app/",
+      "published_at": "2026-09-22"
+    },
+    {
+      "title": "Copilot for JetBrains adds AI-assisted tool approvals and plan-mode",
+      "category": "Agent governance / Agentic QA controls",
+      "priority": 3,
+      "summary": "Copilot for JetBrains 1.18.0 introduces assisted approvals for low-risk tool calls, plan-review (Codex agent plan mode), persistent per-tool controls, and shared organization skills/instructions.",
+      "why_it_matters": "Gives QA leads policy and review controls for agent-driven code edits and tool usage, reducing unsafe automation while enabling repeatable, reviewable agent test flows.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains/",
+      "published_at": "2026-09-22"
+    },
+    {
+      "title": "Python Workers generally available on Cloudflare (native Python + AI orchestration)",
+      "category": "Edge test harnesses / Agent execution environments",
+      "priority": 3,
+      "summary": "Cloudflare announced GA for Python Workers, enabling Python web frameworks and AI orchestration libraries to run natively in the Workers runtime (integrations with R2, D1, Workers AI).",
+      "why_it_matters": "QA teams can run agentic harnesses and lightweight executable test environments at the edge, making domain-specific, low-latency agent evaluations and in-situ integration tests feasible.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/python-workers-ga/",
+      "published_at": "2026-09-21"
+    },
+    {
+      "title": "Worker Previews: isolated preview environments for agent-driven changes",
+      "category": "Test environments / Agent sandboxing",
+      "priority": 3,
+      "summary": "Cloudflare Worker Previews provides an isolated URL, state, configuration, and observability per branch or change an agent makes, enabling parallel preview environments without touching production.",
+      "why_it_matters": "Simplifies safe, parallel testing of agent-made changes and gives QA reproducible preview instances for verification, exploratory test runs, and automated regression checks before deployment.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/worker-previews/",
+      "published_at": "2026-09-22"
+    }
+  ],
+  "watch": [],
+  "learning": [
+    {
+      "title": "Kubernetes v1.37: PersistentVolumeClaim 'Unused' condition (PVC last-used time, Beta)",
+      "category": "Test infrastructure hygiene / Resource cleanup",
+      "priority": 2,
+      "summary": "Kubernetes v1.37 promotes PersistentVolumeClaimUnusedSinceTime to Beta (enabled by default) and adds an `Unused` condition and lastTransitionTime to PVC status, making it easy to detect orphaned volumes without custom tooling.",
+      "why_it_matters": "Test infra owners can reliably find and automate cleanup of PVCs leaked by test jobs, reducing noisy resource exhaustion and flaky failures in shared CI/test clusters.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/",
+      "published_at": "2026-09-21"
+    }
+  ]
+}

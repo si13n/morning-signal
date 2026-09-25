@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-25",
+  "headline": "QA-focused morning signal — agentic QA, serving gaps, test observability, and infra readiness",
+  "top_signal": {
+    "title": "How SWE-Serve exposes the gap between local tests and live serving",
+    "category": "AI-serving QA / Integration testing",
+    "priority": 1,
+    "summary": "NVIDIA shows how changes that pass local unit and integration tests can still fail in real model-serving environments due to runtime differences, model loading, and request handling. The post analyzes real failure modes and investigation steps.",
+    "why_it_matters": "Signals a test-surface mismatch: teams must validate serving environments with end-to-end and canary tests, not just local unit suites.",
+    "source": "NVIDIA Developer Blog",
+    "source_url": "https://developer.nvidia.com/blog/how-swe-serve-exposes-the-gap-between-local-tests-and-live-serving/",
+    "published_at": "2026-09-23"
+  },
+  "items": [
+    {
+      "title": "Measuring the back/forward cache with Application Metrics",
+      "category": "Web QA / Test observability",
+      "priority": 2,
+      "summary": "Sentry released a bfcacheMetricsIntegration to surface back/forward cache hits/misses in application metrics, enabling detection of regressions invisible to standard page-load metrics.",
+      "why_it_matters": "Makes bfcache behavior measurable in test and monitoring pipelines, helping QA detect navigation regressions and flaky user journeys earlier.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/bfcache-metrics/",
+      "published_at": "2026-09-24"
+    },
+    {
+      "title": "Professional skepticism is a dev’s best skill (flaky-test focus)",
+      "category": "Test reliability / Flaky-test investigation",
+      "priority": 3,
+      "summary": "Stack Overflow’s feature emphasizes professional skepticism in AI-driven development, discusses applying test-driven practices to agentic workflows, and highlights flaky-test root causes tied to application state.",
+      "why_it_matters": "Reinforces people/process guidance: prioritize deterministic state, stronger test isolation, and skepticism when adopting agents that alter code or test flows.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/09/25/professional-skepticism-is-a-devs-best-skill/",
+      "published_at": "2026-09-25"
+    },
+    {
+      "title": "Build your way: Use any AI agent of your choice in Android Studio",
+      "category": "Agentic QA / Mobile testing",
+      "priority": 4,
+      "summary": "Android Studio added Bring-Your-Own-Agent (BYOA) capability so teams can run custom coding agents or agentic tools inside the IDE, integrating third-party agents with Android’s tooling and workflows.",
+      "why_it_matters": "Impacts mobile QA: agent-driven test generation or device orchestration can now run inside developers’ IDEs, changing how teams validate generated tests and agent actions.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/09/build-your-way-use-any-ai-agent-in-android-studio.html",
+      "published_at": "2026-09-24"
+    },
+    {
+      "title": "Local sandboxing in the GitHub Copilot app",
+      "category": "Agentic QA safety / Test environment hygiene",
+      "priority": 5,
+      "summary": "GitHub added local sandboxing controls to the Copilot app to limit file, network, and credential access during agent runs, reducing destructive side effects from generated commands.",
+      "why_it_matters": "Improves safety for agentic QA: safer local execution reduces false failures from uncontrolled agent actions and makes unattended test-agent experiments less risky.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app/",
+      "published_at": "2026-09-23"
+    },
+    {
+      "title": "Validate GPU cluster readiness before AI workloads land",
+      "category": "Test infrastructure / GPU cluster validation",
+      "priority": 6,
+      "summary": "NVIDIA published an active validation approach (NVCRE/AICR) showing how to run real multi-node GPU workloads and verification jobs to detect runtime configuration and networking issues that static checks miss.",
+      "why_it_matters": "For QA owning AI infra, run active workload validations in CI or pre-production to catch runtime failures that unit checks and passive monitoring overlook.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+      "published_at": "2026-09-23"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

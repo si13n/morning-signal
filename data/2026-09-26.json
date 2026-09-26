@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-26",
+  "headline": "Morning Signal — QA-focused digest (2026-09-26)",
+  "top_signal": {
+    "title": "Grafana Turns Cypress Test Results Into Persistent Observability Data",
+    "category": "Test Observability / Web Automation",
+    "priority": 1,
+    "summary": "Grafana Labs published a pattern to export Cypress lifecycle data to Prometheus (via Pushgateway) and ingest it into Grafana Cloud, creating time-series metrics for individual tests, specs, durations, failure rates and flaky frequency across runs.",
+    "why_it_matters": "Makes test reliability and performance observable alongside app telemetry, enabling trend detection, flaky-test triage, and alerting for suite degradation rather than relying on ephemeral CI logs.",
+    "source": "InfoQ (reporting on Grafana Labs)",
+    "source_url": "https://www.infoq.com/news/2026/09/grafana-cypress-observability/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+    "published_at": "2026-09-25T12:00:00Z"
+  },
+  "items": [
+    {
+      "title": "Measuring the back/forward cache with Application Metrics",
+      "category": "Web Performance Testing / Observability",
+      "priority": 2,
+      "summary": "Sentry released bfcacheMetricsIntegration (JS SDK v11) to model bfcache hits, misses, reasons and reload cost as application metrics so teams can chart back/forward cache health and investigate regressions by route.",
+      "why_it_matters": "Closes a visibility gap: QA can detect regressions that standard performance tools miss, prioritize fixes by route/release, and quantify user impact of bfcache misses.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/bfcache-metrics/",
+      "published_at": "2026-09-24T00:00:00Z"
+    },
+    {
+      "title": "Professional skepticism is a dev’s best skill",
+      "category": "Testing Practices / Agentic QA",
+      "priority": 3,
+      "summary": "Stack Overflow’s post/interview with BrowserStack’s David Burns argues for professional skepticism when using AI/agents, recommends applying TDD principles to agentic workflows, and focuses flaky-test fixes on controlling application state and isolation.",
+      "why_it_matters": "Reinforces disciplined test design and skepticism for teams using agents; practical guidance to reduce flaky tests and validate agent-produced test assets or fixes.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/09/25/professional-skepticism-is-a-devs-best-skill/",
+      "published_at": "2026-09-25T07:40:00Z"
+    },
+    {
+      "title": "Agentic autofix now uses Copilot Memory",
+      "category": "Agentic QA / Autofix",
+      "priority": 3,
+      "summary": "GitHub updated its agentic autofix so, when enabled, autofix agents consult Copilot Memory for contextual clues before proposing fixes — surfacing prior recommendations or repo-specific context into automated remediation.",
+      "why_it_matters": "Autofix behavior now depends on persisted memory; QA must validate agent-applied patches, add tests guarding autofix changes, and audit memory-influenced fixes to prevent regressions or nondeterministic outcomes.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "published_at": "2026-09-25T17:25:50Z"
+    },
+    {
+      "title": "CodeQL 2.27.1 adds C/C++ queries and Kotlin 2.4.20 support",
+      "category": "Static Analysis / QA Tools",
+      "priority": 4,
+      "summary": "GitHub released CodeQL 2.27.1 with new queries for C and C++, Kotlin 2.4.20 support, and query-accuracy improvements to code scanning and analysis pipelines.",
+      "why_it_matters": "Expands static-analysis coverage for native and Kotlin code; QA teams should upgrade scanners, revise rulesets, and retune suppression to reduce false positives and coverage gaps.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-25-codeql-2-27-1-adds-c-and-c-query-and-kotlin-2-4-20-support",
+      "published_at": "2026-09-25T09:55:23Z"
+    },
+    {
+      "title": "Build your way: Use any AI agent of your choice in Android Studio",
+      "category": "Mobile QA / Agentic Testing",
+      "priority": 4,
+      "summary": "Android Studio added first-class support for third-party AI agents (agent mode) with access to build diagnostics, emulators, SDK tools and test execution, enabling agents to run, diagnose, and triage mobile tests inside the IDE.",
+      "why_it_matters": "Enables agentic test design and local triage for mobile teams; QA must validate agent sandboxing, ensure reproducible runs, and add audit trails for agent-driven test actions.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/09/build-your-way-use-any-ai-agent-in-android-studio.html",
+      "published_at": "2026-09-24T15:59:00Z"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

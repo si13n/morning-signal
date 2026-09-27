@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-27",
+  "headline": "QA-focused signals: test observability, agent sandboxes for agentic QA, CodeQL updates, GKE pod snapshots for model-backed testing, and testing culture",
+  "top_signal": {
+    "title": "Grafana converts Cypress results into Prometheus metrics for persistent test observability",
+    "category": "test observability",
+    "priority": 1,
+    "summary": "Grafana Labs published a practical approach to convert Cypress test results into Prometheus metrics and push them to Grafana Cloud, enabling dashboards and long-term retention of test-suite telemetry.",
+    "why_it_matters": "Persisting test metrics enables trend analysis, flaky-test detection, SLA-style quality gates, and actionable CI health dashboards for automation teams.",
+    "source": "InfoQ (reporting on Grafana approach)",
+    "source_url": "https://www.infoq.com/news/2026/09/grafana-cypress-observability/",
+    "published_at": "2026-09-25"
+  },
+  "items": [
+    {
+      "title": "Docker Cloud Sandboxes extend microVM sandboxes from laptop to cloud for AI agents",
+      "category": "agentic QA / sandboxing",
+      "priority": 2,
+      "summary": "Docker announced Cloud Sandboxes: a microVM-based sandbox that can move from local laptop to Docker-managed cloud, preserving filesystem and runtime for long-running agent tasks and reproducible agent execution.",
+      "why_it_matters": "Provides reproducible, isolated execution for agentic QA (test generation, autonomous test runs), reducing host interference and making long-horizon agent evaluations reproducible.",
+      "source": "Docker (product blog & press release)",
+      "source_url": "https://www.docker.com/blog/introducing-cloud-sandboxes-start-on-your-laptop-finish-in-the-cloud/",
+      "published_at": "2026-09-24"
+    },
+    {
+      "title": "CodeQL 2.27.1 adds C/C++ queries and Kotlin 2.4.20 support with query-accuracy improvements",
+      "category": "static analysis / test-quality",
+      "priority": 2,
+      "summary": "GitHub’s CodeQL 2.27.1 release adds new C and C++ queries, Kotlin 2.4.20 support, and query-accuracy tweaks — improving coverage for native code analysis in code scanning pipelines.",
+      "why_it_matters": "Expanded and more accurate queries catch defects earlier in PRs and CI, reducing downstream test noise and improving the value of automated security and correctness scans.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-25-codeql-2-27-1-adds-c-and-c-query-and-kotlin-2-4-20-support/",
+      "published_at": "2026-09-25"
+    },
+    {
+      "title": "GKE Pod snapshots reduce model load latency by checkpointing CPU/GPU memory for fast restores",
+      "category": "performance / infra for model-backed testing",
+      "priority": 2,
+      "summary": "Google Cloud documented GKE Pod snapshots that checkpoint CPU and GPU memory (via gVisor) to Cloud Storage, enabling much faster startup for large model-backed pods and repeatable restored states.",
+      "why_it_matters": "Speeds repeated test runs and performance benchmarks for model-serving workloads, and makes test environments reproducible by restoring fully-loaded model state quickly.",
+      "source": "Google Cloud Blog / GKE docs",
+      "source_url": "https://cloud.google.com/blog/products/containers-kubernetes/gke-pod-snapshots",
+      "published_at": "2026-09-21"
+    },
+    {
+      "title": "Professional skepticism is a dev’s best skill — dev interview on flaky tests, TDD, and agentic engineering",
+      "category": "QA culture / test strategy",
+      "priority": 3,
+      "summary": "Stack Overflow’s blog interview with BrowserStack’s David Burns emphasizes professional skepticism, test-driven practices for agentic engineering, and the role of state-management in fixing flaky tests.",
+      "why_it_matters": "Reinforces disciplined testing practices and state management as primary levers for reducing flakiness and improving reliability of automated and agent-driven tests.",
+      "source": "Stack Overflow Blog",
+      "source_url": "https://stackoverflow.blog/2026/09/25/professional-skepticism-is-a-dev-s-best-skill/",
+      "published_at": "2026-09-25"
+    }
+  ],
+  "watch": [],
+  "learning": [
+    {
+      "title": "Adaptive Recommenders in the Real World: Inference, Evals, and System Design",
+      "category": "ML evaluation / test design",
+      "priority": 2,
+      "summary": "An InfoQ presentation explains that operational challenges—real-time feedback loops, retrieval freshness, and latency budgeting—drive complexity in adaptive recommendation systems beyond model architecture.",
+      "why_it_matters": "Useful for QA engineers building evals and reliability tests for adaptive systems: design tests for feedback loops, freshness, and end-to-end latency, not just model output correctness.",
+      "source": "InfoQ (presentation)",
+      "source_url": "https://www.infoq.com/presentations/adaptive-recommendation-systems-architecture/",
+      "published_at": "2026-09-26"
+    }
+  ]
+}

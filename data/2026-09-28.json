@@ -1,0 +1,68 @@
+{
+  "date": "2026-09-28",
+  "headline": "Agent containment and agentic tooling updates reshape QA responsibilities for test agents, observability, and autofix workflows",
+  "top_signal": {
+    "title": "NVIDIA launches Open Agent Safety Platform (OpenShell + Sentry) for continuous, in‑silicon agent monitoring",
+    "category": "Agentic QA / Testability",
+    "priority": 1,
+    "summary": "NVIDIA published the Open Agent Safety Platform: OpenShell (open-source secure runtime) plus Sentry (out‑of‑band BlueField DPU watchdog) to enforce verifiable policies, collect attested telemetry, and quarantine misbehaving agents at line speed.",
+    "why_it_matters": "QA teams running or validating agentic test systems must evaluate sandbox guarantees, out‑of‑band observability, policy proofs, and hardware‑level containment as part of test design and CI gating.",
+    "source": "NVIDIA Developer Blog",
+    "source_url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+    "published_at": "2026-09-28"
+  },
+  "items": [
+    {
+      "title": "GitHub Agentic Autofix now reads and writes Copilot Memory",
+      "category": "AI for QA / Agentic QA",
+      "priority": 2,
+      "summary": "GitHub updated Agentic Autofix to use Copilot Memory, allowing autofix agents to consult and persist repository‑specific memories to resolve security alerts and provide context to other Copilot features.",
+      "why_it_matters": "Autofix agents using memory change how fixes are generated and re‑applied; QA must add auditability, regression tests, and reproducibility checks for memory‑driven fixes.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory/",
+      "published_at": "2026-09-25"
+    },
+    {
+      "title": "Docker launches Cloud Sandboxes — microVM sandboxes that move between laptop and cloud",
+      "category": "Agentic QA / Test Infrastructure",
+      "priority": 3,
+      "summary": "Docker introduced Cloud Sandboxes (microVMs) so long‑running agent tasks can run reliably in Docker‑managed cloud compute, with secrets proxying, per‑agent network policies, kits, and a CLI to move sandboxes between local and cloud.",
+      "why_it_matters": "QA automation can run reproducible, isolated agent‑driven test suites at scale, enforce network/secret policies per agent, and standardize agent test harnesses across local and cloud environments.",
+      "source": "Docker Blog",
+      "source_url": "https://www.docker.com/blog/introducing-cloud-sandboxes-start-on-your-laptop-finish-in-the-cloud/",
+      "published_at": "2026-09-24"
+    },
+    {
+      "title": "GitHub Usage Metrics API adds pull request review stage timings (median + p90)",
+      "category": "Test Observability / QA Metrics",
+      "priority": 4,
+      "summary": "GitHub added a pull_request_review_times array to repos-1-day Copilot usage metrics, reporting median and 90th‑percentile minutes for ready→first review, first→final review, and final→merge.",
+      "why_it_matters": "QA leads can now locate where PR latency occurs (waiting for review, review back‑and‑forth, or approved but unmerged) and target process fixes that slow test feedback and release quality.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages/",
+      "published_at": "2026-09-25"
+    },
+    {
+      "title": "GitHub adds in‑product validator for enterprise managed Copilot settings",
+      "category": "Agentic QA / Governance",
+      "priority": 5,
+      "summary": "GitHub added a Copilot enterprise settings validator that detects malformed JSON, unsupported configurations, and invalid team mappings in managed settings to prevent misapplied policies.",
+      "why_it_matters": "QA and platform teams should validate agent and Copilot config before rollout to avoid silent policy gaps that could alter agent behavior or invalidate automated test assumptions.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator/",
+      "published_at": "2026-09-25"
+    },
+    {
+      "title": "Cloudflare introduces Turnstile Spin to let coding agents wire up Turnstile with guided server validation",
+      "category": "Agentic QA / Integration Testing",
+      "priority": 6,
+      "summary": "Cloudflare’s Turnstile Spin provides a guided workflow for AI coding agents to install client widgets and wire canonical server‑side siteverify verification to reduce incomplete setups that leave endpoints exposed.",
+      "why_it_matters": "When agents configure security or onboarding flows, QA must test agent‑generated setup scripts, validate server‑side verification, and include negative tests for incomplete or skipped backend validation.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/turnstile-spin/",
+      "published_at": "2026-09-25"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

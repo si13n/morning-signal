@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-29",
+  "headline": "QA-focused roundup: agent audit trails, agentic incident automation in production, agentic browser testability, real-user performance data, and self-hosted runner enforcement",
+  "top_signal": {
+    "title": "Audit trails for autonomous agents with AWS DevOps Agent",
+    "category": "Agentic QA / Auditability",
+    "priority": 1,
+    "summary": "AWS details a reference architecture to capture immutable agent journals, EventBridge lifecycle events, recommendations, and CloudTrail records so every autonomous investigation, finding, and remediation is durably archived for later inspection and compliance.",
+    "why_it_matters": "QA leads must capture agent reasoning and actions to reproduce failures, validate remediations, and build test evidence for agent-driven fixes and triage workflows.",
+    "source": "AWS DevOps & Developer Productivity Blog",
+    "source_url": "https://aws.amazon.com/blogs/devops/audit-trails-for-autonomous-agents-with-aws-devops-agent/",
+    "published_at": "2026-09-28"
+  },
+  "items": [
+    {
+      "title": "How Property Finder automated incident management with AWS DevOps Agent",
+      "category": "Agentic QA / Incident automation",
+      "priority": 2,
+      "summary": "Property Finder implemented AWS DevOps Agent to run parallel subagents across metrics, logs, and code, creating Slack context, Jira tickets, paging, and an auto-remediation PR — reducing an example incident lifecycle to 14 minutes.",
+      "why_it_matters": "Demonstrates agentic end-to-end remediation in production — QA must design tests, guardrails, and review steps to validate agent-generated fixes and avoid regressions.",
+      "source": "AWS DevOps & Developer Productivity Blog (customer case)",
+      "source_url": "https://aws.amazon.com/blogs/devops/how-property-finder-automated-incident-management-with-aws-devops-agent/",
+      "published_at": "2026-09-28"
+    },
+    {
+      "title": "The road to the agentic browser: a Kitesurf update",
+      "category": "Agentic QA / Web automation",
+      "priority": 2,
+      "summary": "Cloudflare updates Kitesurf (an agentic browser) with WebMCP support, improved DOM performance, and reports passing 730,000+ Web Platform subtests — improving how agents navigate and interact with complex sites.",
+      "why_it_matters": "Agentic QA and test automation can rely on a more standards-complete agentic browser, reducing flakiness when agents drive real web apps and enabling reproducible agent-driven test scenarios.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/kitesurf-update/",
+      "published_at": "2026-09-28"
+    },
+    {
+      "title": "How fast is the web? Explore billions of real-user measurements with BEACON",
+      "category": "Performance / Real-user metrics for testing",
+      "priority": 3,
+      "summary": "Cloudflare published the BEACON dataset (billions of anonymized RUM records) on Google BigQuery, including Core Web Vitals and navigation metrics across browsers and regions.",
+      "why_it_matters": "Performance engineers and QA can use BEACON as real-world traffic distributions and thresholds to design realistic load/perf tests and validate user-impacting regressions.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/how-fast-is-the-web/",
+      "published_at": "2026-09-28"
+    },
+    {
+      "title": "Self-hosted runner version enforcement date has moved",
+      "category": "Test infrastructure / CI runners",
+      "priority": 2,
+      "summary": "GitHub announced the enforcement schedule for minimum self-hosted runner versions shifted: change ships Sep 28, 2026 and full enforcement begins Sep 29, 2026; older runners may stop registering or running jobs.",
+      "why_it_matters": "QA teams operating self-hosted runners must patch runner images and automation before Sep 29, 2026 to avoid test-run interruptions and flaky CI gating during the enforcement window.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-28-self-hosted-runner-version-enforcement-date-has-moved/",
+      "published_at": "2026-09-28"
+    },
+    {
+      "title": "Previews: per-branch isolated preview environments for Cloudflare Workers",
+      "category": "Test environments / Isolation",
+      "priority": 3,
+      "summary": "Cloudflare Workers documentation describes per-branch Previews that give each Git branch a stable preview URL and scoped configuration to test changes in production-like isolation.",
+      "why_it_matters": "Per-branch preview environments reduce test-environment drift and let QA validate Worker behavior, bindings, and observability before merging — lowering production surprises.",
+      "source": "Cloudflare Workers documentation",
+      "source_url": "https://developers.cloudflare.com/workers/previews/",
+      "published_at": "2026-09-24"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Air Teams: JetBrains’ team layer for agentic development",
+      "category": "Agentic QA / Collaboration & governance",
+      "priority": 4,
+      "summary": "JetBrains launched Air Teams to provide shared context, environments, instructions, and controls that coordinate humans and agents across the development lifecycle.",
+      "why_it_matters": "If adopted, Air Teams could standardize agent workflows and environments — QA should monitor for new team-level agent governance, test orchestration, and reproducibility features.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/air/2026/09/introducing-air-teams/",
+      "published_at": "2026-09-28"
+    }
+  ],
+  "learning": [
+    {
+      "title": "OpenTelemetry everywhere: Migrating a metrics platform at scale (Atlassian)",
+      "category": "Test observability / Metrics",
+      "priority": 3,
+      "summary": "Atlassian published a detailed migration account replacing a large metrics pipeline with OpenTelemetry collectors, covering design choices for high-volume ingestion, shard hot-spotting, and reliability tradeoffs.",
+      "why_it_matters": "QA and SRE teams will find practical observability patterns and pitfalls to improve test telemetry, create robust test diagnostics, and design metric-based quality gates.",
+      "source": "CNCF (Atlassian authors)",
+      "source_url": "https://www.cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale/",
+      "published_at": "2026-09-17"
+    }
+  ]
+}

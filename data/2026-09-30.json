@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-30",
+  "headline": "QA-focused signals: mobile automation release, AI-assisted triage advances, agent auditability, adaptive testing methods, and CI runner changes",
+  "top_signal": {
+    "title": "Maestro mobile automation: CLI v2.11.0 release",
+    "category": "Mobile automation",
+    "priority": 1,
+    "summary": "Maestro published CLI 2.11.0 / v2.11.0 (release tag cli-2.11.0 on Sep 29, 2026). Mobile QA teams should review the changelog for breaking changes, script behavior and device-support notes before updating runners.",
+    "why_it_matters": "Maestro upgrades can change test execution on device farms and CI runners — review before rolling out to avoid test-flakiness or infra breakage.",
+    "source": "GitHub (Maestro releases)",
+    "source_url": "https://github.com/mobile-dev-inc/Maestro/releases/tag/cli-2.11.0",
+    "published_at": "2026-09-29T13:36:48Z"
+  },
+  "items": [
+    {
+      "title": "Seer Agent upgrades: write actions and infrastructure connectors for faster triage",
+      "category": "Agentic QA / Test failure triage",
+      "priority": 2,
+      "summary": "Sentry’s Seer Agent now performs write actions in Sentry (create monitors, assign/resolve issues) and can ingest Datadog and GCP data via Seer Connectors to improve diagnosis. Published Sept 29, 2026.",
+      "why_it_matters": "Agents that act and pull infra telemetry speed triage but raise permission, audit and reproducibility questions for QA workflows and test-failure automation.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/big-improvements-to-seer-agent/",
+      "published_at": "2026-09-29"
+    },
+    {
+      "title": "Cloudflare’s adaptive WAF tester: AI-driven, feedback-loop testing for detection gaps",
+      "category": "Test design / AI-assisted testing",
+      "priority": 2,
+      "summary": "Cloudflare built an adaptive tester that varies inputs based on WAF responses and ran it across six attack categories to discover gaps a fixed test suite missed. Published Sept 29, 2026.",
+      "why_it_matters": "Adaptive test loops catch evasive or variant-driven failures that static suites miss — useful pattern for QA tests of detectors, validators, and security rules.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/adaptive-ai-waf-testing/",
+      "published_at": "2026-09-29"
+    },
+    {
+      "title": "Audit trails for autonomous agents with AWS DevOps Agent",
+      "category": "Agentic QA / Observability for agents",
+      "priority": 2,
+      "summary": "AWS details patterns for durable audit trails for autonomous DevOps agents: journaling decisions, recording actions, and linking evidence to change events. Published Sept 28, 2026.",
+      "why_it_matters": "Traceable agent actions are essential for test reproducibility, root-cause analysis, and safe adoption of agentic test/execution tooling in production.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/audit-trails-for-autonomous-agents-with-aws-devops-agent/",
+      "published_at": "2026-09-28"
+    },
+    {
+      "title": "GitHub moves self-hosted runner version enforcement date",
+      "category": "Test infrastructure",
+      "priority": 3,
+      "summary": "GitHub changed enforcement timing for minimum self-hosted runner versions (announcement published Sept 28, 2026). Self-hosted runner upgrades may be required sooner or on revised schedule.",
+      "why_it_matters": "Runner version enforcement can break test pipelines or change runner behavior; QA teams must inventory runners and plan upgrades to keep test CI green.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-28-self-hosted-runner-version-enforcement-date-has-moved",
+      "published_at": "2026-09-28T19:22:46Z"
+    },
+    {
+      "title": "Kiro CLI as a pre-commit/git-hook agent to catch issues earlier",
+      "category": "Pre-commit QA / Developer-side automation",
+      "priority": 3,
+      "summary": "AWS DevOps blog demonstrates using Kiro CLI as a pre-commit and git-hook agent to run checks and catch issues before commits leave developer machines. Published Sept 29, 2026.",
+      "why_it_matters": "Shifting checks left reduces noisy test runs in CI and speeds feedback loops; QA should evaluate which tests are safe and fast enough to run pre-commit.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/accelerating-development-workflows-with-kiro-cli-as-a-pre-commit-and-git-hook-agent/",
+      "published_at": "2026-09-29T16:02:43Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Repository custom runner settings for Dependabot",
+      "category": "Test infrastructure / Dependency PR testing",
+      "priority": 4,
+      "summary": "GitHub added settings to choose runner type, optional custom labels and runner groups for Dependabot dependency and security update PRs. Published Sept 29, 2026.",
+      "why_it_matters": "This can change where and how dependency PRs run tests — important for preserving test coverage, avoiding noisy failures, and isolating privileged runner usage.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-09-29-repository-custom-runner-settings-for-dependabot",
+      "published_at": "2026-09-29T19:10:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Software Quality Assurance Tools and Tips for Developers (JetBrains Qodana)",
+      "category": "QA practices / Tooling",
+      "priority": 4,
+      "summary": "JetBrains Qodana outlines practical QA tooling and processes to embed quality earlier in development: linters, static analysis, continuous checks, and integrating QA into delivery pipelines. Published Sept 29, 2026.",
+      "why_it_matters": "Concise checklist for teams improving testability and automating early-quality gates — useful reference for QA leads designing toolchains and shift-left strategies.",
+      "source": "JetBrains Qodana Blog",
+      "source_url": "https://blog.jetbrains.com/qodana/2026/09/software-quality-assurance-tools/",
+      "published_at": "2026-09-29T12:23:15Z"
+    }
+  ]
+}

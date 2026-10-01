@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-01",
+  "headline": "QA-focused roundup: agentic failure handoffs, accessibility standard impacts, agent sandboxes, and data-aware coding agents",
+  "top_signal": {
+    "title": "Detect and send production issues straight to your agent",
+    "category": "Agentic QA / Observability",
+    "priority": 1,
+    "summary": "Cloudflare’s Issues (open beta) groups Worker exceptions and captures occurrence context — source-mapped stack traces, leading/trailing logs, traces, Worker version, and app attributes — then sends that bundle to configured coding agents, webhooks, or incident tools to triage and open PRs.",
+    "why_it_matters": "Structured, automated handoff removes manual telemetry gathering, enabling agents to triage, generate tests, propose fixes, and verify remediation faster — changing failure-triage and agentic QA workflows.",
+    "source": "Cloudflare Blog",
+    "source_url": "https://blog.cloudflare.com/real-time-issue-detection/",
+    "published_at": "2026-09-30"
+  },
+  "items": [
+    {
+      "title": "Beyond compliance to readiness: What EN 301 549 v4.1.1 means for your accessibility strategy",
+      "category": "Accessibility testing",
+      "priority": 2,
+      "summary": "EN 301 549 v4.1.1 adopts WCAG 2.2 across web and mobile ICT. BrowserStack outlines the new success criteria and recommends automated, semi-automated, and real-device validation patterns for focus, target size, drag alternatives, and accessible authentication.",
+      "why_it_matters": "QA teams must add interaction-driven checks, real-device touch-target tests, and CI accessibility gates to prevent regressions and meet forthcoming procurement and regulatory expectations in Europe.",
+      "source": "BrowserStack Blog",
+      "source_url": "https://www.browserstack.com/blog/what-en-301-549-v4-1-1-means-for-your-accessibility-strategy/",
+      "published_at": "2026-10-01"
+    },
+    {
+      "title": "Software Quality Assurance Tools and Tips for Developers",
+      "category": "QA tooling",
+      "priority": 3,
+      "summary": "JetBrains’ Qodana post reviews modern SQA tooling and shift-left practices, covering static analysis, CI-integrated quality gates, automated test frameworks, and the role of AI-assisted checks in continuous QA.",
+      "why_it_matters": "QA leads should reassess code-quality gates, IDE-integrated linters, and automated static-analysis coverage to reduce defects reaching tests and improve testability and triage speed.",
+      "source": "JetBrains Qodana Blog",
+      "source_url": "https://blog.jetbrains.com/qodana/2026/09/software-quality-assurance-tools/",
+      "published_at": "2026-09-29"
+    },
+    {
+      "title": "Cloudflare Containers, rebuilt to scale agent sandboxes",
+      "category": "Agentic QA / Sandboxes",
+      "priority": 2,
+      "summary": "Cloudflare rearchitected Containers to start ~6x faster, let sandboxes choose images at runtime, and add filesystem snapshots (public beta), improving isolated, reproducible execution environments for agents and test harnesses.",
+      "why_it_matters": "Faster, snapshot-capable sandboxes reduce cold-start noise, speed agent-driven test runs, and make flaky-test reproduction and deterministic replay more practical for QA automation.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/faster-agent-sandboxes/",
+      "published_at": "2026-09-30"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Data Agent Kit is now GA: Bring Google Data Cloud to any coding agent",
+      "category": "Agentic QA / Data Access",
+      "priority": 2,
+      "summary": "Google Cloud’s Data Agent Kit reached GA, adding MCP tools and open-source skills so coding agents can inspect schemas, run BigQuery/Bigtable/Spark queries, read job logs, and manage pipelines with proper IAM.",
+      "why_it_matters": "If QA agents will validate analytics, reproduce pipeline failures, or generate data-driven tests, this gives agents safe, governed data access and troubleshooting skills — worth piloting for data-heavy QA flows.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/developers-practitioners/data-agent-kit-is-now-ga-bring-google-data-cloud-to-any-coding-agent/",
+      "published_at": "2026-09-30"
+    }
+  ],
+  "learning": [
+    {
+      "title": "How Etsy gets its mobile apps ready for peak traffic",
+      "category": "Mobile QA / Observability",
+      "priority": 3,
+      "summary": "Sentry’s Etsy case study describes a three-phase peak-prep workflow: code slush, targeted tagging and release-health signals, break-glass alerts, and focused triage steps tied to crash cost metrics and observability.",
+      "why_it_matters": "Mobile QA leads can adopt these observability-driven practices — alert tuning, targeted tagging, and release-health checks — to reduce noise and improve incident-driven test and triage efficiency during peaks.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/etsy-peak-traffic-prep/",
+      "published_at": "2026-09-30"
+    }
+  ]
+}

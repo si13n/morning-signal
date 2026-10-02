@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-02",
+  "headline": "QA-focused signals: CI runner deprecation, shorter retention windows, accessibility standard update, and agentic GUI automation preview",
+  "top_signal": {
+    "title": "GitHub Actions: macOS 14 runner image retirement (Nov 2, 2026)",
+    "category": "CI / test infrastructure",
+    "priority": 1,
+    "summary": "GitHub announced retirement of the macOS 14 (Sonoma) Actions runner image effective November 2, 2026, with multiple October brownouts. Workflows should migrate to macos-15 or macos-latest (macos-26) labels now.",
+    "why_it_matters": "macOS runners host iOS/macOS UI tests (XCUITest, Appium) and simulators—update workflow labels and validate toolchains to avoid CI failures and longer queue times.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement/",
+    "published_at": "2026-10-01"
+  },
+  "items": [
+    {
+      "title": "EN 301 549 v4.1.1 adopts WCAG 2.2 — BrowserStack: prepare testing pipelines",
+      "category": "Accessibility testing",
+      "priority": 2,
+      "summary": "ETSI’s EN 301 549 v4.1.1 (adopting WCAG 2.2) raises interactive and platform-preference criteria. BrowserStack recommends integrated automated, semi-automated, and real-device testing for web and native apps.",
+      "why_it_matters": "New success criteria require active interaction and real-device checks; QA must add WCAG 2.2 checks into CI and real-device suites to avoid regressions and procurement issues.",
+      "source": "BrowserStack Blog",
+      "source_url": "https://www.browserstack.com/blog/what-en-301-549-v4-1-1-means-for-your-accessibility-strategy/",
+      "published_at": "2026-10-01"
+    },
+    {
+      "title": "Actions retention now covers checks, workflow runs, and statuses",
+      "category": "Test evidence & observability",
+      "priority": 2,
+      "summary": "Starting October 1, 2026, GitHub Actions retention settings apply to checks, workflow runs and statuses (default 90 days), aligning them with artifact/log retention and shortening historical availability.",
+      "why_it_matters": "Flaky-test history, triage evidence and test-forensics windows shrink—QA leads must review retention, export or archive critical runs, and adjust policies before data is evicted.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-08-27-actions-retention-will-cover-checks-workflow-runs-and-statuses/",
+      "published_at": "2026-08-27"
+    },
+    {
+      "title": "Code coverage uploads no longer fail CI for new branches",
+      "category": "CI stability / coverage tooling",
+      "priority": 3,
+      "summary": "The GitHub Code Quality upload-code-coverage action no longer fails CI when pushing a branch that has no open pull request; it now skips uploads until a PR exists and explains why in the step summary.",
+      "why_it_matters": "Eliminates false CI failures for new branches and reduces noisy broken pipelines—QA teams can simplify coverage workflows or add pull_request triggers for immediate uploads.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-01-code-coverage-uploads-no-longer-fail-ci-for-new-branches/",
+      "published_at": "2026-10-01"
+    }
+  ],
+  "watch": [
+    {
+      "title": "GitHub Copilot 'computer use' (public preview) — Copilot can now interact with desktop apps",
+      "category": "Agentic QA / GUI automation",
+      "priority": 3,
+      "summary": "GitHub’s Copilot app now supports 'computer use' in public preview: it can read accessible UI content, click controls, type, scroll and drive GUI workflows on macOS and Windows (requires Accessibility + Screen Recording permissions).",
+      "why_it_matters": "Enables agentic automation for GUI-only and legacy apps—potentially useful for automating manual flows, but QA must validate reliability, permissions, and governance before adoption.",
+      "source": "GitHub Docs",
+      "source_url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/computer-use",
+      "published_at": "2026-10-01"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Software Quality Assurance Tools and Tips for Developers — JetBrains (Qodana)",
+      "category": "QA tooling & practices",
+      "priority": 4,
+      "summary": "JetBrains Qodana post surveys SQA tools, shift-left practices, and practical tool choices across static analysis, unit/integration testing, performance tools, and CI integration for modern QA workflows.",
+      "why_it_matters": "A concise primer for QA leads building layered toolchains—shows how to integrate static analysis, coverage, and automated checks into CI and test strategy.",
+      "source": "JetBrains Qodana Blog",
+      "source_url": "https://blog.jetbrains.com/qodana/2026/09/software-quality-assurance-tools/",
+      "published_at": "2026-09-29"
+    }
+  ]
+}

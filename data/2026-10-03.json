@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-03",
+  "headline": "QA Morning Signal — 2026-10-03: agentic investigations, accessibility readiness, device streaming, and CI runner changes",
+  "top_signal": {
+    "title": "Closed-loop incident response: connect AWS DevOps Agent to OpenSearch",
+    "category": "Agentic QA / Observability",
+    "priority": 1,
+    "summary": "AWS shows how to connect AWS DevOps Agent to OpenSearch alerting so alerts automatically trigger investigations (Lambda → Event Channel). That automates triage, evidence capture, and structured investigation for production incidents and test failures.",
+    "why_it_matters": "QA teams can auto-run investigations on alerts, collect traces/logs as test evidence, and reduce manual triage for intermittent CI or production test failures.",
+    "source": "AWS DevOps Blog",
+    "source_url": "https://aws.amazon.com/blogs/devops/closed-loop-incident-response-connect-aws-devops-agent-to-opensearch/",
+    "published_at": "2026-10-02T15:24:49Z"
+  },
+  "items": [
+    {
+      "title": "Beyond compliance to readiness: EN 301 549 v4.1.1 and WCAG 2.2 — BrowserStack guidance",
+      "category": "Accessibility Testing",
+      "priority": 2,
+      "summary": "BrowserStack explains EN 301 549 v4.1.1's adoption of WCAG 2.2 for web and mobile ICT and shows how real-device clouds and automated workflows can validate accessibility across device matrices.",
+      "why_it_matters": "QA leads must update automation and device coverage to include WCAG 2.2 checks and real-device validation before mandates arrive.",
+      "source": "BrowserStack Blog",
+      "source_url": "https://www.browserstack.com/blog/what-en-301-549-v4-1-1-means-for-your-accessibility-strategy/",
+      "published_at": "2026-10-01T05:58:58Z"
+    },
+    {
+      "title": "Device Streaming and Android 'skills' added to Android CLI",
+      "category": "Mobile QA / Agentic QA",
+      "priority": 2,
+      "summary": "Android CLI now includes device streaming plus 'Android skills'—structured guidance files that let agent tools and CLIs perform grounded device actions, easing remote reproductions and guided exploratory testing on real devices.",
+      "why_it_matters": "Enables agents and CI to interact with physical devices directly for reproductions and exploratory tests without heavy device-farm orchestration.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "published_at": "2026-10-02T16:00:00Z"
+    },
+    {
+      "title": "Integrate AWS DevOps Agent with third-party tools using Amazon EventBridge",
+      "category": "Agentic QA / Tooling",
+      "priority": 3,
+      "summary": "AWS docs and a blog post provide patterns to emit DevOps Agent investigation events to EventBridge so Lambda/Step Functions can create or update tickets, notify systems, or start workflows when investigations change state.",
+      "why_it_matters": "QA teams can automate triage-to-ticket flows and attach investigation artifacts to issues for reproducible failure analysis and faster debug handoffs.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/integrate-aws-devops-agent-with-third-party-tools-using-amazon-eventbridge/",
+      "published_at": "2026-10-02T15:50:00Z"
+    },
+    {
+      "title": "Seer, the Sentry MCP and CLI, or your own coding agent: where each one fits",
+      "category": "Agentic QA / Failure Triage",
+      "priority": 3,
+      "summary": "Sentry published guidance comparing Seer, the MCP/plugin, and the Sentry CLI, explaining when to use each integration for structured root-cause analysis across errors, traces, logs, profiles, and repositories.",
+      "why_it_matters": "Clarifies tool selection for automated triage: Seer for deep RCA, MCP for agent handoffs, and CLI for quick terminal-driven investigations.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/seer-mcp-cli-or-coding-agent/",
+      "published_at": "2026-10-02T00:00:00Z"
+    },
+    {
+      "title": "GitHub Actions: macOS 14 runner image retirement — update macOS labels",
+      "category": "Test Infrastructure",
+      "priority": 4,
+      "summary": "GitHub will retire macOS 14 runner images on November 2, 2026 and scheduled brownouts occur through October. Workflows must switch to macos-15 or macos-latest labels to avoid job failures.",
+      "why_it_matters": "iOS/macOS QA automation relying on hosted runners must update workflow labels and validate test tooling on macOS 15 images to prevent CI failures and longer queue times.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement/",
+      "published_at": "2026-10-01T19:11:23Z"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

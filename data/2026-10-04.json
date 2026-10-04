@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-04",
+  "headline": "QA-focused morning signal — agentic testing, test infra, and observability updates you should act on",
+  "top_signal": {
+    "title": "GitHub Actions: macOS 14 runner image retirement",
+    "category": "CI / Test infrastructure",
+    "priority": 1,
+    "summary": "GitHub will retire the macOS 14 (Sonoma) Actions runner image on November 2, 2026; jobs using that image will fail during scheduled removal windows. The changelog gives migration guidance and timing. ",
+    "why_it_matters": "If you run macOS or iOS tests on GitHub Actions, update runner images and validate macOS build/test pipelines before Nov 2 to avoid failing test runs and blocked releases.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement/",
+    "published_at": "2026-10-01"
+  },
+  "items": [
+    {
+      "title": "Android CLI adds Device Streaming and Android skills",
+      "category": "Mobile QA / Agentic QA",
+      "priority": 2,
+      "summary": "Android CLI now supports Android Device Streaming (secure ADB-over-SSL) and a growing 'Android skills' repo. Agents and CLIs can reserve real devices, deploy builds, collect logs/traces, and capture headless screenshots from the terminal.",
+      "why_it_matters": "Enables agent-driven remote device access for automated end-to-end tests, screenshot suites, and trace-backed debugging without separate device-farm APIs or custom adapters.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "published_at": "2026-10-02"
+    },
+    {
+      "title": "Closed-loop incident response: connect AWS DevOps Agent to OpenSearch",
+      "category": "Agentic QA / Failure triage",
+      "priority": 2,
+      "summary": "AWS published a how‑to connecting AWS DevOps Agent to Amazon OpenSearch via the Model Context Protocol (MCP), enabling alerts to auto-trigger agent investigations using observability data and structured payload mapping.",
+      "why_it_matters": "Makes autonomous root-cause investigations practical for test-failure alerts and production regressions — useful for automating triage of flaky tests and release-blocking failures.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/closed-loop-incident-response-connect-aws-devops-agent-to-opensearch/",
+      "published_at": "2026-10-02"
+    },
+    {
+      "title": "Integrate AWS DevOps Agent with third-party tools using Amazon EventBridge",
+      "category": "Agentic QA / Test governance",
+      "priority": 3,
+      "summary": "AWS published a deployable pattern showing how DevOps Agent investigation events can be routed through EventBridge to create/update Jira issues (via Lambda + CDK), appending investigation results to tickets.",
+      "why_it_matters": "Automates evidence collection and ticketing for investigations — useful for turning test-run failures into reproducible Jira issues with agent-collected logs, traces, and RCA attachments.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/integrate-aws-devops-agent-with-third-party-tools-using-amazon-eventbridge/",
+      "published_at": "2026-10-02"
+    },
+    {
+      "title": "Seer, the Sentry MCP and CLI, or your own coding agent: where each one fits",
+      "category": "Agentic QA / Failure triage and autofix",
+      "priority": 3,
+      "summary": "Sentry explains tradeoffs between Seer (Sentry’s coding agent), the Model Context Protocol (MCP), and CLI-based workflows for automating error triage, structured context delivery, and scripted fixes in CI and incident pipelines.",
+      "why_it_matters": "Helps QA leads choose between in‑pipeline coding-agent autofix, MCP-driven structured context for agents, or CLI automation when designing safe test-failure triage and autofix workflows.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/seer-mcp-cli-or-coding-agent/",
+      "published_at": "2026-10-02"
+    },
+    {
+      "title": "Cloudflare launches One Observability platform and Cloudflare Traces",
+      "category": "Test observability / Test diagnostics",
+      "priority": 4,
+      "summary": "Cloudflare announced unified logs, traces, analytics, and new Workers observability datasets plus 'Cloudflare Traces' to follow requests across edge, Workers, and origin services in one platform.",
+      "why_it_matters": "Improves the ability to correlate test-run telemetry and synthetic/request traces with application behavior — useful for flaky-test forensics and validating end-to-end regression fixes.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/one-observability-platform/",
+      "published_at": "2026-10-02"
+    }
+  ],
+  "watch": [],
+  "learning": [
+    {
+      "title": "Agent Seer: Synthesizing Scenarios from Specification Understanding (research)",
+      "category": "AI-for-QA / Test generation",
+      "priority": 4,
+      "summary": "ArXiv paper shows how tool specifications (function names, schemas, descriptions) can be used to synthesize realistic evaluation scenarios and test cases without live tool access or manual curation.",
+      "why_it_matters": "Offers a practical technique for generating agent/eval test scenarios from tool specs — valuable for automated test-case generation and benchmark creation for agentic QA.",
+      "source": "arXiv",
+      "source_url": "https://arxiv.org/abs/2608.26133",
+      "published_at": "2026-06-24"
+    }
+  ]
+}

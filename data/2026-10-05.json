@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-05",
+  "headline": "QA-focused Morning Signal — agentic QA, mobile/device streaming, CI/test integration, and AI-for-QA evaluation (2026-10-05)",
+  "top_signal": {
+    "title": "Building Reusable Evaluation Frameworks for Agentic AI Products (InfoQ presentation)",
+    "category": "Agentic QA",
+    "priority": 1,
+    "summary": "Susan Chang (Elastic) presents a production-grade evaluation framework for agentic AI: unified benchmarks, combining deterministic rules with LLM-as-judge approaches, and deep tracing to catch agent failures and evaluation drift.",
+    "why_it_matters": "Concrete patterns and tracing practices help QA teams build reproducible agent evaluation, automated failure capture, and metrics suitable for production validation of agentic test workflows.",
+    "source": "InfoQ",
+    "source_url": "https://www.infoq.com/presentations/elastic-ai-agent-evaluations/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+    "published_at": "2026-10-05T11:19:00Z"
+  },
+  "items": [
+    {
+      "title": "Device Streaming and Android skills — available in Android CLI",
+      "category": "Mobile QA",
+      "priority": 2,
+      "summary": "Android CLI adds device streaming and 'skills' for scripted interactions and remote device access, enabling lower-latency debugging and automated tasks against real devices from the command line.",
+      "why_it_matters": "Enables more direct remote access for exploratory and automated mobile testing, shifting how device farms and local debugging integrate into QA workflows and CI test runs.",
+      "source": "Android Developers Blog",
+      "source_url": "https://android-developers.googleblog.com/2026/10/android-cli-device-streaming-and-skills.html",
+      "published_at": "2026-10-02T16:00:00Z"
+    },
+    {
+      "title": "Closed-loop incident response: connect AWS DevOps Agent to OpenSearch",
+      "category": "Agentic QA",
+      "priority": 2,
+      "summary": "AWS shows how to connect DevOps Agent investigation events to OpenSearch using the Model Context Protocol to trigger autonomous investigation workflows from alerts.",
+      "why_it_matters": "Automates root-cause triage for test failures and incidents, enabling agents to gather observability context and start investigations that reduce mean time to resolution for flaky or failing tests.",
+      "source": "AWS DevOps Blog",
+      "source_url": "https://aws.amazon.com/blogs/devops/closed-loop-incident-response-connect-aws-devops-agent-to-opensearch/",
+      "published_at": "2026-10-02T15:24:49Z"
+    },
+    {
+      "title": "Stateless GitHub App installation tokens rolled out",
+      "category": "Test Automation Integrations",
+      "priority": 3,
+      "summary": "GitHub completed the staged rollout of stateless installation tokens for GitHub Apps; newly minted tokens now use the stateless format by default.",
+      "why_it_matters": "Test automation that relies on GitHub Apps may need SDK and token-refresh updates; verify token handling in test runners and automation tooling to avoid auth failures in pipelines.",
+      "source": "GitHub Blog",
+      "source_url": "https://github.blog/changelog/2026-10-02-stateless-github-app-installation-tokens-rolled-out",
+      "published_at": "2026-10-02T22:18:23Z"
+    },
+    {
+      "title": "Copilot code review: API support and new default effort level",
+      "category": "AI-assisted testing",
+      "priority": 3,
+      "summary": "GitHub added REST and GraphQL API support for Copilot Code Review and changed the default review effort level to 'Balanced', letting tools request programmatic reviews.",
+      "why_it_matters": "QA pipelines can now request automated code reviews for test code and infra programmatically, enabling machine-assisted PR gates and continuous quality checks in test repos.",
+      "source": "GitHub Blog",
+      "source_url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+      "published_at": "2026-10-02T19:13:50Z"
+    },
+    {
+      "title": "TeamCity 2026.2.1 and 2026.1.5 bugfix updates",
+      "category": "Test Infrastructure",
+      "priority": 2,
+      "summary": "JetBrains released TeamCity 2026.2.1 and 2026.1.5 maintenance updates addressing over 40 security vulnerabilities alongside various bug and stability fixes.",
+      "why_it_matters": "On-prem TeamCity instances used to orchestrate test runs should be patched to avoid compromised CI/test orchestration and prevent downtime that disrupts automated test execution.",
+      "source": "JetBrains TeamCity Blog",
+      "source_url": "https://blog.jetbrains.com/teamcity/2026/10/teamcity-2026-2-1-2026-1-5-bugfix/",
+      "published_at": "2026-10-05T11:59:09Z"
+    },
+    {
+      "title": "Android Security State libraries enable component-level security verification",
+      "category": "Mobile QA",
+      "priority": 3,
+      "summary": "Google's AndroidX Security State libraries let apps verify security patch status at the component level rather than only a device-wide patch date.",
+      "why_it_matters": "Mobile QA should adapt device gating and security tests to component-level indicators so tests target devices/components with relevant security status and avoid false assumptions.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/10/android-security-state-libs/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-10-04T17:00:00Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Selected models in GitHub Copilot deprecated",
+      "category": "AI-assisted testing",
+      "priority": 2,
+      "summary": "GitHub deprecated several models used across Copilot experiences (completions, agents, chat) as of October 2, 2026, affecting behavior across Copilot features.",
+      "why_it_matters": "Model deprecations can change automated code-review and generation outputs; QA should monitor Copilot-driven gates and revalidate any tests or heuristics that depend on its behavior.",
+      "source": "GitHub Blog",
+      "source_url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "published_at": "2026-10-02T18:24:19Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "The Platform Engineering Playbook for Production LLMs (InfoQ article)",
+      "category": "AI for QA",
+      "priority": 2,
+      "summary": "Article argues treating LLMs as shared platform infrastructure: central observability, platform controls, and guardrails to reduce hallucinations and operational surprises in agentic systems.",
+      "why_it_matters": "Gives QA teams tactics to design validation, observability, and platform-level tests for LLM-driven features and agent workflows used in production.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/articles/platform-engineering-playbook-production-llms/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global",
+      "published_at": "2026-10-05T11:00:00Z"
+    }
+  ]
+}

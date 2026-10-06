@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-06",
+  "headline": "Agentic QA and evaluation practices advance: spec-driven delivery, agent experience metrics, and reusable evaluation frameworks enter QA workflows.",
+  "top_signal": {
+    "title": "Akka tests spec-driven AI delivery across 65 open-source projects",
+    "category": "Agentic QA / Spec-driven test generation",
+    "priority": 1,
+    "summary": "Akka ran a spec-driven delivery experiment across 65 open-source projects to measure how structured specs, model choice, and validation affect AI-assisted porting and test coverage, reporting measurable efficiency and quality differences across workloads. ([infoq.com](https://www.infoq.com/news/2026/10/ai-spec-driven-delivery/))",
+    "why_it_matters": "Shows a concrete, repeatable spec→validate workflow for agentic delivery — relevant to teams adopting AI agents for test generation, differential testing, and validation. ([infoq.com](https://www.infoq.com/news/2026/10/ai-spec-driven-delivery/))",
+    "source": "InfoQ",
+    "source_url": "https://www.infoq.com/news/2026/10/ai-spec-driven-delivery/",
+    "published_at": "2026-10-05"
+  },
+  "items": [
+    {
+      "title": "What is Agent Experience (AX)? — measuring agent correctness with AX",
+      "category": "Agentic QA / Agent evaluation",
+      "priority": 2,
+      "summary": "Microsoft’s AX guidance describes measuring how well coding agents use project tech, choose APIs, and complete tasks — including scenario-based runs and task-level metrics for agent-tool interactions. ([developer.microsoft.com](https://developer.microsoft.com/blog/tag/agent-experience/?utm_source=openai))",
+      "why_it_matters": "AX gives QA teams concrete measurement targets (tooling compatibility, task success rates) for validating agent-driven test creation and automation. ([developer.microsoft.com](https://developer.microsoft.com/blog/tag/agent-experience/?utm_source=openai))",
+      "source": "Microsoft Developer Blogs (Agent Experience)",
+      "source_url": "https://devblogs.microsoft.com/blog/what-is-agent-experience-ax/",
+      "published_at": "2026-10-06T09:18:05Z"
+    },
+    {
+      "title": "Pizza Bot: an open-source inbox for background AI agents",
+      "category": "Agentic QA / Agent orchestration",
+      "priority": 3,
+      "summary": "AWS released Pizza Bot, a self-hosted inbox model for long-running background agents that preserves provenance, approval boundaries, and scheduled runs — designed for asynchronous agent work and inspection. ([aws.amazon.com](https://aws.amazon.com/blogs/opensource/introducing-pizza-bot-an-open-source-inbox-for-ai-agents-that-work-in-the-background/))",
+      "why_it_matters": "Makes background agent outputs auditable and reviewable — important for QA workflows, human-in-the-loop approvals, and reproducible failure triage of agent-driven tests. ([aws.amazon.com](https://aws.amazon.com/blogs/opensource/introducing-pizza-bot-an-open-source-inbox-for-ai-agents-that-work-in-the-background/))",
+      "source": "AWS Open Source Blog",
+      "source_url": "https://aws.amazon.com/blogs/opensource/introducing-pizza-bot-an-open-source-inbox-for-ai-agents-that-work-in-the-background/",
+      "published_at": "2026-09-10"
+    },
+    {
+      "title": "Grounding AI agents in contracts: empirical spec-driven test-generation results",
+      "category": "AI-for-QA research / Test generation",
+      "priority": 3,
+      "summary": "An empirical paper evaluates spec-driven agent test-generation against production bugs and reports a meaningful improvement in bug detection and branch coverage versus baseline test-generation agents. ([arxiv.org](https://arxiv.org/abs/2608.17177?utm_source=openai))",
+      "why_it_matters": "Provides evidence for spec-driven agent test generation improving defect detection and coverage — useful when planning agent-based test generation pilots. ([arxiv.org](https://arxiv.org/abs/2608.17177?utm_source=openai))",
+      "source": "arXiv",
+      "source_url": "https://arxiv.org/abs/2608.17177",
+      "published_at": "2026-08-17T22:36:12Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Akka’s 'We ported 65 OSS projects with AI' blog — follow adoption of Akka Specify / spec tooling",
+      "category": "Agentic QA / Tooling watch",
+      "priority": 4,
+      "summary": "Akka’s own blog describing their porting experiment and Akka Specify highlights spec tooling, benchmark runners, and guardrails worth monitoring as spec-driven QA toolchains mature. ([akka.io](https://akka.io/blog/we-ported-65-oss-projects?hs_amp=true&utm_source=openai))",
+      "why_it_matters": "If Akka Specify and related spec kits gain traction, QA teams must revisit test ingestion, provenance, and adversarial validation strategies. ([akka.io](https://akka.io/blog/we-ported-65-oss-projects?hs_amp=true&utm_source=openai))",
+      "source": "Akka Blog",
+      "source_url": "https://akka.io/blog/we-ported-65-oss-projects?hs_amp=true",
+      "published_at": "2026-09-03"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Building Reusable Evaluation Frameworks for Agentic AI Products (Susan Chang, Elastic) — QCon talk",
+      "category": "QA learning / Agent evaluation frameworks",
+      "priority": 5,
+      "summary": "Susan Chang outlines a production-grade evaluation framework that combines programmatic metrics, LLM-as-judge patterns, and deep tracing to prevent regressions and measure factuality, recall, and tool-call correctness. Recorded at QCon AI. ([infoq.com](https://www.infoq.com/presentations/elastic-ai-agent-evaluations/))",
+      "why_it_matters": "Practical playbook for QA teams building repeatable agent evaluation pipelines, regression tracing, and composite metric roll-ups. ([infoq.com](https://www.infoq.com/presentations/elastic-ai-agent-evaluations/))",
+      "source": "InfoQ (QCon presentation)",
+      "source_url": "https://www.infoq.com/presentations/elastic-ai-agent-evaluations/",
+      "published_at": "2026-10-05"
+    }
+  ]
+}

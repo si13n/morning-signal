@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-07",
+  "headline": "Agentic QA, LLM review workflows, and infra stability: what QA leads must act on today",
+  "top_signal": {
+    "title": "JetBrains Research: Framework for Reviewing AI‑Generated Code (trust‑calibration first)",
+    "category": "AI-assisted code review / Agentic QA",
+    "priority": 1,
+    "summary": "JetBrains Research proposes a three‑level review workflow (overview → file risk stratification → snippet checks) and a trust‑calibration focus for reviewing large AI‑generated change sets, backed by participatory study and a conference paper.",
+    "why_it_matters": "QA leads must rework review and test acceptance processes for agent‑written code and tests, prioritizing segment‑level risk signals and tooling that surfaces model confidence.",
+    "source": "JetBrains Research (blog)",
+    "source_url": "https://blog.jetbrains.com/research/2026/10/review-ai-generated/",
+    "published_at": "2026-10-06T12:17:53Z"
+  },
+  "items": [
+    {
+      "title": "Sentry adds Unreal MCP integration so coding agents can set up crash reporting and triage issues",
+      "category": "Agentic QA / Game & native crash triage",
+      "priority": 2,
+      "summary": "Sentry’s plugin exposes Sentry tools to Unreal Engine 5.8’s experimental MCP server, letting coding agents configure DSNs, upload symbols, reproduce crashes, and fetch enriched issue context for root‑cause work.",
+      "why_it_matters": "Game and native QA teams can delegate repetitive instrumentation and root‑cause triage to agents while preserving evidence and traceability, accelerating crash‑to‑fix workflows for packaged builds.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/unreal-mcp-sentry/",
+      "published_at": "2026-10-06T00:00:00Z"
+    },
+    {
+      "title": "Kotlin Toolchain 0.13 adds agent‑friendly features, smoother iOS/Android onboarding and compiler caches",
+      "category": "Mobile QA / Agentic test generation",
+      "priority": 2,
+      "summary": "JetBrains released Kotlin Toolchain 0.13: a unified CLI with Hot Reload MCP server, agent skills, iOS simulator auto‑provisioning, improved Android SDK provisioning, and Kotlin/Native per‑file caches to speed native rebuilds and tests.",
+      "why_it_matters": "Mobile QA automation teams should update environment provisioning and test workflows—agentic test generation/maintenance will be more reliable and device/simulator provisioning becomes less brittle.",
+      "source": "JetBrains Kotlin Blog",
+      "source_url": "https://blog.jetbrains.com/kotlin/2026/10/start-your-next-kmp-app-with-kotlin-toolchain-0-13/",
+      "published_at": "2026-10-07T10:21:46Z"
+    },
+    {
+      "title": "Kubernetes: shift to cgroup v2 — resource semantics and compatibility guidance",
+      "category": "Test infrastructure / Containerized test runners",
+      "priority": 2,
+      "summary": "Kubernetes published guidance on moving clusters to cgroup v2, detailing kernel requirements, task freezer behavior, CPU/memory accounting differences, and migration caveats that affect scheduling and observability.",
+      "why_it_matters": "Teams running containerized test runners, load tests or agent sandboxes must validate test harness behavior and performance baselines under cgroup v2 to avoid misleading test regressions.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/",
+      "published_at": "2026-10-06T18:00:00Z"
+    },
+    {
+      "title": "NVIDIA publishes AICR v1.0: stable, verifiable GPU cluster configuration",
+      "category": "ML/LLM QA / Reproducible test infra",
+      "priority": 2,
+      "summary": "NVIDIA’s AICR v1.0 standardizes GPU cluster compatibility (CLI, REST API, SDK, bundle layout, artifact schemas) and declares stable public interfaces to support verifiable, reproducible cluster setups.",
+      "why_it_matters": "ML/LLM test and benchmark teams gain a practical spec to lock down GPU environment variants, improving reproducibility for performance regressions, automated model tests, and CI GPU validation suites.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/aicr-v1-0-open-stable-and-verifiable-gpu-cluster-configuration/",
+      "published_at": "2026-10-06T16:13:47Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "GitHub: fix rolling out to restore agent activity in Copilot usage metrics",
+      "category": "Agentic QA / Tooling metrics",
+      "priority": 3,
+      "summary": "GitHub rolled an IDE update to correct under‑reported agent activity in Copilot usage metrics; the fix restores accurate agent lines and activity reporting in usage dashboards.",
+      "why_it_matters": "QA leads tracking adoption of agentic test generation or review should treat historical Copilot agent metrics as partially undercounted until this fix is applied and compare baselines accordingly.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics/",
+      "published_at": "2026-10-06T23:43:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "How to evaluate LLMs and agents: benchmarks, application evaluation, and guardrails (LangChain guide)",
+      "category": "AI/LLM testing / Evaluation design",
+      "priority": 2,
+      "summary": "LangChain’s evaluation guide separates benchmark‑level and application‑level testing, and outlines designing representative tests, scoring strategies, and guardrails for agents and LLMs in production contexts.",
+      "why_it_matters": "Use this guide to design repeatable, task‑focused LLM/agent evals, lock protocols for CI tests, and choose metrics that expose uncertainty and real‑world failure modes.",
+      "source": "LangChain (how‑to guide)",
+      "source_url": "https://www.langchain.com/resources/how-to-evaluate-llms",
+      "published_at": "2026-06-23T00:00:00Z"
+    }
+  ]
+}

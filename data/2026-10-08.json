@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-08",
+  "headline": "Morning Signal — QA-focused edition (2026-10-08)",
+  "top_signal": {
+    "title": "Playwright v1.64.0: WebMCP test access, improved test runner and video options",
+    "category": "Web/API automation",
+    "priority": 1,
+    "summary": "Playwright v1.64.0 adds experimental WebMCP support (page.webmcp / frame.webmcp) so tests can enumerate and call page-registered tools, plus new test-runner options (shuffle, project defaults) and higher-fidelity video settings.",
+    "why_it_matters": "WebMCP lets QA treat in-page agent/tool integrations as testable surfaces; new runner features help reproduce order-dependent flakes and capture deterministic video evidence.",
+    "source": "GitHub — Playwright releases",
+    "source_url": "https://github.com/microsoft/playwright/releases/tag/v1.64.0",
+    "published_at": "2026-10-07T20:40:43Z"
+  },
+  "items": [
+    {
+      "title": "Introducing Warm Agents — TeamCity plugin to keep build/test agents pre-started",
+      "category": "Test infrastructure",
+      "priority": 2,
+      "summary": "JetBrains published the Warm Agents TeamCity plugin to maintain a target count of idle, pre-started cloud agents per image, exposing Prometheus metrics and REST API hooks for dynamic control and scheduling.",
+      "why_it_matters": "Reduces queue latency for short PR tests and fast feedback cycles; trades cost for lower test start jitter and improves flakiness triage speed by reducing environment spin-up variance.",
+      "source": "JetBrains — TeamCity blog",
+      "source_url": "https://blog.jetbrains.com/teamcity/2026/10/teamcity-warm-agents-plugin/",
+      "published_at": "2026-10-07T14:23:08Z"
+    },
+    {
+      "title": "GitHub: Local sandboxing for Copilot generally available",
+      "category": "Agentic QA / AI-assisted testing",
+      "priority": 2,
+      "summary": "GitHub announced general availability of local sandboxing for Copilot (CLI, app, VS Code Agent Host), enabling running generated code and subagents in local, isolated sandboxes rather than remote execution environments.",
+      "why_it_matters": "Safer local execution makes using Copilot-generated test code and test-driving agents feasible in private environments and improves reproducible, auditable test runs.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/",
+      "published_at": "2026-10-07T00:00:00Z"
+    },
+    {
+      "title": "GitHub: Purpose-built model for leaked secret detection in the platform",
+      "category": "Test reliability & security testing",
+      "priority": 3,
+      "summary": "GitHub released a purpose-built model for detecting leaked secrets, integrated into secret-protection tooling to reduce false positives and improve context-aware detection across repos and agent-generated code.",
+      "why_it_matters": "Improves automated pre-merge checks and scan accuracy in CI/test gates, lowering noise for security-related tests and reducing missed secrets in generated test fixtures or agent output.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/",
+      "published_at": "2026-10-07T00:00:00Z"
+    },
+    {
+      "title": "Kubernetes guidance: shift to cgroup v2 and test infrastructure impact",
+      "category": "Test infrastructure / Performance testing",
+      "priority": 3,
+      "summary": "Kubernetes published guidance on shifting to cgroup v2 (Kubernetes v1.31+), describing unified hierarchies and changes to resource isolation and accounting that affect container behavior and scheduler interaction.",
+      "why_it_matters": "cgroup v2 changes can alter CPU/memory throttling and resource isolation for test runners, affecting performance tests, flaky resource-sensitive tests, and CI worker sizing strategies.",
+      "source": "Kubernetes Blog",
+      "source_url": "https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/",
+      "published_at": "2026-10-06T00:00:00Z"
+    }
+  ],
+  "watch": [],
+  "learning": [
+    {
+      "title": "Our Framework for Reviewing AI-Generated Code — JetBrains Research",
+      "category": "AI-assisted testing / Review practices",
+      "priority": 2,
+      "summary": "JetBrains Research proposes a three-level review workflow and a trust-calibration framework for reviewing large AI-generated code changes, backed by a participatory study and an accompanying paper presented at ESEIW 2026.",
+      "why_it_matters": "Actionable review patterns and risk-signalling ideas help QA leads design code-review workflows, test plans, and validation checks for large agent-generated change sets.",
+      "source": "JetBrains Research blog",
+      "source_url": "https://blog.jetbrains.com/research/2026/10/review-ai-generated/",
+      "published_at": "2026-10-06T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-09",
+  "headline": "QA-focused roundup: Playwright WebMCP, local Copilot sandboxes, TeamCity warm agents, SDK and PR workflow changes that affect test reliability and agentic QA",
+  "top_signal": {
+    "title": "Playwright v1.64.0 — experimental WebMCP + runner and video features that aid flaky-test diagnosis",
+    "category": "Web/API automation",
+    "priority": 1,
+    "summary": "Playwright v1.64.0 adds experimental WebMCP (page.webmcp/frame.webmcp and CLI calls), test-runner shuffling, improved video capture (custom fps, styled action markers), locator.within(), and several APIs to reproduce and debug browser flakiness.",
+    "why_it_matters": "WebMCP lets QA test page-registered tools and agent integrations directly; shuffle and video improvements improve flaky-test detection, reproduction, and richer diagnostics in CI.",
+    "source": "GitHub Releases (microsoft/playwright)",
+    "source_url": "https://github.com/microsoft/playwright/releases/tag/v1.64.0",
+    "published_at": "2026-10-07T20:40:43Z"
+  },
+  "items": [
+    {
+      "title": "Reducing Android scope-sync overhead in Sentry Flutter (sentry_flutter 9.26.0)",
+      "category": "Mobile QA / SDK instrumentation",
+      "priority": 2,
+      "summary": "Sentry Flutter moved Android scope-sync work to a worker isolate, removed duplicate normalization and an extra byte copy, and benchmarked 27–30% processing-time reductions for scope payloads; changes are available in sentry_flutter 9.26.0+.",
+      "why_it_matters": "Lower SDK overhead reduces instrumentation-induced noise and flakiness, giving mobile QA more accurate performance and stability signals during tests.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/flutter-android-scope-sync/",
+      "published_at": "2026-10-08"
+    },
+    {
+      "title": "Purpose-built model for leaked secret detection (GitHub)",
+      "category": "Testing & governance / QA safety",
+      "priority": 2,
+      "summary": "GitHub published a fine‑tuned model for AI-based secret detection across secret scanning, push protection, and Copilot security reviews to identify credentials (including unstructured passwords) in code and agent outputs.",
+      "why_it_matters": "QA teams can catch unstructured credentials and agent-generated leaks earlier, improving test-data hygiene and preventing sensitive data from entering test artifacts or histories.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
+      "published_at": "2026-10-07"
+    },
+    {
+      "title": "Stacked pull requests generally available (GitHub) — stack metadata, timeline events, CLI/agent support",
+      "category": "Test workflow / PR testing",
+      "priority": 3,
+      "summary": "GitHub made stacked pull requests generally available with persistent stack context in the UI, timeline events for stack membership, improved merge-queue behavior, and CLI/agent workflow enhancements for stacks.",
+      "why_it_matters": "Stacked PRs enable incremental test selection and targeted CI runs per dependent change, reducing unnecessary full-pipeline runs and improving test impact analysis for multi-PR changes.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-06-stacked-pull-requests-generally-available",
+      "published_at": "2026-10-06"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Local sandboxing for GitHub Copilot now generally available",
+      "category": "Agentic QA / Agent safety",
+      "priority": 4,
+      "summary": "GitHub Copilot added local sandboxing (powered by Microsoft eXecution Container) to restrict filesystem, network, and credential access for agent-run commands in Copilot CLI, app, and VS Code Agent Host.",
+      "why_it_matters": "Watch this for safer local execution of test-generation and test-execution agents; sandboxing lowers risk from autonomous agents and eases adoption in regulated/test-sensitive environments.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
+      "published_at": "2026-10-07"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Introducing Warm Agents — a TeamCity plugin to keep test agents ready",
+      "category": "Test infrastructure / CI quality",
+      "priority": 2,
+      "summary": "JetBrains released the Warm Agents plugin for TeamCity to maintain a target count of idle, pre-started cloud agents per image, expose Prometheus-formatted utilization metrics, and provide REST/CLI controls to manage warm targets.",
+      "why_it_matters": "Read this to reduce PR test startup latency, improve CI predictability, and implement metrics-driven pre-warming for critical test images and platforms.",
+      "source": "JetBrains TeamCity Blog",
+      "source_url": "https://blog.jetbrains.com/teamcity/2026/10/teamcity-warm-agents-plugin/",
+      "published_at": "2026-10-07"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-10",
+  "headline": "QA Morning Signal — 2026-10-10: agentic test tooling, observability, and safer local agents",
+  "top_signal": {
+    "title": "Playwright v1.64 adds WebMCP hooks and test-runner quality features",
+    "category": "Web/API automation / Agentic QA",
+    "priority": 1,
+    "summary": "Playwright v1.64 introduces page.webmcp and frame.webmcp to call page-registered tools (experimental WebMCP), plus test-runner improvements (shuffle, locks, video options) that help reproduce and surface cross-browser test behavior.",
+    "why_it_matters": "WebMCP gives QA direct APIs to exercise in-page agent tools and validate agent–app interactions; runner changes help find order-dependent flakiness and reproduce test runs reliably.",
+    "source": "Playwright releases (GitHub)",
+    "source_url": "https://github.com/microsoft/playwright/releases/tag/v1.64.0",
+    "published_at": "2026-10-07T20:40:43Z"
+  },
+  "items": [
+    {
+      "title": "GitHub Copilot: local sandboxing now generally available",
+      "category": "Agentic QA / Tooling safety",
+      "priority": 2,
+      "summary": "GitHub Copilot added local sandboxing (GA) to constrain agent-run commands: file/directory limits, network access controls, credential restrictions, and enterprise policies to enforce sandboxing for local tools and MCPs.",
+      "why_it_matters": "Sandboxing reduces risk when using Copilot-driven test-generation or execution on developer machines and CI, enabling safer agent-assisted test runs and reproducible test harnesses.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/",
+      "published_at": "2026-10-07T15:46:17Z"
+    },
+    {
+      "title": "GitHub Copilot CLI: discover and use local models from the CLI",
+      "category": "Agentic QA / Local models",
+      "priority": 3,
+      "summary": "Copilot CLI gained a /model discovery feature to list and choose local models without leaving the CLI workflow, easing selection of on‑device models for local agent use.",
+      "why_it_matters": "Running local models helps QA teams evaluate agentic test tools offline, avoid data exfiltration, and benchmark agent behavior against production test harnesses under controlled conditions.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/",
+      "published_at": "2026-10-07T15:46:13Z"
+    },
+    {
+      "title": "JetBrains Marketplace adds UI freeze reports for plugin authors",
+      "category": "IDE / Mobile & SDK testing",
+      "priority": 3,
+      "summary": "JetBrains Marketplace now provides UI freeze reports (user-submitted) to plugin authors, including thread dumps and context to reproduce IDE freezes that previously could not be diagnosed from reports alone.",
+      "why_it_matters": "Freeze reports give QA and plugin testers concrete diagnostics to reproduce, triage, and write regression tests for UI responsiveness issues in IDE plugins and developer tooling.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/platform/2026/10/ui-freeze-reports-in-marketplace/",
+      "published_at": "2026-10-09T14:27:09Z"
+    },
+    {
+      "title": "Sentry JavaScript SDK v11 adds tracing across JS platforms (Workers, Bun, Deno)",
+      "category": "Test observability / Failure triage",
+      "priority": 3,
+      "summary": "Sentry v11 expands tracing via a code-transformer approach to support Cloudflare Workers, Bun, Deno and other JS runtimes, enabling end-to-end traces where OpenTelemetry integrations were limited.",
+      "why_it_matters": "Broader JS tracing improves QA’s ability to correlate test failures with runtime traces across serverless and edge environments, speeding root-cause analysis and flaky‑test investigation.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/tracing-for-all-js-platforms/",
+      "published_at": "2026-10-09T00:00:00Z"
+    },
+    {
+      "title": "Cloudflare Workers: on-demand CPU and memory profiling with flamegraphs",
+      "category": "Performance / Serverless testing",
+      "priority": 4,
+      "summary": "Cloudflare launched on-demand CPU and memory profiling for Workers and Durable Objects, producing interactive flamegraphs in production to identify bottlenecks and memory leaks quickly.",
+      "why_it_matters": "QA and performance engineers can now capture production flamegraphs for serverless code under test, enabling targeted performance tests and faster diagnosis of load-related failures.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "published_at": "2026-10-09T13:00:00Z"
+    },
+    {
+      "title": "CodeQL 2.27.2: improved analysis for C++, Go, Rust and JavaScript",
+      "category": "Static analysis / Test infrastructure",
+      "priority": 4,
+      "summary": "CodeQL 2.27.2 adds a C++ regular-expression parser and language-specific analysis improvements that increase detection coverage for common bug classes across multiple languages.",
+      "why_it_matters": "Upgraded CodeQL rules reduce false negatives in SAST pipelines used by QA and security teams, improving pre-merge quality gates and earlier detection of code paths that cause test failures.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-09-codeql-2-27-2-improves-c-go-rust-and-javascript-analysis/",
+      "published_at": "2026-10-09T21:32:54Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Mellum2.1: fast open model built for coding agents and repository-level tool use",
+      "category": "Agentic QA / Coding agents",
+      "priority": 5,
+      "summary": "JetBrains released Mellum2.1: a compact model trained with large-scale RL in sandboxed runs that can explore repositories, edit files, and check its own changes — optimized for local coding agents and sub-agents.",
+      "why_it_matters": "If adopted by QA tooling, Mellum2.1 could enable more capable self-driving test agents; monitor for reproducibility, test-harness safety, and deterministic evaluation methods.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+      "published_at": "2026-10-08T12:00:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Validate AI Factory Changes with Digital Twins and AI Agents (practical validation guidance)",
+      "category": "AI-for-QA / AI system validation",
+      "priority": 5,
+      "summary": "NVIDIA outlines using digital twins and agentic harnesses to validate complex AI-factory changes — simulating infra, schedulers, and orchestration to test deployment and performance impacts before production rollouts.",
+      "why_it_matters": "QA teams testing ML/AI pipelines can use these patterns to design reproducible validation suites, reduce risky live changes, and build evidence for model and infra rollbacks.",
+      "source": "NVIDIA Developer Blog",
+      "source_url": "https://developer.nvidia.com/blog/validate-ai-factory-changes-with-digital-twins-and-ai-agents/",
+      "published_at": "2026-10-07T16:00:00Z"
+    }
+  ]
+}

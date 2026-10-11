@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-11",
+  "headline": "Agentic reliability, production profiling, and improved test observability reshape QA priorities",
+  "top_signal": {
+    "title": "Gremlin Foresight AI — agentic reliability checks that propose and re-run tests",
+    "category": "Agentic QA / Reliability testing",
+    "priority": 1,
+    "summary": "Gremlin announced Foresight AI (general availability): supervised agents analyze service telemetry, recommend targeted fault-injection tests and remediations, then re-run the same tests to validate fixes and track reliability scores over time.",
+    "why_it_matters": "Brings an agentic closed-loop for reliability testing — automates discovery, test generation, and validation while preserving human approval and audit trails.",
+    "source": "Gremlin (release notes)",
+    "source_url": "https://www.gremlin.com/release-notes/general",
+    "published_at": "2026-10-07"
+  },
+  "items": [
+    {
+      "title": "Cloudflare adds on-demand CPU and memory profiling (flamegraphs) for Workers",
+      "category": "Performance & production diagnostics",
+      "priority": 2,
+      "summary": "Cloudflare Workers can now generate on-demand CPU and memory profiles with interactive flamegraphs in production, making it possible to pinpoint hotspots and memory leaks in serverless edge code without reproducing issues locally.",
+      "why_it_matters": "Enables QA and performance engineers to collect actionable production profiles for flaky performance, regressions, and memory leaks, reducing time-to-root-cause for hard-to-reproduce failures.",
+      "source": "Cloudflare Blog",
+      "source_url": "https://blog.cloudflare.com/workers-on-demand-profiling/",
+      "published_at": "2026-10-09"
+    },
+    {
+      "title": "Sentry JavaScript SDK v11 introduces tracing across Node, Cloudflare Workers, Bun and Deno",
+      "category": "Test observability / Tracing",
+      "priority": 2,
+      "summary": "Sentry v11 unifies tracing for all major JS runtimes via a code transformer and improved OpenTelemetry compatibility, adding span streaming and broader build/runtime instrumentation across server and edge platforms.",
+      "why_it_matters": "Better end-to-end traces make test failure triage and flaky-test diagnosis easier across JS runtimes, improving signal quality for automated regression and performance tests.",
+      "source": "Sentry Blog",
+      "source_url": "https://blog.sentry.io/tracing-for-all-js-platforms/",
+      "published_at": "2026-10-09"
+    },
+    {
+      "title": "JetBrains Marketplace exposes UI-freeze reports to plugin authors",
+      "category": "SDK / Plugin testing",
+      "priority": 3,
+      "summary": "JetBrains Marketplace now shares captured UI-freeze reports and thread dumps with plugin authors when users report IDE freezes, supplying the runtime context needed to reproduce and triage unresponsive-plugin issues.",
+      "why_it_matters": "Provides concrete telemetry and thread dumps for plugin tests, reducing blind-guess debugging and enabling reproducible test cases for UI-thread-related regressions.",
+      "source": "JetBrains Blog",
+      "source_url": "https://blog.jetbrains.com/platform/2026/10/ui-freeze-reports-in-marketplace/",
+      "published_at": "2026-10-09"
+    },
+    {
+      "title": "CircleCI Machine Runner Orchestrator reaches GA for automated scaling of self-hosted runners",
+      "category": "Test infrastructure / Runner scaling",
+      "priority": 4,
+      "summary": "CircleCI made Machine Runner Orchestrator generally available: a Kubernetes controller (KubeVirt) that automatically scales self-hosted machine runner VMs to match CI workload demand, with Helm charts and images public.",
+      "why_it_matters": "Automated scaling reduces test queue times and resource waste for large test suites on self-hosted runners, but requires QA teams to validate orchestration, image consistency, and test isolation.",
+      "source": "CircleCI Changelog",
+      "source_url": "https://circleci.com/changelog/",
+      "published_at": "2026-10-09"
+    },
+    {
+      "title": "CodeQL 2.27.2 improves multi-language static analysis (C++, Go, Rust, JS)",
+      "category": "Static analysis / Test tooling",
+      "priority": 3,
+      "summary": "GitHub released CodeQL 2.27.2 with a new C++ regex parser and analysis improvements for C++, Go, Rust and JavaScript, plus updated security query coverage and CLI behavior updates relevant to code-scanning workflows.",
+      "why_it_matters": "Improved language analyses reduce false negatives in static scans and change maintenance burden for QA/security pipelines; teams should validate new queries against infra and CI runners before roll-out.",
+      "source": "GitHub Changelog (CodeQL 2.27.2)",
+      "source_url": "https://github.blog/changelog/2026-10-09-codeql-2-27-2-improves-c-go-rust-and-javascript-analysis/",
+      "published_at": "2026-10-09"
+    }
+  ],
+  "watch": [],
+  "learning": [
+    {
+      "title": "Android Bench 2.0 — long-horizon tasks, agentic evaluation, continuous scoring",
+      "category": "AI-for-QA / Benchmarking & evaluation",
+      "priority": 2,
+      "summary": "Google’s Android Bench 2.0 adds long-horizon tasks, agent-based evaluation and continuous scoring to better measure multi-step, agentic developer workflows and model reliability on Android engineering tasks.",
+      "why_it_matters": "Its agentic evaluation and continuous scoring provide a practical template for QA teams building repeatable benchmarks for LLM-powered test agents and long-run correctness metrics.",
+      "source": "Android Developers Blog",
+      "source_url": "https://developer.android.com/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks?authuser=0",
+      "published_at": "2026-09-16"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>Saturday, October 10, 2026 · Morning Signal</title>
+  <title>Sunday, October 11, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <main class="shell">
 
     <section class="hero">
-      <p class="eyebrow">Saturday, October 10, 2026 <span class="dot">·</span> Issue 2026-10-10</p>
+      <p class="eyebrow">Sunday, October 11, 2026 <span class="dot">·</span> Issue 2026-10-11</p>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -25,62 +25,54 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">Playwright v1.64 adds WebMCP hooks and test-runner quality features</h2>
-      <p class="story-summary">Playwright v1.64 introduces page.webmcp and frame.webmcp to call page-registered tools (experimental WebMCP), plus test-runner improvements (shuffle, locks, video options) that help reproduce and surface cross-browser test behavior.</p>
-      <div class="why"><span>Why it matters</span><p>WebMCP gives QA direct APIs to exercise in-page agent tools and validate agent–app interactions; runner changes help find order-dependent flakiness and reproduce test runs reliably.</p></div>
-      <a class="source-link" href="https://github.com/microsoft/playwright/releases/tag/v1.64.0" target="_blank" rel="noopener noreferrer">Playwright releases (GitHub) <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">Gremlin Foresight AI — agentic reliability checks that propose and re-run tests</h2>
+      <p class="story-summary">Gremlin announced Foresight AI (general availability): supervised agents analyze service telemetry, recommend targeted fault-injection tests and remediations, then re-run the same tests to validate fixes and track reliability scores over time.</p>
+      <div class="why"><span>Why it matters</span><p>Brings an agentic closed-loop for reliability testing — automates discovery, test generation, and validation while preserving human approval and audit trails.</p></div>
+      <a class="source-link" href="https://www.gremlin.com/release-notes/general" target="_blank" rel="noopener noreferrer">Gremlin (release notes) <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
-      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">6 signals</span></div>
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">5 signals</span></div>
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic QA / Tooling safety</span><span class="priority priority-2">2/10</span></div>
-          <h3>GitHub Copilot: local sandboxing now generally available</h3>
-          <p>GitHub Copilot added local sandboxing (GA) to constrain agent-run commands: file/directory limits, network access controls, credential restrictions, and enterprise policies to enforce sandboxing for local tools and MCPs.</p>
-          <div class="why compact"><span>Why it matters</span><p>Sandboxing reduces risk when using Copilot-driven test-generation or execution on developer machines and CI, enabling safer agent-assisted test runs and reproducible test harnesses.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic QA / Local models</span><span class="priority priority-3">3/10</span></div>
-          <h3>GitHub Copilot CLI: discover and use local models from the CLI</h3>
-          <p>Copilot CLI gained a /model discovery feature to list and choose local models without leaving the CLI workflow, easing selection of on‑device models for local agent use.</p>
-          <div class="why compact"><span>Why it matters</span><p>Running local models helps QA teams evaluate agentic test tools offline, avoid data exfiltration, and benchmark agent behavior against production test harnesses under controlled conditions.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">IDE / Mobile & SDK testing</span><span class="priority priority-3">3/10</span></div>
-          <h3>JetBrains Marketplace adds UI freeze reports for plugin authors</h3>
-          <p>JetBrains Marketplace now provides UI freeze reports (user-submitted) to plugin authors, including thread dumps and context to reproduce IDE freezes that previously could not be diagnosed from reports alone.</p>
-          <div class="why compact"><span>Why it matters</span><p>Freeze reports give QA and plugin testers concrete diagnostics to reproduce, triage, and write regression tests for UI responsiveness issues in IDE plugins and developer tooling.</p></div>
-          <a class="source-link" href="https://blog.jetbrains.com/platform/2026/10/ui-freeze-reports-in-marketplace/" target="_blank" rel="noopener noreferrer">JetBrains Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Test observability / Failure triage</span><span class="priority priority-3">3/10</span></div>
-          <h3>Sentry JavaScript SDK v11 adds tracing across JS platforms (Workers, Bun, Deno)</h3>
-          <p>Sentry v11 expands tracing via a code-transformer approach to support Cloudflare Workers, Bun, Deno and other JS runtimes, enabling end-to-end traces where OpenTelemetry integrations were limited.</p>
-          <div class="why compact"><span>Why it matters</span><p>Broader JS tracing improves QA’s ability to correlate test failures with runtime traces across serverless and edge environments, speeding root-cause analysis and flaky‑test investigation.</p></div>
-          <a class="source-link" href="https://blog.sentry.io/tracing-for-all-js-platforms/" target="_blank" rel="noopener noreferrer">Sentry Blog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Performance / Serverless testing</span><span class="priority priority-4">4/10</span></div>
-          <h3>Cloudflare Workers: on-demand CPU and memory profiling with flamegraphs</h3>
-          <p>Cloudflare launched on-demand CPU and memory profiling for Workers and Durable Objects, producing interactive flamegraphs in production to identify bottlenecks and memory leaks quickly.</p>
-          <div class="why compact"><span>Why it matters</span><p>QA and performance engineers can now capture production flamegraphs for serverless code under test, enabling targeted performance tests and faster diagnosis of load-related failures.</p></div>
+          <div class="story-meta"><span class="category">Performance & production diagnostics</span><span class="priority priority-2">2/10</span></div>
+          <h3>Cloudflare adds on-demand CPU and memory profiling (flamegraphs) for Workers</h3>
+          <p>Cloudflare Workers can now generate on-demand CPU and memory profiles with interactive flamegraphs in production, making it possible to pinpoint hotspots and memory leaks in serverless edge code without reproducing issues locally.</p>
+          <div class="why compact"><span>Why it matters</span><p>Enables QA and performance engineers to collect actionable production profiles for flaky performance, regressions, and memory leaks, reducing time-to-root-cause for hard-to-reproduce failures.</p></div>
           <a class="source-link" href="https://blog.cloudflare.com/workers-on-demand-profiling/" target="_blank" rel="noopener noreferrer">Cloudflare Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Static analysis / Test infrastructure</span><span class="priority priority-4">4/10</span></div>
-          <h3>CodeQL 2.27.2: improved analysis for C++, Go, Rust and JavaScript</h3>
-          <p>CodeQL 2.27.2 adds a C++ regular-expression parser and language-specific analysis improvements that increase detection coverage for common bug classes across multiple languages.</p>
-          <div class="why compact"><span>Why it matters</span><p>Upgraded CodeQL rules reduce false negatives in SAST pipelines used by QA and security teams, improving pre-merge quality gates and earlier detection of code paths that cause test failures.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-10-09-codeql-2-27-2-improves-c-go-rust-and-javascript-analysis/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Test observability / Tracing</span><span class="priority priority-2">2/10</span></div>
+          <h3>Sentry JavaScript SDK v11 introduces tracing across Node, Cloudflare Workers, Bun and Deno</h3>
+          <p>Sentry v11 unifies tracing for all major JS runtimes via a code transformer and improved OpenTelemetry compatibility, adding span streaming and broader build/runtime instrumentation across server and edge platforms.</p>
+          <div class="why compact"><span>Why it matters</span><p>Better end-to-end traces make test failure triage and flaky-test diagnosis easier across JS runtimes, improving signal quality for automated regression and performance tests.</p></div>
+          <a class="source-link" href="https://blog.sentry.io/tracing-for-all-js-platforms/" target="_blank" rel="noopener noreferrer">Sentry Blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">SDK / Plugin testing</span><span class="priority priority-3">3/10</span></div>
+          <h3>JetBrains Marketplace exposes UI-freeze reports to plugin authors</h3>
+          <p>JetBrains Marketplace now shares captured UI-freeze reports and thread dumps with plugin authors when users report IDE freezes, supplying the runtime context needed to reproduce and triage unresponsive-plugin issues.</p>
+          <div class="why compact"><span>Why it matters</span><p>Provides concrete telemetry and thread dumps for plugin tests, reducing blind-guess debugging and enabling reproducible test cases for UI-thread-related regressions.</p></div>
+          <a class="source-link" href="https://blog.jetbrains.com/platform/2026/10/ui-freeze-reports-in-marketplace/" target="_blank" rel="noopener noreferrer">JetBrains Blog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Test infrastructure / Runner scaling</span><span class="priority priority-4">4/10</span></div>
+          <h3>CircleCI Machine Runner Orchestrator reaches GA for automated scaling of self-hosted runners</h3>
+          <p>CircleCI made Machine Runner Orchestrator generally available: a Kubernetes controller (KubeVirt) that automatically scales self-hosted machine runner VMs to match CI workload demand, with Helm charts and images public.</p>
+          <div class="why compact"><span>Why it matters</span><p>Automated scaling reduces test queue times and resource waste for large test suites on self-hosted runners, but requires QA teams to validate orchestration, image consistency, and test isolation.</p></div>
+          <a class="source-link" href="https://circleci.com/changelog/" target="_blank" rel="noopener noreferrer">CircleCI Changelog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Static analysis / Test tooling</span><span class="priority priority-3">3/10</span></div>
+          <h3>CodeQL 2.27.2 improves multi-language static analysis (C++, Go, Rust, JS)</h3>
+          <p>GitHub released CodeQL 2.27.2 with a new C++ regex parser and analysis improvements for C++, Go, Rust and JavaScript, plus updated security query coverage and CLI behavior updates relevant to code-scanning workflows.</p>
+          <div class="why compact"><span>Why it matters</span><p>Improved language analyses reduce false negatives in static scans and change maintenance burden for QA/security pipelines; teams should validate new queries against infra and CI runners before roll-out.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-10-09-codeql-2-27-2-improves-c-go-rust-and-javascript-analysis/" target="_blank" rel="noopener noreferrer">GitHub Changelog (CodeQL 2.27.2) <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -89,14 +81,12 @@
     <div class="two-column">
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
-
-        <article class="mini-story"><div class="story-meta"><span class="category">Agentic QA / Coding agents</span><span class="priority priority-5">5/10</span></div><h3>Mellum2.1: fast open model built for coding agents and repository-level tool use</h3><p>If adopted by QA tooling, Mellum2.1 could enable more capable self-driving test agents; monitor for reproducibility, test-harness safety, and deterministic evaluation methods.</p><a class="source-link" href="https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
-
+<p class="empty-state">Nothing new to watch closely.</p>
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">AI-for-QA / AI system validation</span><span class="priority priority-5">5/10</span></div><h3>Validate AI Factory Changes with Digital Twins and AI Agents (practical validation guidance)</h3><p>NVIDIA outlines using digital twins and agentic harnesses to validate complex AI-factory changes — simulating infra, schedulers, and orchestration to test deployment and performance impacts before production rollouts.</p><a class="source-link" href="https://developer.nvidia.com/blog/validate-ai-factory-changes-with-digital-twins-and-ai-agents/" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">AI-for-QA / Benchmarking & evaluation</span><span class="priority priority-2">2/10</span></div><h3>Android Bench 2.0 — long-horizon tasks, agentic evaluation, continuous scoring</h3><p>Google’s Android Bench 2.0 adds long-horizon tasks, agent-based evaluation and continuous scoring to better measure multi-step, agentic developer workflows and model reliability on Android engineering tasks.</p><a class="source-link" href="https://developer.android.com/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks?authuser=0" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
 
       </section>
     </div>

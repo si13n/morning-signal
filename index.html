@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>Monday, October 12, 2026 · Morning Signal</title>
+  <title>Tuesday, October 13, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <main class="shell">
 
     <section class="hero">
-      <p class="eyebrow">Monday, October 12, 2026 <span class="dot">·</span> Issue 2026-10-12</p>
+      <p class="eyebrow">Tuesday, October 13, 2026 <span class="dot">·</span> Issue 2026-10-13</p>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -25,46 +25,54 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">Gremlin Foresight AI (GA) — agentic reliability product that analyzes services, recommends fixes, and reruns tests to validate remediation</h2>
-      <p class="story-summary">Gremlin announced Foresight AI (general availability): an agentic product that scans services for reliability risks, proposes remediation, and automatically reruns chaos, integration, and validation tests to confirm fixes.</p>
-      <div class="why"><span>Why it matters</span><p>Automates failure triage and verification by rerunning tests as part of remediation, reducing manual chaos orchestration and improving test-driven evidence for fixes.</p></div>
+      <h2 id="top-signal-heading">Gremlin launches Foresight AI: agentic reliability that detects, recommends, and re-tests fixes</h2>
+      <p class="story-summary">Gremlin announced Foresight AI (general availability), an agentic product that analyzes services for likely failures, recommends remediations, and re-runs tests to verify fixes before incidents occur.</p>
+      <div class="why"><span>Why it matters</span><p>Foresight automates detection, triage, and regression verification—shifting some reliability work from human SRE/QA to agentic test-and-verify flows that QA teams must instrument and audit.</p></div>
       <a class="source-link" href="https://www.gremlin.com/release-notes/general" target="_blank" rel="noopener noreferrer">Gremlin release notes <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
-      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">4 signals</span></div>
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">5 signals</span></div>
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Static analysis</span><span class="priority priority-2">2/10</span></div>
-          <h3>CodeQL 2.27.2 — improved language analysis (C++, Go, Rust, JavaScript)</h3>
-          <p>GitHub released CodeQL 2.27.2 with language analysis improvements (C++ regex parser, improved flows and sink models across languages) that change what SAST flags and dataflow queries find.</p>
-          <div class="why compact"><span>Why it matters</span><p>Higher-fidelity static analysis shifts triage workload and reduces false positives/negatives—affects security-test coverage, test assertions, and automated scan gating in pipelines.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-10-09-codeql-2-27-2-improves-c-go-rust-and-javascript-analysis/" target="_blank" rel="noopener noreferrer">GitHub Changelog (CodeQL) <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agentic QA / AI for QA tooling</span><span class="priority priority-2">2/10</span></div>
+          <h3>Google ADK adds first-class support for five languages (Python, Go, TypeScript, Java, Kotlin)</h3>
+          <p>Google published an Agent Development Kit (ADK) post describing native ADKs for Python, Go, TypeScript, Java, and Kotlin plus MCP and A2A protocols and CI-focused eval tooling to score agent trajectories.</p>
+          <div class="why compact"><span>Why it matters</span><p>Multi-language ADK lets QA agents run in the same runtime as production services, improving test fidelity, reducing Python-shim maintenance, and enabling CI-based agent evaluations.</p></div>
+          <a class="source-link" href="https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages/" target="_blank" rel="noopener noreferrer">Google Cloud Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Plugin/IDE testing</span><span class="priority priority-3">3/10</span></div>
-          <h3>JetBrains Marketplace adds UI freeze reports for plugin authors</h3>
-          <p>JetBrains Marketplace now surfaces UI freeze reports (thread dumps, reproduction context) to registered plugin authors and documents the SDK error-reporting APIs and handling of diagnostic data.</p>
-          <div class="why compact"><span>Why it matters</span><p>Provides reproducible diagnostics for intermittent IDE hangs and plugin-related freezes—useful for reproducing flaky UI tests and capturing actionable thread dumps during triage.</p></div>
-          <a class="source-link" href="https://blog.jetbrains.com/platform/2026/10/ui-freeze-reports-in-marketplace/" target="_blank" rel="noopener noreferrer">JetBrains Blog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agentic QA / Agent governance</span><span class="priority priority-3">3/10</span></div>
+          <h3>GitLab 19.4: goal-driven /goal CLI, MCP governance, and expanded MCP tools</h3>
+          <p>GitLab 19.4 adds a /goal command to the Duo CLI for governed, goal-driven flows, expands MCP server tools, and introduces controls to restrict MCP server/tool access and governance modes.</p>
+          <div class="why compact"><span>Why it matters</span><p>QA teams can automate end-to-end objectives (e.g., fix failing tests) while applying governance and tool-level access rules—critical for safe agentic test automation and pipeline integrity.</p></div>
+          <a class="source-link" href="https://docs.gitlab.com/releases/19/gitlab-19-4-released/" target="_blank" rel="noopener noreferrer">GitLab 19.4 release notes <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Test observability</span><span class="priority priority-3">3/10</span></div>
-          <h3>Cloudflare Traces (open beta) — proxy-layer requests as OpenTelemetry spans</h3>
-          <p>Cloudflare launched Traces in open beta, converting proxy, security rules, cache, routing and origin handling into OpenTelemetry spans and exporting them via OTLP to observability backends.</p>
-          <div class="why compact"><span>Why it matters</span><p>Makes edge/proxy behavior visible to test traces, aiding end-to-end test failure triage and flaky-test investigation across CDN/proxy boundaries.</p></div>
-          <a class="source-link" href="https://blog.cloudflare.com/cloudflare-tracing/" target="_blank" rel="noopener noreferrer">Cloudflare Blog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">AI-assisted testing / Code scanning</span><span class="priority priority-3">3/10</span></div>
+          <h3>GitHub surfaces AI Scan metrics in Security Overview for orgs and enterprises</h3>
+          <p>GitHub added AI Scan metrics to Security Overview, showing counts of AI-generated findings, resolutions, remediation rates, repository trends, and how often developers applied autofix suggestions.</p>
+          <div class="why compact"><span>Why it matters</span><p>QA and security leads can now measure AI-scan effectiveness and autofix adoption, enabling evidence-driven decisions about gating, test acceptance, and automations that apply fixes.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-10-13-code-scanning-ai-scan-metrics-in-security-overview/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic QA / Test orchestration</span><span class="priority priority-2">2/10</span></div>
-          <h3>GitLab 19.4 — goal-driven agents, MCP tools, and governance for agentic automation</h3>
-          <p>GitLab 19.4 adds a /goal command to the Duo CLI, new MCP tools, hosted open-weight models, and tighter cost/governance controls to scale agentic automation across CI/CD and merge workflows.</p>
-          <div class="why compact"><span>Why it matters</span><p>Enables governed, goal-driven agent flows that can orchestrate test runs, triage issues, and open fixes—QA teams must update quality gates and agent governance policies accordingly.</p></div>
-          <a class="source-link" href="https://docs.gitlab.com/releases/19/gitlab-19-4-released/" target="_blank" rel="noopener noreferrer">GitLab release notes / docs <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Mobile QA / Test automation</span><span class="priority priority-4">4/10</span></div>
+          <h3>Xcode 27.2 adopts a JSON (.xcproj) project configuration format</h3>
+          <p>Apple introduced a JSON-based Xcode project configuration format (project.xcproj) in Xcode 27.2, making project files more human- and agent-editable and merge-friendly compared to the old pbxproj format.</p>
+          <div class="why compact"><span>Why it matters</span><p>Mobile QA automation and device-farm tooling must update parsers, CI project converters, and test harnesses; JSON configs simplify deterministic edits by agents and reduce merge conflicts affecting UI and instrumentation tests.</p></div>
+          <a class="source-link" href="https://developer.apple.com/documentation/xcode/updating-your-xcode-project-configuration-file-format" target="_blank" rel="noopener noreferrer">Apple Developer Documentation <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">QA org/process and test reliability</span><span class="priority priority-4">4/10</span></div>
+          <h3>Spotify: AI-assisted development more than doubled monthly merged changes; quality controls revised</h3>
+          <p>InfoQ reports Spotify’s AI-assisted development doubled monthly merged changes (≈8,100→17,000), prompting changes to testing, observability, rollback capacity, rollout safeguards, and automated maintenance.</p>
+          <div class="why compact"><span>Why it matters</span><p>Rapid AI-driven change volume stresses test execution capacity and gates—QA leaders should plan selective gating, scalable test runners, improved test health metrics, and stronger rollback/verification practices.</p></div>
+          <a class="source-link" href="https://www.infoq.com/news/2026/10/spotify-ai-quality-controls/" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -73,15 +81,11 @@
     <div class="two-column">
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
-
-        <article class="mini-story"><div class="story-meta"><span class="category">Mobile QA / Tooling</span><span class="priority priority-2">2/10</span></div><h3>Xcode 27.2 introduces a JSON-based project configuration (.xcproj) and canonical tooling</h3><p>Changes how project configuration is parsed and merged—expect updates to CI scripts, test runners, and tooling that parse project files; agentic edits to project config become safer.</p><a class="source-link" href="https://developer.apple.com/documentation/xcode/updating-your-xcode-project-configuration-file-format" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
-
+<p class="empty-state">Nothing new to watch closely.</p>
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
-
-        <article class="mini-story"><div class="story-meta"><span class="category">AI for QA / Benchmarking</span><span class="priority priority-2">2/10</span></div><h3>Android Bench 2.0 — long-horizon tasks, agentic evaluation, and continuous scoring (methodology)</h3><p>Google published Android Bench 2.0: it adds long-horizon tasks, agent-based evaluations, and continuous scoring to better measure agent performance on complex Android development scenarios.</p><a class="source-link" href="https://developer.android.com/blog/posts/android-bench-2-0-pushing-the-frontier-with-challenging-long-horizon-tasks" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
-
+<p class="empty-state">No learning pick today.</p>
       </section>
     </div>
   </main>

@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-13",
+  "headline": "Agentic QA, multi-language agent tooling, and emergent org-scale testing pressures",
+  "top_signal": {
+    "title": "Gremlin launches Foresight AI: agentic reliability that detects, recommends, and re-tests fixes",
+    "category": "Agentic QA / Reliability testing",
+    "priority": 1,
+    "summary": "Gremlin announced Foresight AI (general availability), an agentic product that analyzes services for likely failures, recommends remediations, and re-runs tests to verify fixes before incidents occur.",
+    "why_it_matters": "Foresight automates detection, triage, and regression verification—shifting some reliability work from human SRE/QA to agentic test-and-verify flows that QA teams must instrument and audit.",
+    "source": "Gremlin release notes",
+    "source_url": "https://www.gremlin.com/release-notes/general",
+    "published_at": "2026-10-07"
+  },
+  "items": [
+    {
+      "title": "Google ADK adds first-class support for five languages (Python, Go, TypeScript, Java, Kotlin)",
+      "category": "Agentic QA / AI for QA tooling",
+      "priority": 2,
+      "summary": "Google published an Agent Development Kit (ADK) post describing native ADKs for Python, Go, TypeScript, Java, and Kotlin plus MCP and A2A protocols and CI-focused eval tooling to score agent trajectories.",
+      "why_it_matters": "Multi-language ADK lets QA agents run in the same runtime as production services, improving test fidelity, reducing Python-shim maintenance, and enabling CI-based agent evaluations.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages/",
+      "published_at": "2026-10-13"
+    },
+    {
+      "title": "GitLab 19.4: goal-driven /goal CLI, MCP governance, and expanded MCP tools",
+      "category": "Agentic QA / Agent governance",
+      "priority": 3,
+      "summary": "GitLab 19.4 adds a /goal command to the Duo CLI for governed, goal-driven flows, expands MCP server tools, and introduces controls to restrict MCP server/tool access and governance modes.",
+      "why_it_matters": "QA teams can automate end-to-end objectives (e.g., fix failing tests) while applying governance and tool-level access rules—critical for safe agentic test automation and pipeline integrity.",
+      "source": "GitLab 19.4 release notes",
+      "source_url": "https://docs.gitlab.com/releases/19/gitlab-19-4-released/",
+      "published_at": "2026-09-17"
+    },
+    {
+      "title": "GitHub surfaces AI Scan metrics in Security Overview for orgs and enterprises",
+      "category": "AI-assisted testing / Code scanning",
+      "priority": 3,
+      "summary": "GitHub added AI Scan metrics to Security Overview, showing counts of AI-generated findings, resolutions, remediation rates, repository trends, and how often developers applied autofix suggestions.",
+      "why_it_matters": "QA and security leads can now measure AI-scan effectiveness and autofix adoption, enabling evidence-driven decisions about gating, test acceptance, and automations that apply fixes.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-13-code-scanning-ai-scan-metrics-in-security-overview/",
+      "published_at": "2026-10-13"
+    },
+    {
+      "title": "Xcode 27.2 adopts a JSON (.xcproj) project configuration format",
+      "category": "Mobile QA / Test automation",
+      "priority": 4,
+      "summary": "Apple introduced a JSON-based Xcode project configuration format (project.xcproj) in Xcode 27.2, making project files more human- and agent-editable and merge-friendly compared to the old pbxproj format.",
+      "why_it_matters": "Mobile QA automation and device-farm tooling must update parsers, CI project converters, and test harnesses; JSON configs simplify deterministic edits by agents and reduce merge conflicts affecting UI and instrumentation tests.",
+      "source": "Apple Developer Documentation",
+      "source_url": "https://developer.apple.com/documentation/xcode/updating-your-xcode-project-configuration-file-format",
+      "published_at": "2026-09-17"
+    },
+    {
+      "title": "Spotify: AI-assisted development more than doubled monthly merged changes; quality controls revised",
+      "category": "QA org/process and test reliability",
+      "priority": 4,
+      "summary": "InfoQ reports Spotify’s AI-assisted development doubled monthly merged changes (≈8,100→17,000), prompting changes to testing, observability, rollback capacity, rollout safeguards, and automated maintenance.",
+      "why_it_matters": "Rapid AI-driven change volume stresses test execution capacity and gates—QA leaders should plan selective gating, scalable test runners, improved test health metrics, and stronger rollback/verification practices.",
+      "source": "InfoQ",
+      "source_url": "https://www.infoq.com/news/2026/10/spotify-ai-quality-controls/",
+      "published_at": "2026-10-12"
+    }
+  ],
+  "watch": [],
+  "learning": []
+}

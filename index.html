@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>Tuesday, October 13, 2026 · Morning Signal</title>
+  <title>Wednesday, October 14, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <main class="shell">
 
     <section class="hero">
-      <p class="eyebrow">Tuesday, October 13, 2026 <span class="dot">·</span> Issue 2026-10-13</p>
+      <p class="eyebrow">Wednesday, October 14, 2026 <span class="dot">·</span> Issue 2026-10-14</p>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -25,54 +25,38 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">Gremlin launches Foresight AI: agentic reliability that detects, recommends, and re-tests fixes</h2>
-      <p class="story-summary">Gremlin announced Foresight AI (general availability), an agentic product that analyzes services for likely failures, recommends remediations, and re-runs tests to verify fixes before incidents occur.</p>
-      <div class="why"><span>Why it matters</span><p>Foresight automates detection, triage, and regression verification—shifting some reliability work from human SRE/QA to agentic test-and-verify flows that QA teams must instrument and audit.</p></div>
-      <a class="source-link" href="https://www.gremlin.com/release-notes/general" target="_blank" rel="noopener noreferrer">Gremlin release notes <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">GitHub adds AI Scan metrics to Security Overview (public preview)</h2>
+      <p class="story-summary">GitHub added an AI Scan tab and metrics in Security Overview showing total AI Scan findings, remediation rate, repos producing findings, trends, and autofix application counts (public preview on Oct 13, 2026).</p>
+      <div class="why"><span>Why it matters</span><p>QA leads can now measure AI-assisted scan coverage, autofix adoption, and remediation trends to calibrate test policies and evaluate AI-sourced findings' reliability.</p></div>
+      <a class="source-link" href="https://github.blog/changelog/2026-10-13-code-scanning-ai-scan-metrics-in-security-overview/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
-      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">5 signals</span></div>
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">3 signals</span></div>
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic QA / AI for QA tooling</span><span class="priority priority-2">2/10</span></div>
-          <h3>Google ADK adds first-class support for five languages (Python, Go, TypeScript, Java, Kotlin)</h3>
-          <p>Google published an Agent Development Kit (ADK) post describing native ADKs for Python, Go, TypeScript, Java, and Kotlin plus MCP and A2A protocols and CI-focused eval tooling to score agent trajectories.</p>
-          <div class="why compact"><span>Why it matters</span><p>Multi-language ADK lets QA agents run in the same runtime as production services, improving test fidelity, reducing Python-shim maintenance, and enabling CI-based agent evaluations.</p></div>
-          <a class="source-link" href="https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages/" target="_blank" rel="noopener noreferrer">Google Cloud Blog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Test Evidence / Governance</span><span class="priority priority-2">2/10</span></div>
+          <h3>Audit events for GitHub Code Quality finding dismissals and reopenings</h3>
+          <p>GitHub added two audit-log events that record manual dismissals and reopenings of Code Quality findings, including who acted, when, repository, rule, and affected finding identifiers (GA on GitHub Enterprise Cloud, Oct 13, 2026).</p>
+          <div class="why compact"><span>Why it matters</span><p>Traceability for manual finding changes enables QA leads to investigate dismissed rules, correlate with test backlog changes, and enforce review policies for test-quality exceptions.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-10-13-audit-github-code-quality-finding-dismissals-and-reopenings/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Agentic QA / Agent governance</span><span class="priority priority-3">3/10</span></div>
-          <h3>GitLab 19.4: goal-driven /goal CLI, MCP governance, and expanded MCP tools</h3>
-          <p>GitLab 19.4 adds a /goal command to the Duo CLI for governed, goal-driven flows, expands MCP server tools, and introduces controls to restrict MCP server/tool access and governance modes.</p>
-          <div class="why compact"><span>Why it matters</span><p>QA teams can automate end-to-end objectives (e.g., fix failing tests) while applying governance and tool-level access rules—critical for safe agentic test automation and pipeline integrity.</p></div>
-          <a class="source-link" href="https://docs.gitlab.com/releases/19/gitlab-19-4-released/" target="_blank" rel="noopener noreferrer">GitLab 19.4 release notes <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Test Infrastructure / Security for QA</span><span class="priority priority-3">3/10</span></div>
+          <h3>Secret scanning: Anthropic keys blocked by default; Salesforce partner added</h3>
+          <p>GitHub secret scanning now detects Anthropic and Cloudsmith keys, blocks Anthropic service/user keys with push protection by default, and adds Salesforce as a secret-scanning partner (Oct 13, 2026).</p>
+          <div class="why compact"><span>Why it matters</span><p>Prevents model API keys and other provider secrets from entering repos or CI — critical for safe test fixtures, device-farm configs, and protecting test environment credentials.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-10-13-secret-scanning-blocks-anthropic-keys-by-default-adds-salesforce/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">AI-assisted testing / Code scanning</span><span class="priority priority-3">3/10</span></div>
-          <h3>GitHub surfaces AI Scan metrics in Security Overview for orgs and enterprises</h3>
-          <p>GitHub added AI Scan metrics to Security Overview, showing counts of AI-generated findings, resolutions, remediation rates, repository trends, and how often developers applied autofix suggestions.</p>
-          <div class="why compact"><span>Why it matters</span><p>QA and security leads can now measure AI-scan effectiveness and autofix adoption, enabling evidence-driven decisions about gating, test acceptance, and automations that apply fixes.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-10-13-code-scanning-ai-scan-metrics-in-security-overview/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">Mobile QA / Test automation</span><span class="priority priority-4">4/10</span></div>
-          <h3>Xcode 27.2 adopts a JSON (.xcproj) project configuration format</h3>
-          <p>Apple introduced a JSON-based Xcode project configuration format (project.xcproj) in Xcode 27.2, making project files more human- and agent-editable and merge-friendly compared to the old pbxproj format.</p>
-          <div class="why compact"><span>Why it matters</span><p>Mobile QA automation and device-farm tooling must update parsers, CI project converters, and test harnesses; JSON configs simplify deterministic edits by agents and reduce merge conflicts affecting UI and instrumentation tests.</p></div>
-          <a class="source-link" href="https://developer.apple.com/documentation/xcode/updating-your-xcode-project-configuration-file-format" target="_blank" rel="noopener noreferrer">Apple Developer Documentation <span aria-hidden="true">↗</span></a>
-        </article>
-
-        <article class="story-card">
-          <div class="story-meta"><span class="category">QA org/process and test reliability</span><span class="priority priority-4">4/10</span></div>
-          <h3>Spotify: AI-assisted development more than doubled monthly merged changes; quality controls revised</h3>
-          <p>InfoQ reports Spotify’s AI-assisted development doubled monthly merged changes (≈8,100→17,000), prompting changes to testing, observability, rollback capacity, rollout safeguards, and automated maintenance.</p>
-          <div class="why compact"><span>Why it matters</span><p>Rapid AI-driven change volume stresses test execution capacity and gates—QA leaders should plan selective gating, scalable test runners, improved test health metrics, and stronger rollback/verification practices.</p></div>
-          <a class="source-link" href="https://www.infoq.com/news/2026/10/spotify-ai-quality-controls/" target="_blank" rel="noopener noreferrer">InfoQ <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Test Reliability / Observability</span><span class="priority priority-4">4/10</span></div>
+          <h3>CI/CD pipeline observability: framework to diagnose flaky tests and pipeline failures</h3>
+          <p>JetBrains published a practical framework for CI/CD pipeline observability: what signals to collect (queue times, flaky-test rate, agent utilization), how to connect CI context to metrics, and tool trade-offs for investigation depth.</p>
+          <div class="why compact"><span>Why it matters</span><p>Observability choices directly impact flaky-test triage speed and root-cause analysis; the framework helps QA leads pick metrics and tools that surface test-level causes, not just infra symptoms.</p></div>
+          <a class="source-link" href="https://blog.jetbrains.com/teamcity/2026/10/cicd-pipeline-observability-tools/" target="_blank" rel="noopener noreferrer">JetBrains TeamCity Blog <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -81,11 +65,15 @@
     <div class="two-column">
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
-<p class="empty-state">Nothing new to watch closely.</p>
+
+        <article class="mini-story"><div class="story-meta"><span class="category">Agentic QA / Test Generation (Watch)</span><span class="priority priority-5">5/10</span></div><h3>Gemini 4 Argon available in GitHub Copilot (impact on test-generation agents)</h3><p>Upgraded models in developer tooling can change the quality and failure modes of auto-generated tests and coding agents; QA teams should monitor Copilot-generated test accuracy and hallucination patterns.</p><a class="source-link" href="https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
-<p class="empty-state">No learning pick today.</p>
+
+        <article class="mini-story"><div class="story-meta"><span class="category">Agentic QA / Evaluation Techniques</span><span class="priority priority-6">6/10</span></div><h3>Are Harnesses Worth the Cost? — practical experiment on behavioral and evaluation harnesses</h3><p>Martin Fowler (guest post) compares coding agents run with and without behavioral/evaluation harnesses. Findings: frontier models succeeded both ways, but a cost-optimized model improved from 3/10 to 10/10 accepted runs with a harness (article published Oct 13, 2026).</p><a class="source-link" href="https://martinfowler.com/articles/are-harnesses-worth-the-cost.html" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+
       </section>
     </div>
   </main>

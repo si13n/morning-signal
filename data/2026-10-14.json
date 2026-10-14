@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-14",
+  "headline": "GitHub advances AI-assisted code scanning and governance; practical QA signals on secret scanning, pipeline observability, and agent evaluation",
+  "top_signal": {
+    "title": "GitHub adds AI Scan metrics to Security Overview (public preview)",
+    "category": "AI-for-QA / Test Governance",
+    "priority": 1,
+    "summary": "GitHub added an AI Scan tab and metrics in Security Overview showing total AI Scan findings, remediation rate, repos producing findings, trends, and autofix application counts (public preview on Oct 13, 2026).",
+    "why_it_matters": "QA leads can now measure AI-assisted scan coverage, autofix adoption, and remediation trends to calibrate test policies and evaluate AI-sourced findings' reliability.",
+    "source": "GitHub Changelog",
+    "source_url": "https://github.blog/changelog/2026-10-13-code-scanning-ai-scan-metrics-in-security-overview/",
+    "published_at": "2026-10-13"
+  },
+  "items": [
+    {
+      "title": "Audit events for GitHub Code Quality finding dismissals and reopenings",
+      "category": "Test Evidence / Governance",
+      "priority": 2,
+      "summary": "GitHub added two audit-log events that record manual dismissals and reopenings of Code Quality findings, including who acted, when, repository, rule, and affected finding identifiers (GA on GitHub Enterprise Cloud, Oct 13, 2026).",
+      "why_it_matters": "Traceability for manual finding changes enables QA leads to investigate dismissed rules, correlate with test backlog changes, and enforce review policies for test-quality exceptions.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-13-audit-github-code-quality-finding-dismissals-and-reopenings/",
+      "published_at": "2026-10-13"
+    },
+    {
+      "title": "Secret scanning: Anthropic keys blocked by default; Salesforce partner added",
+      "category": "Test Infrastructure / Security for QA",
+      "priority": 3,
+      "summary": "GitHub secret scanning now detects Anthropic and Cloudsmith keys, blocks Anthropic service/user keys with push protection by default, and adds Salesforce as a secret-scanning partner (Oct 13, 2026).",
+      "why_it_matters": "Prevents model API keys and other provider secrets from entering repos or CI — critical for safe test fixtures, device-farm configs, and protecting test environment credentials.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-13-secret-scanning-blocks-anthropic-keys-by-default-adds-salesforce/",
+      "published_at": "2026-10-13"
+    },
+    {
+      "title": "CI/CD pipeline observability: framework to diagnose flaky tests and pipeline failures",
+      "category": "Test Reliability / Observability",
+      "priority": 4,
+      "summary": "JetBrains published a practical framework for CI/CD pipeline observability: what signals to collect (queue times, flaky-test rate, agent utilization), how to connect CI context to metrics, and tool trade-offs for investigation depth.",
+      "why_it_matters": "Observability choices directly impact flaky-test triage speed and root-cause analysis; the framework helps QA leads pick metrics and tools that surface test-level causes, not just infra symptoms.",
+      "source": "JetBrains TeamCity Blog",
+      "source_url": "https://blog.jetbrains.com/teamcity/2026/10/cicd-pipeline-observability-tools/",
+      "published_at": "2026-10-13"
+    }
+  ],
+  "watch": [
+    {
+      "title": "Gemini 4 Argon available in GitHub Copilot (impact on test-generation agents)",
+      "category": "Agentic QA / Test Generation (Watch)",
+      "priority": 5,
+      "summary": "GitHub announced Gemini 4 Argon is now available in GitHub Copilot, targeting complex coding and agentic tasks (announcement Oct 13, 2026).",
+      "why_it_matters": "Upgraded models in developer tooling can change the quality and failure modes of auto-generated tests and coding agents; QA teams should monitor Copilot-generated test accuracy and hallucination patterns.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/",
+      "published_at": "2026-10-13"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Are Harnesses Worth the Cost? — practical experiment on behavioral and evaluation harnesses",
+      "category": "Agentic QA / Evaluation Techniques",
+      "priority": 6,
+      "summary": "Martin Fowler (guest post) compares coding agents run with and without behavioral/evaluation harnesses. Findings: frontier models succeeded both ways, but a cost-optimized model improved from 3/10 to 10/10 accepted runs with a harness (article published Oct 13, 2026).",
+      "why_it_matters": "Shows concrete value and trade-offs of harnesses when using coding agents for QA: harnesses can materially improve reliability of lower-cost models used for test-generation or automation.",
+      "source": "martinfowler.com",
+      "source_url": "https://martinfowler.com/articles/are-harnesses-worth-the-cost.html",
+      "published_at": "2026-10-13"
+    }
+  ]
+}

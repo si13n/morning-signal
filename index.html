@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
-  <title>Wednesday, October 14, 2026 · Morning Signal</title>
+  <title>Thursday, October 15, 2026 · Morning Signal</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <main class="shell">
 
     <section class="hero">
-      <p class="eyebrow">Wednesday, October 14, 2026 <span class="dot">·</span> Issue 2026-10-14</p>
+      <p class="eyebrow">Thursday, October 15, 2026 <span class="dot">·</span> Issue 2026-10-15</p>
       <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
       <div class="chips" aria-label="Focus areas">
         <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
@@ -25,10 +25,10 @@
 
     <section class="signal-card" aria-labelledby="top-signal-heading">
       <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
-      <h2 id="top-signal-heading">GitHub adds AI Scan metrics to Security Overview (public preview)</h2>
-      <p class="story-summary">GitHub added an AI Scan tab and metrics in Security Overview showing total AI Scan findings, remediation rate, repos producing findings, trends, and autofix application counts (public preview on Oct 13, 2026).</p>
-      <div class="why"><span>Why it matters</span><p>QA leads can now measure AI-assisted scan coverage, autofix adoption, and remediation trends to calibrate test policies and evaluate AI-sourced findings' reliability.</p></div>
-      <a class="source-link" href="https://github.blog/changelog/2026-10-13-code-scanning-ai-scan-metrics-in-security-overview/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+      <h2 id="top-signal-heading">BrowserStack Load Testing — GA: run real browsers and API traffic in one test</h2>
+      <p class="story-summary">BrowserStack launched Load Testing (GA) that runs real browsers and API virtual users in the same test, correlating Core Web Vitals, page-level metrics and backend responses and reusing existing UI tests as load scenarios.</p>
+      <div class="why"><span>Why it matters</span><p>QA teams can now detect frontend render and UX regressions under backend load earlier—reducing blind spots from protocol-only load tests and improving pre-peak readiness.</p></div>
+      <a class="source-link" href="https://www.browserstack.com/blog/introducing-browserstack-load-testing/" target="_blank" rel="noopener noreferrer">BrowserStack Blog <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="content-section" aria-labelledby="moved-heading">
@@ -36,27 +36,27 @@
       <div class="story-grid">
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Test Evidence / Governance</span><span class="priority priority-2">2/10</span></div>
-          <h3>Audit events for GitHub Code Quality finding dismissals and reopenings</h3>
-          <p>GitHub added two audit-log events that record manual dismissals and reopenings of Code Quality findings, including who acted, when, repository, rule, and affected finding identifiers (GA on GitHub Enterprise Cloud, Oct 13, 2026).</p>
-          <div class="why compact"><span>Why it matters</span><p>Traceability for manual finding changes enables QA leads to investigate dismissed rules, correlate with test backlog changes, and enforce review policies for test-quality exceptions.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-10-13-audit-github-code-quality-finding-dismissals-and-reopenings/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Web automation</span><span class="priority priority-2">2/10</span></div>
+          <h3>Playwright v1.64.1 — patch addresses Electron first-window loss and Chromium cross-origin redirect regression</h3>
+          <p>Playwright v1.64.1 fixes an intermittent _electron.launch loss of a packaged app's first window and a Chromium 155+ regression that aborts preflighted cross-origin redirects when routes are registered—both can cause flaky or failing CI tests.</p>
+          <div class="why compact"><span>Why it matters</span><p>Patch reduces intermittent test failures and regression-induced aborts; QA leads should update CI agents to avoid false negatives and flaky noise in web suites.</p></div>
+          <a class="source-link" href="https://github.com/microsoft/playwright/releases/tag/v1.64.1" target="_blank" rel="noopener noreferrer">Playwright releases (GitHub) <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Test Infrastructure / Security for QA</span><span class="priority priority-3">3/10</span></div>
-          <h3>Secret scanning: Anthropic keys blocked by default; Salesforce partner added</h3>
-          <p>GitHub secret scanning now detects Anthropic and Cloudsmith keys, blocks Anthropic service/user keys with push protection by default, and adds Salesforce as a secret-scanning partner (Oct 13, 2026).</p>
-          <div class="why compact"><span>Why it matters</span><p>Prevents model API keys and other provider secrets from entering repos or CI — critical for safe test fixtures, device-farm configs, and protecting test environment credentials.</p></div>
-          <a class="source-link" href="https://github.blog/changelog/2026-10-13-secret-scanning-blocks-anthropic-keys-by-default-adds-salesforce/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Mobile QA / Observability</span><span class="priority priority-2">2/10</span></div>
+          <h3>Sentry Flutter SDK 10.0 — streaming traces, separate app.start, and crash-classification changes</h3>
+          <p>Sentry released Flutter SDK v10: streaming spans by default, app.start becomes a separate trace, unhandled-but-noncrashing errors no longer mark sessions as crashed, expanded Dio network failure capture, and clear upgrade requirements and migration guidance.</p>
+          <div class="why compact"><span>Why it matters</span><p>Improves mobile observability fidelity and crash-rate accuracy; QA must review sampling, transaction filters, grouping rules and platform minimums before upgrading production apps.</p></div>
+          <a class="source-link" href="https://blog.sentry.io/flutter-sdk-10/" target="_blank" rel="noopener noreferrer">Sentry Blog <span aria-hidden="true">↗</span></a>
         </article>
 
         <article class="story-card">
-          <div class="story-meta"><span class="category">Test Reliability / Observability</span><span class="priority priority-4">4/10</span></div>
-          <h3>CI/CD pipeline observability: framework to diagnose flaky tests and pipeline failures</h3>
-          <p>JetBrains published a practical framework for CI/CD pipeline observability: what signals to collect (queue times, flaky-test rate, agent utilization), how to connect CI context to metrics, and tool trade-offs for investigation depth.</p>
-          <div class="why compact"><span>Why it matters</span><p>Observability choices directly impact flaky-test triage speed and root-cause analysis; the framework helps QA leads pick metrics and tools that surface test-level causes, not just infra symptoms.</p></div>
-          <a class="source-link" href="https://blog.jetbrains.com/teamcity/2026/10/cicd-pipeline-observability-tools/" target="_blank" rel="noopener noreferrer">JetBrains TeamCity Blog <span aria-hidden="true">↗</span></a>
+          <div class="story-meta"><span class="category">Agentic QA / AI-assisted testing</span><span class="priority priority-2">2/10</span></div>
+          <h3>NVIDIA NeMo Gym: practical agentic evaluation to diagnose failures and raise verifier scores</h3>
+          <p>NVIDIA’s NeMo Gym post shows an end-to-end agent evaluation loop (used with Siemens Fuse) that grades final artifacts with domain-specific verifiers, boosting composite verification scores from ~55% to ~95% while cutting agent turns and tokens.</p>
+          <div class="why compact"><span>Why it matters</span><p>Provides a replicable approach for QA to evaluate agents against final artifacts (not just tool calls), detect silent failures, and iterate verifiers to improve agent reliability and reproducibility.</p></div>
+          <a class="source-link" href="https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym/" target="_blank" rel="noopener noreferrer">NVIDIA Developer Blog <span aria-hidden="true">↗</span></a>
         </article>
 
       </div>
@@ -66,13 +66,13 @@
       <section class="side-section" aria-labelledby="watch-heading">
         <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Agentic QA / Test Generation (Watch)</span><span class="priority priority-5">5/10</span></div><h3>Gemini 4 Argon available in GitHub Copilot (impact on test-generation agents)</h3><p>Upgraded models in developer tooling can change the quality and failure modes of auto-generated tests and coding agents; QA teams should monitor Copilot-generated test accuracy and hallucination patterns.</p><a class="source-link" href="https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">Test infrastructure / CI reproducibility</span><span class="priority priority-3">3/10</span></div><h3>GitHub Actions workflow lockfiles — public preview for reproducible workflow runs</h3><p>Lockfiles reduce surprising workflow changes and supply-chain risk in CI runs—QA teams should plan adoption, tests for stale locks, and gating strategies for reproducible test pipelines.</p><a class="source-link" href="https://github.blog/changelog/2026-10-14-github-actions-workflow-lockfiles-in-public-preview/" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
 
       </section>
       <section class="side-section learning" aria-labelledby="learning-heading">
         <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
 
-        <article class="mini-story"><div class="story-meta"><span class="category">Agentic QA / Evaluation Techniques</span><span class="priority priority-6">6/10</span></div><h3>Are Harnesses Worth the Cost? — practical experiment on behavioral and evaluation harnesses</h3><p>Martin Fowler (guest post) compares coding agents run with and without behavioral/evaluation harnesses. Findings: frontier models succeeded both ways, but a cost-optimized model improved from 3/10 to 10/10 accepted runs with a harness (article published Oct 13, 2026).</p><a class="source-link" href="https://martinfowler.com/articles/are-harnesses-worth-the-cost.html" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+        <article class="mini-story"><div class="story-meta"><span class="category">AI evaluation / LLM testing</span><span class="priority priority-2">2/10</span></div><h3>The lifecycle of LLM-as-a-Judge — Netflix’s build/align/monitor blueprint for automated evaluators</h3><p>Netflix documents a four-phase LLM-judge lifecycle: benchmark creation, reasoning-aligned rubric tuning (RART), deployment as gate+critic, and weekly human review with Meta-Judge and Reflector components to catch drift and 'right answer, wrong reason' failures.</p><a class="source-link" href="https://netflixtechblog.com/the-lifecycle-of-llm-as-a-judge-building-aligning-and-monitoring-at-scale-c95bd8283508" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
 
       </section>
     </div>

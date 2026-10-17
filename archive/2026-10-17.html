@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A focused daily digest for QA automation and agentic engineering.">
+  <title>Saturday, October 17, 2026 · Morning Signal</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header shell">
+    <a class="brand" href="../index.html"><span class="brand-mark">MS</span><span>Morning Signal</span></a>
+    <nav aria-label="Primary navigation"><a href="../archive/index.html">Archive</a></nav>
+  </header>
+
+  <main class="shell">
+
+    <section class="hero">
+      <p class="eyebrow">Saturday, October 17, 2026 <span class="dot">·</span> Issue 2026-10-17</p>
+      <p class="hero-copy">A small, useful scan of what moved across QA automation, AI agents, and the engineering systems that make them dependable.</p>
+      <div class="chips" aria-label="Focus areas">
+        <span>QA automation</span><span>Agentic engineering</span><span>Mobile QA</span><span>LLM evals</span><span>CI/CD</span>
+      </div>
+    </section>
+
+    <section class="signal-card" aria-labelledby="top-signal-heading">
+      <div class="section-kicker"><span class="signal-pulse"></span> Top Signal <span class="priority priority-1">Priority 1/10</span></div>
+      <h2 id="top-signal-heading">BrowserStack launches Load Testing (real browsers + API traffic)</h2>
+      <p class="story-summary">BrowserStack Load Testing (GA Oct 14) runs real browsers and API traffic together so frontend rendering, Core Web Vitals and backend load appear on one dashboard, exposing client-side degradation missed by protocol-only tests. ([browserstack.com](https://www.browserstack.com/blog/introducing-browserstack-load-testing/))</p>
+      <div class="why"><span>Why it matters</span><p>Run combined browser+API load tests to catch front-end bottlenecks that protocol-level tools miss; adjust test coverage and performance SLAs accordingly.</p></div>
+      <a class="source-link" href="https://www.browserstack.com/blog/introducing-browserstack-load-testing/" target="_blank" rel="noopener noreferrer">BrowserStack Blog <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="content-section" aria-labelledby="moved-heading">
+      <div class="section-heading"><div><p class="eyebrow">The useful layer</p><h2 id="moved-heading">What moved</h2></div><span class="count">4 signals</span></div>
+      <div class="story-grid">
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Agentic QA / Security Testing</span><span class="priority priority-1">1/10</span></div>
+          <h3>GitHub: Agentic autofix for code scanning alerts — generally available</h3>
+          <p>GitHub’s Agentic autofix (GA Oct 15) explores code, proposes fixes, reruns CodeQL to confirm closure, and opens a PR for review — automating end-to-end remediation for code-scanning alerts. ([github.blog](https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability))</p>
+          <div class="why compact"><span>Why it matters</span><p>QA and security teams must validate autofix correctness, introduce verification tests, and guard against incorrect or incomplete automated fixes in CI gates.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">AI-assisted Static Analysis</span><span class="priority priority-1">1/10</span></div>
+          <h3>GitHub: AI Scan for pull requests generally available</h3>
+          <p>AI Scan for pull requests (GA Oct 15) complements CodeQL by flagging vulnerabilities in languages and configs CodeQL doesn't cover, surfacing AI-identified findings and suggested autofixes inline on PRs. ([github.blog](https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available))</p>
+          <div class="why compact"><span>Why it matters</span><p>Incorporate AI Scan into PR workflows but add validation and reproducibility checks; treat AI findings as triage candidates requiring test or human verification before merge.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Mobile QA / CI Runners</span><span class="priority priority-2">2/10</span></div>
+          <h3>Xcode 27 runner image generally available (GitHub Actions)</h3>
+          <p>GitHub Actions now provides a GA Xcode 27 runner image (macOS 27, Apple Silicon) for building and testing iOS apps, standardizing the Xcode toolchain in hosted runners. ([github.blog](https://github.blog/changelog/2026-10-15-xcode-27-runner-image-generally-available))</p>
+          <div class="why compact"><span>Why it matters</span><p>Plan test matrix updates for iOS SDKs, validate existing XCUITest/Appium pipelines on xcode-27 runners, and verify Apple Silicon behaviour in device/simulator farms.</p></div>
+          <a class="source-link" href="https://github.blog/changelog/2026-10-15-xcode-27-runner-image-generally-available/" target="_blank" rel="noopener noreferrer">GitHub Changelog <span aria-hidden="true">↗</span></a>
+        </article>
+
+        <article class="story-card">
+          <div class="story-meta"><span class="category">Automated Mobile Testing Research</span><span class="priority priority-2">2/10</span></div>
+          <h3>Sapienz (2016) honored with ISSTA 2026 Impact Award — lessons for mobile autonomous testing</h3>
+          <p>Meta highlights Sapienz’s decade-long impact: multi-objective automated app exploration that finds crashes and reduces repro steps; Sapienz now runs millions of tests daily inside Meta. ([engineering.fb.com](https://engineering.fb.com/2026/10/15/developer-tools/sapienz-issta-2026-impact-paper-award-meta/))</p>
+          <div class="why compact"><span>Why it matters</span><p>Sapienz’s multi-objective exploration and actionable fault revelation remain practical patterns for large-scale mobile testing and autonomous app exploration efforts.</p></div>
+          <a class="source-link" href="https://engineering.fb.com/2026/10/15/developer-tools/sapienz-issta-2026-impact-paper-award-meta/" target="_blank" rel="noopener noreferrer">Engineering at Meta <span aria-hidden="true">↗</span></a>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="two-column">
+      <section class="side-section" aria-labelledby="watch-heading">
+        <div class="section-heading"><div><p class="eyebrow">Keep an eye on it</p><h2 id="watch-heading">Watch</h2></div></div>
+
+        <article class="mini-story"><div class="story-meta"><span class="category">AI-for-QA Tooling (Watch)</span><span class="priority priority-2">2/10</span></div><h3>GitHub: Deprecation of selected Copilot models (mid-Nov 2026)</h3><p>If your QA/test-generation or agent workflows rely on deprecated Copilot models, plan model updates and revalidate generated tests and agents against the suggested alternatives.</p><a class="source-link" href="https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/" target="_blank" rel="noopener noreferrer">Read source ↗</a></article>
+
+      </section>
+      <section class="side-section learning" aria-labelledby="learning-heading">
+        <div class="section-heading"><div><p class="eyebrow">One useful hour</p><h2 id="learning-heading">Worth learning today</h2></div></div>
+
+        <article class="mini-story"><div class="story-meta"><span class="category">Evaluation Engineering / Agentic QA (Learning)</span><span class="priority priority-1">1/10</span></div><h3>Four evaluation-engineering lessons from building agent plugins (Google Cloud)</h3><p>Google Cloud outlines four eval engineering lessons: score execution traces not just summaries, preserve turn structure in telemetry, run live+plan-only side-by-side, and use golden sets as durable baselines. Useful for testing agentic QA systems. ([cloud.google.com](https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons/))</p><a class="source-link" href="https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons/" target="_blank" rel="noopener noreferrer">Open resource ↗</a></article>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer shell"><span>Morning Signal · carefully filtered for useful signal</span><a href="../archive/index.html">Browse the archive ↗</a></footer>
+</body>
+</html>

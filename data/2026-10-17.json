@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-17",
+  "headline": "QA-focused morning signal: agentic fixes, AI code scanning, browser-level load testing, and agent eval lessons — immediate impacts for test automation and QA reliability.",
+  "top_signal": {
+    "title": "BrowserStack launches Load Testing (real browsers + API traffic)",
+    "category": "Performance & Load Testing",
+    "priority": 1,
+    "summary": "BrowserStack Load Testing (GA Oct 14) runs real browsers and API traffic together so frontend rendering, Core Web Vitals and backend load appear on one dashboard, exposing client-side degradation missed by protocol-only tests. ([browserstack.com](https://www.browserstack.com/blog/introducing-browserstack-load-testing/))",
+    "why_it_matters": "Run combined browser+API load tests to catch front-end bottlenecks that protocol-level tools miss; adjust test coverage and performance SLAs accordingly.",
+    "source": "BrowserStack Blog",
+    "source_url": "https://www.browserstack.com/blog/introducing-browserstack-load-testing/",
+    "published_at": "2026-10-14T13:00:00Z"
+  },
+  "items": [
+    {
+      "title": "GitHub: Agentic autofix for code scanning alerts — generally available",
+      "category": "Agentic QA / Security Testing",
+      "priority": 1,
+      "summary": "GitHub’s Agentic autofix (GA Oct 15) explores code, proposes fixes, reruns CodeQL to confirm closure, and opens a PR for review — automating end-to-end remediation for code-scanning alerts. ([github.blog](https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability))",
+      "why_it_matters": "QA and security teams must validate autofix correctness, introduce verification tests, and guard against incorrect or incomplete automated fixes in CI gates.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/",
+      "published_at": "2026-10-15T00:00:00Z"
+    },
+    {
+      "title": "GitHub: AI Scan for pull requests generally available",
+      "category": "AI-assisted Static Analysis",
+      "priority": 1,
+      "summary": "AI Scan for pull requests (GA Oct 15) complements CodeQL by flagging vulnerabilities in languages and configs CodeQL doesn't cover, surfacing AI-identified findings and suggested autofixes inline on PRs. ([github.blog](https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available))",
+      "why_it_matters": "Incorporate AI Scan into PR workflows but add validation and reproducibility checks; treat AI findings as triage candidates requiring test or human verification before merge.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available/",
+      "published_at": "2026-10-15T00:00:00Z"
+    },
+    {
+      "title": "Xcode 27 runner image generally available (GitHub Actions)",
+      "category": "Mobile QA / CI Runners",
+      "priority": 2,
+      "summary": "GitHub Actions now provides a GA Xcode 27 runner image (macOS 27, Apple Silicon) for building and testing iOS apps, standardizing the Xcode toolchain in hosted runners. ([github.blog](https://github.blog/changelog/2026-10-15-xcode-27-runner-image-generally-available))",
+      "why_it_matters": "Plan test matrix updates for iOS SDKs, validate existing XCUITest/Appium pipelines on xcode-27 runners, and verify Apple Silicon behaviour in device/simulator farms.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-15-xcode-27-runner-image-generally-available/",
+      "published_at": "2026-10-15T00:00:00Z"
+    },
+    {
+      "title": "Sapienz (2016) honored with ISSTA 2026 Impact Award — lessons for mobile autonomous testing",
+      "category": "Automated Mobile Testing Research",
+      "priority": 2,
+      "summary": "Meta highlights Sapienz’s decade-long impact: multi-objective automated app exploration that finds crashes and reduces repro steps; Sapienz now runs millions of tests daily inside Meta. ([engineering.fb.com](https://engineering.fb.com/2026/10/15/developer-tools/sapienz-issta-2026-impact-paper-award-meta/))",
+      "why_it_matters": "Sapienz’s multi-objective exploration and actionable fault revelation remain practical patterns for large-scale mobile testing and autonomous app exploration efforts.",
+      "source": "Engineering at Meta",
+      "source_url": "https://engineering.fb.com/2026/10/15/developer-tools/sapienz-issta-2026-impact-paper-award-meta/",
+      "published_at": "2026-10-15T00:00:00Z"
+    }
+  ],
+  "watch": [
+    {
+      "title": "GitHub: Deprecation of selected Copilot models (mid-Nov 2026)",
+      "category": "AI-for-QA Tooling (Watch)",
+      "priority": 2,
+      "summary": "GitHub will deprecate several Copilot models on Nov 16, 2026 and recommend alternatives; admins should update workflows and model selection before that date. ([github.blog](https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november))",
+      "why_it_matters": "If your QA/test-generation or agent workflows rely on deprecated Copilot models, plan model updates and revalidate generated tests and agents against the suggested alternatives.",
+      "source": "GitHub Changelog",
+      "source_url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/",
+      "published_at": "2026-10-15T00:00:00Z"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Four evaluation-engineering lessons from building agent plugins (Google Cloud)",
+      "category": "Evaluation Engineering / Agentic QA (Learning)",
+      "priority": 1,
+      "summary": "Google Cloud outlines four eval engineering lessons: score execution traces not just summaries, preserve turn structure in telemetry, run live+plan-only side-by-side, and use golden sets as durable baselines. Useful for testing agentic QA systems. ([cloud.google.com](https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons/))",
+      "why_it_matters": "Adopt these eval practices to build repeatable, auditable test suites for agents — essential for reliable agentic testing, flaky-agent diagnosis, and safe production rollout.",
+      "source": "Google Cloud Blog",
+      "source_url": "https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons/",
+      "published_at": "2026-10-16T00:00:00Z"
+    }
+  ]
+}
